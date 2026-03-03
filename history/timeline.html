@@ -1,293 +1,414 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<!-- TemplateBeginEditable name="doctitle" -->
-	<title>Earlsdon History Timeline - Earlsdon Online</title>
-	<!-- TemplateEndEditable -->
-	<link rel="stylesheet" href="../styles/main.css" type="text/css" />
-	<script src="../scripts/swfobject_modified.js" type="text/javascript"></script>
-	<!-- TemplateBeginEditable name="head" -->	<!-- TemplateEndEditable -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Earlsdon History Timeline – Earlsdon Online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green-dark:#2c4a2e;--green-mid:#3d6b40;--green-light:#e8f0e8;
+      --navy:#1a2744;--gold:#c9903a;--gold-light:#f0c060;
+      --cream:#faf8f3;--text:#2a2a2a;--text-light:#555;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Source Serif 4',Georgia,serif;background:var(--cream);color:var(--text);line-height:1.7}
+    header{background:var(--navy);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+    .header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;gap:16px}
+    .logo-area{display:flex;align-items:center;gap:14px;text-decoration:none}
+    .logo-area img{height:52px;width:auto}
+    .logo-text{display:flex;flex-direction:column;line-height:1.1}
+    .logo-main{font-family:'Playfair Display',serif;font-weight:900;font-size:1.5rem;color:#fff}
+    .logo-sub{font-size:.7rem;color:var(--gold);letter-spacing:.18em;text-transform:uppercase}
+    nav{display:flex;gap:6px;flex-wrap:wrap}
+    nav a{font-size:.82rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.85);text-decoration:none;padding:8px 14px;border-radius:3px;transition:background .2s,color .2s}
+    nav a:hover,nav a.active{background:var(--green-mid);color:#fff}
+    nav a.community-link{color:var(--gold-light);border:1px solid rgba(201,144,58,.4)}
+    nav a.community-link:hover{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+    .page-hero{background:var(--navy);padding:52px 24px 44px;position:relative;overflow:hidden}
+    .page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(to right,var(--gold),var(--green-mid),var(--gold))}
+    .page-hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+    .breadcrumb{font-size:.78rem;color:rgba(255,255,255,.5);margin-bottom:12px}
+    .breadcrumb a{color:var(--gold);text-decoration:none}
+    .breadcrumb a:hover{text-decoration:underline}
+    .page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:10px}
+    .page-hero .subtitle{color:var(--gold-light);font-style:italic;font-size:1rem;font-weight:300}
+    .main-content{max-width:860px;margin:0 auto;padding:52px 24px 80px}
+
+    /* TIMELINE */
+    .timeline{position:relative;padding-left:100px}
+    .timeline::before{content:'';position:absolute;left:72px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--gold),var(--green-mid),var(--gold))}
+
+    .timeline-item{position:relative;margin-bottom:0;display:flex;gap:0}
+    .timeline-item:last-child .tl-body{border-bottom:none}
+
+    .tl-year{position:absolute;left:-100px;width:88px;text-align:right;font-family:'Playfair Display',serif;font-weight:700;font-size:.95rem;color:var(--navy);padding-top:14px;line-height:1}
+
+    .tl-dot{position:absolute;left:-15px;top:18px;width:12px;height:12px;border-radius:50%;background:var(--gold);border:2px solid var(--cream);box-shadow:0 0 0 2px var(--gold);flex-shrink:0}
+
+    .tl-body{padding:14px 0 14px 24px;border-bottom:1px solid var(--green-light);width:100%}
+    .tl-body p{color:var(--text-light);font-size:.95rem;line-height:1.65}
+    .tl-body a{color:var(--green-mid);font-weight:600;text-decoration:none}
+    .tl-body a:hover{color:var(--gold)}
+
+    .back-link{display:inline-flex;align-items:center;gap:8px;margin-top:36px;color:var(--green-mid);font-weight:600;font-size:.88rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:gap .2s}
+    .back-link:hover{gap:12px;color:var(--gold)}
+
+    footer{background:var(--navy);color:rgba(255,255,255,.6);padding:40px 24px;font-size:.82rem}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+    .footer-logo{font-family:'Playfair Display',serif;font-weight:700;color:#fff;font-size:1.1rem}
+    .footer-logo span{color:var(--gold)}
+    footer a{color:rgba(255,255,255,.6);text-decoration:none}
+    footer a:hover{color:var(--gold)}
+    .footer-links{display:flex;gap:20px}
+
+    @media(max-width:600px){
+      .timeline{padding-left:60px}
+      .timeline::before{left:40px}
+      .tl-year{left:-60px;width:52px;font-size:.8rem}
+      .tl-dot{left:-13px}
+    }
+  </style>
 </head>
-
 <body>
+<header>
+  <div class="header-inner">
+    <a href="../index.html" class="logo-area">
+      <img src="../images/Logo2.png" alt="Earlsdon Online" onerror="this.style.display='none'">
+      <div class="logo-text"><span class="logo-main">Earlsdon</span><span class="logo-sub">— Online —</span></div>
+    </a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="history.html" class="active">History</a>
+      <a href="localinfo.html" class="active-check">Local Info</a>
+    </nav>
+  </div>
+</header>
 
-<table width="1024" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="204" rowspan="7" valign="top" id="left">
-		<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="204" height="297" id="FlashID" title="Clock">
-			<param name="movie" value="../images/clock.swf" />
-			<param name="quality" value="high" />
-			<param name="wmode" value="opaque" />
-			<param name="swfversion" value="6.0.65.0" />
-			<!-- This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don’t want users to see the prompt. -->
-			<param name="expressinstall" value="../scripts/expressInstall.swf" />
-			<!-- Next object tag is for non-IE browsers. So hide it from IE using IECC. -->
-			<!--[if !IE]>-->
-				<object type="application/x-shockwave-flash" data="../images/clock.swf" width="204" height="297">
-				<!--<![endif]-->
-				<param name="quality" value="high" />
-				<param name="wmode" value="transparent" />
-				<param name="swfversion" value="6.0.65.0" />
-				<param name="expressinstall" value="../scripts/expressInstall.swf" />
-				<!-- The browser displays the following alternative content for users with Flash Player 6.0 and older. -->
-				<img src="../images/Clock.png" width="204" height="297" alt="Earlsdon Clock" />
-			<!--[if !IE]>-->
-				</object>
-			<!--<![endif]-->
-	  </object>	</td>
-    <td height="90" colspan="2">&nbsp;</td>
-    <td width="53" rowspan="7" valign="top" id="right">&nbsp;</td>
-  </tr>
-  <tr>
-    <td rowspan="2"><img src="../images/Logo.png" width="328" height="123" alt="Earlsdon Online" /></td>
-    <td><img src="../images/Quote.png" width="439" height="87" alt="Coventry's longest running community website" /></td>
-  </tr>
-  <tr>
-    <td id="nav"><a href="../index.html">HOME</a>&nbsp; | &nbsp;<a href="../news/news.html">NEWS</a>&nbsp; | &nbsp;<a href="../events/events.html">EVENTS</a>&nbsp; | &nbsp;<a href="../local/localinfo.html">LOCAL INFO</a>&nbsp; | &nbsp;<a href="history.html">HISTORY</a></td>
-  </tr>
-  <tr>
-    <td height="33" colspan="2" id="top">&nbsp;</td>
-  </tr>
-  <tr>
-    <td colspan="2" id="main">
-		<table width="100%" border="0" cellspacing="0" cellpadding="0">
-		  <tr>
-			  <td id="content">
-			  <!-- TemplateBeginEditable name="content" -->
-			  <h1>Earlsdon History Timeline<br />
-			  </h1>
-			  <table border="1" cellspacing="0" cellpadding="0">
-                <tr>
-                  <td width="73" valign="top"><p><strong>Abt 1830</strong></p></td>
-                  <td width="593" valign="top"><p><a href="/history/johnmoore.html">John Moore</a> builds a new farmhouse    adjacent to Elsdon Lane.</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1847</strong></p></td>
-                  <td width="593" valign="top"><p>Following the death of <a href="/history/johnmoore.html">John Moore</a> his    farmhouse and his 6 fields (Barn Close, House Close, Big Ground, The Slang,    The Close at Elsdon Lane and Far Close) are sold at auction to William Pickering.</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1851</strong></p></td>
-                  <td width="593" valign="top"><p>The Freehold Land Society purchases the land    at Elsdon Lane, between Styvichale Common and Hearsall Common, from William    Pickering for development</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1852</strong></p></td>
-                  <td width="593" valign="top"><p><a href="/history/johnflinn.html">John Flinn</a> builds <a href="/history/earlsdonhse.html">'Earlsdon House'</a>, the first house in Earlsdon Street and his    <a href="/history/flinnscottages.html">workers cottages</a> in <a href="/history/streets/ardenst.html">Arden Street</a>.<br />
-                      <a href="/history/bates.html">Henry Bates</a> builds his cottage in <a href="/history/streets/earlsdonst.html">Earlsdon Street</a>.<br />
-                    <a href="/history/johnmoore.html">John Moore's old farmhouse</a> opens as the    Bowling Green pub.</p>                    </td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1853</strong></p></td>
-                  <td width="593" valign="top"><p>The <a href="/history/cityarms.html">City Arms</a> opens in <a href="/history/streets/earlsdonaves.html">Earlsdon Lane</a> (later    Earlsdon Avenue South). <br />
-                      <a href="/history/johnhulk.html">John Hulk</a> and <a href="/history/thomaspearson.html">Thomas Pearson</a> build their watchmakers    houses in <a href="/history/streets/berkeleyrd.html">Cromwell Street</a>.</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1854</strong></p></td>
-                  <td width="593" valign="top"><p><a href="/history/richardsons.html">The Richardson’s</a> build adjoining    watchmakers houses in <a href="/history/streets/clarendonst.html">Clarendon Street</a>. <br />
-                  </p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1855</strong></p></td>
-                  <td width="593" valign="top"><p>The Grosvenor Road Footbridge (aka <a href="/history/anarchybridge.html">Anarchy    Bridge</a>) opens over Coventry marshalling yard.<br />
-                      <a href="/history/jameswalker.html">James Walker</a> builds ‘Woodlands’ in <a href="/history/streets/earlsdonaves.html">Earlsdon Lane</a> (now Earlsdon Avenue South). The Bowling Green pub closes and    is converted back into a house.<br />
-                    <a href="/history/henrywestrap.html">Henry Westrap</a> builds ‘Holly    Bank’ in <a href="/history/streets/earlsdonaves.html">Earlsdon Lane</a> (now Earlsdon Avenue South).</p>                  </td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1859</strong></p></td>
-                  <td width="593" valign="top"><p><a href="/history/oak.html">The Royal Oak</a> opens in <a href="/history/streets/earlsdonst.html">Earlsdon Street</a>. </p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1860</strong></p></td>
-                  <td width="593" valign="top"><p><a href="/history/shop.html">Earlsdon’s first shop</a> opens in Moor    Street.</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>Abt 1865</strong></p></td>
-                  <td width="593" valign="top"><p><a href="/history/cottage.html">The Earlsdon Cottage Inn</a> opens in Warwick    Street, converted from a watchmakers house.</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1868</strong></p></td>
-                  <td width="593" valign="top"><p><a href="/history/josephwhite.html">Joseph White</a> purchases <a href="/history/earlsdonhse.html">'Earlsdon House'</a> and    the <a href="/history/flinnscottages.html">Arden Street cottages</a> from <a href="/history/johnflinn.html">John Flinn</a>.</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1875</strong></p></td>
-                  <td width="593" valign="top"><p><a href="/history/hearsallcommon.html">Hearsall Common</a> Inclosure.</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1877</strong></p></td>
-                  <td width="593" valign="top"><p>A small purification plant is built adjacent    to <a href="/history/jetty.html">Earlsdon Jetty</a>.</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1878</strong></p></td>
-                  <td width="593" valign="top"><p><a href="/history/robertwaddington.html">Robert Waddington</a> builds 'Wythburn' in    <a href="/history/streets/earlsdonaves.html">Earlsdon Lane</a> (now Earlsdon Avenue South).</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1882</strong></p></td>
-                  <td width="593" valign="top"><p>Earlsdon’s first school opens in the old    <a href="/history/ribbon.html">Ribbon Weaving Shed</a> in <a href="/history/streets/berkeleyrd.html">Cromwell Street</a> (now Berkeley Road South).</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1883</strong></p></td>
-                  <td width="593" valign="top"><p><a href="/history/spencerpark.html">Spencer Park</a> opens.</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1884</strong></p></td>
-                  <td width="593" valign="top"><p><a href="/history/chapel.html">The Methodist Chapel</a> opens in <a href="/history/streets/berkeleyrd.html">Cromwell Street</a>.</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1885</strong></p></td>
-                  <td width="593" valign="top"><p>King Henry VIII School built. <br />
-                      <a href="/history/nailfactory.html">The Nail    Factory</a> opens in Moor Street.</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1889</strong></p></td>
-                  <td width="593" valign="top"><p>The <a href="/history/albanyclub.html">Earlsdon Coffee Tavern</a> (later Albany    Club) opens in Earlsdon Street. </p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1890</strong></p></td>
-                  <td width="593" valign="top"><p>Earlsdon is incorporated into the City of    Coventry. <br />
-                  Fred Allard opens Allard Cycles in the old <a href="/history/nailfactory.html">Nail Factory</a> in Moor Street.<br />
-                  The new    <a href="/history/school.html">Earlsdon School</a> opens in <a href="/history/streets/earlsdonaven.html">Earlsdon Lane</a> (now Earlsdon Avenue North).</p>                  </td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1896</strong></p></td>
-                  <td width="593" valign="top"><p>The <a href="/history/coop.html">Co-op</a> open their first shop in Earlsdon    Street.</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1898</strong></p></td>
-                  <td width="593" valign="top"><p><a href="/history/streets/albanyrd.html">Albany Road</a> is opened. <br />
-                  Production is transferred    from the <a href="/history/nailfactory.html">Allard Works</a> to the new <a href="/history/rex.html">Rex Works</a> in Osborne Road.</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1900</strong></p></td>
-                  <td width="593" valign="top"><p><a href="/history/bell.html">Harrington's Bell Foundry</a> moves to    <a href="/history/streets/clarendonst.html">Clarendon Street</a>.</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1905</strong></p></td>
-                  <td width="593" valign="top"><p>A direct tram route opens from Earlsdon to    the centre of Coventry.</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1906</strong></p></td>
-                  <td width="593" valign="top"><p>The <a href="/history/coop.html">Co-op</a> open their second and larger store    (now Bedlam) in <a href="/history/streets/earlsdonst.html">Earlsdon Street</a>.</p></td>
-                </tr>
-                <tr>
-                  <td valign="top"><strong>1911</strong></td>
-                  <td valign="top">The 'Electric' Cinema (later the '<a href="/history/imperial.html">Imperial</a>') is    opened in <a href="/history/streets/earlsdonst.html">Earlsdon Street</a>. <br />
-                    <a href="/history/leonforestier.html">Leon Forestier</a> builds the last watchmakers house, Geneve,     in <a href="/history/streets/earlsdonaves.html">Earlsdon Lane</a> (now Earlsdon Avenue    South).</td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1912</strong></p></td>
-                  <td width="593" valign="top"><p><a href="/history/library.html">Earlsdon Library</a> opens.<br />
-                  Completion of the Newcombe Estate, linking Earlsdon with Coventry.</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1913</strong></p></td>
-                  <td width="593" valign="top"><p><a href="/history/barbaras.html">St Bararba’s</a> first Anglican church opens    in <a href="/history/streets/palmerstonrd.html">Palmerston Road</a>. <br />
-                  </p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1915</strong></p></td>
-                  <td width="593" valign="top"><p><a href="/history/spencerpark.html">Spencer Park Pavilion</a> opens.</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1919</strong></p></td>
-                  <td width="593" valign="top"><p>Coventry’s first Cenotaph is unveiled in <a href="/history/spencerpark.html">Spencer    Park</a> but is later removed.</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1920</strong></p></td>
-                  <td width="593" valign="top"><p><a href="/history/bell.html">Harrington's Bell Foundry</a> leaves <a href="/history/streets/clarendonst.html">Clarendon    Street</a>.</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1921</strong></p></td>
-                  <td width="593" valign="top"><p>War Memorial Park opens.</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1922</strong></p></td>
-                  <td width="593" valign="top"><p>The 'Broadway' Cinema (later the '<a href="/history/astoria.html">Astoria</a>') opens    in <a href="/history/streets/albanyrd.html">Albany Road</a>.</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1923</strong></p></td>
-                  <td width="593" valign="top"><p>The Methodist Church opens in Earlsdon Avenue    and replaces the old Chapel. <br />
-                  The <a href="/history/rex.html">Rex</a> goes into liquidation.</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1931</strong></p></td>
-                  <td width="593" valign="top"><p>St Barbara’s 'new' Anglican church opens in    Rochester Road.<a href="/history/cityarms.html"><br />
-                  The City Arms</a> is demolished and rebuilt.</p></td>
-                </tr>
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <p class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="history.html">History</a> &rsaquo; Timeline</p>
+    <h1>Earlsdon History Timeline</h1>
+    <p class="subtitle">From farmland to neighbourhood — the story of Earlsdon year by year</p>
+  </div>
+</section>
 
-                <tr>
-                  <td width="73" valign="top"><p><strong>1940</strong></p></td>
-                  <td width="593" valign="top"><p>The '<a href="/history/imperial.html">Imperial</a>' Cinema closes due to bomb damage.</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1947</strong></p></td>
-                  <td width="593" valign="top"><p>The '<a href="/history/imperial.html">Imperial</a>' Cinema reopens</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1951</strong></p></td>
-                  <td width="593" valign="top"><p>The '<a href="/history/imperial.html">Imperial</a>' Cinema becomes ‘La Continentale’</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1958</strong></p></td>
-                  <td width="593" valign="top"><p>The '<a href="/history/astoria.html">Astoria</a>' Cinema closes</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1960</strong></p></td>
-                  <td width="593" valign="top"><p>The Criterion Theatre Group take over the <a href="/history/chapel.html">old    Methodist Chapel</a> in Berkeley Road South. </p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1962</strong></p></td>
-                  <td width="593" valign="top"><p>DBS Furniture move to Clarendon Street.</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1965</strong></p></td>
-                  <td width="593" valign="top"><p>'<a href="/history/imperial.html">La Continentale</a>' Cinema closes and is   demolished</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1972</strong></p></td>
-                  <td width="593" valign="top"><p><a href="/history/johnmoore.html">John Moore's old farmhouse</a> is demolished to    make way for a factory extension.</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1978</strong></p></td>
-                  <td width="593" valign="top"><p>The ‘Earlsdon 125’ celebration leads to the creation    of the <a href="/earlsdon_soc/index.html">Earlsdon Society</a> and the ECHO the following year.</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1981</strong></p></td>
-                  <td width="593" valign="top"><p>The <a href="/history/coop.html">Co-op</a> opens a new store in Earlsdon Street.</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>1987</strong></p></td>
-                  <td width="593" valign="top"><p>The old <a href="/history/rex.html">Osborne Road Works</a> are demolished and    replaced by a sheltered housing development.</p></td>
-                </tr>
-                <tr>
-                  <td width="73" valign="top"><p><strong>2000</strong></p></td>
-                  <td width="593" valign="top"><p>The <a href="/history/heritagetrail.html">Earlsdon Millennium Heritage Trail</a> is   launched by Mary Montes.</p></td>
-                </tr>
-              </table>
-			  <p><br />
-			    <a href="history.html">Click here to return to 'Local History'</a></p>
-			  <!-- TemplateEndEditable -->			  </td>
-		  </tr>
-		</table>	</td>
-  </tr>
-  <tr>
-  	<td height="18" colspan="2" id="bottom">
-		&copy; <a href="../about.html" style="color:#666">EOL 2026</a> | In association with <a href="http://www.firesidemedia.co.uk"  title="Fireside Media" target="_blank" style="color:#666">Fireside Media</a>
-		<br />
-		<br /><br />
-	<img src="http://hitwebcounter.com/counter/counter.php?page=210546&amp;style=0006&amp;nbdigits=6&amp;type=page&amp;initCount=0" alt="Visitors" width="57" height="12" border="0" title="Visitors" align="absmiddle" />&nbsp; visitors<br /><br /><br /><br />	</td>
-  </tr>
-</table>
-<div id="footer">&nbsp;</div>
-<script type="text/javascript">swfobject.registerObject("FlashID");</script>
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-	var pageTracker = _gat._getTracker("UA-6699942-1");
-	pageTracker._trackPageview();
-} catch(err) {}</script>
-</body>
-</html>
+<main class="main-content">
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <span class="tl-year">c.1830</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p><a href="johnmoore.html">John Moore</a> builds a new farmhouse adjacent to Elsdon Lane.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1847</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p>Following the death of <a href="johnmoore.html">John Moore</a>, his farmhouse and six fields are sold at auction to William Pickering.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1851</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p>The Freehold Land Society purchases the land at Elsdon Lane, between Styvichale Common and Hearsall Common, from William Pickering for development.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1852</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p><a href="johnflinn.html">John Flinn</a> builds <a href="earlsdonhse.html">Earlsdon House</a>, the first house in Earlsdon Street, and his <a href="flinnscottages.html">workers' cottages</a> in <a href="streets/ardenst.html">Arden Street</a>. <a href="bates.html">Henry Bates</a> builds his cottage in <a href="streets/earlsdonst.html">Earlsdon Street</a>. <a href="johnmoore.html">John Moore's</a> old farmhouse opens as the Bowling Green pub.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1853</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p>The <a href="cityarms.html">City Arms</a> opens in Earlsdon Lane (later Earlsdon Avenue South). <a href="johnhulk.html">John Hulk</a> and <a href="thomaspearson.html">Thomas Pearson</a> build their watchmakers' houses in <a href="streets/berkeleyrd.html">Cromwell Street</a>.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1854</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p>The <a href="richardsons.html">Richardsons</a> build adjoining watchmakers' houses in <a href="streets/clarendonst.html">Clarendon Street</a>.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1855</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p>The Grosvenor Road Footbridge (aka <a href="anarchybridge.html">Anarchy Bridge</a>) opens over Coventry marshalling yard. <a href="jameswalker.html">James Walker</a> builds 'Woodlands' in Earlsdon Lane. <a href="henrywestrap.html">Henry Westrap</a> builds 'Holly Bank' in Earlsdon Lane.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1859</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p><a href="oak.html">The Royal Oak</a> opens in <a href="streets/earlsdonst.html">Earlsdon Street</a>.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1860</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p><a href="shop.html">Earlsdon's first shop</a> opens in Moor Street.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">c.1865</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p><a href="cottage.html">The Earlsdon Cottage Inn</a> opens in Warwick Street, converted from a watchmakers' house.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1868</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p><a href="josephwhite.html">Joseph White</a> purchases <a href="earlsdonhse.html">Earlsdon House</a> and the Arden Street cottages from <a href="johnflinn.html">John Flinn</a>.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1875</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p><a href="hearsallcommon.html">Hearsall Common</a> Enclosure.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1877</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p>A small purification plant is built adjacent to <a href="jetty.html">Earlsdon Jetty</a>.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1878</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p><a href="robertwaddington.html">Robert Waddington</a> builds 'Wythburn' in Earlsdon Lane (now Earlsdon Avenue South).</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1882</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p>Earlsdon's first school opens in the old <a href="ribbon.html">Ribbon Weaving Shed</a> in Cromwell Street (now Berkeley Road South).</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1883</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p><a href="spencerpark.html">Spencer Park</a> opens.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1884</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p><a href="chapel.html">The Methodist Chapel</a> opens in Cromwell Street.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1885</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p>King Henry VIII School is built. <a href="nailfactory.html">The Nail Factory</a> opens in Moor Street.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1889</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p>The <a href="albanyclub.html">Earlsdon Coffee Tavern</a> (later Albany Club) opens in Earlsdon Street.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1890</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p>Earlsdon is incorporated into the City of Coventry. Fred Allard opens Allard Cycles in the old <a href="nailfactory.html">Nail Factory</a> in Moor Street. The new <a href="school.html">Earlsdon School</a> opens in Earlsdon Lane (now Earlsdon Avenue North).</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1896</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p>The <a href="coop.html">Co-op</a> opens its first shop in Earlsdon Street.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1898</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p><a href="streets/albanyrd.html">Albany Road</a> is opened. Production is transferred from the Allard Works to the new <a href="rex.html">Rex Works</a> in Osborne Road.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1900</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p><a href="bell.html">Harrington's Bell Foundry</a> moves to <a href="streets/clarendonst.html">Clarendon Street</a>.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1905</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p>A direct tram route opens from Earlsdon to the centre of Coventry.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1906</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p>The <a href="coop.html">Co-op</a> opens its second and larger store in <a href="streets/earlsdonst.html">Earlsdon Street</a>.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1907</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p><a href="frankwhittle.html">Frank Whittle</a>, inventor of the jet engine, is born at Newcombe Road, Earlsdon.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1908</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p><a href="gibberd.html">Frederick Gibberd</a>, architect and town planner, is born in Spencer Avenue, Earlsdon.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1911</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p>The 'Electric' Cinema (later the <a href="imperial.html">Imperial</a>) opens in <a href="streets/earlsdonst.html">Earlsdon Street</a>. <a href="leonforestier.html">Leon Forestier</a> builds the last watchmakers' house, Geneve, in Earlsdon Lane.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1912</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p><a href="library.html">Earlsdon Library</a> opens. Completion of the Newcombe Estate, linking Earlsdon with Coventry.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1913</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p><a href="barbaras.html">St Barbara's</a> first Anglican church opens in <a href="streets/palmerstonrd.html">Palmerston Road</a>.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1915</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p><a href="spencerpark.html">Spencer Park Pavilion</a> opens.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1919</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p>Coventry's first Cenotaph is unveiled in <a href="spencerpark.html">Spencer Park</a> but is later removed when the War Memorial Park opened.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1920</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p><a href="bell.html">Harrington's Bell Foundry</a> leaves Clarendon Street.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1921</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p>War Memorial Park opens.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1922</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p>The 'Broadway' Cinema (later the <a href="astoria.html">Astoria</a>) opens in <a href="streets/albanyrd.html">Albany Road</a>.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1923</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p>The Methodist Church opens in Earlsdon Avenue, replacing the old Chapel. The <a href="rex.html">Rex</a> goes into liquidation.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1931</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p>St Barbara's 'new' Anglican church opens in Rochester Road. <a href="cityarms.html">The City Arms</a> is demolished and rebuilt.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1940</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p>The <a href="imperial.html">Imperial Cinema</a> closes due to bomb damage.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1947</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p>The <a href="imperial.html">Imperial Cinema</a> reopens.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1951</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p>The <a href="imperial.html">Imperial Cinema</a> becomes 'La Continentale'.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1958</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p>The <a href="astoria.html">Astoria Cinema</a> closes.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1960</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p>The Criterion Theatre Group takes over the <a href="chapel.html">old Methodist Chapel</a> in Berkeley Road South.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1965</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p>'La Continentale' Cinema closes and is demolished.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1972</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p><a href="johnmoore.html">John Moore's</a> old farmhouse is demolished to make way for a factory extension.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1978</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p>The 'Earlsdon 125' celebration leads to the creation of the Earlsdon Society and the ECHO newsletter.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1981</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p>The <a href="coop.html">Co-op</a> opens a new store in Earlsdon Street.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1987</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p>The old <a href="rex.html">Osborne Road Works</a> are demolished and replaced by a sheltered housing development.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1990</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p>The Earlsdon Clock is erected by local subscription, replacing a tram clock which stood on the roundabout until the 1980s.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">1995</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p>Earlsdon Online is founded by Dave Galliers — Coventry's longest running community website.</p></div>
+    </div>
+
+    <div class="timeline-item">
+      <span class="tl-year">2000</span>
+      <div class="tl-dot"></div>
+      <div class="tl-body"><p>The <a href="heritagetrail.html">Earlsdon Millennium Heritage Trail</a> is launched by local historian Mary Montes.</p></div>
+    </div>
+
+  </div>
+
+  <a href="history.html" class="back-link">← Back to Local History</a>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Earlsdon <span>Online</span></div>
+      <p style="margin-top:6px;">© EOL 2026 | In association with <a href="http://www.firesidemedia.co.uk" target="_blank" rel="noopener">Fireside Media</a></p>
+    </div>
+    <div class="footer-links">
+      <a href="../about.html">About</a>
+      <a href="mailto:earlsdon.online@gmail.com">Contact</a

@@ -1,88 +1,148 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<!-- TemplateBeginEditable name="doctitle" -->
-	<title>John Flinn's Cottages - Earlsdon Online</title>
-	<!-- TemplateEndEditable -->
-	<link rel="stylesheet" href="../styles/main.css" type="text/css" />
-	<script src="../scripts/swfobject_modified.js" type="text/javascript"></script>
-	<!-- TemplateBeginEditable name="head" -->
-	<!-- TemplateEndEditable -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>John Flinn&rsquo;s Cottages – Earlsdon Online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root{--green-dark:#2c4a2e;--green-mid:#3d6b40;--green-light:#e8f0e8;--navy:#1a2744;--gold:#c9903a;--gold-light:#f0c060;--cream:#faf8f3;--text:#2a2a2a;--text-light:#555}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Source Serif 4',Georgia,serif;background:var(--cream);color:var(--text);line-height:1.8}
+    header{background:var(--navy);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+    .header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;gap:16px}
+    .logo-area{display:flex;align-items:center;gap:14px;text-decoration:none}
+    .logo-area img{height:52px;width:auto}
+    .logo-text{display:flex;flex-direction:column;line-height:1.1}
+    .logo-main{font-family:'Playfair Display',serif;font-weight:900;font-size:1.5rem;color:#fff}
+    .logo-sub{font-size:.7rem;color:var(--gold);letter-spacing:.18em;text-transform:uppercase}
+    nav{display:flex;gap:6px;flex-wrap:wrap}
+    nav a{font-size:.82rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.85);text-decoration:none;padding:8px 14px;border-radius:3px;transition:background .2s,color .2s}
+    nav a:hover,nav a.active{background:var(--green-mid);color:#fff}
+    nav a.community-link{color:var(--gold-light);border:1px solid rgba(201,144,58,.4)}
+    nav a.community-link:hover{background:var(--gold);color:var(--navy)}
+    .page-hero{background:var(--navy);padding:48px 24px 40px;position:relative;overflow:hidden}
+    .page-hero::before{content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;border-radius:50%;background:rgba(201,144,58,.06)}
+    .page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(to right,var(--gold),var(--green-mid),var(--gold))}
+    .page-hero-inner{max-width:1100px;margin:0 auto;position:relative}
+    .breadcrumb{font-size:.78rem;color:rgba(255,255,255,.5);margin-bottom:12px}
+    .breadcrumb a{color:var(--gold);text-decoration:none}
+    .breadcrumb a:hover{color:var(--gold-light)}
+    .page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:8px}
+    .page-hero .subtitle{color:var(--gold-light);font-style:italic;font-size:.95rem}
+    .trail-badge{display:inline-flex;align-items:center;gap:8px;margin-top:14px;background:rgba(201,144,58,.15);border:1px solid rgba(201,144,58,.4);color:var(--gold-light);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;border-radius:20px}
+    .main-content{max-width:1100px;margin:0 auto;padding:44px 24px 80px;display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:start}
+    @media(max-width:800px){.main-content{grid-template-columns:1fr}}
+    .article-body p{margin-bottom:1.3em;color:var(--text-light)}
+    
+    .article-body h2{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--navy);margin:1.8em 0 .6em;padding-bottom:6px;border-bottom:2px solid var(--green-light)}
+    .article-body a{color:var(--green-mid);font-weight:600;text-decoration:none}
+    .article-body a:hover{color:var(--gold)}
+    .source-note{margin-top:2em;padding:14px 18px;background:var(--green-light);border-left:3px solid var(--green-mid);font-size:.85rem;font-style:italic;color:var(--text-light);border-radius:0 4px 4px 0}
+    .back-links{margin-top:2.5em;display:flex;flex-direction:column;gap:10px}
+    .back-links a{display:inline-flex;align-items:center;gap:8px;color:var(--green-mid);font-weight:600;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
+    .back-links a:hover{color:var(--gold)}
+    .sidebar{display:flex;flex-direction:column;gap:24px}
+    .sidebar-img{border-radius:6px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12)}
+    .sidebar-img img{width:100%;display:block}
+    .sidebar-img figcaption{background:var(--navy);color:rgba(255,255,255,.7);font-size:.75rem;padding:8px 12px;font-style:italic}
+    .fact-box{background:#fff;border:1px solid var(--green-light);border-radius:6px;overflow:hidden}
+    .fact-box-header{background:var(--navy);color:var(--gold-light);font-family:'Playfair Display',serif;font-size:.85rem;font-weight:700;padding:10px 16px;letter-spacing:.06em}
+    .fact-box-body{padding:14px 16px}
+    .fact-box-body dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px}
+    .fact-box-body dt{font-weight:700;color:var(--navy);font-size:.82rem;white-space:nowrap}
+    .fact-box-body dd{color:var(--text-light);font-size:.82rem}
+    .trail-nav{background:#fff;border:1px solid var(--green-light);border-radius:6px;overflow:hidden}
+    .trail-nav-header{background:var(--green-mid);color:#fff;font-family:'Playfair Display',serif;font-size:.82rem;font-weight:700;padding:10px 16px;letter-spacing:.06em}
+    .trail-nav ol{padding:12px 16px 12px 32px;margin:0}
+    .trail-nav li{font-size:.8rem;color:var(--text-light);padding:3px 0;line-height:1.4}
+    .trail-nav li a{color:var(--green-mid);text-decoration:none;font-weight:600}
+    .trail-nav li a:hover{color:var(--gold)}
+    .trail-nav li.current{font-weight:700;color:var(--navy)}
+    footer{background:var(--navy);color:rgba(255,255,255,.6);padding:40px 24px;font-size:.82rem}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+    .footer-logo{font-family:'Playfair Display',serif;font-weight:700;color:#fff;font-size:1.1rem}
+    .footer-logo span{color:var(--gold)}
+    footer a{color:rgba(255,255,255,.6);text-decoration:none}
+    footer a:hover{color:var(--gold)}
+    .footer-links{display:flex;gap:20px}
+</style>
 </head>
-
 <body>
+<header>
+  <div class="header-inner">
+    <a href="../index.html" class="logo-area">
+      <img src="../images/Logo2.png" alt="Earlsdon Online" onerror="this.style.display='none'">
+      <div class="logo-text"><span class="logo-main">Earlsdon</span><span class="logo-sub">— Online —</span></div>
+    </a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="history.html" class="active">History</a>
+      <a href="localinfo.html" class="active-check">Local Info</a>
+    </nav>
+  </div>
+</header>
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <p class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="history.html">History</a> &rsaquo; <a href="watchtrail.html">Watchmakers Trail</a> &rsaquo; Flinn&rsquo;s Cottages</p>
+    <h1>John Flinn&rsquo;s Cottages</h1>
+    <p class="subtitle">Arden Street, Earlsdon</p>
+    <div class="trail-badge">&#9201; Watchmakers Trail &ndash; Stop 2</div>
+  </div>
+</section>
+<div class="main-content">
+  <article class="article-body">
+<p><a href="johnflinn.html">John Flinn</a> was a watch manufacturer and one of the first inhabitants of the new Earlsdon estate, building <a href="earlsdonhse.html">Earlsdon House</a> on Earlsdon Street in 1852. At the same time, so that his workers would not face the necessity of commuting from the city each day, he bought a plot of land just around the corner in <a href="streets/ardenst.html">Arden Street</a>, where he had a row of thirteen tiny &lsquo;two up, two down&rsquo; cottages built for them.</p>
 
-<table width="1024" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="204" rowspan="7" valign="top" id="left">
-		<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="204" height="297" id="FlashID" title="Clock">
-			<param name="movie" value="../images/clock.swf" />
-			<param name="quality" value="high" />
-			<param name="wmode" value="opaque" />
-			<param name="swfversion" value="6.0.65.0" />
-			<!-- This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don’t want users to see the prompt. -->
-			<param name="expressinstall" value="../scripts/expressInstall.swf" />
-			<!-- Next object tag is for non-IE browsers. So hide it from IE using IECC. -->
-			<!--[if !IE]>-->
-				<object type="application/x-shockwave-flash" data="../images/clock.swf" width="204" height="297">
-				<!--<![endif]-->
-				<param name="quality" value="high" />
-				<param name="wmode" value="transparent" />
-				<param name="swfversion" value="6.0.65.0" />
-				<param name="expressinstall" value="../scripts/expressInstall.swf" />
-				<!-- The browser displays the following alternative content for users with Flash Player 6.0 and older. -->
-				<img src="../images/Clock.png" width="204" height="297" alt="Earlsdon Clock" />
-			<!--[if !IE]>-->
-				</object>
-			<!--<![endif]-->
-	  </object>	</td>
-    <td height="90" colspan="2">&nbsp;</td>
-    <td width="53" rowspan="7" valign="top" id="right">&nbsp;</td>
-  </tr>
-  <tr>
-    <td rowspan="2"><img src="../images/Logo.png" width="328" height="123" alt="Earlsdon Online" /></td>
-    <td><img src="../images/Quote.png" width="439" height="87" alt="Coventry's longest running community website" /></td>
-  </tr>
-  <tr>
-    <td id="nav"><a href="../index.html">HOME</a>&nbsp; | &nbsp;<a href="../news/news.html">NEWS</a>&nbsp; | &nbsp;<a href="../events/events.html">EVENTS</a>&nbsp; | &nbsp;<a href="../local/localinfo.html">LOCAL INFO</a>&nbsp; | &nbsp;<a href="../history/history.html">HISTORY</a></td>
-  </tr>
-  <tr>
-    <td height="33" colspan="2" id="top">&nbsp;</td>
-  </tr>
-  <tr>
-    <td colspan="2" id="main">
-		<table width="100%" border="0" cellspacing="0" cellpadding="0">
-		  <tr>
-			  <td id="content">
-			  <!-- TemplateBeginEditable name="content" -->
-			  <h1>John Flinn's Cottages</h1>
-			  <p align="center"><img src="/history/images/streets/Ardenst.jpg" alt="Arden Street" width="658" height="383" /></p>
-			  <p>An early image of Arden Street showing Flinn's Cottages on the right. <a href="/history/johnflinn.html">John Flinn</a> was a watch manufacturer and one of the first inhabitants of the new estate, building <a href="/history/earlsdonhse.html">Earlsdon House</a> on Earsldon Street in 1852. At the same time, so that his workers were not faced with the necessity of   commuting from the city each day, he bought a plot of land just around the   corner in <a href="/history/streets/ardenst.html">Arden Street</a>, where he had a row of 13 tiny '2 up 2 down' cottages   built for them . It seems probable that the cottages were 'tied' for Flinn's own   employees with a very nominal rent if any, with surplus ones being let to   allcomers for a more realistic rent. </p>
-			  <p>When Flinn sold Earlsdon House to <a href="/history/josephwhite.html">Joseph White</a> he also sold the cottages. Sadly this row of Victorian houses was demolished and has recently been replaced by a development of flats. </p>
-			  <p><a href="../history/watchtrail.html">Click here to return to the 'Earlsdon Watchmakers Trail'</a><a href="../history/history.html"></a></p>
-			  <!-- TemplateEndEditable -->			  </td>
-		  </tr>
-		</table>	</td>
-  </tr>
-  <tr>
-  	<td height="18" colspan="2" id="bottom">
-		&copy; <a href="../about.html" style="color:#666">EOL 2026</a> | In association with <a href="http://www.firesidemedia.co.uk"  title="Fireside Media" target="_blank" style="color:#666">Fireside Media</a>
-		<br />
-		<br /><br />
-	<img src="http://hitwebcounter.com/counter/counter.php?page=210546&amp;style=0006&amp;nbdigits=6&amp;type=page&amp;initCount=0" alt="Visitors" width="57" height="12" border="0" title="Visitors" align="absmiddle" />&nbsp; visitors<br /><br /><br /><br />	</td>
-  </tr>
-</table>
-<div id="footer">&nbsp;</div>
-<script type="text/javascript">swfobject.registerObject("FlashID");</script>
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-	var pageTracker = _gat._getTracker("UA-6699942-1");
-	pageTracker._trackPageview();
-} catch(err) {}</script>
-</body>
-</html>
+<p>It seems probable that the cottages were tied to Flinn&rsquo;s own employees, with a very nominal rent if any, and surplus ones let to others for a more realistic rent. They provided modest but convenient housing for the skilled craftsmen who formed the backbone of his watchmaking business.</p>
+
+<p>When Flinn sold Earlsdon House to <a href="josephwhite.html">Joseph White</a>, he also sold the cottages. They passed through various hands over the subsequent decades. Sadly this row of Victorian houses was eventually demolished and has been replaced by a development of flats &mdash; removing one of Earlsdon&rsquo;s few remaining links to its earliest days as a purpose-built artisan community.</p>
+<div class="back-links">
+    <a href="watchtrail.html">&#8592; Back to Watchmakers Trail</a>
+</div>
+  </article>
+  <aside class="sidebar">
+<figure class="sidebar-img">
+  <img src="../images/ardenst.jpg" alt="Arden Street, showing Flinn&rsquo;s Cottages on the right" onerror="this.style.display='none'">
+  <figcaption>Arden Street, showing Flinn&rsquo;s Cottages on the right</figcaption>
+</figure>
+<div class="fact-box">
+  <div class="fact-box-header">Flinn&rsquo;s Cottages</div>
+  <div class="fact-box-body"><dl>
+      <dt>Built</dt><dd>c.1852</dd>
+      <dt>Location</dt><dd>Arden Street</dd>
+      <dt>Number</dt><dd>13 cottages</dd>
+      <dt>Original tenants</dt><dd>Flinn&rsquo;s watch workers</dd>
+      <dt>Fate</dt><dd>Demolished; replaced by flats</dd>
+  </dl></div>
+</div>
+<div class="trail-nav">
+  <div class="trail-nav-header">&#9660; Watchmakers Trail</div>
+  <ol>
+    <li><a href="johnflinn.html">John Flinn</a> &amp; <a href="josephwhite.html">Joseph White</a> &ndash; <a href="earlsdonhse.html">Earlsdon House</a></li>
+    <li><a href="flinnscottages.html">John Flinn&rsquo;s Cottages</a></li>
+    <li><a href="johnhulme.html">John Hulme</a></li>
+    <li><a href="arthurmorgan.html">Arthur Morgan &ndash; Fairmount</a></li>
+    <li><a href="richardsons.html">William &amp; Joseph Richardson</a> &ndash; <a href="clarendon.html">Clarendon &amp; Westwood House</a></li>
+    <li><a href="johnhulk.html">John Hulk</a></li>
+    <li><a href="thomaspearson.html">Thomas Pearson</a></li>
+    <li><a href="henrywestrap.html">Henry Westrap &ndash; Earlsdon Villa</a></li>
+    <li><a href="jameswalker.html">James Walker &ndash; Woodlands</a></li>
+    <li><a href="robertwaddington.html">Robert Waddington &ndash; Wythburn</a></li>
+    <li><a href="robertpike.html">Robert James Pike &ndash; Cromwell House</a></li>
+    <li><a href="leonforestier.html">L&eacute;on Forestier &ndash; Gen&egrave;ve</a></li>
+  </ol>
+</div>
+  </aside>
+</div>
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Earlsdon <span>Online</span></div>
+      <p style="margin-top:6px;">&copy; EOL 2026 | In association with <a href="http://www.firesidemedia.co.uk" target="_blank" rel="noopener">Fireside Media</a></p>
+    </div>
+    <div class="footer-links">
+      <a href="../about.html">About</a>
+      <a href="mailto:earlsdon.online@gmail.com">Contact</

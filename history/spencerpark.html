@@ -1,101 +1,128 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/main.dwt" codeOutsideHTMLIsLocked="false" -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<!-- InstanceBeginEditable name="doctitle" -->
-	<title>Spencer Park - Earlsdon Online</title>
-	<!-- InstanceEndEditable -->
-	<link rel="stylesheet" href="../styles/main.css" type="text/css" />
-	<script src="../scripts/swfobject_modified.js" type="text/javascript"></script>
-	<!-- InstanceBeginEditable name="head" -->
-	<!-- InstanceEndEditable -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spencer Park – Earlsdon Online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green-dark:#2c4a2e;--green-mid:#3d6b40;--green-light:#e8f0e8;
+      --navy:#1a2744;--gold:#c9903a;--gold-light:#f0c060;
+      --cream:#faf8f3;--text:#2a2a2a;--text-light:#555;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Source Serif 4',Georgia,serif;background:var(--cream);color:var(--text);line-height:1.8}
+    header{background:var(--navy);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+    .header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;gap:16px}
+    .logo-area{display:flex;align-items:center;gap:14px;text-decoration:none}
+    .logo-area img{height:52px;width:auto}
+    .logo-text{display:flex;flex-direction:column;line-height:1.1}
+    .logo-main{font-family:'Playfair Display',serif;font-weight:900;font-size:1.5rem;color:#fff}
+    .logo-sub{font-size:.7rem;color:var(--gold);letter-spacing:.18em;text-transform:uppercase}
+    nav{display:flex;gap:6px;flex-wrap:wrap}
+    nav a{font-size:.82rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.85);text-decoration:none;padding:8px 14px;border-radius:3px;transition:background .2s,color .2s}
+    nav a:hover,nav a.active{background:var(--green-mid);color:#fff}
+    nav a.community-link{color:var(--gold-light);border:1px solid rgba(201,144,58,.4)}
+    nav a.community-link:hover{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+    .page-hero{background:var(--navy);padding:52px 24px 44px;position:relative;overflow:hidden}
+    .page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(to right,var(--gold),var(--green-mid),var(--gold))}
+    .page-hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+    .breadcrumb{font-size:.78rem;color:rgba(255,255,255,.5);margin-bottom:12px}
+    .breadcrumb a{color:var(--gold);text-decoration:none}
+    .breadcrumb a:hover{text-decoration:underline}
+    .page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:10px}
+    .page-hero .subtitle{color:var(--gold-light);font-style:italic;font-size:1rem;font-weight:300}
+    .article-wrap{max-width:1100px;margin:0 auto;padding:52px 24px 80px;display:grid;grid-template-columns:1fr 300px;gap:52px;align-items:start}
+    .article-body p{color:var(--text-light);margin-bottom:18px;font-size:1.02rem}
+    
+    .article-body h2{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--navy);margin:28px 0 12px}
+    .article-body ol,.article-body ul{color:var(--text-light);padding-left:24px;margin-bottom:18px}
+    .article-body li{margin-bottom:8px;font-size:1rem}
+    .article-body a{color:var(--green-mid);font-weight:600}
+    .article-body blockquote{border-left:4px solid var(--gold);padding:12px 20px;margin:20px 0;background:#fff;font-style:italic;color:var(--text-light)}
+    .source-note{font-size:.82rem;color:#999;font-style:italic;border-left:3px solid var(--gold);padding-left:12px;margin-top:20px}
+    .article-sidebar{position:sticky;top:88px}
+    .sidebar-image{border-radius:4px;overflow:hidden;box-shadow:6px 6px 0 var(--green-light),10px 10px 0 var(--green-mid);margin-bottom:28px}
+    .sidebar-image img,.sidebar-image-sm img{width:100%;height:auto;display:block;object-fit:cover}
+    .sidebar-image-sm{border-radius:4px;overflow:hidden;margin-bottom:18px;box-shadow:0 3px 12px rgba(0,0,0,.12)}
+    .caption{background:var(--navy);color:rgba(255,255,255,.7);font-size:.78rem;font-style:italic;padding:10px 14px;text-align:center}
+    .caption-sm{background:var(--green-dark);color:rgba(255,255,255,.75);font-size:.75rem;font-style:italic;padding:8px 12px;text-align:center}
+    .sidebar-fact{background:var(--navy);border-radius:4px;padding:20px;margin-bottom:18px}
+    .sidebar-fact h3{font-family:'Playfair Display',serif;color:var(--gold);font-size:.88rem;margin-bottom:12px;letter-spacing:.05em;text-transform:uppercase}
+    .sidebar-fact ul{list-style:none;padding:0}
+    .sidebar-fact ul li{color:rgba(255,255,255,.75);font-size:.82rem;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.08);display:flex;gap:8px}
+    .sidebar-fact ul li:last-child{border-bottom:none}
+    .sidebar-fact ul li .label{color:var(--gold-light);font-weight:600;min-width:64px;flex-shrink:0}
+    .map-embed{border-radius:4px;overflow:hidden;margin-bottom:18px;box-shadow:0 3px 12px rgba(0,0,0,.12)}
+    .map-embed iframe{width:100%;height:260px;border:none;display:block}
+    .back-link{display:inline-flex;align-items:center;gap:8px;margin-top:28px;color:var(--green-mid);font-weight:600;font-size:.88rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:gap .2s}
+    .back-link:hover{gap:12px;color:var(--gold)}
+    footer{background:var(--navy);color:rgba(255,255,255,.6);padding:40px 24px;font-size:.82rem}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+    .footer-logo{font-family:'Playfair Display',serif;font-weight:700;color:#fff;font-size:1.1rem}
+    .footer-logo span{color:var(--gold)}
+    footer a{color:rgba(255,255,255,.6);text-decoration:none}
+    footer a:hover{color:var(--gold)}
+    .footer-links{display:flex;gap:20px}
+    @media(max-width:768px){
+      .article-wrap{grid-template-columns:1fr}
+      .article-sidebar{position:static}
+    }
+  </style>
 </head>
-
 <body>
+<header>
+  <div class="header-inner">
+    <a href="../index.html" class="logo-area">
+      <img src="../images/Logo2.png" alt="Earlsdon Online" onerror="this.style.display='none'">
+      <div class="logo-text"><span class="logo-main">Earlsdon</span><span class="logo-sub">— Online —</span></div>
+    </a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="history.html" class="active">History</a>
+      <a href="localinfo.html" class="active-check">Local Info</a>
+    </nav>
+  </div>
+</header>
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <p class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="history.html">History</a> &rsaquo; Spencer Park</p>
+    <h1>Spencer Park</h1>
+    <p class="subtitle">Opened 1883 · Gift of David Spencer · Earlsdon's beloved green space</p>
+  </div>
+</section>
+<div class="article-wrap">
+  <article class="article-body">
+    <p>The city owes a debt of gratitude to Coventry benefactor <a href="davidspencer.html">David Spencer</a>, for the gift of land for Spencer Park which opened in 1883. He had acquired land in Earlsdon which he donated for a park long before he died in 1888. David Spencer is commemorated by a memorial which reads: "This tree was planted in 1925 in memory of David Spencer (1805–1888), a generous benefactor of Coventry who presented this park to the people of Coventry City in 1852."</p>
 
-<table width="1024" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="204" rowspan="7" valign="top" id="left">
-		<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="204" height="297" id="FlashID" title="Clock">
-			<param name="movie" value="../images/clock.swf" />
-			<param name="quality" value="high" />
-			<param name="wmode" value="opaque" />
-			<param name="swfversion" value="6.0.65.0" />
-			<!-- This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don’t want users to see the prompt. -->
-			<param name="expressinstall" value="../scripts/expressInstall.swf" />
-			<!-- Next object tag is for non-IE browsers. So hide it from IE using IECC. -->
-			<!--[if !IE]>-->
-				<object type="application/x-shockwave-flash" data="../images/clock.swf" width="204" height="297">
-				<!--<![endif]-->
-				<param name="quality" value="high" />
-				<param name="wmode" value="transparent" />
-				<param name="swfversion" value="6.0.65.0" />
-				<param name="expressinstall" value="../scripts/expressInstall.swf" />
-				<!-- The browser displays the following alternative content for users with Flash Player 6.0 and older. -->
-				<img src="../images/Clock.png" width="204" height="297" alt="Earlsdon Clock" />
-			<!--[if !IE]>-->
-				</object>
-			<!--<![endif]-->
-	  </object>	</td>
-    <td height="90" colspan="2">&nbsp;</td>
-    <td width="53" rowspan="7" valign="top" id="right">&nbsp;</td>
-  </tr>
-  <tr>
-    <td rowspan="2"><img src="../images/Logo.png" width="328" height="123" alt="Earlsdon Online" /></td>
-    <td><img src="../images/Quote.png" width="439" height="87" alt="Coventry's longest running community website" /></td>
-  </tr>
-  <tr>
-    <td id="nav"><a href="../index.html">HOME</a>&nbsp; | &nbsp;<a href="../news/news.html">NEWS</a>&nbsp; | &nbsp;<a href="../events/events.html">EVENTS</a>&nbsp; | &nbsp;<a href="../local/localinfo.html">LOCAL INFO</a>&nbsp; | &nbsp;<a href="history.html">HISTORY</a></td>
-  </tr>
-  <tr>
-    <td height="33" colspan="2" id="top">&nbsp;</td>
-  </tr>
-  <tr>
-    <td colspan="2" id="main">
-		<table width="100%" border="0" cellspacing="0" cellpadding="0">
-		  <tr>
-			  <td id="content">
-			  <!-- InstanceBeginEditable name="content" -->
-			  <h1>Spencer Park </h1>
-			  <p><img src="images/ES001105.jpg" alt="Spencer Park" width="675" class="image_rounded" /></p>
-			  <p>The city owes a debt of   gratitude to Coventry benefactor <a href="davidspencer.html">David   Spencer</a>, for the gift of land for Spencer Park which opened in 1883. He had   acquired land in Earlsdon which he donated for a park long before he died in   1888. David Spencer is commemorated by a memorial which says: &quot;This tree was   planted in 1925 in memory of David Spencer (1805-1888) a generous benefactor of   Coventry who presented this park to the people of Coventry City in 1852.&quot; The story goes that in the mid 19th Century the City Council was looking   for an area of public land on which they could create a city park. Part of   Stivichale Common was eventually identified and work began on a 4 acre site on   Warwick Road, which is now known as Top Green. David Spencer  believed the   area could be improved if the space was increased to provide a good sized   recreation ground and he offered the city council 4,000 Guineas to pay for it if   they would complete the project. However, the owners of the adjoining land would   not sell.</p>
-			  <p>Instead another area of   land was found in the form of a large meadow of just over 7 acres which belonged   to the Grammar School Trustees. They had bought the land in order to build the   new King Henry VIII Grammar School, but this area of meadow was surplus to their   needs. The Trustees were glad to sell as the proceeds enabled them to begin   their building project earlier than originally envisaged. </p>
-			  <p>In addition to the 7   acre meadow a further small field of 3 acres or so was also bought from Mr RA   Dalton who was the owner of a large chunk of the surrounding land. This was   later to become the Bowling Green and Tennis Court area. An agreement was also   entered into by the Council with the city Freeman's Trustees whereby a new road   was to be cut from Warwick Road to the Freeman's land at Earlsdon, this was to   become Spencer Road. This was to compensate for the common rights they were   losing by the regulation of Stivichale Common and would give them better access   between Earlsdon and the railway station and the city. Finally, an extra wedged   shape area called Quarry Close, next to the railway line, was also bought from   the John Worth estate. This would give access for Earlsdon folk from the   <a href="/history/jetty.html">Earlsdon Jetty</a> (Albany Road was not   built for another 15 years).</p>
-			  <p>On 19 December 1882   there was an official handing over ceremony and a luncheon held in celebration   hosted by the mayor and attended by the Corporation, Mr Spencer and many other   local worthies. The mayor proposed a toast to Mr David Spencer saying he was   “the truest and most generous benefactor, who in his own lifetime at his own   expense bestows his bounty for the benefit of his fellows”.</p>
-			  <p>By 1894 a “gymnasium”,   as it was called, consisting of swings, roundabouts, slides, see-saws and   climbing frames was erected for the children. This was followed some years later   by the bowling greens and tennis courts and the pavilion, designed by the City   Engineer and opened in August 1915. </p>
-			  <p align="center"><img src="images/ES025603.JPG" alt="Spencer Park" width="628" height="383" class="image_rounded" /></p>
-			  <p align="center"><img src="images/Spencer Park 2.jpg" alt="Spencer Park" width="600" height="398" class="image_rounded" /><br />
-		        <span class="image_caption">  The Pavilion and   Tennis courts, circa 1920 </span></p>
-			  <p>Originally the   park stretched from the railway bridge (the iron part of which was constructed   in the 1850s to maintain a public right of way through the new railway   marshalling and goods yard) to Dalton Road, unbroken by what is now Spencer Avenue. The section of road that   runs through the park was added in the early 1900's to link the existing Spencer   Road with Albany Road. </p>
-			  <p><img src="images/Cenotaph.jpg" alt="Spencer Park 1919" width="675" class="image_rounded" /><br />
-	          <span class="image_caption">Spencer Park 1919</span></p>
-			  <p>Close to the footpath alongside Spencer Avenue a small stone acts as a reminder of the Cenotaph unveiled on 12th October 1919. The Cenotaph was erected after the ceremony depicted in this postcard but was removed when the City's war memorial was unveiled in War Memorial Park. At the same time an oak was planted that had been grown from an acorn gathered at Verdun in 1916. This original ceremony in 1919 was Coventry's first attempt at a memorial to its dead from the First World War. Despite being performed in very poor weather the ceremony was reportedly attended by thousands who gathered after a procession from Pool Meadow. They collected the Mayor and sword and mace bearers on the way past the Council House. The Mayor, who performed the unveiling ceremony, referred to the cenotaph, not unkindly, as ‘quite home-made affair' as it was constructed of wood in the form of an obelisk surmounted by a cross painted in black and white. It had been designed, built and paid for by discharged soldiers. Clearly a larger memorial had not been planned at this stage as it was hoped that the wooden cenotaph would be replaced by an identical stone one.</p>
-			  <p align="center"><img src="images/baloon.jpg" alt="'The Barrage Balloon' by Dame Laura Knight" width="400" height="317" class="image_rounded"/><br />
-			    <span class="image_caption">'The Barrage Balloon' by Dame Laura Knight</span></p>
-			  <p>Spencer Park was the subject of a painting by British war artist Dame Laura Knight. 'The Barrage Balloon'  depicts members of the ATS preparing a barrage balloon in Spencer Park during the Second World War. The Coventry skyline can be seen in the background.</p>
-			  <p><a href="history.html">Click here to return to 'Local History'</a></p>
-			  <!-- InstanceEndEditable -->			  </td>
-		  </tr>
-		</table>	</td>
-  </tr>
-  <tr>
-  	<td height="18" colspan="2" id="bottom">
-		&copy; <a href="../about.html" style="color:#666">EOL 2026</a> | In association with <a href="http://www.firesidemedia.co.uk"  title="Fireside Media" target="_blank" style="color:#666">Fireside Media</a>
-		<br />
-		<br /><br />
-	<img src="http://hitwebcounter.com/counter/counter.php?page=210546&amp;style=0006&amp;nbdigits=6&amp;type=page&amp;initCount=0" alt="Visitors" width="57" height="12" border="0" title="Visitors" align="absmiddle" />&nbsp; visitors<br /><br /><br /><br />	</td>
-  </tr>
-</table>
-<div id="footer">&nbsp;</div>
-<script type="text/javascript">swfobject.registerObject("FlashID");</script>
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-	var pageTracker = _gat._getTracker("UA-6699942-1");
-	pageTracker._trackPageview();
-} catch(err) {}</script>
-</body>
-<!-- InstanceEnd --></html>
+<p>In the mid-19th century the City Council was looking for an area of public land on which to create a city park. Part of Stivichale Common was eventually identified and work began on a 4-acre site on Warwick Road, now known as Top Green. David Spencer believed the area could be improved if the space was increased to provide a good-sized recreation ground and he offered the city council 4,000 guineas to pay for it — however, the owners of the adjoining land would not sell.</p>
+
+<p>Instead another area of land was found: a large meadow of just over 7 acres belonging to the Grammar School Trustees. They had bought the land in order to build the new King Henry VIII Grammar School, but this area of meadow was surplus to their needs. The Trustees were glad to sell, as the proceeds enabled them to begin their building project earlier than originally envisaged.</p>
+
+<p>In addition to the 7-acre meadow, a further small field of 3 acres was also bought from Mr R.A. Dalton, later to become the Bowling Green and Tennis Court area. An agreement was also entered into with the city Freemen's Trustees whereby a new road was to be cut from Warwick Road to the Freeman's land at Earlsdon — this was to become Spencer Road.</p>
+
+<p>On 19 December 1882 there was an official handing-over ceremony and a luncheon hosted by the mayor. The mayor proposed a toast to Mr David Spencer saying he was "the truest and most generous benefactor, who in his own lifetime at his own expense bestows his bounty for the benefit of his fellows."</p>
+
+<p>By 1894 a "gymnasium" — consisting of swings, roundabouts, slides, see-saws and climbing frames — was erected for the children. This was followed by bowling greens, tennis courts and the pavilion, designed by the City Engineer and opened in August 1915.</p>
+
+<p>Close to the footpath alongside Spencer Avenue a small stone acts as a reminder of the Cenotaph unveiled on 12 October 1919. This original ceremony was Coventry's first attempt at a memorial to its dead from the First World War. The Mayor, who performed the unveiling, referred to the cenotaph not unkindly as a "quite home-made affair" — it had been designed, built and paid for by discharged soldiers.</p>
+
+<p>Spencer Park was the subject of a painting by British war artist Dame Laura Knight. <em>The Barrage Balloon</em> depicts members of the ATS preparing a barrage balloon in Spencer Park during the Second World War, with the Coventry skyline visible in the background.</p>
+    <a href="history.html" class="back-link">← Back to Local History</a>
+  </article>
+  <aside class="article-sidebar">
+    <div class="sidebar-image"><img src="../images/SpencerPark.jpg" alt="Spencer Park" onerror="this.style.display='none'"></div><div class="sidebar-image-sm"><img src="../images/SpencerPavilion.jpg" alt="The Pavilion and Tennis Courts, circa 1920" onerror="this.style.display='none'"><div class="caption-sm">The Pavilion and Tennis courts, circa 1920</div></div><div class="sidebar-image-sm"><img src="../images/SpencerPark1919.jpg" alt="Spencer Park 1919" onerror="this.style.display='none'"><div class="caption-sm">Spencer Park 1919</div></div><div class="sidebar-image-sm"><img src="../images/BarrageBalloon.jpg" alt="The Barrage Balloon by Dame Laura Knight" onerror="this.style.display='none'"><div class="caption-sm">'The Barrage Balloon' by Dame Laura Knight</div></div>
+  </aside>
+</div>
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Earlsdon <span>Online</span></div>
+      <p style="margin-top:6px;">© EOL 2026 | In association with <a href="http://www.firesidemedia.co.uk" target="_blank" rel="noopener">Fireside Media</a></p>
+    </div>
+    <div class="footer-links">
+      <a href="../about.html">About</a>
+      <a href="mailto:earlsdon.online@gmail.com">Contact</

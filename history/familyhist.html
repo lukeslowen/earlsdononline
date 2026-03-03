@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Earlsdon Family History – Earlsdon Online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root{--green-dark:#2c4a2e;--green-mid:#3d6b40;--green-light:#e8f0e8;--navy:#1a2744;--gold:#c9903a;--gold-light:#f0c060;--cream:#faf8f3;--text:#2a2a2a;--text-light:#555}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Source Serif 4',Georgia,serif;background:var(--cream);color:var(--text);line-height:1.8}
+    header{background:var(--navy);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+    .header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;gap:16px}
+    .logo-area{display:flex;align-items:center;gap:14px;text-decoration:none}
+    .logo-area img{height:52px;width:auto}
+    .logo-text{display:flex;flex-direction:column;line-height:1.1}
+    .logo-main{font-family:'Playfair Display',serif;font-weight:900;font-size:1.5rem;color:#fff}
+    .logo-sub{font-size:.7rem;color:var(--gold);letter-spacing:.18em;text-transform:uppercase}
+    nav{display:flex;gap:6px;flex-wrap:wrap}
+    nav a{font-size:.82rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.85);text-decoration:none;padding:8px 14px;border-radius:3px;transition:background .2s,color .2s}
+    nav a:hover,nav a.active{background:var(--green-mid);color:#fff}
+    nav a.community-link{color:var(--gold-light);border:1px solid rgba(201,144,58,.4)}
+    nav a.community-link:hover{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+    .page-hero{background:var(--navy);padding:52px 24px 44px;position:relative;overflow:hidden}
+    .page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(to right,var(--gold),var(--green-mid),var(--gold))}
+    .page-hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+    .breadcrumb{font-size:.78rem;color:rgba(255,255,255,.5);margin-bottom:12px}
+    .breadcrumb a{color:var(--gold);text-decoration:none}
+    .page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:10px}
+    .page-hero .subtitle{color:var(--gold-light);font-style:italic;font-size:1rem;font-weight:300}
+    .article-wrap{max-width:1100px;margin:0 auto;padding:52px 24px 80px;display:grid;grid-template-columns:1fr 300px;gap:52px;align-items:start}
+    .article-body p{color:var(--text-light);margin-bottom:18px;font-size:1.02rem}
+    
+    .article-body h2{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--navy);margin:28px 0 14px}
+    .article-body a{color:var(--green-mid);font-weight:600;text-decoration:none}
+    .article-body a:hover{color:var(--gold)}
+    .link-list{list-style:none;padding:0;margin-bottom:24px}
+    .link-list li{border-bottom:1px solid var(--green-light)}
+    .link-list li a{display:block;padding:12px 16px;color:var(--navy);font-weight:600;font-size:.95rem;text-decoration:none;transition:background .15s,padding-left .15s}
+    .link-list li a:hover{background:#fff;padding-left:22px;color:var(--green-mid)}
+    .link-list li a::after{content:' →';color:var(--gold)}
+    .census-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+    .census-card{background:#fff;border:1px solid var(--green-light);border-top:3px solid var(--gold);border-radius:4px;padding:16px 18px;text-decoration:none;display:block;transition:transform .15s,box-shadow .15s}
+    .census-card:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.08)}
+    .census-card h3{font-family:'Playfair Display',serif;font-size:1rem;color:var(--navy);margin-bottom:4px}
+    .census-card p{font-size:.82rem;color:var(--text-light)}
+    .sidebar-image{border-radius:4px;overflow:hidden;box-shadow:6px 6px 0 var(--green-light),10px 10px 0 var(--green-mid);margin-bottom:28px}
+    .sidebar-image img{width:100%;height:auto;display:block}
+    .caption{background:var(--navy);color:rgba(255,255,255,.7);font-size:.78rem;font-style:italic;padding:10px 14px;text-align:center}
+    .sidebar-image-sm{border-radius:4px;overflow:hidden;margin-bottom:18px;box-shadow:0 3px 12px rgba(0,0,0,.12)}
+    .sidebar-image-sm img{width:100%;height:auto;display:block}
+    .caption-sm{background:var(--green-dark);color:rgba(255,255,255,.75);font-size:.75rem;font-style:italic;padding:8px 12px;text-align:center}
+    .back-link{display:inline-flex;align-items:center;gap:8px;margin-top:28px;color:var(--green-mid);font-weight:600;font-size:.88rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
+    .back-link:hover{color:var(--gold)}
+    footer{background:var(--navy);color:rgba(255,255,255,.6);padding:40px 24px;font-size:.82rem}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+    .footer-logo{font-family:'Playfair Display',serif;font-weight:700;color:#fff;font-size:1.1rem}
+    .footer-logo span{color:var(--gold)}
+    footer a{color:rgba(255,255,255,.6);text-decoration:none}
+    footer a:hover{color:var(--gold)}
+    .footer-links{display:flex;gap:20px}
+    @media(max-width:768px){.article-wrap{grid-template-columns:1fr}.census-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="../../index.html" class="logo-area">
+      <img src="../../images/Logo2.png" alt="Earlsdon Online" onerror="this.style.display='none'">
+      <div class="logo-text"><span class="logo-main">Earlsdon</span><span class="logo-sub">— Online —</span></div>
+    </a>
+    <nav>
+      <a href="../../index.html">Home</a>
+      <a href="../history.html" class="active">History</a>
+      <a href="localinfo.html" class="active-check">Local Info</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <p class="breadcrumb"><a href="../../index.html">Home</a> &rsaquo; <a href="../history.html">History</a> &rsaquo; Family History</p>
+    <h1>Earlsdon Family History</h1>
+    <p class="subtitle">Resources for tracing your Earlsdon roots</p>
+  </div>
+</section>
+
+<div class="article-wrap">
+  <article class="article-body">
+    <p>There is a wealth of local history information about Earlsdon throughout these pages, but below are some specific resources to help those with a particular interest in the history of Earlsdon's families. If you know of other Earlsdon family history information online, please let us know at <a href="mailto:earlsdon.online@gmail.com"><span class="__cf_email__" data-cfemail="c5a0a4b7a9b6a1aaabebaaaba9acaba085a2a8a4aca9eba6aaa8">[email&#160;protected]</span></a>.</p>
+
+    <h2>Census Transcripts</h2>
+    <p>The following census transcripts list Earlsdon residents at the time of each census and are a valuable resource for family history research:</p>
+
+    <div class="census-grid">
+      <a href="hh41census.html" class="census-card">
+        <h3>1841 Census</h3>
+        <p>Transcript of what is now Earlsdon</p>
+      </a>
+      <a href="hh51census.html" class="census-card">
+        <h3>1851 Census</h3>
+        <p>Transcript of Earlsdon residents</p>
+      </a>
+      <a href="hh61census.htm" class="census-card">
+        <h3>1861 Census</h3>
+        <p>Transcript of Earlsdon residents</p>
+      </a>
+      <a href="hh91census.htm" class="census-card">
+        <h3>1891 Census</h3>
+        <p>Transcript of Earlsdon residents</p>
+      </a>
+    </div>
+
+    <a href="1912direct.html" class="census-card" style="margin-bottom:28px">
+      <h3>1912 Spennell's Directory</h3>
+      <p>Extract of Earlsdon residents from the 1912 directory</p>
+    </a>
+
+    <h2>Useful External Resources</h2>
+    <ul class="link-list">
+      <li><a href="http://earlsdonfamilies.123guestbook.com/" target="_blank" rel="noopener">Earlsdon Family History Register</a></li>
+      <li><a href="http://www.covfhs.org/" target="_blank" rel="noopener">Coventry Family History Society</a></li>
+      <li></li>
+      <li><a href="http://www.historiccoventry.co.uk/" target="_blank" rel="noopener">Historic Coventry</a></li>
+      <li><a href="http://www.coventry.gov.uk/info/448/records_and_archives-information_and_advice/512/family_history" target="_blank" rel="noopener">Coventry Register Office</a></li>
+      <li><a href="https://www.theherbert.org/collections/history-centre.aspx" target="_blank" rel="noopener">Coventry History Centre</a></li>
+<li><a href="https://locations.familysearch.org/en/gb/england/coventry/riverside-close" target="_blank" rel="noopener">Coventry Family Search Centre</a></li>
+      <li><a href="http://www.picturesofcoventry.co.uk/" target="_blank" rel="noopener">Pictures of Coventry</a></li>
+    </ul>
+
+    <a href="../history.html" class="back-link">← Back to Local History</a>
+  </article>
+
+  <aside>
+    <div class="sidebar-image">
+      <img src="../../images/RoyalOak1911.jpg" alt="Patrons of the Royal Oak, 1911" onerror="this.style.display='none'">
+      <div class="caption">Patrons of the Royal Oak, 1911</div>
+    </div>
+    <div class="sidebar-image-sm">
+      <img src="../../images/StBarbaras1925.jpg" alt="St Barbara's Sporting Group, 1925" onerror="this.style.display='none'">
+      <div class="caption-sm">St Barbara's Sporting Group, 1925</div>
+    </div>
+    <div class="sidebar-image-sm">
+      <img src="../../images/EarlsdonRFC1910.jpg" alt="Earlsdon Old Boys RFC, 1910" onerror="this.style.display='none'">
+      <div class="caption-sm">Earlsdon Old Boys RFC, 1910</div>
+    </div>
+    <div class="sidebar-image-sm">
+      <img src="../../images/MissSteane1931.jpg" alt="Miss Steane's School, 1931" onerror="this.style.display='none'">
+      <div class="caption-sm">Miss Steane's School, Moor Street, 1931</div>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Earlsdon <span>Online</span></div>
+      <p style="margin-top:6px;">© EOL 2026 | In association with <a href="http://www.firesidemedia.co.uk" target="_blank" rel="noopener">Fireside Media</a></p>
+    </div>
+    <div class="footer-links">
+      <a href="../../about.html">About</a>
+      
