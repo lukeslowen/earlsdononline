@@ -145,19 +145,6 @@
       background: linear-gradient(to right, var(--gold), var(--green-mid), var(--gold));
     }
 
-    /* Large logo image in hero */
-    .hero-logo-img {
-      position: absolute;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      height: 100%;
-      max-height: 500px;
-      width: auto;
-      opacity: 0.9;
-      pointer-events: none;
-    }
-
     .hero-content {
       position: relative;
       z-index: 2;
@@ -586,7 +573,6 @@
       .cards-grid { grid-template-columns: 1fr; }
       .highlights-grid { grid-template-columns: 1fr; }
       .facebook-cta { text-align: center; justify-content: center; }
-      .hero-logo-img { opacity: 0.15; }
       nav a { padding: 7px 10px; font-size: 0.75rem; }
       .history-highlights { margin: 0 -24px; }
     }
@@ -631,9 +617,6 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-bg"></div>
-    <!-- The illustrated logo image sits on the right of the hero -->
-    <img src="images/Logo1.png" alt="" class="hero-logo-img"
-         onerror="this.style.display='none'">
     <div class="hero-content">
       <p class="hero-eyebrow">Coventry's Longest Running Community Website</p>
       <h1 class="hero-title">Welcome to <em>Earlsdon</em></h1>
@@ -667,8 +650,7 @@
         <p>Browse our history section to discover the fascinating stories of the people and places that have shaped Earlsdon, or join the conversation on the <a href="https://www.facebook.com/groups/1741625052743636/?locale=en_GB" target="_blank" rel="noopener">Earlsdon Local Message Board</a> on Facebook.</p>
       </div>
       <div class="welcome-image">
-        <img src="images/Church.jpg" alt="Earlsdon Street"
-             onerror="this.outerHTML='<div class=\'welcome-image-placeholder\'>Earlsdon Street Scene</div>'">
+        <img src="images/Logo1.png" alt="Earlsdon Online" style="max-width:100%;height:auto;display:block;margin:0 auto;" onerror="this.style.display='none'">
       </div>
     </div>
 
@@ -753,5 +735,4 @@
       </div>
       <div class="footer-links">
         <a href="about.html">About</a>
-        <a href="mailto:earlsdon.online@gmail.com">Contact</a>
-     
+        <a href="/cdn-cgi/l/email-protection#395c584b554a5d565717565
