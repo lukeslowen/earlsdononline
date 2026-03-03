@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Brief History of Earlsdon – Earlsdon Online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green-dark:#2c4a2e;--green-mid:#3d6b40;--green-light:#e8f0e8;
+      --navy:#1a2744;--gold:#c9903a;--gold-light:#f0c060;
+      --cream:#faf8f3;--text:#2a2a2a;--text-light:#555;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Source Serif 4',Georgia,serif;background:var(--cream);color:var(--text);line-height:1.8}
+    header{background:var(--navy);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+    .header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;gap:16px}
+    .logo-area{display:flex;align-items:center;gap:14px;text-decoration:none}
+    .logo-area img{height:52px;width:auto}
+    .logo-text{display:flex;flex-direction:column;line-height:1.1}
+    .logo-main{font-family:'Playfair Display',serif;font-weight:900;font-size:1.5rem;color:#fff}
+    .logo-sub{font-size:.7rem;color:var(--gold);letter-spacing:.18em;text-transform:uppercase}
+    nav{display:flex;gap:6px;flex-wrap:wrap}
+    nav a{font-size:.82rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.85);text-decoration:none;padding:8px 14px;border-radius:3px;transition:background .2s,color .2s}
+    nav a:hover,nav a.active{background:var(--green-mid);color:#fff}
+    nav a.community-link{color:var(--gold-light);border:1px solid rgba(201,144,58,.4)}
+    nav a.community-link:hover{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+    .page-hero{background:var(--navy);padding:52px 24px 44px;position:relative;overflow:hidden}
+    .page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(to right,var(--gold),var(--green-mid),var(--gold))}
+    .page-hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+    .breadcrumb{font-size:.78rem;color:rgba(255,255,255,.5);margin-bottom:12px}
+    .breadcrumb a{color:var(--gold);text-decoration:none}
+    .breadcrumb a:hover{text-decoration:underline}
+    .page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:10px}
+    .page-hero .subtitle{color:var(--gold-light);font-style:italic;font-size:1rem;font-weight:300}
+    .article-wrap{max-width:1100px;margin:0 auto;padding:52px 24px 80px;display:grid;grid-template-columns:1fr 300px;gap:52px;align-items:start}
+    .article-body p{color:var(--text-light);margin-bottom:18px;font-size:1.02rem}
+    
+    .article-body h2{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--navy);margin:28px 0 12px}
+    .article-body ol,.article-body ul{color:var(--text-light);padding-left:24px;margin-bottom:18px}
+    .article-body li{margin-bottom:8px;font-size:1rem}
+    .article-body a{color:var(--green-mid);font-weight:600}
+    .article-body blockquote{border-left:4px solid var(--gold);padding:12px 20px;margin:20px 0;background:#fff;font-style:italic;color:var(--text-light)}
+    .source-note{font-size:.82rem;color:#999;font-style:italic;border-left:3px solid var(--gold);padding-left:12px;margin-top:20px}
+    .article-sidebar{position:sticky;top:88px}
+    .sidebar-image{border-radius:4px;overflow:hidden;box-shadow:6px 6px 0 var(--green-light),10px 10px 0 var(--green-mid);margin-bottom:28px}
+    .sidebar-image img,.sidebar-image-sm img{width:100%;height:auto;display:block;object-fit:cover}
+    .sidebar-image-sm{border-radius:4px;overflow:hidden;margin-bottom:18px;box-shadow:0 3px 12px rgba(0,0,0,.12)}
+    .caption{background:var(--navy);color:rgba(255,255,255,.7);font-size:.78rem;font-style:italic;padding:10px 14px;text-align:center}
+    .caption-sm{background:var(--green-dark);color:rgba(255,255,255,.75);font-size:.75rem;font-style:italic;padding:8px 12px;text-align:center}
+    .sidebar-fact{background:var(--navy);border-radius:4px;padding:20px;margin-bottom:18px}
+    .sidebar-fact h3{font-family:'Playfair Display',serif;color:var(--gold);font-size:.88rem;margin-bottom:12px;letter-spacing:.05em;text-transform:uppercase}
+    .sidebar-fact ul{list-style:none;padding:0}
+    .sidebar-fact ul li{color:rgba(255,255,255,.75);font-size:.82rem;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.08);display:flex;gap:8px}
+    .sidebar-fact ul li:last-child{border-bottom:none}
+    .sidebar-fact ul li .label{color:var(--gold-light);font-weight:600;min-width:64px;flex-shrink:0}
+    .map-embed{border-radius:4px;overflow:hidden;margin-bottom:18px;box-shadow:0 3px 12px rgba(0,0,0,.12)}
+    .map-embed iframe{width:100%;height:260px;border:none;display:block}
+    .back-link{display:inline-flex;align-items:center;gap:8px;margin-top:28px;color:var(--green-mid);font-weight:600;font-size:.88rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:gap .2s}
+    .back-link:hover{gap:12px;color:var(--gold)}
+    footer{background:var(--navy);color:rgba(255,255,255,.6);padding:40px 24px;font-size:.82rem}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+    .footer-logo{font-family:'Playfair Display',serif;font-weight:700;color:#fff;font-size:1.1rem}
+    .footer-logo span{color:var(--gold)}
+    footer a{color:rgba(255,255,255,.6);text-decoration:none}
+    footer a:hover{color:var(--gold)}
+    .footer-links{display:flex;gap:20px}
+    @media(max-width:768px){
+      .article-wrap{grid-template-columns:1fr}
+      .article-sidebar{position:static}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="../index.html" class="logo-area">
+      <img src="../images/Logo2.png" alt="Earlsdon Online" onerror="this.style.display='none'">
+      <div class="logo-text"><span class="logo-main">Earlsdon</span><span class="logo-sub">— Online —</span></div>
+    </a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="history.html" class="active">History</a>
+      <a href="../localinfo.html" class="active-check">Local Info</a>
+    </nav>
+  </div>
+</header>
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <p class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="history.html">History</a> &rsaquo; A Brief History of Earlsdon</p>
+    <h1>A Brief History of Earlsdon</h1>
+    <p class="subtitle">From ancient common land to a thriving Victorian suburb</p>
+  </div>
+</section>
+<div class="article-wrap">
+  <article class="article-body">
+    <p>The districts known as Asthill and Horwell lay in the south-west of St. Michael's parish, mainly to the east of the stream which runs south from Hearsall Common to Canley Ford. There was a well here called Horwell or Whorwell from at least the 14th century, and the stream has been called Horwell stream or the Whor (or Hor) Brook. Asthill was the land rising east of the Whor Brook and south from <a href="hearsallcommon.html">Hearsall Common</a> towards Stivichall Common.</p>
+
+<p>Horwell as the name for a locality has disappeared, and has been replaced for some purposes by that of Hearsall. Except for Hearsall Common, Hearsall Golf Course, and some playing fields the whole area is now occupied by houses of the 19th century and later.</p>
+
+<p>In the 14th century the boundary of the inner liberties of the city ran from Stivichall through Aylesden (Earlsdon) Field and Blackorchard Field to Guphill Ford. After the dissolution of the county of the city in 1842, the railway line from Coventry to Birmingham, which crosses the area south of Hearsall Common, became the boundary of the new municipal borough. The land north of the railway remained in the city, and the rest of the two districts was taken into the city in the boundary extension of 1890.</p>
+
+<p>Hearsall Common and strips of common along Earlsdon Lane and Whor Lane were enclosed in the Coventry commons' enclosure of 1875, some parts being allotted to the corporation and others sold. Land south of the railway and west of Earlsdon Lane was bought for building in 1853. This was laid out with streets and partly built up, forming the detached suburb of Earlsdon which was occupied mainly by <a href="watchtrail.html">watchmakers</a>.</p>
+
+<p>Further to the southeast, near Warwick Road and Kenilworth Road, there were some large houses in their own grounds by 1887. This area was evidently becoming one of the most favoured residential districts of Coventry. <a href="spencerpark.html">Spencer Park</a>, immediately south of the railway, was opened in 1883 and the new King Henry VIII School was built in 1885. By 1906 the former watchmaking suburb had spread southwards between Whor Lane and Earlsdon Lane, over land which had belonged to Earlsdon Farm.</p>
+
+<p>By the First World War there were more houses to the east of Earlsdon Lane, while in the west Hearsall Golf Course was laid out. Immediately after the war scattered building development began west of Whor Lane. Earlsdon Lane and Whor Lane were straightened and renamed Earlsdon Avenue and Beechwood Avenue respectively. The opening of the War Memorial Park beyond Kenilworth Road in 1921 further enhanced the leafy character of the area, which has largely been maintained to this day.</p>
+
+<p class="source">From: <em>A History of the County of Warwick: Volume 8: The City of Coventry and Borough of Warwick</em> (1969), pp. 48–50.</p>
+    <a href="history.html" class="back-link">← Back to Local History</a>
+  </article>
+  <aside class="article-sidebar">
+    <div class="sidebar-image"><img src="images/Crossroads1885.jpg" alt="Earlsdon Crossroads" onerror="this.style.display='none'"><div class="caption">Earlsdon Crossroads, 1885</div></div>
+  </aside>
+</div>
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Earlsdon <span>Online</span></div>
+      <p style="margin-top:6px;">© EOL 2026 | In association with <a href="http://www.firesidemedia.co.uk" target="_blank" rel="noopener">Fireside Media</a></p>
+    </div>
+    <div class="footer-links">
+      <a href="../about.html">About</a>
+      <a href="/cdn-cgi/l/email-protection#1e7b7f6c726d7a7

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Co-operative Store – Earlsdon Online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root{--green-dark:#2c4a2e;--green-mid:#3d6b40;--green-light:#e8f0e8;--navy:#1a2744;--gold:#c9903a;--gold-light:#f0c060;--cream:#faf8f3;--text:#2a2a2a;--text-light:#555}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Source Serif 4',Georgia,serif;background:var(--cream);color:var(--text);line-height:1.8}
+    header{background:var(--navy);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+    .header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;gap:16px}
+    .logo-area{display:flex;align-items:center;gap:14px;text-decoration:none}
+    .logo-area img{height:52px;width:auto}
+    .logo-text{display:flex;flex-direction:column;line-height:1.1}
+    .logo-main{font-family:'Playfair Display',serif;font-weight:900;font-size:1.5rem;color:#fff}
+    .logo-sub{font-size:.7rem;color:var(--gold);letter-spacing:.18em;text-transform:uppercase}
+    nav{display:flex;gap:6px;flex-wrap:wrap}
+    nav a{font-size:.82rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.85);text-decoration:none;padding:8px 14px;border-radius:3px;transition:background .2s,color .2s}
+    nav a:hover,nav a.active{background:var(--green-mid);color:#fff}
+    nav a.community-link{color:var(--gold-light);border:1px solid rgba(201,144,58,.4)}
+    nav a.community-link:hover{background:var(--gold);color:var(--navy)}
+    .page-hero{background:var(--navy);padding:48px 24px 40px;position:relative;overflow:hidden}
+    .page-hero::before{content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;border-radius:50%;background:rgba(201,144,58,.06)}
+    .page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(to right,var(--gold),var(--green-mid),var(--gold))}
+    .page-hero-inner{max-width:1100px;margin:0 auto;position:relative}
+    .breadcrumb{font-size:.78rem;color:rgba(255,255,255,.5);margin-bottom:12px}
+    .breadcrumb a{color:var(--gold);text-decoration:none}
+    .breadcrumb a:hover{color:var(--gold-light)}
+    .page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:8px}
+    .page-hero .subtitle{color:var(--gold-light);font-style:italic;font-size:.95rem}
+    .trail-badge{display:inline-flex;align-items:center;gap:8px;margin-top:14px;background:rgba(201,144,58,.15);border:1px solid rgba(201,144,58,.4);color:var(--gold-light);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;border-radius:20px}
+    .main-content{max-width:1100px;margin:0 auto;padding:44px 24px 80px;display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:start}
+    @media(max-width:800px){.main-content{grid-template-columns:1fr}}
+    .article-body p{margin-bottom:1.3em;color:var(--text-light)}
+    
+    .article-body h2{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--navy);margin:1.8em 0 .6em;padding-bottom:6px;border-bottom:2px solid var(--green-light)}
+    .article-body a{color:var(--green-mid);font-weight:600;text-decoration:none}
+    .article-body a:hover{color:var(--gold)}
+    .source-note{margin-top:2em;padding:14px 18px;background:var(--green-light);border-left:3px solid var(--green-mid);font-size:.85rem;font-style:italic;color:var(--text-light);border-radius:0 4px 4px 0}
+    .back-links{margin-top:2.5em;display:flex;flex-direction:column;gap:10px}
+    .back-links a{display:inline-flex;align-items:center;gap:8px;color:var(--green-mid);font-weight:600;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
+    .back-links a:hover{color:var(--gold)}
+    .sidebar{display:flex;flex-direction:column;gap:24px}
+    .sidebar-img{border-radius:6px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12)}
+    .sidebar-img img{width:100%;display:block}
+    .sidebar-img figcaption{background:var(--navy);color:rgba(255,255,255,.7);font-size:.75rem;padding:8px 12px;font-style:italic}
+    .fact-box{background:#fff;border:1px solid var(--green-light);border-radius:6px;overflow:hidden}
+    .fact-box-header{background:var(--navy);color:var(--gold-light);font-family:'Playfair Display',serif;font-size:.85rem;font-weight:700;padding:10px 16px;letter-spacing:.06em}
+    .fact-box-body{padding:14px 16px}
+    .fact-box-body dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px}
+    .fact-box-body dt{font-weight:700;color:var(--navy);font-size:.82rem;white-space:nowrap}
+    .fact-box-body dd{color:var(--text-light);font-size:.82rem}
+    .trail-nav{background:#fff;border:1px solid var(--green-light);border-radius:6px;overflow:hidden}
+    .trail-nav-header{background:var(--green-mid);color:#fff;font-family:'Playfair Display',serif;font-size:.82rem;font-weight:700;padding:10px 16px;letter-spacing:.06em}
+    .trail-nav ol{padding:12px 16px 12px 32px;margin:0}
+    .trail-nav li{font-size:.8rem;color:var(--text-light);padding:3px 0;line-height:1.4}
+    .trail-nav li a{color:var(--green-mid);text-decoration:none;font-weight:600}
+    .trail-nav li a:hover{color:var(--gold)}
+    .trail-nav li.current{font-weight:700;color:var(--navy)}
+    footer{background:var(--navy);color:rgba(255,255,255,.6);padding:40px 24px;font-size:.82rem}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+    .footer-logo{font-family:'Playfair Display',serif;font-weight:700;color:#fff;font-size:1.1rem}
+    .footer-logo span{color:var(--gold)}
+    footer a{color:rgba(255,255,255,.6);text-decoration:none}
+    footer a:hover{color:var(--gold)}
+    .footer-links{display:flex;gap:20px}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="../index.html" class="logo-area">
+      <img src="../images/Logo2.png" alt="Earlsdon Online" onerror="this.style.display='none'">
+      <div class="logo-text"><span class="logo-main">Earlsdon</span><span class="logo-sub">— Online —</span></div>
+    </a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="history.html" class="active">History</a>
+      <a href="../localinfo.html" class="active-check">Local Info</a>
+    </nav>
+  </div>
+</header>
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <p class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="history.html">History</a> &rsaquo; <a href="heritagetrail.html">Heritage Trail</a> &rsaquo; The Co-operative Store</p>
+    <h1>The Co-operative Store</h1>
+    <p class="subtitle">Earlsdon Street &middot; Est. 1896</p>
+    <div class="trail-badge">&#127979; Heritage Trail &ndash; Stop 19</div>
+  </div>
+</section>
+<div class="main-content">
+  <article class="article-body">
+<p>The Co-operative store was the first purpose-built shop to appear on Earlsdon Street. Opened in 1896, it soon attracted such trade that much larger premises were needed. The large site on the corner of Earlsdon Street and Poplar Road was bought, and in 1906 a quite imposing new building was constructed and opened as the new Co-op.</p>
+
+<p>The Co-op continued to expand: in 1930 it took over a butcher&rsquo;s shop on the corner of Moor Street and Earlsdon Street, followed by a chemist in 1936. At one time it operated six different businesses in six different premises &mdash; shoe shop, drapery, men&rsquo;s wear, wet fish, greengrocery and more. This was eventually found to be inconvenient and uneconomical.</p>
+
+<p>By 1979 plans were made for a complete reorganisation. The entire area the Co-op had occupied since 1896 was cleared, and a new building opened in May 1981. The large corner premises, no longer needed, was taken over as a bedding store. The move unfortunately put an end to Earlsdon&rsquo;s claim to its unique &lsquo;-ation&rsquo; corner: Damnation, Co-operation, Education and Salvation &mdash; the City Arms, the Co-op, the school and library, and the Methodist Church &mdash; each on one of the four corners of the crossroads.</p>
+<div class="back-links">
+    <a href="heritagetrail.html">&#8592; Back to Heritage Trail</a>
+</div>
+  </article>
+  <aside class="sidebar">
+<figure class="sidebar-img">
+  <img src="images/firstcoop.jpg" alt="The first Earlsdon Co-operative store" onerror="this.style.display='none'">
+  <figcaption>The first Earlsdon Co-operative store</figcaption>
+</figure>
+<figure class="sidebar-img">
+  <img src="images/coop1974.jpg" alt="The Co-op in 1974" onerror="this.style.display='none'">
+  <figcaption>The Co-op in 1974</figcaption>
+</figure>
+<div class="fact-box">
+  <div class="fact-box-header">The Co-operative Store</div>
+  <div class="fact-box-body"><dl>
+      <dt>First opened</dt><dd>1896</dd>
+      <dt>New premises</dt><dd>1906, corner of Earlsdon Street &amp; Poplar Road</dd>
+      <dt>Peak</dt><dd>Six departments in six premises</dd>
+      <dt>Rebuilt</dt><dd>1981</dd>
+      <dt>Famous for</dt><dd>The &ldquo;-ation corner&rdquo; with City Arms, school &amp; library, Methodist Church</dd>
+  </dl></div>
+</div>
+<div class="trail-nav">
+  <div class="trail-nav-header">&#9660; Millennium Heritage Trail</div>
+  <ol>
+    <li><a href="jetty.html">The Jetty</a></li>
+    <li><a href="cityarms.html">The City Arms</a></li>
+    <li><a href="imperial.html">The Imperial Cinema</a></li>
+    <li><a href="nailfactory.html">The Old Nail Factory</a></li>
+    <li><a href="chapel.html">The Old Methodist Chapel</a></li>
+    <li><a href="weavers.html">The Weavers Cottages</a></li>
+    <li><a href="ribbon.html">The Ribbon Weaving Shed</a></li>
+    <li><a href="rex.html">The Rex Factory</a></li>
+    <li><a href="bates.html">Henry Bates&rsquo; Cottage</a></li>
+    <li><a href="earlsdonhse.html">Earlsdon House</a></li>
+    <li><a href="barbaras.html">St Barbara&rsquo;s first Church</a></li>
+    <li><a href="bell.html">The Tubular Bell Factory</a></li>
+    <li><a href="clarendon.html">Clarendon &amp; Westwood House</a></li>
+    <li><a href="johnmoore.html">John Moore&rsquo;s House</a></li>
+    <li><a href="shop.html">Earlsdon&rsquo;s first shop</a></li>
+    <li><a href="cottage.html">The Earlsdon Cottage Inn</a></li>
+    <li><a href="oak.html">The Royal Oak</a></li>
+    <li><a href="albanyclub.html">The Albany Social Club</a></li>
+    <li><a href="coop.html">The Co-operative Store</a></li>
+    <li><a href="astoria.html">The Astoria</a></li>
+  </ol>
+</div>
+  </aside>
+</div>
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Earlsdon <span>Online</span></div>
+      <p style="margin-top:6px;">&copy; EOL 2026 | In association with <a href="http://www.firesidemedia.co.uk" target="_blank" rel="noopener">Fireside Media</a></p>
+    </div>
+    <div class="footer-links">
+      <a href="../about.html">About</a>
+      <a href="/cdn-cgi/l/email-protection#b2d7d3c0dec1d6d
