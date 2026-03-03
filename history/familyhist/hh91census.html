@@ -1,0 +1,1820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1891 Census – Full Transcript – Earlsdon Online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--green-dark:#2c4a2e;--green-mid:#3d6b40;--green-light:#e8f0e8;--navy:#1a2744;--gold:#c9903a;--gold-light:#f0c060;--cream:#faf8f3;--text:#2a2a2a;--text-light:#555}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Source Serif 4',Georgia,serif;background:var(--cream);color:var(--text);line-height:1.7}
+    header{background:var(--navy);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+    .header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;gap:16px}
+    .logo-area{display:flex;align-items:center;gap:14px;text-decoration:none}
+    .logo-area img{height:52px;width:auto}
+    .logo-text{display:flex;flex-direction:column;line-height:1.1}
+    .logo-main{font-family:'Playfair Display',serif;font-weight:900;font-size:1.5rem;color:#fff}
+    .logo-sub{font-size:.7rem;color:var(--gold);letter-spacing:.18em;text-transform:uppercase}
+    nav{display:flex;gap:6px;flex-wrap:wrap}
+    nav a{font-size:.82rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.85);text-decoration:none;padding:8px 14px;border-radius:3px;transition:background .2s,color .2s}
+    nav a:hover,nav a.active{background:var(--green-mid);color:#fff}
+    nav a.community-link{color:var(--gold-light);border:1px solid rgba(201,144,58,.4)}
+    nav a.community-link:hover{background:var(--gold);color:var(--navy)}
+    .page-hero{background:var(--navy);padding:48px 24px 40px;position:relative}
+    .page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(to right,var(--gold),var(--green-mid),var(--gold))}
+    .page-hero-inner{max-width:1100px;margin:0 auto}
+    .breadcrumb{font-size:.78rem;color:rgba(255,255,255,.5);margin-bottom:12px}
+    .breadcrumb a{color:var(--gold);text-decoration:none}
+    .page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:8px}
+    .page-hero .subtitle{color:var(--gold-light);font-style:italic;font-size:.95rem}
+    .main-content{max-width:1000px;margin:0 auto;padding:44px 24px 80px}
+    .intro{color:var(--text-light);margin-bottom:20px;font-size:1rem;line-height:1.8}
+    .intro a{color:var(--green-mid);font-weight:600;text-decoration:none}
+    .context-note{background:var(--green-light);border-left:4px solid var(--green-mid);padding:14px 18px;margin-bottom:28px;border-radius:0 4px 4px 0;font-size:.9rem;color:var(--text-light)}
+    .context-note a{color:var(--green-mid);font-weight:600;text-decoration:none}
+    .search-bar{display:flex;gap:12px;margin-bottom:32px;align-items:center;flex-wrap:wrap}
+    .search-bar input{flex:1;min-width:200px;padding:11px 16px;border:2px solid var(--green-light);border-radius:4px;font-family:'Source Serif 4',serif;font-size:.95rem;background:#fff;color:var(--text)}
+    .search-bar input:focus{outline:none;border-color:var(--green-mid)}
+    .search-bar .hint{font-size:.82rem;color:var(--text-light);font-style:italic}
+    .census-wrap{background:#fff;border-radius:6px;border:1px solid var(--green-light);overflow:hidden}
+    .page-section{border-bottom:3px solid var(--navy)}
+    .page-section:last-child{border-bottom:none}
+    .page-header{background:var(--navy);color:var(--gold-light);font-family:'Playfair Display',serif;font-size:.85rem;font-weight:700;padding:8px 20px;letter-spacing:.08em;text-transform:uppercase}
+    .household{border-bottom:1px solid var(--green-light);padding:14px 20px}
+    .household:last-child{border-bottom:none}
+    .household.highlight{background:rgba(201,144,58,.08)}
+    .hh-address{font-family:'Playfair Display',serif;font-weight:700;color:var(--navy);font-size:.95rem;margin-bottom:6px}
+    .hh-address a{color:var(--green-mid);text-decoration:none}
+    .hh-address a:hover{color:var(--gold)}
+    .hh-note{font-size:.82rem;color:var(--gold);font-style:italic;margin-bottom:8px}
+    .hh-table{width:100%;border-collapse:collapse;font-size:.82rem;font-family:'Source Code Pro',monospace}
+    .hh-table tr:nth-child(even){background:var(--green-light)}
+    .hh-table td{padding:4px 8px;vertical-align:top;color:var(--text-light)}
+    .hh-table td:first-child{color:var(--navy);font-weight:600;white-space:nowrap}
+    .back-link{display:inline-flex;align-items:center;gap:8px;margin-top:32px;color:var(--green-mid);font-weight:600;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
+    .back-link:hover{color:var(--gold)}
+    footer{background:var(--navy);color:rgba(255,255,255,.6);padding:40px 24px;font-size:.82rem}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+    .footer-logo{font-family:'Playfair Display',serif;font-weight:700;color:#fff;font-size:1.1rem}
+    .footer-logo span{color:var(--gold)}
+    footer a{color:rgba(255,255,255,.6);text-decoration:none}
+    footer a:hover{color:var(--gold)}
+    .footer-links{display:flex;gap:20px}
+  </style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="../../index.html" class="logo-area">
+      <img src="images/Logo2.png" alt="Earlsdon Online" onerror="this.style.display='none'">
+      <div class="logo-text"><span class="logo-main">Earlsdon</span><span class="logo-sub">— Online —</span></div>
+    </a>
+    <nav>
+      <a href="../../index.html">Home</a>
+      <a href="../history.html" class="active">History</a>
+      <a href="../localinfo.html" class="active-check">Local Info</a>
+    </nav>
+  </div>
+</header>
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <p class="breadcrumb"><a href="../../index.html">Home</a> &rsaquo; <a href="../history.html">History</a> &rsaquo; <a href="familyhist.html">Family History</a> &rsaquo; 1891 Census</p>
+    <h1>1891 Census &ndash; Full Transcript</h1>
+    <p class="subtitle">Transcript of Piece RG12/2451 &middot; Earlsdon, Coventry</p>
+  </div>
+</section>
+<main class="main-content">
+  <p class="intro">Transcript of Piece RG12/2451. This is a full transcript of the 1891 Census showing all residents of Earlsdon at that time. Census schedule numbers are shown &mdash; these are <em>not</em> house numbers. Transcriber&rsquo;s annotations are noted where present, and linked biographies are highlighted. Use the search box to find names, addresses or occupations.</p>
+  <div class="context-note"><strong>A suburb transformed.</strong> By 1891 Earlsdon had grown dramatically. The old watchmaking trade was giving way to the emerging bicycle industry &mdash; many households record both occupations side by side. The streets now extended well beyond the old Earlsdon Lane axis, and Albany Road would open just seven years later to complete the suburb we recognise today.</div>
+  <div class="search-bar">
+    <input type="text" id="censusSearch" placeholder="Search by name, address or occupation&hellip;">
+    <span class="hint">Type to filter households</span>
+  </div>
+  <div class="census-wrap">
+    <div class="page-section">
+    <div class="page-header">Folio 134, Page 8</div>
+    <div class="household">
+      <div class="hh-address">37 &ndash; Warwick Road, The Firs</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Thomas W Pegg</td><td>50</td><td>Ironmonger — Lenton, Notts</td></tr>
+        <tr><td>Emma Pegg</td><td>45</td><td>Wife — Coventry</td></tr>
+        <tr><td>John H Pegg</td><td>24</td><td>Medical Student — Coventry</td></tr>
+        <tr><td>Florence S Pegg</td><td>24</td><td>— Coventry</td></tr>
+        <tr><td>Charlotte E Pegg</td><td>18</td><td>— Coventry</td></tr>
+        <tr><td>Catherine L Pegg</td><td>16</td><td>— Coventry</td></tr>
+        <tr><td>Elizabeth A Pegg</td><td>13</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Emma G Pegg</td><td>13</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Beatrice M Pegg</td><td>10</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Adeline J Pegg</td><td>7</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Winifred G Pegg</td><td>4</td><td>— Coventry</td></tr>
+        <tr><td>Mary Shellaw</td><td>16</td><td>Servant — Inchwick, Gloucs</td></tr>
+        <tr><td>James W Clarke</td><td>54</td><td>Visitor, Living on Own Means — London</td></tr>
+        <tr><td>Emily Clarke</td><td>48</td><td>Visitor — Claxton, Norfolk</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">38 &ndash; Stivechall Common, The Chestnuts</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Silvester R Manner</td><td>42</td><td>Solicitor — Foleshill</td></tr>
+        <tr><td>Alice E Manner</td><td>39</td><td>Wife — Coventry</td></tr>
+        <tr><td>Bernard U Manner</td><td>9</td><td>— Coventry</td></tr>
+        <tr><td>Mary A Harris</td><td>26</td><td>Servant — Stoneleigh</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">39 &ndash; Stivechall Common, The Ferns</div>
+      <table class="hh-table"><tbody>
+        <tr><td>William K Lee</td><td>49</td><td>Retired Draper — Reading, Berks</td></tr>
+        <tr><td>Sarah Lee</td><td>47</td><td>Wife — Long Itchington</td></tr>
+        <tr><td>John C Lee</td><td>18</td><td>Organ Builder — Coventry</td></tr>
+        <tr><td>Percy K Lee</td><td>12</td><td>Scholar — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">40 &ndash; Earlsdon Lane</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Herbert Reynolds</td><td>30</td><td>Farmer — Coventry</td></tr>
+        <tr><td>Elizabeth W Reynolds</td><td>31</td><td>Wife — Kilsby, Northants</td></tr>
+        <tr><td>Kate E Reynolds</td><td>7</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Florence M Reynolds</td><td>4</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    </div>
+    <div class="page-section">
+    <div class="page-header">Folio 135, Page 9</div>
+    <div class="household">
+      <div class="hh-address">41 &ndash; Earlsdon Terrace, Holly Bank (formerly Earlsdon Villa)</div>
+      <div class="hh-note">Thomas Inger Stevens — son and heir to Thomas Stevens, inventor of the Stevengraph</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Thomas I Stevens</td><td>32</td><td>Fancy Ribbon Manufacturer — Coventry</td></tr>
+        <tr><td>Frances M Stevens</td><td>30</td><td>Wife — Birkenhead</td></tr>
+        <tr><td>Thomas S Stevens</td><td>7</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Alice M Stevens</td><td>6</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Dorothy Stevens</td><td>1</td><td>— Coventry</td></tr>
+        <tr><td>Elizabeth Broadbent</td><td>25</td><td>Cook — Bedworth</td></tr>
+        <tr><td>Fanny Shellam</td><td>20</td><td>Housemaid — Longboro, Gloucs</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">42 &ndash; <a href="../jameswalker.html">Earlsdon Terrace, Woodlands</a></div>
+      <div class="hh-note">James Walker — Retired Watch Case Maker</div>
+      <table class="hh-table"><tbody>
+        <tr><td>James Walker</td><td>66</td><td>Retired Watch Case Maker — Birmingham</td></tr>
+        <tr><td>Hannah Walker</td><td>69</td><td>Wife — Claybrook, Leics</td></tr>
+        <tr><td>Hannah Walker (dau)</td><td>38</td><td>— Coventry</td></tr>
+        <tr><td>Alma R Walker</td><td>35</td><td>— Coventry</td></tr>
+        <tr><td>Tom L Wildigg</td><td>8</td><td>Grandson — Coventry</td></tr>
+        <tr><td>Alice M Davies</td><td>20</td><td>Servant — Warwick</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">43 &ndash; Earlsdon Terrace</div>
+      <div class="hh-note">Edwin J Walker — Gold Case Maker (son of James Walker, inherited half the business)</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Edwin J Walker</td><td>41</td><td>Gold Case Maker — Coventry</td></tr>
+        <tr><td>Jane Walker</td><td>37</td><td>Wife — Scotland</td></tr>
+        <tr><td>George Walker</td><td>16</td><td>Pupil Teacher — Coventry</td></tr>
+        <tr><td>Ellen Walker</td><td>14</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Emily Walker</td><td>13</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Alice Walker</td><td>10</td><td>Scholar — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">44 &ndash; Earlsdon Terrace</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Thomas W Owen</td><td>39</td><td>Watch Examiner — Coventry</td></tr>
+        <tr><td>Ann Owen</td><td>35</td><td>Wife — Coventry</td></tr>
+        <tr><td>Ellen Owen</td><td>14</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Eva Owen</td><td>6</td><td>Scholar — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">45 &ndash; <a href="../robertwaddington.html">Earlsdon Terrace, Wythburn</a></div>
+      <div class="hh-note">Robert Waddington — Watch Manufacturer</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Robert Waddington</td><td>47</td><td>Watch Manufacturer — Clitheroe, Lancs</td></tr>
+        <tr><td>Elizabeth Waddington</td><td>48</td><td>Wife — Burnley, Lancs</td></tr>
+        <tr><td>Wilfred Waddington</td><td>22</td><td>Watch Finisher — Padiham</td></tr>
+        <tr><td>Robert Waddington (son)</td><td>17</td><td>Watch Case Maker — Padiham</td></tr>
+        <tr><td>Bertha Waddington</td><td>15</td><td>— Padiham</td></tr>
+        <tr><td>Frank Waddington</td><td>13</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Nathan Waddington</td><td>10</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Lizzie Waddington</td><td>8</td><td>Scholar — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    </div>
+    <div class="page-section">
+    <div class="page-header">Folio 135, Page 10</div>
+    <div class="household">
+      <div class="hh-address">46 &ndash; <a href="../robertpike.html">Earlsdon Terrace, Cromwell House</a></div>
+      <div class="hh-note">Robert J Pike — Silver Watch Case Maker</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Robert J Pike</td><td>49</td><td>Silver Watch Case Maker — Clerkenwell</td></tr>
+        <tr><td>Alice M Pike</td><td>47</td><td>Wife — Clerkenwell</td></tr>
+        <tr><td>Alice S Pike</td><td>21</td><td>— Clerkenwell</td></tr>
+        <tr><td>Ernest N Pike</td><td>16</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Ida M Pike</td><td>14</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Lewis L Pike</td><td>12</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Henrietta H Pike</td><td>6</td><td>— Coventry (deaf and dumb since birth)</td></tr>
+        <tr><td>Edith Mary Courts</td><td>13</td><td>Servant — Aston, Birmingham</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">47 &ndash; Earlsdon Terrace, Ryland Villa</div>
+      <table class="hh-table"><tbody>
+        <tr><td>John Lee</td><td>27</td><td>Clerk — Brushfield, Derbys</td></tr>
+        <tr><td>Beatrice M Lee</td><td>25</td><td>Wife — Skegby, Notts</td></tr>
+        <tr><td>Ellen M Lee</td><td>5</td><td>Scholar — Beeston, Notts</td></tr>
+        <tr><td>Jessie Lee</td><td>3</td><td>Scholar — Beeston</td></tr>
+        <tr><td>David C Davis</td><td>22</td><td>Boarder, Journalist — Manchester</td></tr>
+        <tr><td>Adelaide Davis</td><td>19</td><td>Boarder — Southport</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">48 &ndash; Earlsdon Terrace</div>
+      <table class="hh-table"><tbody>
+        <tr><td>William J Grainger</td><td>51</td><td>Manager Cycle Factory — London</td></tr>
+        <tr><td>Louisa Grainger</td><td>49</td><td>Wife — London</td></tr>
+        <tr><td>William J Grainger (son)</td><td>23</td><td>Cycle Saddle Manufacturer — London</td></tr>
+        <tr><td>Annie S Grainger</td><td>22</td><td>— London</td></tr>
+        <tr><td>Arthur Grainger</td><td>20</td><td>Cycle Saddle Manufacturer — London</td></tr>
+        <tr><td>Harry Grainger</td><td>18</td><td>Clerk — London</td></tr>
+        <tr><td>Maggie Grainger</td><td>14</td><td>Scholar — London</td></tr>
+        <tr><td>H J Leake</td><td>29</td><td>Boarder — London</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">49 &ndash; Earlsdon Terrace</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Frederick M Edmunds</td><td>28</td><td>Clerk, Cycle Works — Coventry</td></tr>
+        <tr><td>Alice E Edmunds</td><td>29</td><td>Wife — Coventry</td></tr>
+        <tr><td>Edith A Edmunds</td><td>6</td><td>Scholar — Manchester</td></tr>
+        <tr><td>Nora D Edmunds</td><td>1</td><td>— Dublin</td></tr>
+        <tr><td>Margaret K Goodman</td><td>14</td><td>Servant — Haseley, Warks</td></tr>
+      </tbody></table>
+    </div>
+    </div>
+    <div class="page-section">
+    <div class="page-header">Folio 136, Page 11</div>
+    <div class="household">
+      <div class="hh-address">50 &ndash; Earlsdon Lane, Earlsdon Terrace</div>
+      <table class="hh-table"><tbody>
+        <tr><td>William Furneaux</td><td>51</td><td>Watch Cap Maker — Coventry</td></tr>
+        <tr><td>Mary Furneaux</td><td>55</td><td>Wife — Coventry</td></tr>
+        <tr><td>William Furneaux (son)</td><td>26</td><td>Watch Cap Finisher — Coventry</td></tr>
+        <tr><td>Maud Furneaux</td><td>20</td><td>Waitress — Coventry</td></tr>
+        <tr><td>Ada Furneaux</td><td>18</td><td>— Coventry</td></tr>
+        <tr><td>Charles Furneaux</td><td>16</td><td>Cycle Maker — Coventry</td></tr>
+        <tr><td>Edith Furneaux</td><td>14</td><td>Watch Maker — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">51 &ndash; Earlsdon Lane, Earlsdon Terrace</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Ernest Oxborrow</td><td>26</td><td>Bicycle Fitter — Bramfield, Suffolk</td></tr>
+        <tr><td>Bella Oxborrow</td><td>25</td><td>Wife — Hornsey, London</td></tr>
+        <tr><td>Bella J Oxborrow</td><td>4</td><td>— Coventry</td></tr>
+        <tr><td>Alfred Morris</td><td>23</td><td>Boarder, Bicycle Fitter — Birmingham</td></tr>
+        <tr><td>Henry Hands</td><td>23</td><td>Boarder, Bicycle Fitter — Leamington</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">52 &ndash; <a href="../cityarms.html">Earlsdon Lane, Earlsdon Terrace (The City Arms)</a></div>
+      <div class="hh-note">John Merrifield — Licensed Victualler</div>
+      <table class="hh-table"><tbody>
+        <tr><td>John Merrifield</td><td>53</td><td>Licensed Victualler — Exeter, Devon</td></tr>
+        <tr><td>Elizabeth Merrifield</td><td>58</td><td>Wife — Westland, Devon</td></tr>
+        <tr><td>Alice Worsley</td><td>17</td><td>Servant — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">53 &ndash; Earlsdon Lane, Earlsdon Terrace</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Samuel W Morris</td><td>32</td><td>Commercial Traveller — London</td></tr>
+        <tr><td>Mary E Morris</td><td>33</td><td>Wife — Coventry</td></tr>
+        <tr><td>Ada I Morris</td><td>9</td><td>— Coventry</td></tr>
+        <tr><td>Elizabeth Verrins</td><td>26</td><td>Servant — Birmingham</td></tr>
+        <tr><td>John Guppey</td><td>20</td><td>Groom — Yeovil, Somerset</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">54 &ndash; Moor Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>William H Jones</td><td>38</td><td>Dairyman — Stoneleigh</td></tr>
+        <tr><td>Lucy Smith</td><td>42</td><td>Housekeeper — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">55 &ndash; Moor Street, Belvedere House</div>
+      <table class="hh-table"><tbody>
+        <tr><td>John G Betts</td><td>75</td><td>Retired Corn Merchant — Alfriston, Sussex</td></tr>
+        <tr><td>Elizabeth Betts</td><td>69</td><td>Wife — Coventry</td></tr>
+        <tr><td>Margaret E Betts</td><td>26</td><td>— Coventry</td></tr>
+        <tr><td>Hannah R Burton</td><td>69</td><td>Sister — Alfriston</td></tr>
+        <tr><td>Sarah Allen</td><td>27</td><td>Servant — Croughton, Northants</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">56 &ndash; Moor Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>John Hewitt</td><td>49</td><td>Watch Engraver — Coventry</td></tr>
+        <tr><td>Priscilla Hewitt</td><td>47</td><td>Wife — Coventry</td></tr>
+        <tr><td>Herbert Hewitt</td><td>23</td><td>Watch Finisher — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    </div>
+    <div class="page-section">
+    <div class="page-header">Folio 136, Page 12</div>
+    <div class="household">
+      <div class="hh-address">56 (cont.) &ndash; Moor Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>William Hewitt</td><td>21</td><td>Machinist — Coventry</td></tr>
+        <tr><td>John Hewitt (son)</td><td>18</td><td>Watch Finisher — Coventry</td></tr>
+        <tr><td>Thomas Hewitt</td><td>16</td><td>Watch Jeweller — Coventry</td></tr>
+        <tr><td>Albert Hewitt</td><td>13</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">57 &ndash; Moor Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Arthur Lee</td><td>33</td><td>Watch Jeweller — Coventry</td></tr>
+        <tr><td>Kate Lee</td><td>29</td><td>Wife — Coventry</td></tr>
+        <tr><td>Arthur F Lee</td><td>8m</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">58 &ndash; Moor Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Peter Brain</td><td>50</td><td>Labourer — Coventry</td></tr>
+        <tr><td>Mary Brain</td><td>42</td><td>Wife — Coventry</td></tr>
+        <tr><td>Peter Brain (son)</td><td>15</td><td>Machinist — Coventry</td></tr>
+        <tr><td>John Brain</td><td>12</td><td>— Coventry</td></tr>
+        <tr><td>Lily Brain</td><td>11</td><td>— Coventry</td></tr>
+        <tr><td>Mirian Brain</td><td>7</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">59 &ndash; Moor Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Alfred M Barker</td><td>39</td><td>Manager Cycle Works — London</td></tr>
+        <tr><td>Martha Barker</td><td>29</td><td>Wife — Birmingham</td></tr>
+        <tr><td>Edith Barker</td><td>8</td><td>Scholar — Wolverhampton</td></tr>
+        <tr><td>Alfred J Barker</td><td>7</td><td>Scholar — Wolverhampton</td></tr>
+        <tr><td>Winifred F Barker</td><td>3</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Ida E Barker</td><td>9m</td><td>— Coventry</td></tr>
+        <tr><td>John Anderson</td><td>45</td><td>Boarder, Groom — Banbury</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">60 &ndash; Moor Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Thomas Kendal</td><td>32</td><td>Assistant to Iron Works — Stoneleigh</td></tr>
+        <tr><td>Emily Kendal</td><td>28</td><td>Wife — Heyford, Northants</td></tr>
+        <tr><td>Emily Kendal (dau)</td><td>1</td><td>— Stoneleigh</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">61 &ndash; Moor Street</div>
+      <div class="hh-note">Charles C Johnson — Board Schoolmaster (first headmaster of Earlsdon School)</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Charles C Johnson</td><td>29</td><td>Board Schoolmaster — Coventry</td></tr>
+        <tr><td>Anna Johnson</td><td>31</td><td>Private Schoolmistress — Coventry</td></tr>
+        <tr><td>Ida Johnson</td><td>6</td><td>— Coventry</td></tr>
+        <tr><td>Marie R Johnson</td><td>1</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">62 &ndash; Moor Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Thomas G Golby</td><td>30</td><td>Builder — Hillmorton</td></tr>
+        <tr><td>Edith W Golby</td><td>29</td><td>Wife — Birmingham</td></tr>
+        <tr><td>Edith W Golby (dau)</td><td>6</td><td>Scholar — Hillmorton</td></tr>
+      </tbody></table>
+    </div>
+    </div>
+    <div class="page-section">
+    <div class="page-header">Folio 137, Page 13</div>
+    <div class="household">
+      <div class="hh-address">62 (cont.) &ndash; Moor Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Ethel A Golby</td><td>3</td><td>— Coventry</td></tr>
+        <tr><td>Theresa Golby</td><td>1</td><td>— Coventry</td></tr>
+        <tr><td>Nellie Adams</td><td>16</td><td>Cousin, Mother's Help — Daventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">63 &ndash; Moor Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>William Lester</td><td>36</td><td>Joiner — Nottingham</td></tr>
+        <tr><td>Eleanor Lester</td><td>33</td><td>Wife — Nottingham</td></tr>
+        <tr><td>Edith G Lester</td><td>11</td><td>— Nottingham</td></tr>
+        <tr><td>Arthur Lester</td><td>8</td><td>— Nottingham</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">64 &ndash; Moor Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>William Perry</td><td>47</td><td>Cabinet Preparer — Birmingham</td></tr>
+        <tr><td>Lucy Perry</td><td>43</td><td>Wife — Hatton</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">65 &ndash; Moor Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Maria Bates</td><td>48</td><td>Head (widow) — Coventry</td></tr>
+        <tr><td>Alice Bates</td><td>23</td><td>— Coventry</td></tr>
+        <tr><td>Alfred N Bates</td><td>22</td><td>Machinist — Coventry</td></tr>
+        <tr><td>Fred Bates</td><td>19</td><td>Machinist — Coventry</td></tr>
+        <tr><td>Thomas Bates</td><td>16</td><td>Watch Jeweller — Coventry</td></tr>
+        <tr><td>Frank Bates</td><td>14</td><td>Machinist — Coventry</td></tr>
+        <tr><td>Allan A Bates</td><td>12</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Maggie Bates</td><td>10</td><td>Scholar — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">66 &ndash; Moor Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Mary Dillon</td><td>77</td><td>Living on Own Means (widow) — Kenilworth</td></tr>
+        <tr><td>Jessie Kenning</td><td>14</td><td>Niece — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">67 &ndash; Moor Street, Grandburgh House</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Frederick Bullock</td><td>34</td><td>Clerk in Solicitor's Office — Whittington, Salop</td></tr>
+        <tr><td>Louisa M Bullock</td><td>30</td><td>Wife — Worcester</td></tr>
+        <tr><td>Ann Wankling</td><td>65</td><td>Mother-in-law, Living on Own Means — Worcester</td></tr>
+        <tr><td>Henry A Bullock</td><td>6</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Robert C Bullock</td><td>4</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Mary M Betts</td><td>14</td><td>Servant — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">68 &ndash; Moor Street, Livingstone Cottage</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Charles Boutler</td><td>29</td><td>Watch Maker Finisher — London</td></tr>
+        <tr><td>Elizabeth Boutler</td><td>29</td><td>Wife — Little Packington</td></tr>
+        <tr><td>William Boutler</td><td>13</td><td>Brother — London</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">69 &ndash; Moor Street, Stanley House</div>
+      <table class="hh-table"><tbody>
+        <tr><td>William T Saden</td><td>54</td><td>Retired Police Officer — Coventry</td></tr>
+        <tr><td>Eliza Saden</td><td>52</td><td>Wife — Wandsworth, Surrey</td></tr>
+        <tr><td>Alice M Saden</td><td>21</td><td>— London</td></tr>
+      </tbody></table>
+    </div>
+    </div>
+    <div class="page-section">
+    <div class="page-header">Folio 137, Page 14</div>
+    <div class="household">
+      <div class="hh-address">70 &ndash; Moor Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Thomas Houghton</td><td>57</td><td>Watch Balance Manufacturer — Prescot, Lancs</td></tr>
+        <tr><td>Emily M Houghton</td><td>41</td><td>Wife — Coventry</td></tr>
+        <tr><td>Elizabeth Houghton</td><td>31</td><td>— Prescot</td></tr>
+        <tr><td>Frank Houghton</td><td>18</td><td>Watch Balance Manufacturer — Coventry</td></tr>
+        <tr><td>Mabel Houghton</td><td>16</td><td>Student — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">71 &ndash; Moor Street, Grocer's Shop</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Harry Cantrill</td><td>26</td><td>Grocer's Assistant — Foleshill</td></tr>
+        <tr><td>Sarah A Cantrill</td><td>25</td><td>Wife — Foleshill</td></tr>
+        <tr><td>Ernest W Cantrill</td><td>4</td><td>— Foleshill</td></tr>
+        <tr><td>Rowland Hale</td><td>28</td><td>Boarder, Grocer's Assistant — Willenhall</td></tr>
+        <tr><td>Harold Wise</td><td>19</td><td>Boarder, Grocer's Apprentice — Eastern Green</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">72 &ndash; Moor Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Arthur Barr</td><td>41</td><td>Watch Finisher — Coventry</td></tr>
+        <tr><td>Hannah Barr</td><td>39</td><td>Wife — Coventry</td></tr>
+        <tr><td>Sarah A Barr</td><td>17</td><td>Watch Polisher — Coventry</td></tr>
+        <tr><td>Amy Barr</td><td>15</td><td>— Coventry</td></tr>
+        <tr><td>Annie Barr</td><td>10</td><td>— Coventry</td></tr>
+        <tr><td>Elizabeth Barr</td><td>8</td><td>— Coventry</td></tr>
+        <tr><td>Maggie Barr</td><td>6</td><td>— Coventry</td></tr>
+        <tr><td>Arthur Barr (son)</td><td>4</td><td>— Coventry</td></tr>
+        <tr><td>Nellie Barr</td><td>1</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">73 &ndash; Moor Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Alfred North</td><td>45</td><td>Watch Finisher — Coventry</td></tr>
+        <tr><td>Annie North</td><td>42</td><td>Wife — Coventry</td></tr>
+        <tr><td>Alfred North (son)</td><td>20</td><td>Machinist — Manchester</td></tr>
+        <tr><td>Gertrude North</td><td>18</td><td>Watch Polisher — Coventry</td></tr>
+        <tr><td>Herbert W North</td><td>17</td><td>Watch Finisher — Coventry</td></tr>
+        <tr><td>Florence North</td><td>15</td><td>Watch Polisher — Coventry</td></tr>
+        <tr><td>Rhoda North</td><td>14</td><td>Watch Polisher — Coventry</td></tr>
+        <tr><td>Alice North</td><td>9</td><td>— Coventry</td></tr>
+        <tr><td>Arthur North</td><td>6</td><td>— Coventry</td></tr>
+        <tr><td>Sarah A North</td><td>4</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    </div>
+    <div class="page-section">
+    <div class="page-header">Folio 138, Page 15</div>
+    <div class="household">
+      <div class="hh-address">74 &ndash; <a href="../arthurmorgan.html">Moor Street</a></div>
+      <div class="hh-note">Arthur Josiah Morgan — Watch Case Maker</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Arthur Josiah Morgan</td><td>45</td><td>Watch Case Maker — Southwark, London</td></tr>
+        <tr><td>Henrietta Morgan</td><td>44</td><td>Wife — Bermondsey</td></tr>
+        <tr><td>Arthur Morgan</td><td>22</td><td>Jeweller Diamond Maker — Hounslow</td></tr>
+        <tr><td>Henrietta Morgan (dau)</td><td>20</td><td>Clerk — USA Philadelphia</td></tr>
+        <tr><td>Clara G Morgan</td><td>18</td><td>Teacher of Music — USA, Maine</td></tr>
+        <tr><td>Mabel Morgan</td><td>15</td><td>Watch Hand Finisher — Aston</td></tr>
+        <tr><td>Alfred Morgan</td><td>14</td><td>Scholar — Aston</td></tr>
+        <tr><td>Edith E Morgan</td><td>11</td><td>Scholar — Aston</td></tr>
+        <tr><td>Walter H Bolton</td><td>8</td><td>Grandson — Enfield</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">75 &ndash; Moor Street, Butcher's Shop</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Thomas W Adams</td><td>20</td><td>Butcher — Daventry, Northants</td></tr>
+        <tr><td>Elizabeth Adams</td><td>23</td><td>Sister — Birmingham</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">76 &ndash; Moor Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Benjamin Cox</td><td>68</td><td>Watch Examiner — Coventry</td></tr>
+        <tr><td>Susannah Cox</td><td>71</td><td>Wife — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">77 &ndash; Moor Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>William Flinn</td><td>56</td><td>Watch Maker Finisher — Coventry</td></tr>
+        <tr><td>Ruth Flinn</td><td>57</td><td>Wife — Reading, Berks</td></tr>
+        <tr><td>Ester Flinn</td><td>34</td><td>Watch Maker Finisher — Coventry</td></tr>
+        <tr><td>Lizzie Bird</td><td>26</td><td>Niece, Living on Own Means — London</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">78 &ndash; Moor Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Albert W Flinn</td><td>32</td><td>Watch Maker Finisher — Coventry</td></tr>
+        <tr><td>Ann Flinn</td><td>30</td><td>Wife — Coventry</td></tr>
+        <tr><td>Edith A Flinn</td><td>5</td><td>Scholar — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">79 &ndash; Moor Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Augusta J Davis</td><td>32</td><td>Head, Living on Own Means — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">80 &ndash; Moor Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Frederick Buckingham</td><td>23</td><td>Cycle Turner — Wolverhampton</td></tr>
+        <tr><td>Sarah E Buckingham</td><td>23</td><td>Wife — Wolverhampton</td></tr>
+        <tr><td>George A Buckingham</td><td>3</td><td>— Wolverhampton</td></tr>
+        <tr><td>John Al. Buckingham</td><td>1</td><td>— Coventry</td></tr>
+        <tr><td>Sarah M Buckingham</td><td>59</td><td>Mother — Ashton Keynes, Wilts</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">81 &ndash; Moor Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>William Overs</td><td>59</td><td>Watch Motioner — Coventry</td></tr>
+        <tr><td>Mary A Overs</td><td>57</td><td>Wife — Coventry</td></tr>
+        <tr><td>Sarah J Overs</td><td>18</td><td>Dressmaker — Birmingham</td></tr>
+        <tr><td>Mary Magarry</td><td>20</td><td>Niece, Enameller Bicycle — Prescot</td></tr>
+      </tbody></table>
+    </div>
+    </div>
+    <div class="page-section">
+    <div class="page-header">Folio 138, Page 16</div>
+    <div class="household">
+      <div class="hh-address">82 &ndash; Moor Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Mary Dolman</td><td>56</td><td>Head, Living on Own Means (widow) — Alrewas, Staffs</td></tr>
+        <tr><td>Arthur Dolman</td><td>25</td><td>Son, Railway Signalman — Hilton, Staffs</td></tr>
+        <tr><td>Laura Dolman</td><td>25</td><td>Daughter-in-law — Newton Longville, Bucks</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">83 &ndash; Moor Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Arthur J Horsfall</td><td>38</td><td>Watch Case Maker — Coventry</td></tr>
+        <tr><td>Emma Horsfall</td><td>39</td><td>Wife — Coventry</td></tr>
+        <tr><td>Alice Horsfall</td><td>16</td><td>Watch Polisher — Coventry</td></tr>
+        <tr><td>Clara Horsfall</td><td>14</td><td>Watch Polisher — Coventry</td></tr>
+        <tr><td>Florence Horsfall</td><td>11</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Arthur J Horsfall (son)</td><td>9</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Thomas Horsfall</td><td>4</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Leonard Horsfall</td><td>6m</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">84 &ndash; Moor Street, Grocer's Shop</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Mary Ann Burton</td><td>43</td><td>Grocer (widow) — Nuneaton</td></tr>
+        <tr><td>William J Burton</td><td>20</td><td>Watch Finisher — Coventry</td></tr>
+        <tr><td>George Burton</td><td>17</td><td>Clerk — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">85 &ndash; Moor Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Thomas Oughton</td><td>65</td><td>Railway Goods Porter — Coventry</td></tr>
+        <tr><td>Eliza Oughton</td><td>71</td><td>Wife — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">86 &ndash; Moor Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Thomas Parsons</td><td>40</td><td>Laundryman — Leicester</td></tr>
+        <tr><td>Elizabeth Parsons</td><td>43</td><td>Wife — Coventry</td></tr>
+        <tr><td>Alice Parsons</td><td>12</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Frank Parsons</td><td>10</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Polly Parsons</td><td>8</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Fredk. Parsons</td><td>6</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Edith L Parsons</td><td>6</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Mary Cunningham</td><td>20</td><td>Servant — Birmingham</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">87 &ndash; Cromwell Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Anna Steane</td><td>56</td><td>Head, Living on Own Means — Coventry</td></tr>
+        <tr><td>Rebecca Steane</td><td>55</td><td>Sister — Coventry</td></tr>
+        <tr><td>Emma Hardy</td><td>26</td><td>Servant — Northampton</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">88 &ndash; Cromwell Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>William Blockley</td><td>34</td><td>Cabinet Maker — Coventry</td></tr>
+        <tr><td>Eliza Blockley</td><td>30</td><td>Wife — Coventry</td></tr>
+        <tr><td>Maria E Blockley</td><td>9</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    </div>
+    <div class="page-section">
+    <div class="page-header">Folio 139, Page 17</div>
+    <div class="household">
+      <div class="hh-address">88 (cont.) &ndash; Cromwell Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>William W Blockley</td><td>7</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Edith C Blockley</td><td>3</td><td>— Coventry</td></tr>
+        <tr><td>Sidney H Blockley</td><td>6w</td><td>— Coventry</td></tr>
+        <tr><td>Samuel Smith</td><td>83</td><td>Grandfather, Retired Publican — Bubbenhall</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">89 &ndash; Cromwell Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Nathaniel Goode</td><td>61</td><td>Watch Finisher — Coventry</td></tr>
+        <tr><td>Eliza Goode</td><td>62</td><td>Wife — Coventry</td></tr>
+        <tr><td>Ellen Goode</td><td>29</td><td>Watch Polisher — Coventry</td></tr>
+        <tr><td>Alice Goode</td><td>23</td><td>— Coventry</td></tr>
+        <tr><td>Edwin Goode</td><td>22</td><td>Watch Finisher — Coventry</td></tr>
+        <tr><td>Harry Goode</td><td>20</td><td>Watch Engraver — Coventry</td></tr>
+        <tr><td>Minnie Goode</td><td>16</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">90 &ndash; Cromwell Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Benjamin A Hall</td><td>57</td><td>Watch Case Engraver — London</td></tr>
+        <tr><td>Sarah Hall</td><td>56</td><td>Wife — Coventry</td></tr>
+        <tr><td>Elizabeth Hall</td><td>27</td><td>Governess — London</td></tr>
+        <tr><td>George B Hall</td><td>19</td><td>Nephew, Watch Case Engraver — London</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">91 &ndash; Cromwell Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Robert H Worrall</td><td>55</td><td>Watch Finisher — Coventry</td></tr>
+        <tr><td>Annie Worrall</td><td>36</td><td>Wife — Coventry</td></tr>
+        <tr><td>Emily Worrall</td><td>12</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Harry W Adams</td><td>17</td><td>Boarder, Carpenter and Joiner — Daventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">92 &ndash; Cromwell Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>James Nasmyth</td><td>42</td><td>Draper's Assistant — Scotland</td></tr>
+        <tr><td>Elsie Nasmyth</td><td>44</td><td>Wife — Scotland</td></tr>
+        <tr><td>James Nasmyth (son)</td><td>12</td><td>Scholar — Leamington</td></tr>
+        <tr><td>Elsie S Nasmyth</td><td>10</td><td>Scholar — Leicester</td></tr>
+        <tr><td>Joseph R Nasmyth</td><td>9</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Alexander G Nasmyth</td><td>6</td><td>Scholar — Coventry</td></tr>
+        <tr><td>William Nasmyth</td><td>2</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">93 &ndash; Cromwell Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>John Dolman</td><td>33</td><td>Railway Clerk — Anslow, Staffs</td></tr>
+        <tr><td>Alice Dolman</td><td>34</td><td>Wife — Coventry</td></tr>
+        <tr><td>Edith Dolman</td><td>11</td><td>Scholar — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    </div>
+    <div class="page-section">
+    <div class="page-header">Folio 139, Page 18</div>
+    <div class="household">
+      <div class="hh-address">93 (cont.) &ndash; Cromwell Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>William O Dolman</td><td>11</td><td>Scholar — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">94 &ndash; Cromwell Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Stephen Houghton</td><td>36</td><td>Watch Motioner — Prescot, Lancs</td></tr>
+        <tr><td>Alice L Houghton</td><td>36</td><td>Wife — Coventry</td></tr>
+        <tr><td>Herbert W Houghton</td><td>7</td><td>Scholar — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">95 &ndash; Cromwell Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Thomas Booth</td><td>39</td><td>Watch Finisher — Coventry</td></tr>
+        <tr><td>Elizabeth Booth</td><td>37</td><td>Wife — Burton, Northants</td></tr>
+        <tr><td>Alice Booth</td><td>11</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Harry Booth</td><td>9</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Thomas Booth (son)</td><td>6</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Elizabeth E Booth</td><td>1</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">96 &ndash; Cromwell Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Henry Jacobs</td><td>72</td><td>Gun Maker — Walsall, Staffs</td></tr>
+        <tr><td>Emma Jacobs</td><td>71</td><td>Wife — Coleshill</td></tr>
+        <tr><td>Arthur Jacobs</td><td>32</td><td>Machinist, Cycle — Birmingham</td></tr>
+        <tr><td>Samuel Hockley</td><td>25</td><td>Lodger, Machinist, Cycle — Birmingham</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">97 &ndash; Cromwell Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>James S Simonds</td><td>30</td><td>Railway Clerk — Brackley, Northants</td></tr>
+        <tr><td>Emily L Simonds</td><td>33</td><td>Wife — Coventry</td></tr>
+        <tr><td>Percy Simonds</td><td>4</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">98 &ndash; Cromwell Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Thomas Salmons</td><td>30</td><td>Groom — Scopwick, Lincs</td></tr>
+        <tr><td>Annie Salmons</td><td>28</td><td>Wife — Calthorpe, Leics</td></tr>
+        <tr><td>Sarah E Salmons</td><td>4</td><td>— Coombe Fields</td></tr>
+        <tr><td>Ethel Salmons</td><td>3</td><td>— Coventry</td></tr>
+        <tr><td>John Samuel King</td><td>24</td><td>Boarder, Carman — Whaddon, Bucks</td></tr>
+        <tr><td>Thomas Varden</td><td>23</td><td>Boarder, Bricklayer — Dunchurch</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">99 &ndash; Cromwell Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Joseph Wadley</td><td>27</td><td>Watch Engraver — London</td></tr>
+        <tr><td>Emily Wadley</td><td>24</td><td>Wife — London</td></tr>
+        <tr><td>Grace Wadley</td><td>3</td><td>— London</td></tr>
+        <tr><td>Harold Wadley</td><td>2</td><td>— London</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">100 &ndash; Cromwell Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Henry Dean</td><td>36</td><td>Machinist — Warwick</td></tr>
+        <tr><td>Elizabeth L Dean</td><td>33</td><td>Wife — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    </div>
+    <div class="page-section">
+    <div class="page-header">Folio 140, Page 19</div>
+    <div class="household">
+      <div class="hh-address">101 &ndash; Cromwell Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Robert W Lord</td><td>45</td><td>Foreman Watch Maker — Guernsey</td></tr>
+        <tr><td>Charlotte Lord</td><td>44</td><td>Wife — Coventry</td></tr>
+        <tr><td>Sarah A Lord</td><td>24</td><td>School Mistress — Coventry</td></tr>
+        <tr><td>Arthur W Lord</td><td>20</td><td>Watch Maker Finisher — Coventry</td></tr>
+        <tr><td>Charlotte J Lord</td><td>19</td><td>Hospital Nurse — Coventry</td></tr>
+        <tr><td>Amy Lord</td><td>21</td><td>Watch Maker Finisher — Coventry</td></tr>
+        <tr><td>Edith J Lord</td><td>14</td><td>Watch Maker Finisher — Coventry</td></tr>
+        <tr><td>Herbert Lord</td><td>13</td><td>Clerk — Coventry</td></tr>
+        <tr><td>Bertha A Lord</td><td>11</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Reginald Lord</td><td>8</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Elsie Lord</td><td>6</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Gertrude Lord</td><td>4</td><td>Scholar — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">102 &ndash; Cromwell Street</div>
+      <div class="hh-note">Arthur G Pearson — Watch Manufacturer</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Arthur G Pearson</td><td>42</td><td>Watch Manufacturer — Coventry</td></tr>
+        <tr><td>Cordelia H Pearson</td><td>42</td><td>Wife — Docking, Norfolk</td></tr>
+        <tr><td>Lilian G Pearson</td><td>18</td><td>Draper's Apprentice — Coventry</td></tr>
+        <tr><td>Vincent A Pearson</td><td>16</td><td>Machinist — Coventry</td></tr>
+        <tr><td>Percy E Pearson</td><td>14</td><td>Watch Maker's Apprentice — Coventry</td></tr>
+        <tr><td>Ethel M Pearson</td><td>12</td><td>— Coventry</td></tr>
+        <tr><td>Harold E Pearson</td><td>4</td><td>— Coventry</td></tr>
+        <tr><td>Elizabeth Ellson</td><td>74</td><td>Mother-in-law, Living on Own Means — Alcester</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">103 &ndash; Cromwell Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Alfred Molesworth</td><td>30</td><td>Watch Finisher and Jeweller — Coventry</td></tr>
+        <tr><td>Florence Molesworth</td><td>24</td><td>Watch Finisher and Jeweller — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">104 &ndash; Cromwell Street, Post Office</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Thomas Fletcher</td><td>64</td><td>Postmaster (widower) — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">105 &ndash; Providence Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Eleanor E Baker</td><td>72</td><td>Independent Beer Retailer — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">106 &ndash; Providence Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Alfred Williams</td><td>34</td><td>Machinist — Shrewsbury</td></tr>
+        <tr><td>Mary Williams</td><td>34</td><td>Wife — Lichfield, Staffs</td></tr>
+        <tr><td>Edith Williams</td><td>11</td><td>Scholar — Derby</td></tr>
+        <tr><td>Frank Williams</td><td>10</td><td>Scholar — Derby</td></tr>
+        <tr><td>Harry Williams</td><td>6</td><td>Scholar — Derby</td></tr>
+      </tbody></table>
+    </div>
+    </div>
+    <div class="page-section">
+    <div class="page-header">Folio 140, Page 20</div>
+    <div class="household">
+      <div class="hh-address">106 (cont.) &ndash; Providence Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Alfred E Williams</td><td>3</td><td>Scholar — Newcastle, Staffs</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">107 &ndash; Providence Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Thomas Worsley</td><td>48</td><td>Watch Balance Maker — Lancashire</td></tr>
+        <tr><td>Ann Worsley</td><td>47</td><td>Wife — Baginton</td></tr>
+        <tr><td>Mary Worsley</td><td>19</td><td>Bicycle Painter — Coventry</td></tr>
+        <tr><td>Annie Worsley</td><td>16</td><td>— Coventry</td></tr>
+        <tr><td>Thomas Worsley (son)</td><td>15</td><td>Gold Watch Case Maker — Coventry</td></tr>
+        <tr><td>Samuel Worsley</td><td>13</td><td>Machinist — Coventry</td></tr>
+        <tr><td>Sarah Worsley</td><td>11</td><td>Scholar — Coventry</td></tr>
+        <tr><td>John Worsley</td><td>9</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Harry Worsley</td><td>4</td><td>Scholar — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">108 &ndash; Providence Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Charles Gunn</td><td>41</td><td>Watch Finisher — Stivichall</td></tr>
+        <tr><td>Selina Gunn</td><td>42</td><td>Wife — Coventry</td></tr>
+        <tr><td>Selina M Gunn</td><td>14</td><td>Dressmaker's Apprentice — Coventry</td></tr>
+        <tr><td>Daisy Gunn</td><td>12</td><td>Scholar — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">109 &ndash; Providence Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Walter J Harper</td><td>25</td><td>Carpenter — Coventry</td></tr>
+        <tr><td>Alice Harper</td><td>24</td><td>Wife — Coventry</td></tr>
+        <tr><td>Ethel M Harper</td><td>1</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">110 &ndash; Providence Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Maria Ford</td><td>55</td><td>Independent (widow) — Long Itchington</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">111 &ndash; Providence Street (White Oak Cottages)</div>
+      <table class="hh-table"><tbody>
+        <tr><td>George Buckingham</td><td>60</td><td>Band Master — Crawley, Oxon</td></tr>
+        <tr><td>May M Buckingham</td><td>49</td><td>Wife — Kensington</td></tr>
+        <tr><td>George M Buckingham</td><td>23</td><td>Watch Case Maker — Portsmouth</td></tr>
+        <tr><td>Louisa M Buckingham</td><td>18</td><td>Pupil Teacher — Coventry</td></tr>
+        <tr><td>Beatrice Buckingham</td><td>10</td><td>— Coventry</td></tr>
+        <tr><td>Hilda Buckingham</td><td>2</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">112 &ndash; Providence Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>William C Hepworth</td><td>25</td><td>Railway Clerk — Coventry</td></tr>
+        <tr><td>Annie Hepworth</td><td>22</td><td>Wife — Coventry</td></tr>
+        <tr><td>Percy W Hepworth</td><td>4m</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">113 &ndash; Providence Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>William H North</td><td>22</td><td>Watch Finisher — Coventry</td></tr>
+        <tr><td>Louisa North</td><td>22</td><td>Wife — Coventry</td></tr>
+        <tr><td>William H North (son)</td><td>2m</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    </div>
+    <div class="page-section">
+    <div class="page-header">Folio 141, Page 21</div>
+    <div class="household">
+      <div class="hh-address">114 &ndash; Providence Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Thomas W E Brooks</td><td>43</td><td>Machinist (widower) — Coventry</td></tr>
+        <tr><td>Elizabeth Brooks</td><td>79</td><td>Mother (widow) — Coventry</td></tr>
+        <tr><td>Harry A E Brooks</td><td>18</td><td>Fitter, Cycles — Coventry</td></tr>
+        <tr><td>Alex W L Brooks</td><td>16</td><td>Polisher, Cycles — Coventry</td></tr>
+        <tr><td>Thomas E J Brooks</td><td>13</td><td>Machinist, Cycles — Coventry</td></tr>
+        <tr><td>Percy E A Brooks</td><td>11</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Sidney E A Brooks</td><td>7</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Oscar L L Brooks</td><td>4</td><td>Scholar — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">115 &ndash; Providence Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Thomas Benson</td><td>26</td><td>Machinist, Cycles — Tamworth</td></tr>
+        <tr><td>Emma Benson</td><td>25</td><td>Wife — Birmingham</td></tr>
+        <tr><td>Nellie Benson</td><td>5</td><td>Scholar — Birmingham</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">116 &ndash; Providence Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>William Rylance</td><td>58</td><td>Watch Movement Polisher (widower) — Appleton, Lancs</td></tr>
+        <tr><td>Herbert J Rylance</td><td>22</td><td>Watch Movement Polisher — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">117 &ndash; Providence Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Samuel Wilson</td><td>32</td><td>Railway Engine Driver — Corley</td></tr>
+        <tr><td>Fanny Wilson</td><td>28</td><td>Wife — Stoneleigh</td></tr>
+        <tr><td>Thomas Bond</td><td>30</td><td>Brother-in-law, Gardener — Stoneleigh</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">118 &ndash; Providence Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>William Fleckner</td><td>31</td><td>Watch Silver Case Maker — Stoneleigh</td></tr>
+        <tr><td>Clara Fleckner</td><td>31</td><td>Wife — Emscote</td></tr>
+        <tr><td>Herbert Fleckner</td><td>10</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Harry Fleckner</td><td>10</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Fred Fleckner</td><td>4</td><td>Scholar — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">119 &ndash; Providence Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>John Johnson</td><td>39</td><td>Escapement Maker — Coventry</td></tr>
+        <tr><td>Ann Johnson</td><td>41</td><td>Wife — Kenilworth</td></tr>
+        <tr><td>Ann Smith</td><td>89</td><td>Mother-in-law — Kenilworth</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">120 &ndash; Providence Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Alfred Rowley</td><td>31</td><td>Watch Balance Maker — Coventry</td></tr>
+        <tr><td>Charlotte E Rowley</td><td>25</td><td>Wife — Waldron, Sussex</td></tr>
+        <tr><td>Percy Rowley</td><td>1</td><td>— Coventry</td></tr>
+        <tr><td>Sarah Ann Thomas</td><td>27</td><td>Visitor, Dressmaker — Waldron</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">121 &ndash; Providence Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Charles Wilday</td><td>29</td><td>Dial Enamel Painter — Coventry</td></tr>
+        <tr><td>Fanny Wilday</td><td>27</td><td>Wife — Coventry</td></tr>
+        <tr><td>Charles Wilday (son)</td><td>7</td><td>Scholar — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    </div>
+    <div class="page-section">
+    <div class="page-header">Folio 141, Page 22</div>
+    <div class="household">
+      <div class="hh-address">121 (cont.) &ndash; Providence Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Sidney Wilday</td><td>5</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Emily Wilday</td><td>1</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">122 &ndash; Providence Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>William Gardner</td><td>54</td><td>Watch Case Eng Turner — Coventry</td></tr>
+        <tr><td>Mary A Gardner</td><td>51</td><td>Wife — Coventry</td></tr>
+        <tr><td>Edward Stringer</td><td>24</td><td>Son-in-law, Cycle Machinist — Coventry</td></tr>
+        <tr><td>Lizzie Stringer</td><td>27</td><td>Daughter — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">123 &ndash; Providence Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Joseph Hepwell</td><td>49</td><td>Railway Porter — Lutterworth, Leics</td></tr>
+        <tr><td>Fanny R Hepwell</td><td>48</td><td>Wife — Astley</td></tr>
+        <tr><td>May A E Hepwell</td><td>20</td><td>Watch Trade Finisher — Coventry</td></tr>
+        <tr><td>Fanny R Hepwell (dau)</td><td>15</td><td>Mother's Help — Coventry</td></tr>
+        <tr><td>Arthur J Hepwell</td><td>6</td><td>— Coventry</td></tr>
+        <tr><td>William Randle</td><td>17</td><td>Boarder, Grocer and Gardener — Balsall</td></tr>
+        <tr><td>Horace A Pass</td><td>33</td><td>Boarder, Commission Agent — Rugeley</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">124 &ndash; Earlsdon Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Edward J Haswell</td><td>45</td><td>Watch Finisher — Coventry</td></tr>
+        <tr><td>Ann E Haswell</td><td>44</td><td>Wife — Coventry</td></tr>
+        <tr><td>Edward H Haswell</td><td>18</td><td>Butcher — Coventry</td></tr>
+        <tr><td>Charles J Haswell</td><td>16</td><td>Grocer's Assistant — Coventry</td></tr>
+        <tr><td>George J Haswell</td><td>15</td><td>Watch Trade Polisher — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">125 &ndash; <a href="../josephwhite.html">Earlsdon Street, Earlsdon House (now known as Stoneleigh House)</a></div>
+      <div class="hh-note">Joseph White — Watch Manufacturer and owner of Cycle Co.</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Joseph White</td><td>55</td><td>Watch Manufacturer and owner of Cycle Co. — Foleshill</td></tr>
+        <tr><td>Catherine White</td><td>54</td><td>Wife — Coventry</td></tr>
+        <tr><td>Ann C White</td><td>30</td><td>— Coventry</td></tr>
+        <tr><td>Howard J White</td><td>27</td><td>Watch Manufacturer — Coventry</td></tr>
+        <tr><td>Catherine E White</td><td>24</td><td>Clerk — Coventry</td></tr>
+        <tr><td>Florence White</td><td>22</td><td>— Coventry</td></tr>
+        <tr><td>Cyril W White</td><td>19</td><td>Watch Finisher — Coventry</td></tr>
+        <tr><td>Winifred A White</td><td>18</td><td>— Coventry</td></tr>
+        <tr><td>Harold E White</td><td>16</td><td>— Coventry</td></tr>
+        <tr><td>Ethel M White</td><td>15</td><td>— Coventry</td></tr>
+        <tr><td>Conrad R White</td><td>13</td><td>— Coventry</td></tr>
+        <tr><td>Anne Twigger</td><td>24</td><td>Servant — Bedworth</td></tr>
+        <tr><td>Eleanor Harvey</td><td>16</td><td>Servant — Monks Kirby</td></tr>
+        <tr><td>Zillah Whatstone</td><td>20</td><td>Servant — Bedworth</td></tr>
+      </tbody></table>
+    </div>
+    </div>
+    <div class="page-section">
+    <div class="page-header">Folio 142, Page 23</div>
+    <div class="household">
+      <div class="hh-address">126 &ndash; Earlsdon Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Eliza Bant</td><td>70</td><td>Retired Laundress (widow) — Weston, Northants</td></tr>
+        <tr><td>Thomas Innocent</td><td>78</td><td>Boarder, Retired Watch Case Maker (widower) — Tamworth</td></tr>
+        <tr><td>John Rugman</td><td>51</td><td>Boarder, Watch Engraver — London</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">127 &ndash; Earlsdon Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Robert N Newbold</td><td>42</td><td>Watch Finisher — Baginton</td></tr>
+        <tr><td>Elizabeth Walker</td><td>24</td><td>Housekeeper — Moreton Morrell</td></tr>
+        <tr><td>Mary J Outen</td><td>18</td><td>Servant — Stoneleigh</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">128 &ndash; Earlsdon Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Mathew H Shaw</td><td>79</td><td>Retired Watch Engraver — Coventry</td></tr>
+        <tr><td>Elizabeth Shaw</td><td>64</td><td>Wife — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">129 &ndash; Earlsdon Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Ann Wright</td><td>59</td><td>Head (widow) — Corley</td></tr>
+        <tr><td>Ann M Wright</td><td>21</td><td>— Corley</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">130 &ndash; Earlsdon Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>George Pulford</td><td>59</td><td>Painter — North Kilworth, Leics</td></tr>
+        <tr><td>Mary Pulford</td><td>50</td><td>Wife — Leamington</td></tr>
+        <tr><td>Maggie Kenning</td><td>18</td><td>Daughter, Dressmaker — Coventry</td></tr>
+        <tr><td>George Pulford (son)</td><td>21</td><td>Bricklayer — Longford</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">131 &ndash; Earlsdon Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Henry Clay</td><td>48</td><td>Watch Finisher — Coventry</td></tr>
+        <tr><td>Anna Clay</td><td>49</td><td>Wife — Coventry</td></tr>
+        <tr><td>William H Clay</td><td>21</td><td>Watch Finisher — Coventry</td></tr>
+        <tr><td>Arthur Clay</td><td>15</td><td>Clerk — Coventry</td></tr>
+        <tr><td>Harry Clay</td><td>12</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Alice Williams</td><td>15</td><td>Servant — Shipston on Stour</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">131a &ndash; Earlsdon Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Henry Turner</td><td>48</td><td>Watch Finisher — Coventry</td></tr>
+        <tr><td>Mary A M Turner</td><td>45</td><td>Wife — Guernsey</td></tr>
+        <tr><td>Caroline E Turner</td><td>25</td><td>Watch Trade Finisher — Coventry</td></tr>
+        <tr><td>Florence A Turner</td><td>20</td><td>Watch Trade Finisher — Coventry</td></tr>
+        <tr><td>Sidney W Turner</td><td>18</td><td>Cycle Trade Finisher — Coventry</td></tr>
+        <tr><td>Mary A Turner</td><td>15</td><td>Watch Trade Finisher — Coventry</td></tr>
+        <tr><td>Ernest A Turner</td><td>13</td><td>— Coventry</td></tr>
+        <tr><td>Walter A Turner</td><td>11</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Francis H Turner</td><td>6</td><td>Scholar — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    </div>
+    <div class="page-section">
+    <div class="page-header">Folio 142, Page 24</div>
+    <div class="household">
+      <div class="hh-address">131a (cont.) &ndash; Earlsdon Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Leonard Turner</td><td>4</td><td>Scholar — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">132 &ndash; Earlsdon Street (The Royal Oak)</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Richard Welton</td><td>53</td><td>Butcher and Publican (widower) — Coventry</td></tr>
+        <tr><td>Sarah Ann Powell</td><td>28</td><td>Niece — Leamington</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">134 &ndash; Earlsdon Street</div>
+      <div class="hh-note">Arthur J Walker — Watch Case Maker (son of James Walker, shared business with brother Edwin)</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Arthur J Walker</td><td>39</td><td>Watch Case Maker — Coventry</td></tr>
+        <tr><td>Annie Walker</td><td>39</td><td>Wife — Coventry</td></tr>
+        <tr><td>Newnham J Walker</td><td>15</td><td>Pupil Teacher — Coventry</td></tr>
+        <tr><td>Edith J Walker</td><td>10</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Arthur A Walker</td><td>8</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Alma C Walker</td><td>5</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Elizabeth Bell</td><td>72</td><td>Mother-in-law (widow) — Scotland</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">135 &ndash; Earlsdon Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Charles Luck</td><td>33</td><td>Bricklayer — Woburn, Beds</td></tr>
+        <tr><td>Ellen Luck</td><td>33</td><td>Wife — Wellingboro, Northants</td></tr>
+        <tr><td>Charles W Luck</td><td>6</td><td>Scholar — Rugby</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">136 &ndash; Earlsdon Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>William H Jones</td><td>46</td><td>Watch Finisher — Coventry</td></tr>
+        <tr><td>Mary A Jones</td><td>41</td><td>Wife — Coventry</td></tr>
+        <tr><td>Percy J Jones</td><td>16</td><td>Gold Case Maker — Coventry</td></tr>
+        <tr><td>Edith M Jones</td><td>14</td><td>— Coventry</td></tr>
+        <tr><td>Arthur H Jones</td><td>5</td><td>Scholar — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">137 &ndash; Earlsdon Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>George Dale</td><td>40</td><td>Foreman Shunter, Railway — Wolverhampton</td></tr>
+        <tr><td>Alice Dale</td><td>40</td><td>Wife — Wolverhampton</td></tr>
+        <tr><td>Charles Smith</td><td>18</td><td>Boarder, Clerk — Birmingham</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">138 &ndash; Earlsdon Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>William G Burchell</td><td>48</td><td>Labourer — Wolvey</td></tr>
+        <tr><td>Mazallah Burchell</td><td>53</td><td>Wife — Shenington, Oxon</td></tr>
+        <tr><td>William Burchell (son)</td><td>19</td><td>Machinist — Stoneleigh</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">139 &ndash; Earlsdon Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Thomas H Hammersley</td><td>34</td><td>Watch Examiner — Coventry</td></tr>
+        <tr><td>Jane Hammersley</td><td>34</td><td>Wife — Walderton, Sussex</td></tr>
+        <tr><td>George Birch</td><td>67</td><td>Father-in-law, Gardener — Binsted, Sussex</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">140 &ndash; <a href="../rex.html">Earlsdon Street</a></div>
+      <div class="hh-note">George Pilkington — son of William Pilkington, business partner to Frank Allard</div>
+      <table class="hh-table"><tbody>
+        <tr><td>George Pilkington</td><td>30</td><td>Cycle Maker — Birmingham</td></tr>
+        <tr><td>Eveline Smith</td><td>13</td><td>Sister-in-law — Birmingham</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">141 &ndash; Earlsdon Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>William Elliss</td><td>33</td><td>Manager, Cycle Factory — Scotland</td></tr>
+        <tr><td>Elizabeth Elliss</td><td>33</td><td>Wife — Birmingham</td></tr>
+        <tr><td>Catherine E Elliss</td><td>4</td><td>— Birmingham</td></tr>
+        <tr><td>Arthur Mall</td><td>13</td><td>Nephew, Machinist, Cycles — Birmingham</td></tr>
+        <tr><td>Catherine T Ellis</td><td>67</td><td>Mother — Scotland</td></tr>
+      </tbody></table>
+    </div>
+    </div>
+    <div class="page-section">
+    <div class="page-header">Folio 143, Page 25</div>
+    <div class="household">
+      <div class="hh-address">142 &ndash; Earlsdon Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Mary Carter</td><td>79</td><td>Head (widow) — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">143 &ndash; <a href="../richardsons.html">Clarendon Street, Clarendon House</a></div>
+      <div class="hh-note">Oliver E Richardson — Watch Manufacturer</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Oliver E Richardson</td><td>32</td><td>Watch Manufacturer — Coventry</td></tr>
+        <tr><td>Elizabeth Richardson</td><td>42</td><td>— Coventry</td></tr>
+        <tr><td>Ellen Richardson</td><td>35</td><td>— Coventry</td></tr>
+        <tr><td>Ann E Shirley</td><td>17</td><td>Servant — Lower Wooton, Oxon</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">144 &ndash; Clarendon Street, Westwood House</div>
+      <div class="hh-note">George Steane — Architect</div>
+      <table class="hh-table"><tbody>
+        <tr><td>George Steane</td><td>49</td><td>Architect — Coventry</td></tr>
+        <tr><td>Sarah E Steane</td><td>50</td><td>Wife — Coventry</td></tr>
+        <tr><td>Ellen N Steane</td><td>16</td><td>Scholar — Coventry</td></tr>
+        <tr><td>George A Steane</td><td>14</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Fredk. L Steane</td><td>12</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Edward U Steane</td><td>10</td><td>Scholar — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">145 &ndash; Clarendon Street, Beach Cottage</div>
+      <table class="hh-table"><tbody>
+        <tr><td>George Lawford</td><td>26</td><td>Storekeeper — London</td></tr>
+        <tr><td>Louisa Lawford</td><td>64</td><td>Mother — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">146 &ndash; Clarendon Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>George Cook</td><td>86</td><td>Retired Rush Weaver — Shipston on Stour</td></tr>
+        <tr><td>Eliza Cook</td><td>69</td><td>Laundress — Stoneleigh</td></tr>
+        <tr><td>Charles Mitchell</td><td>48</td><td>Lodger, Bread Baker — Witnash</td></tr>
+        <tr><td>Alex Garlick</td><td>16</td><td>Lodger, Tinplate Worker — Kenilworth</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">147 &ndash; Clarendon Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Herbert Waddington</td><td>25</td><td>Watch Finisher — Padiham, Lancs</td></tr>
+        <tr><td>Eliza Waddington</td><td>27</td><td>Wife — Coventry</td></tr>
+        <tr><td>Arthur Waddington</td><td>1</td><td>— Coventry</td></tr>
+        <tr><td>Beatrice C Waddington</td><td>3m</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">148 &ndash; Clarendon Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>John Holmes</td><td>74</td><td>Watch Maker — Knutsford, Cheshire</td></tr>
+        <tr><td>Mary A Holmes</td><td>73</td><td>Wife — Westminster, London</td></tr>
+        <tr><td>Mary E Holmes</td><td>32</td><td>Niece, General Servant — Coventry</td></tr>
+        <tr><td>Evelyn Thompson</td><td>8</td><td>Niece — Coventry</td></tr>
+        <tr><td>Mary Thompson</td><td>5</td><td>Niece — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    </div>
+    <div class="page-section">
+    <div class="page-header">Folio 143, Page 26</div>
+    <div class="household">
+      <div class="hh-address">149 &ndash; Clarendon Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Alfred Bell</td><td>29</td><td>Cycle Fitter — Birmingham</td></tr>
+        <tr><td>Sarah A Bell</td><td>27</td><td>Wife — Oxford</td></tr>
+        <tr><td>Edith M Bell</td><td>7</td><td>— Birmingham</td></tr>
+        <tr><td>Alfred T Bell</td><td>5</td><td>— Coventry</td></tr>
+        <tr><td>Horace J Bell</td><td>3</td><td>— Coventry</td></tr>
+        <tr><td>Thomas Judd</td><td>63</td><td>Grandfather, Locksmith — Oxford</td></tr>
+        <tr><td>John Bell</td><td>27</td><td>Brother, Fitter — Birmingham</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">150 &ndash; Clarendon Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>John Dickenson</td><td>34</td><td>Watch Finisher — Coventry</td></tr>
+        <tr><td>Annie Dickenson</td><td>30</td><td>Wife — Congleton, Cheshire</td></tr>
+        <tr><td>Annie Dickenson (dau)</td><td>10</td><td>Scholar — Coventry</td></tr>
+        <tr><td>George Dickenson</td><td>9</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Walter Dickenson</td><td>7</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Winifred Dickenson</td><td>5</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Ellen Dickenson</td><td>3</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Florence Dickenson</td><td>1</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">151 &ndash; Clarendon Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>John Goodman</td><td>41</td><td>Railway Labourer — Staverton, Northants</td></tr>
+        <tr><td>Eliza A Goodman</td><td>39</td><td>Wife — Staverton</td></tr>
+        <tr><td>Eliza R Goodman</td><td>11</td><td>— Olton</td></tr>
+        <tr><td>Emily S Goodman</td><td>9</td><td>— Westwood</td></tr>
+        <tr><td>Alice H Goodman</td><td>7</td><td>— Westwood</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">152 &ndash; Clarendon Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Harry Watts</td><td>42</td><td>Gardener, Nursery — Coventry</td></tr>
+        <tr><td>Sarah Watts</td><td>40</td><td>Wife — Fillongley</td></tr>
+        <tr><td>Thomas J Watts</td><td>14</td><td>Cycle Machinist — Coventry</td></tr>
+        <tr><td>Martha Watts</td><td>80</td><td>Mother — Foleshill</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">153 &ndash; Clarendon Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>John Wilkinson</td><td>45</td><td>Watch Case Springer — Berkswell</td></tr>
+        <tr><td>Jane Wilkinson</td><td>46</td><td>Wife — Coventry</td></tr>
+        <tr><td>Herbert Wells</td><td>27</td><td>Son-in-law, Watch Case Maker — Coventry</td></tr>
+        <tr><td>Jane E Wells</td><td>24</td><td>Daughter — Coventry</td></tr>
+        <tr><td>John E Wilkinson</td><td>14</td><td>Apprentice Watch Finisher — Coventry</td></tr>
+        <tr><td>Lillie A Wilkinson</td><td>12</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Herbert Wells (grandson)</td><td>1</td><td>— London</td></tr>
+      </tbody></table>
+    </div>
+    </div>
+    <div class="page-section">
+    <div class="page-header">Folio 144, Page 27</div>
+    <div class="household">
+      <div class="hh-address">154 &ndash; Arden Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Thomas Mann</td><td>41</td><td>Grocer — Aylesbury, Bucks</td></tr>
+        <tr><td>Elizabeth Mann</td><td>40</td><td>Laundress — Coventry</td></tr>
+        <tr><td>Grace E Mann</td><td>9</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Charles Bates</td><td>82</td><td>Father-in-law, Watch Maker Springer — Coventry</td></tr>
+        <tr><td>Charles Bates jnr.</td><td>34</td><td>Brother-in-law, Watch Maker Springer — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">155 &ndash; Arden Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Elizabeth Jones</td><td>37</td><td>Laundress (widow) — Stoneleigh</td></tr>
+        <tr><td>Charles Jones</td><td>18</td><td>Fish and Egg Dealer — Bengal, India</td></tr>
+        <tr><td>Emily Lynes</td><td>17</td><td>Watch Maker Finisher — Coventry</td></tr>
+        <tr><td>Jane M Jones</td><td>16</td><td>Watch Maker Finisher — Coventry</td></tr>
+        <tr><td>Annie Jones</td><td>14</td><td>Unemployed — Coventry</td></tr>
+        <tr><td>Lizzie Jones</td><td>12</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Frank Jones</td><td>10</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Minnie Jones</td><td>8</td><td>Scholar — Coventry</td></tr>
+        <tr><td>John Archer</td><td>26</td><td>Boarder, Labourer — Chipping Warden, Northants</td></tr>
+        <tr><td>James Walker</td><td>23</td><td>Boarder, Labourer — Chipping Warden</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">156 &ndash; Arden Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Ezra Weston</td><td>34</td><td>Railway Engine Driver — Nuneaton</td></tr>
+        <tr><td>Roda Weston</td><td>33</td><td>Wife — Nuneaton</td></tr>
+        <tr><td>George H Weston</td><td>11</td><td>Scholar — Leicester</td></tr>
+        <tr><td>Lily A Weston</td><td>7</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Alfred Weston</td><td>3</td><td>— Leicester</td></tr>
+        <tr><td>Walter Weston</td><td>8m</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">157 &ndash; Arden Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Annie Bilow</td><td>43</td><td>Laundress (widow) — Manchester</td></tr>
+        <tr><td>Annie Bilow (dau)</td><td>21</td><td>Dressmaker — Coventry</td></tr>
+        <tr><td>Adelaide Bilow</td><td>19</td><td>Jewel Hole Maker — Coventry</td></tr>
+        <tr><td>Eugene Bilow</td><td>17</td><td>Watch Maker Finisher — Coventry</td></tr>
+        <tr><td>Wilfred Bilow</td><td>14</td><td>Watch Maker Finisher — Coventry</td></tr>
+        <tr><td>Peter Bilow</td><td>9</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Amelia Bilow</td><td>7</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Charles Bilow</td><td>3</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    </div>
+    <div class="page-section">
+    <div class="page-header">Folio 144, Page 28</div>
+    <div class="household">
+      <div class="hh-address">158 &ndash; Arden Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Samuel Spicer</td><td>54</td><td>Watch Case Maker — Coventry</td></tr>
+        <tr><td>Hannah Spicer</td><td>53</td><td>Wife — Coventry</td></tr>
+        <tr><td>Harry Spicer</td><td>21</td><td>Iron Moulder — Coventry</td></tr>
+        <tr><td>Ernest Spicer</td><td>20</td><td>Watch Case Maker — Coventry</td></tr>
+        <tr><td>Edith Spicer</td><td>10</td><td>Scholar — Coventry</td></tr>
+        <tr><td>William Wood</td><td>68</td><td>Boarder, Watch Maker Finisher — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">159 &ndash; Arden Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Charles H Whale</td><td>46</td><td>Watch Finisher — Kettering, Northants</td></tr>
+        <tr><td>Emma Whale</td><td>46</td><td>Wife — Coventry</td></tr>
+        <tr><td>Ellen Whale</td><td>21</td><td>Watch Hander — Coventry</td></tr>
+        <tr><td>William H Whale</td><td>20</td><td>Watch Finisher — Coventry</td></tr>
+        <tr><td>George H Whale</td><td>18</td><td>Iron Worker — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">160 &ndash; Arden Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>William H B Gardner</td><td>54</td><td>Watch Finisher — Coventry</td></tr>
+        <tr><td>Mary Ann Gardner</td><td>56</td><td>Wife — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">161 &ndash; Arden Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>William Abbott</td><td>56</td><td>Watch Escapement Maker — Widnes, Lancs</td></tr>
+        <tr><td>Eliza Abbott</td><td>63</td><td>Wife — Liverpool</td></tr>
+        <tr><td>Eliza Ann Abbott</td><td>30</td><td>— Coventry</td></tr>
+        <tr><td>Fanny E Abbott</td><td>29</td><td>— Coventry</td></tr>
+        <tr><td>Thomas W Abbott</td><td>26</td><td>Watch Balance Maker — Coventry</td></tr>
+        <tr><td>Martha L Abbott</td><td>23</td><td>— Coventry</td></tr>
+        <tr><td>John C Abbott</td><td>21</td><td>Watch Balance Maker — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">162 &ndash; Arden Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Frederick Bilow</td><td>48</td><td>Watch Balance Maker — London</td></tr>
+        <tr><td>Jane Ann Bilow</td><td>46</td><td>Wife — Coventry</td></tr>
+        <tr><td>Charles J Bilow</td><td>20</td><td>Watch Balance Maker — Liverpool</td></tr>
+        <tr><td>Henrietta Bilow</td><td>17</td><td>Watch Balance Maker — Coventry</td></tr>
+        <tr><td>Ernest Bilow</td><td>12</td><td>— Coventry</td></tr>
+        <tr><td>Florence Bilow</td><td>8</td><td>— Coventry</td></tr>
+        <tr><td>Arthur Bilow</td><td>6</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">163 &ndash; Arden Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Joseph Bull</td><td>49</td><td>Watch Maker Finisher — Coventry</td></tr>
+        <tr><td>Martha Bull</td><td>52</td><td>Watch Maker Finisher — Coventry</td></tr>
+        <tr><td>Kate Bull</td><td>19</td><td>Watch Maker Finisher — Coventry</td></tr>
+        <tr><td>Elsie Bull</td><td>10</td><td>Scholar — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    </div>
+    <div class="page-section">
+    <div class="page-header">Folio 145, Page 29</div>
+    <div class="household">
+      <div class="hh-address">163 (cont.) &ndash; Arden Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Arthur Line</td><td>16</td><td>Boarder, Bricklayer — Braunston, Northants</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">164 &ndash; Arden Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Job Parker</td><td>55</td><td>Florist and Gardener — Coventry</td></tr>
+        <tr><td>Elizabeth Parker</td><td>52</td><td>Wife — Stoneleigh</td></tr>
+        <tr><td>Walter Parker</td><td>21</td><td>Bicycle Filer — Coventry</td></tr>
+        <tr><td>Elizabeth Parker (dau)</td><td>17</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">165 &ndash; Arden Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Walter Greenway</td><td>36</td><td>Watch Maker Finisher — Coventry</td></tr>
+        <tr><td>Emma Greenway</td><td>32</td><td>Wife — Birmingham</td></tr>
+        <tr><td>Joseph Greenway</td><td>13</td><td>Machinist — Birmingham</td></tr>
+        <tr><td>Rebecca Greenway</td><td>12</td><td>Scholar — Birmingham</td></tr>
+        <tr><td>Emma Greenway (dau)</td><td>11</td><td>Scholar — Birmingham</td></tr>
+        <tr><td>Alice Greenway</td><td>9</td><td>Scholar — Birmingham</td></tr>
+        <tr><td>Walter Greenway (son)</td><td>8</td><td>Scholar — Birmingham</td></tr>
+        <tr><td>Albert Greenway</td><td>7</td><td>Scholar — Birmingham</td></tr>
+        <tr><td>Frank Greenway</td><td>6</td><td>Scholar — Birmingham</td></tr>
+        <tr><td>Rosena Greenway</td><td>2</td><td>— Birmingham</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">166 &ndash; Arden Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Joseph Elliott</td><td>50</td><td>Watch Maker Finisher — Coventry</td></tr>
+        <tr><td>Bessie Elliott</td><td>50</td><td>Retired Dressmaker — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">167 &ndash; Arden Street, Arden Cottages</div>
+      <table class="hh-table"><tbody>
+        <tr><td>William A Caldicott</td><td>29</td><td>— Coventry</td></tr>
+        <tr><td>Louisa Caldicott</td><td>27</td><td>Wife — Coventry</td></tr>
+        <tr><td>Lawrence Caldicott</td><td>1</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">168 &ndash; Arden Street, Arden Cottages</div>
+      <table class="hh-table"><tbody>
+        <tr><td>John Ell</td><td>42</td><td>Drayman (widower) — Birmingham</td></tr>
+        <tr><td>Mary Smith</td><td>21</td><td>Sister-in-law — Shillingford, Oxon</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">169 &ndash; Arden Street, Arden Cottages</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Edwin Whyman</td><td>26</td><td>Watch Finisher — Coventry</td></tr>
+        <tr><td>Emma Whyman</td><td>27</td><td>Wife — Coventry</td></tr>
+        <tr><td>Mary J Whyman</td><td>5</td><td>— Coventry</td></tr>
+        <tr><td>Florence E Whyman</td><td>2</td><td>— Coventry</td></tr>
+        <tr><td>Elsie Whyman</td><td>1</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">170 &ndash; Arden Street, Arden Cottages</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Thomas Ward</td><td>43</td><td>Watch Motioner — Coventry</td></tr>
+        <tr><td>Sarah A Ward</td><td>45</td><td>Wife — Coventry</td></tr>
+        <tr><td>Sam Magson</td><td>30</td><td>Boarder, Gardener — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    </div>
+    <div class="page-section">
+    <div class="page-header">Folio 145, Page 30</div>
+    <div class="household">
+      <div class="hh-address">171 &ndash; Arden Street, Arden Cottages</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Edwin Stidworthy</td><td>41</td><td>Carpenter — Southpool, Devon</td></tr>
+        <tr><td>Eliza Stidworthy</td><td>40</td><td>Wife — Clungunford, Salop</td></tr>
+        <tr><td>Amy J Stidworthy</td><td>16</td><td>— Clungunford</td></tr>
+        <tr><td>Edwin Stidworthy (son)</td><td>15</td><td>— Wembley, Middx</td></tr>
+        <tr><td>John H Stidworthy</td><td>12</td><td>— Long Lawford</td></tr>
+        <tr><td>Salome Stidworthy</td><td>10</td><td>— Long Lawford</td></tr>
+        <tr><td>David F Stidworthy</td><td>9</td><td>— Long Lawford</td></tr>
+        <tr><td>Ethel W Stidworthy</td><td>6</td><td>— Long Lawford</td></tr>
+        <tr><td>Elsie H Stidworthy</td><td>4</td><td>— Long Lawford</td></tr>
+        <tr><td>Arthur J Stidworthy</td><td>7</td><td>— Long Lawford</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">172 &ndash; Arden Street, Arden Cottages</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Arthur N Thompson</td><td>24</td><td>Cycle Fitter — Birmingham</td></tr>
+        <tr><td>Harriet Thompson</td><td>18</td><td>Wife — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">173 &ndash; Arden Street, Arden Cottages</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Thomas Griffiths</td><td>28</td><td>Railway Servant — Oswestry, Salop</td></tr>
+        <tr><td>Jane Griffiths</td><td>26</td><td>Wife — Huntington, Cheshire</td></tr>
+        <tr><td>Mary J Griffiths</td><td>5</td><td>— Sandaysay, Cheshire</td></tr>
+        <tr><td>Alfred Griffiths</td><td>3</td><td>— Sandaysay</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">174 &ndash; Arden Street, Arden Cottages</div>
+      <table class="hh-table"><tbody>
+        <tr><td>James W Barnes</td><td>28</td><td>Railway Carman — Kenilworth</td></tr>
+        <tr><td>Elizabeth M Barnes</td><td>29</td><td>Wife — Stresson on Fosse</td></tr>
+        <tr><td>Joseph W Barnes</td><td>5</td><td>Scholar — Exhall</td></tr>
+        <tr><td>Fanny R E Barnes</td><td>3</td><td>— Exhall</td></tr>
+        <tr><td>Daisy Barnes</td><td>1</td><td>— Exhall</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">175 &ndash; Arden Street, Arden Cottages</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Joseph Sumner</td><td>43</td><td>Watch Balance Maker — London</td></tr>
+        <tr><td>Mary Sumner</td><td>37</td><td>Wife — Coventry</td></tr>
+        <tr><td>Mary Sumner (dau)</td><td>15</td><td>— Coventry</td></tr>
+        <tr><td>Francis C Sumner</td><td>12</td><td>— Coventry</td></tr>
+        <tr><td>Emily W Sumner</td><td>8</td><td>— Coventry</td></tr>
+        <tr><td>Gerty W Sumner</td><td>6</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">176 &ndash; Arden Street, Arden Cottages</div>
+      <table class="hh-table"><tbody>
+        <tr><td>George R Grooms</td><td>28</td><td>Machinist — Coventry</td></tr>
+        <tr><td>Harriet F Grooms</td><td>26</td><td>Wife — Coventry</td></tr>
+        <tr><td>George Grooms</td><td>2</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    </div>
+    <div class="page-section">
+    <div class="page-header">Folio 146, Page 31</div>
+    <div class="household">
+      <div class="hh-address">177 &ndash; Arden Street, Arden Cottages</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Arthur Hayden</td><td>23</td><td>Springer and Polisher — Coventry</td></tr>
+        <tr><td>Lucy Hayden</td><td>23</td><td>Wife — Brampton Bryan, Herefordshire</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">178 &ndash; Arden Street, Arden Cottages</div>
+      <table class="hh-table"><tbody>
+        <tr><td>William Rose</td><td>23</td><td>Watch Polisher — Stoneleigh</td></tr>
+        <tr><td>Millicent Rose</td><td>24</td><td>Wife — Stretton on Dunsmore</td></tr>
+        <tr><td>George Rose</td><td>2</td><td>— Stoneleigh</td></tr>
+        <tr><td>Ann Rose</td><td>10m</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">179 &ndash; Arden Street, Arden Cottages</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Joseph W Smith</td><td>26</td><td>Railway Carman — Shipston on Stour</td></tr>
+        <tr><td>Sarah Smith</td><td>29</td><td>Wife — Coventry</td></tr>
+        <tr><td>Ann E Smith</td><td>5</td><td>— Coventry</td></tr>
+        <tr><td>Mary J Smith</td><td>1</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">180 &ndash; Arden Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>William H Mayo</td><td>49</td><td>Watch Examiner — Coventry</td></tr>
+        <tr><td>Ann E Mayo</td><td>46</td><td>Wife — Allesley</td></tr>
+        <tr><td>Ann E Mayo (dau)</td><td>22</td><td>Watch Trade — Coventry</td></tr>
+        <tr><td>Eliza M Mayo</td><td>20</td><td>Watch Trade — Coventry</td></tr>
+        <tr><td>William Mayo (son)</td><td>16</td><td>Clerk — Coventry</td></tr>
+        <tr><td>Herbert J Mayo</td><td>14</td><td>Apprentice to Watch Trade — Coventry</td></tr>
+        <tr><td>Walter E Mayo</td><td>9</td><td>Scholar — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">181 &ndash; Warwick Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Thomas Keight</td><td>37</td><td>Blacksmith — Birmingham</td></tr>
+        <tr><td>Ann Keight</td><td>35</td><td>Wife — Birmingham</td></tr>
+        <tr><td>Arthur T Keight</td><td>6</td><td>— Coventry</td></tr>
+        <tr><td>Lawrence C Keight</td><td>4</td><td>— Coventry</td></tr>
+        <tr><td>Annie F I Keight</td><td>1</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">182 &ndash; <a href="../nailfactory.html">Warwick Street</a></div>
+      <div class="hh-note">Frederick W Allard — proprietor of the Cycle Works in Moor Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Fredk. W Allard</td><td>24</td><td>Professional Bicycle Rider — Northampton</td></tr>
+        <tr><td>Ada W Allard</td><td>23</td><td>Wife — Northampton</td></tr>
+        <tr><td>Fredk. Allard (son)</td><td>1</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">183 &ndash; Warwick Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>John Sauter</td><td>45</td><td>Platelayer — Berkswell</td></tr>
+        <tr><td>Mary A Sauter</td><td>48</td><td>Wife — Coventry</td></tr>
+        <tr><td>Kate Sauter</td><td>17</td><td>General Servant — Coventry</td></tr>
+        <tr><td>Eliza Sauter</td><td>14</td><td>— Coventry</td></tr>
+        <tr><td>Joseph Sauter</td><td>12</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    </div>
+    <div class="page-section">
+    <div class="page-header">Folio 146, Page 32</div>
+    <div class="household">
+      <div class="hh-address">183 (cont.) &ndash; Warwick Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Mary J Sauter</td><td>10</td><td>Scholar — Coventry</td></tr>
+        <tr><td>James Sauter</td><td>4</td><td>Scholar — Coventry</td></tr>
+        <tr><td>Amy F Sauter</td><td>8m</td><td>Granddaughter — Coventry</td></tr>
+        <tr><td>Charles Burbidge</td><td>19</td><td>Lodger, Engine Driver — Salisbury</td></tr>
+        <tr><td>Brian Satchwell</td><td>20</td><td>Lodger, Goods Porter — Slapton, Bucks</td></tr>
+        <tr><td>George Ferland</td><td>36</td><td>Lodger, Labourer — Byfield, Northants</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">184 &ndash; Warwick Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Sarah Brain</td><td>78</td><td>Head (widow) — Reading, Berks</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">185 &ndash; Warwick Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Jane Crook</td><td>29</td><td>Laundress (widow) — Stoneleigh</td></tr>
+        <tr><td>Louisa Bant</td><td>15</td><td>Watch Dial Maker — Stoneleigh</td></tr>
+        <tr><td>Maud M Knight</td><td>23</td><td>Boarder, Shop Assistant — Tewkesbury, Gloucs</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">186 &ndash; Warwick Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Richard E Wood</td><td>24</td><td>Machinist — Tettenhall, Staffs</td></tr>
+        <tr><td>Mary A Wood</td><td>24</td><td>Wife — Hatton, Salop</td></tr>
+        <tr><td>Edith Wood</td><td>3</td><td>— Bushbury, Staffs</td></tr>
+        <tr><td>Francis Wood</td><td>1</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">187 &ndash; Warwick Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Joseph Randle</td><td>31</td><td>Gardener — Burton on the Hill, Gloucs</td></tr>
+        <tr><td>Louisa Randle</td><td>23</td><td>Wife — Lighthorne</td></tr>
+        <tr><td>Alec Randle</td><td>1</td><td>— Stoke</td></tr>
+        <tr><td>Stanley Randle</td><td>3m</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">188 &ndash; Warwick Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>James Hancox</td><td>32</td><td>Carpenter — Coventry</td></tr>
+        <tr><td>Mrs Hancox</td><td>29</td><td>Wife — Coventry</td></tr>
+        <tr><td>Polly Hanson</td><td>3</td><td>— Coventry</td></tr>
+        <tr><td>Edie Hanson</td><td>1</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">189 &ndash; Warwick Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>George H Salmon</td><td>45</td><td>Inspector of Weights and Measures — Rugby</td></tr>
+        <tr><td>Mary E Salmon</td><td>43</td><td>Wife — Rugby</td></tr>
+        <tr><td>Edith M Salmon</td><td>19</td><td>— Rugby</td></tr>
+        <tr><td>Ada Salmon</td><td>17</td><td>— Rugby</td></tr>
+        <tr><td>Ada Ann Wilkins</td><td>34</td><td>Sister, Dressmaker — Rugby</td></tr>
+        <tr><td>Florence E Thompson</td><td>10</td><td>Niece — Rugby</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">190 &ndash; Warwick Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Lettice E Hawkins</td><td>47</td><td>Head, Living on Own Means — Yarmouth, Norfolk</td></tr>
+      </tbody></table>
+    </div>
+    </div>
+    <div class="page-section">
+    <div class="page-header">Folio 147, Page 33</div>
+    <div class="household">
+      <div class="hh-address">191 &ndash; Warwick Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Thomas Pearson</td><td>41</td><td>Watch Examiner — Coventry</td></tr>
+        <tr><td>Emily M Pearson</td><td>41</td><td>Wife — Stratford on Avon</td></tr>
+        <tr><td>Tom Charles Pearson</td><td>17</td><td>Machinist — Coventry</td></tr>
+        <tr><td>Maggie E Pearson</td><td>14</td><td>Finisher — Coventry</td></tr>
+        <tr><td>Jessie A Pearson</td><td>6</td><td>— Coventry</td></tr>
+        <tr><td>Hubert A Pearson</td><td>3</td><td>— Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">192 &ndash; Warwick Street</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Sarah J Carter</td><td>75</td><td>Head (widow) — Coventry</td></tr>
+        <tr><td>John E Carter</td><td>41</td><td>Son, Living on Own Means — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">193 &ndash; <a href="../cottage.html">Warwick Street (The Earlsdon Cottage Inn)</a></div>
+      <div class="hh-note">Alfred C Harper — Licensed Victualler</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Alfred C Harper</td><td>29</td><td>Licensed Victualler and Watch Finisher — Coventry</td></tr>
+        <tr><td>Caroline Harper</td><td>24</td><td>Wife — Banbury, Oxon</td></tr>
+        <tr><td>Charles Harper</td><td>1</td><td>— Coventry</td></tr>
+        <tr><td>Eliza Harper</td><td>65</td><td>Mother-in-law, Retired Licensed Victualler — Long Itchington</td></tr>
+        <tr><td>Louisa Harris</td><td>19</td><td>Servant — Corley Moor</td></tr>
+        <tr><td>Arthur M Bartlett</td><td>14</td><td>Visitor, Scholar — Banbury</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">194 &ndash; Whor Lane</div>
+      <table class="hh-table"><tbody>
+        <tr><td>James Ford</td><td>62</td><td>Farmer — Little Packington</td></tr>
+        <tr><td>Sarah Ford</td><td>64</td><td>Wife — Little Packington</td></tr>
+        <tr><td>George Williams</td><td>19</td><td>Farm Servant — Aston Cantlow</td></tr>
+        <tr><td>Elizabeth Lee</td><td>14</td><td>General Domestic — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    <div class="household">
+      <div class="hh-address">195 &ndash; Whor Lane</div>
+      <table class="hh-table"><tbody>
+        <tr><td>Charles Shufflebotham</td><td>65</td><td>Secretary and Manager — Coventry</td></tr>
+        <tr><td>Margaret Shufflebotham</td><td>59</td><td>Wife — Scotland</td></tr>
+        <tr><td>Samuel C Shufflebotham</td><td>28</td><td>Watch Finisher — Coventry</td></tr>
+        <tr><td>Emily C Lines</td><td>16</td><td>Mother's Help — Coventry</td></tr>
+        <tr><td>Ann E Shufflebotham</td><td>34</td><td>Office Clerk — Coventry</td></tr>
+      </tbody></table>
+    </div>
+    </div>
+  </div><!-- .census-wrap -->
+  <a href="familyhist.html" class="back-link">&#8592; Back to Family History</a>
+</main>
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Earlsdon <span>Online</span></div>
+      <p style="margin-top:6px;">&copy; EOL 2026 | In association with <a href="http://www.firesidemedia.co.uk" target="_blank" rel="noopener">Fireside Media</a></p>
+    </div>
+    <div class="footer-links">
+      <a href="../../about.html">About</a>
+      <a href="/cdn-cgi/l/email-protection#cca9adbea0bfa8a3a2e2a3a2a0a5a2a98caba1ada5a0e2afa3a1">Contact</a>
+    </div>
+  </div>
+</footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const input = document.getElementById('censusSearch');
+if(input){
+  input.addEventListener('input',function(){
+    const q=this.value.trim().toLowerCase();
+    document.querySelectorAll('.household').forEach(hh=>{
+      const txt=hh.textContent.toLowerCase();
+      hh.classList.toggle('highlight',q.length>1&&txt.includes(q));
+      hh.style.display=(!q||txt.incl
