@@ -81,15 +81,15 @@
   <p>By the start of the 20th century it was being rapidly developed as the leafy suburb we know today. Narrow Earlsdon Lane became a broad boulevard, neatly kerbed and pavemented, guttered and drained. Still only one parked car in the early photographs — pedestrians could still choose to use the road instead of the pavement if they so wished!</p>
   </div>
   <div class="photo-grid"><div class="photo-card">
-      <img src="../images/streets/Earlsdonavesouth1.jpg" alt="Earlsdon Lane, about 1890" onerror="this.style.minHeight='160px'">
+      <img src="../images/earlsdon_lane.jpg" alt="Earlsdon Lane, about 1890" onerror="this.style.minHeight='160px'">
       <div class="caption">Earlsdon Lane, about 1890</div>
     </div>
 <div class="photo-card">
-      <img src="../images/streets/Earlsdonavesouth2.jpg" alt="Earlsdon Avenue South from the corner of Mayfield Road" onerror="this.style.minHeight='160px'">
+      <img src="../images/streets/Earlsdonavesouth1.jpg" alt="Earlsdon Avenue South from the corner of Mayfield Road" onerror="this.style.minHeight='160px'">
       <div class="caption">Earlsdon Avenue South from the corner of Mayfield Road</div>
     </div>
 <div class="photo-card">
-      <img src="../images/streets/Earlsdonavesouth3.jpg" alt="Earlsdon Avenue South from the corner of Berkeley Road North" onerror="this.style.minHeight='160px'">
+      <img src="../images/streets/Earlsdonavesouth2.jpg" alt="Earlsdon Avenue South from the corner of Berkeley Road North" onerror="this.style.minHeight='160px'">
       <div class="caption">Earlsdon Avenue South from the corner of Berkeley Road North</div>
     </div>
 <div class="photo-card">
@@ -109,7 +109,7 @@
     </div>
     <div class="footer-links">
       <a href="../../about.html">About</a>
-      <a href="/cdn-cgi/l/email-protection#234642514f50474c4d0d4c4d4f4a4d4663444e424a4f0d404c4e">Contact</a>
+      <a href="mailto:earlsdon.online@gmail.com">Contact</a>
     </div>
   </div>
 </footer>
@@ -119,16 +119,22 @@
 .lightbox-overlay img{max-width:92vw;max-height:92vh;object-fit:contain;border-radius:4px;box-shadow:0 8px 40px rgba(0,0,0,.6)}
 .lightbox-close{position:fixed;top:20px;right:28px;color:#fff;font-size:2.5rem;font-weight:300;cursor:pointer;line-height:1;opacity:.8}
 .lightbox-close:hover{opacity:1}
-.sidebar-image img, .sidebar-image-sm img, img[src*="images/"]{cursor:zoom-in}
+img[src*="images/"]{cursor:zoom-in}
 </style>
 <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
   <span class="lightbox-close" onclick="closeLightbox()">&#x2715;</span>
   <img id="lightbox-img" src="" alt="">
 </div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 function openLightbox(src,alt){document.getElementById('lightbox-img').src=src;document.getElementById('lightbox-img').alt=alt||'';document.getElementById('lightbox').classList.add('active');document.body.style.overflow='hidden';}
 function closeLightbox(){document.getElementById('lightbox').classList.remove('active');document.body.style.overflow='';}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox();});
 document.addEventListener('DOMContentLoaded',function(){
-  document.querySelectorAll('img[src*="images/"]').forEach(function(img){
-   
+  document.querySelectorAll("img[src*='images/']").forEach(function(img){
+    if(img.alt==='Earlsdon Online') return;
+    img.addEventListener('click',function(){openLightbox(this.src,this.alt);});
+  });
+});
+</script>
+</body>
+</html>
