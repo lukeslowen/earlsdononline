@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The Ribbon Weaving Shed on Cromwell Street — Earlsdon's first school building.">
   <title>The Ribbon Weaving Shed – Earlsdon Online</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -160,7 +161,7 @@
     </div>
     <div class="footer-links">
       <a href="../about.html">About</a>
-      <a href="/cdn-cgi/l/email-protection#bdd8dccfd1ced9d2d393d2d3d1d4d3d8fddad0dcd4d193ded2d0">Contact</a>
+      <a href="mailto:earlsdon.online@gmail.com">Contact</a>
     </div>
   </div>
 </footer>
@@ -176,10 +177,16 @@ img[src*="images/"]{cursor:zoom-in}
   <span class="lightbox-close" onclick="closeLightbox()">&#x2715;</span>
   <img id="lightbox-img" src="" alt="">
 </div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 function openLightbox(src,alt){document.getElementById('lightbox-img').src=src;document.getElementById('lightbox-img').alt=alt||'';document.getElementById('lightbox').classList.add('active');document.body.style.overflow='hidden';}
 function closeLightbox(){document.getElementById('lightbox').classList.remove('active');document.body.style.overflow='';}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox();});
 document.addEventListener('DOMContentLoaded',function(){
   document.querySelectorAll("img[src*='images/']").forEach(function(img){
-   
+    if(img.alt==='Earlsdon Online') return;
+    img.addEventListener('click',function(){openLightbox(this.src,this.alt);});
+  });
+});
+</script>
+</body>
+</html>

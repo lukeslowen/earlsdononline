@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Family history resources for Earlsdon, Coventry — census transcripts, directory listings and links for tracing your Earlsdon roots.">
   <title>Earlsdon Family History – Earlsdon Online</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,21 +68,21 @@
 <body>
 <header>
   <div class="header-inner">
-    <a href="../../index.html" class="logo-area">
-      <img src="../../images/Logo2.png" alt="Earlsdon Online" onerror="this.style.display='none'">
+    <a href="../index.html" class="logo-area">
+      <img src="../images/Logo2.png" alt="Earlsdon Online" onerror="this.style.display='none'">
       <div class="logo-text"><span class="logo-main">Earlsdon</span><span class="logo-sub">— Online —</span></div>
     </a>
     <nav>
-      <a href="../../index.html">Home</a>
-      <a href="../history.html" class="active">History</a>
-      <a href="../../localinfo.html" class="active-check">Local Info</a>
+      <a href="../index.html">Home</a>
+      <a href="history.html" class="active">History</a>
+      <a href="../localinfo.html" class="active-check">Local Info</a>
     </nav>
   </div>
 </header>
 
 <section class="page-hero">
   <div class="page-hero-inner">
-    <p class="breadcrumb"><a href="../../index.html">Home</a> &rsaquo; <a href="../history.html">History</a> &rsaquo; Family History</p>
+    <p class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="history.html">History</a> &rsaquo; Family History</p>
     <h1>Earlsdon Family History</h1>
     <p class="subtitle">Resources for tracing your Earlsdon roots</p>
   </div>
@@ -95,32 +96,31 @@
     <p>The following census transcripts list Earlsdon residents at the time of each census and are a valuable resource for family history research:</p>
 
     <div class="census-grid">
-      <a href="hh41census.html" class="census-card">
+      <a href="familyhist/hh41census.html" class="census-card">
         <h3>1841 Census</h3>
         <p>Transcript of what is now Earlsdon</p>
       </a>
-      <a href="hh51census.html" class="census-card">
+      <a href="familyhist/hh51census.html" class="census-card">
         <h3>1851 Census</h3>
         <p>Transcript of Earlsdon residents</p>
       </a>
-      <a href="hh61census.html" class="census-card">
+      <a href="familyhist/hh61census.html" class="census-card">
         <h3>1861 Census</h3>
         <p>Transcript of Earlsdon residents</p>
       </a>
-      <a href="hh91census.html" class="census-card">
+      <a href="familyhist/hh91census.html" class="census-card">
         <h3>1891 Census</h3>
         <p>Transcript of Earlsdon residents</p>
       </a>
     </div>
 
-    <a href="1912direct.html" class="census-card" style="margin-bottom:28px">
+    <a href="familyhist/1912direct.html" class="census-card" style="margin-bottom:28px">
       <h3>1912 Spennell's Directory</h3>
       <p>Extract of Earlsdon residents from the 1912 directory</p>
     </a>
 
     <h2>Useful External Resources</h2>
     <ul class="link-list">
-      <li><a href="http://earlsdonfamilies.123guestbook.com/" target="_blank" rel="noopener">Earlsdon Family History Register</a></li>
       <li><a href="http://www.covfhs.org/" target="_blank" rel="noopener">Coventry Family History Society</a></li>
       <li></li>
       <li><a href="http://www.historiccoventry.co.uk/" target="_blank" rel="noopener">Historic Coventry</a></li>
@@ -130,7 +130,7 @@
       <li><a href="http://www.picturesofcoventry.co.uk/" target="_blank" rel="noopener">Pictures of Coventry</a></li>
     </ul>
 
-    <a href="../history.html" class="back-link">← Back to Local History</a>
+    <a href="history.html" class="back-link">← Back to Local History</a>
   </article>
 
   <aside>
@@ -161,7 +161,7 @@
     </div>
     <div class="footer-links">
       <a href="../about.html">About</a>
-      <a href="/cdn-cgi/l/email-protection#690c081b051a0d06074706070500070c290e04080005470a0604">Contact</a>
+      <a href="mailto:earlsdon.online@gmail.com">Contact</a>
     </div>
   </div>
 </footer>
@@ -177,10 +177,16 @@ img[src*="images/"]{cursor:zoom-in}
   <span class="lightbox-close" onclick="closeLightbox()">&#x2715;</span>
   <img id="lightbox-img" src="" alt="">
 </div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 function openLightbox(src,alt){document.getElementById('lightbox-img').src=src;document.getElementById('lightbox-img').alt=alt||'';document.getElementById('lightbox').classList.add('active');document.body.style.overflow='hidden';}
 function closeLightbox(){document.getElementById('lightbox').classList.remove('active');document.body.style.overflow='';}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox();});
 document.addEventListener('DOMContentLoaded',function(){
   document.querySelectorAll("img[src*='images/']").forEach(function(img){
-   
+    if(img.alt==='Earlsdon Online') return;
+    img.addEventListener('click',function(){openLightbox(this.src,this.alt);});
+  });
+});
+</script>
+</body>
+</html>
