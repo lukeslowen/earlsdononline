@@ -617,15 +617,18 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-bg"></div>
-    <div class="hero-content">
-      <p class="hero-eyebrow">Coventry's Longest Running Community Website</p>
-      <h1 class="hero-title">Welcome to <em>Earlsdon</em></h1>
-      <p class="hero-tagline">A community resource for people living in, and visiting, the Earlsdon area of Coventry.</p>
-      <div class="hero-buttons">
-        <a href="history/history.html" class="btn btn-primary">Explore Our History</a>
-        <a href="https://www.facebook.com/groups/1741625052743636/?locale=en_GB"
-           target="_blank" rel="noopener" class="btn btn-outline">Join the Community</a>
+    <div class="hero-content" style="display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;">
+      <div>
+        <p class="hero-eyebrow">Coventry's Longest Running Community Website</p>
+        <h1 class="hero-title">Welcome to <em>Earlsdon</em></h1>
+        <p class="hero-tagline">A community resource for people living in, and visiting, the Earlsdon area of Coventry.</p>
+        <div class="hero-buttons">
+          <a href="history/history.html" class="btn btn-primary">Explore Our History</a>
+          <a href="https://www.facebook.com/groups/1741625052743636/?locale=en_GB"
+             target="_blank" rel="noopener" class="btn btn-outline">Join the Community</a>
+        </div>
       </div>
+      <img src="images/Logo2.png" alt="Earlsdon Online" style="height:200px;width:auto;flex-shrink:0;" onerror="this.style.display='none'">
     </div>
   </section>
 
@@ -650,7 +653,14 @@
         <p>Browse our history section to discover the fascinating stories of the people and places that have shaped Earlsdon, or join the conversation on the <a href="https://www.facebook.com/groups/1741625052743636/?locale=en_GB" target="_blank" rel="noopener">Earlsdon Local Message Board</a> on Facebook.</p>
       </div>
       <div class="welcome-image">
-        <img src="images/Logo2.png" alt="Earlsdon Online" style="max-width:100%;height:auto;display:block;margin:0 auto;" onerror="this.style.display='none'">
+        <div style="border-radius:6px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.15);height:340px;">
+          <iframe
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-1.5350%2C52.3950%2C-1.4950%2C52.4150&layer=mapnik&marker=52.4050%2C-1.5150"
+            width="100%" height="100%" style="border:0;display:block;"
+            title="Map of Earlsdon, Coventry"
+            loading="lazy">
+          </iframe>
+        </div>
       </div>
     </div>
 
@@ -731,7 +741,7 @@
 
     <!-- CHRISTMAS MARKET PHOTO -->
     <div style="margin-bottom:48px;border-radius:8px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.15);">
-      <img src="images/Christmas_market_.jpeg" alt="Earlsdon Christmas Market" style="width:100%;height:320px;object-fit:cover;object-position:center 50%;display:block;">
+      <img src="images/Christmas market .jpeg" alt="Earlsdon Christmas Market" style="width:100%;height:320px;object-fit:cover;object-position:center 50%;display:block;">
     </div>
 
   </main>
