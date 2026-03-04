@@ -114,5 +114,26 @@
     </div>
     <div class="footer-links">
       <a href="../../about.html">About</a>
-      <a href="mailto:earlsdon.online@gmail.com">Contact</a>
-      <a href="/cdn-cgi/l/email-protection#ff9a9e8d938c9b9
+      <a href="/cdn-cgi/l/email-protection#a6c3c7d4cad5c2c9c888c9c8cacfc8c3e6c1cbc7cfca88c5c9cb">Contact</a>
+    </div>
+  </div>
+</footer>
+<style>
+.lightbox-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.92);z-index:9999;cursor:pointer;align-items:center;justify-content:center}
+.lightbox-overlay.active{display:flex}
+.lightbox-overlay img{max-width:92vw;max-height:92vh;object-fit:contain;border-radius:4px;box-shadow:0 8px 40px rgba(0,0,0,.6)}
+.lightbox-close{position:fixed;top:20px;right:28px;color:#fff;font-size:2.5rem;font-weight:300;cursor:pointer;line-height:1;opacity:.8}
+.lightbox-close:hover{opacity:1}
+.sidebar-image img, .sidebar-image-sm img, img[src*="images/"]{cursor:zoom-in}
+</style>
+<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close" onclick="closeLightbox()">&#x2715;</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function openLightbox(src,alt){document.getElementById('lightbox-img').src=src;document.getElementById('lightbox-img').alt=alt||'';document.getElementById('lightbox').classList.add('active');document.body.style.overflow='hidden';}
+function closeLightbox(){document.getElementById('lightbox').classList.remove('active');document.body.style.overflow='';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox();});
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('img[src*="images/"]').forEach(function(img){
+   
