@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Family history resources for Earlsdon, Coventry — census transcripts, directory listings and external links for research.">
   <title>Earlsdon Family History – Earlsdon Online</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -120,7 +121,6 @@
 
     <h2>Useful External Resources</h2>
     <ul class="link-list">
-      <li><a href="http://earlsdonfamilies.123guestbook.com/" target="_blank" rel="noopener">Earlsdon Family History Register</a></li>
       <li><a href="http://www.covfhs.org/" target="_blank" rel="noopener">Coventry Family History Society</a></li>
       <li></li>
       <li><a href="http://www.historiccoventry.co.uk/" target="_blank" rel="noopener">Historic Coventry</a></li>
@@ -160,8 +160,8 @@
       <p style="margin-top:6px;">© EOL 2026 | In association with <a href="http://www.firesidemedia.co.uk" target="_blank" rel="noopener">Fireside Media</a></p>
     </div>
     <div class="footer-links">
-      <a href="../about.html">About</a>
-      <a href="/cdn-cgi/l/email-protection#492c283b253a2d26276726272520272c092e24282025672a2624">Contact</a>
+      <a href="../../about.html">About</a>
+      <a href="mailto:earlsdon.online@gmail.com">Contact</a>
     </div>
   </div>
 </footer>
@@ -177,10 +177,16 @@ img[src*="images/"]{cursor:zoom-in}
   <span class="lightbox-close" onclick="closeLightbox()">&#x2715;</span>
   <img id="lightbox-img" src="" alt="">
 </div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 function openLightbox(src,alt){document.getElementById('lightbox-img').src=src;document.getElementById('lightbox-img').alt=alt||'';document.getElementById('lightbox').classList.add('active');document.body.style.overflow='hidden';}
 function closeLightbox(){document.getElementById('lightbox').classList.remove('active');document.body.style.overflow='';}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox();});
 document.addEventListener('DOMContentLoaded',function(){
   document.querySelectorAll("img[src*='images/']").forEach(function(img){
-   
+    if(img.alt==='Earlsdon Online') return;
+    img.addEventListener('click',function(){openLightbox(this.src,this.alt);});
+  });
+});
+</script>
+</body>
+</html>
