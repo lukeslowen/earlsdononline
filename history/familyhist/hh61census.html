@@ -75,7 +75,7 @@
     <nav>
       <a href="../../index.html">Home</a>
       <a href="../history.html" class="active">History</a>
-      <a href="../localinfo.html" class="active-check">Local Info</a>
+      <a href="../../localinfo.html" class="active-check">Local Info</a>
     </nav>
   </div>
 </header>
@@ -1284,16 +1284,13 @@
     </div>
     <div class="footer-links">
       <a href="../../about.html">About</a>
-      <a href="/cdn-cgi/l/email-protection#92f7f3e0fee1f6fdfcbcfdfcfefbfcf7d2f5fff3fbfebcf1fdff">Contact</a>
+      <a href="/cdn-cgi/l/email-protection#660307140a150209084809080a0f080326010b070f0a4805090b">Contact</a>
     </div>
   </div>
 </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const input = document.getElementById('censusSearch');
 if(input){
   input.addEventListener('input',function(){
     const q=this.value.trim().toLowerCase();
-    document.querySelectorAll('.household').forEach(hh=>{
-      const txt=hh.textContent.toLowerCase();
-      hh.classList.toggle('highlight',q.length>1&&txt.includes(q));
-      hh.style.display=(!q||txt.incl
+    document.querySelectorAll('.household').forEach(
