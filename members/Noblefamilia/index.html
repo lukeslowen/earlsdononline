@@ -35,7 +35,7 @@ body {
   position: relative; z-index: 1;
   max-width: 1100px;
   margin: 0 auto;
-  background: linear-gradient(180deg, #f7f0e0 0%, #f2e8d0 40%, #ede1c4 100%);
+  background: #ede4c8;
   box-shadow: 0 0 80px rgba(0,0,0,0.7), 0 0 200px rgba(0,0,0,0.4);
   padding-bottom: 80px;
 }
@@ -43,20 +43,28 @@ body {
 /* Header */
 header {
   text-align: center;
-  padding: 60px 40px 40px;
-  border-bottom: 1px solid var(--rule);
+  padding: 60px 40px 48px;
+  background: linear-gradient(180deg, #1a1208 0%, #2a1c0c 40%, #322010 70%, #1e1408 100%);
+  border-bottom: 3px solid #b07d2a;
+  position: relative;
+}
+header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, transparent, #c9a24a, #b07d2a, #c9a24a, transparent);
 }
 header::after {
   content: '';
   display: block;
   width: 200px; height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  margin: 8px auto 0;
+  background: linear-gradient(90deg, transparent, rgba(201,162,74,0.6), transparent);
+  margin: 12px auto 0;
 }
 .ornament {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.1rem;
-  color: var(--sepia-light);
+  color: rgba(196,169,122,0.7);
   letter-spacing: 0.3em;
   text-transform: uppercase;
   display: block;
@@ -66,15 +74,16 @@ h1 {
   font-family: 'Cinzel', serif;
   font-size: clamp(2.8rem, 7vw, 5rem);
   font-weight: 600;
-  color: var(--ink);
+  color: #f0dba8;
   letter-spacing: 0.12em;
   line-height: 1;
+  text-shadow: 0 0 60px rgba(201,162,74,0.25), 0 2px 4px rgba(0,0,0,0.8);
 }
 .subtitle {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-size: 1.15rem;
-  color: var(--sepia);
+  color: rgba(240,219,168,0.6);
   margin-top: 18px;
   letter-spacing: 0.04em;
 }
@@ -85,45 +94,37 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   gap: 6px 16px;
-  padding: 28px 40px;
-  border-bottom: 1px solid var(--parchment-dark);
+  padding: 24px 40px;
+  background: #2e2010;
+  border-bottom: 2px solid #b07d2a;
 }
 .surname-nav a {
   font-family: 'Cinzel', serif;
   font-size: 0.7rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--sepia);
+  color: rgba(196,169,122,0.7);
   text-decoration: none;
   padding: 4px 2px;
   border-bottom: 1px solid transparent;
   transition: color 0.2s, border-color 0.2s;
 }
-.surname-nav a:hover { color: var(--gold); border-bottom-color: var(--gold-light); }
+.surname-nav a:hover { color: #c8a96e; border-bottom-color: #c8a96e; }
 
 /* Tree wrapper */
 .tree-container {
-  padding: 40px 20px 20px;
+  padding: 40px 20px 40px;
   overflow-x: auto;
+  background: linear-gradient(180deg, #2a4a2a 0%, #234020 50%, #2a4a2a 100%);
 }
 
-/* Generation divider */
-.gen-divider {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 0 20px;
-  margin: 32px 0 24px;
-}
-.gen-divider-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--parchment-dark), transparent); }
-.gen-divider-label {
-  font-family: 'Cinzel', serif;
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--sepia-light);
-  white-space: nowrap;
-}
+/* Name and connector colours against green background */
+.person-name { color: #e8dfc0; }
+.m-bar { color: rgba(201,162,74,0.7); }
+.photo-frame::before { border-color: rgba(201,162,74,0.55) !important; }
+.photo-frame::after  { border-color: rgba(201,162,74,0.2) !important; }
+.photo-placeholder { background: #1e3a1e !important; }
+.photo-placeholder svg { fill: rgba(160,200,120,0.2) !important; }
 
 /* Generation rows */
 .gen-row {
@@ -133,6 +134,18 @@ h1 {
   gap: 30px;
   flex-wrap: nowrap;
   min-width: 700px;
+  padding: 24px 20px;
+}
+#gen1, #gen2, #gen3, #gen4 { background: transparent; }
+
+/* SVG connectors — pad them so they sit between bands */
+.connector-svg {
+  display: block;
+  width: 100%;
+  min-width: 700px;
+  pointer-events: none;
+  overflow: visible;
+  background: transparent;
 }
 
 /* Couple unit */
@@ -223,15 +236,16 @@ h1 {
 /* Ancestry link */
 .ancestry-section {
   text-align: center;
-  padding: 48px 40px 20px;
-  border-top: 1px solid var(--parchment-dark);
-  margin-top: 20px;
+  padding: 48px 40px 40px;
+  background: linear-gradient(180deg, #2e2010 0%, #241808 100%);
+  border-top: 3px solid #3a5e3a;
+  margin-top: 0;
 }
 .ancestry-section p {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-size: 1rem;
-  color: var(--sepia);
+  color: rgba(240,219,168,0.8);
   margin-bottom: 16px;
 }
 .ancestry-btn {
@@ -251,25 +265,30 @@ h1 {
 
 /* Footer */
 footer {
-  margin-top: 60px;
-  padding: 32px 40px;
+  padding: 36px 40px 44px;
   text-align: center;
-  border-top: 1px solid var(--parchment-dark);
+  background: #2e2010;
+  border-top: 1px solid rgba(201,162,74,0.25);
 }
 footer::before {
   content: '✦';
   display: block;
-  color: var(--sepia-light);
+  color: rgba(201,162,74,0.6);
   margin-bottom: 16px;
   letter-spacing: 0.5em;
 }
 footer p {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 0.85rem;
-  color: var(--sepia);
+  font-size: 0.9rem;
+  color: rgba(240,219,168,0.75);
   letter-spacing: 0.05em;
 }
+footer a {
+  color: rgba(201,162,74,0.8);
+  text-decoration: none;
+}
+footer a:hover { color: #c8a96e; }
 
 @keyframes fadeIn { from{opacity:0} to{opacity:1} }
 .tree-container { animation: fadeIn 1s ease 0.6s both; }

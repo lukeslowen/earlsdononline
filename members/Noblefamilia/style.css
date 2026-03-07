@@ -68,7 +68,7 @@ body {
   background:
     radial-gradient(ellipse at 20% 0%, rgba(180,130,42,0.12) 0%, transparent 50%),
     radial-gradient(ellipse at 80% 100%, rgba(107,66,32,0.18) 0%, transparent 50%),
-    linear-gradient(180deg, #080502 0%, #130c04 35%, #1a1007 65%, #0f0a04 100%);
+    linear-gradient(180deg, #1a1208 0%, #2a1c0c 35%, #322010 65%, #1e1408 100%);
 }
 
 /* Top decorative border line */
@@ -167,7 +167,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 300;
-  background: var(--ink-mid);
+  background: #2e2010;
   border-top: 1px solid rgba(201,162,74,0.15);
   border-bottom: 2px solid var(--amber);
   box-shadow: 0 4px 20px rgba(0,0,0,0.5);
@@ -221,9 +221,9 @@ body {
    MAIN CONTENT WRAPPER
 ══════════════════════════════════════════════ */
 .page-body {
-  background: var(--parchment);
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E"),
+    linear-gradient(180deg, #e8dcc4 0%, #f0e6d0 8%, #f2e8d5 50%, #ede4c8 100%);
 }
 
 .page-wrapper {
@@ -332,9 +332,27 @@ body {
    GENERATION BLOCKS
 ══════════════════════════════════════════════ */
 .gen-block {
-  margin-bottom: 5rem;
+  margin-bottom: 0;
+  padding: 3.5rem 1.5rem;
   animation: fadeUp 0.6s ease both;
 }
+
+/* Alternate dark/light banding between generation sections */
+.gen-block:nth-child(odd) {
+  background: linear-gradient(180deg, #e6d9bf 0%, #ede3ca 100%);
+}
+.gen-block:nth-child(even) {
+  background: linear-gradient(180deg, #2a1a0a 0%, #1e1208 100%);
+  position: relative;
+}
+.gen-block:nth-child(even) .section-head h2 { color: var(--cream); }
+.gen-block:nth-child(even) .section-head .subline { color: var(--gold-pale); opacity: 0.75; }
+.gen-block:nth-child(even) .era-badge { background: rgba(201,162,74,0.15); border-color: rgba(201,162,74,0.35); }
+.gen-block:nth-child(even) .head-rule::before,
+.gen-block:nth-child(even) .head-rule::after { opacity: 0.4; }
+.gen-block:nth-child(even) .card-name { color: var(--gold-pale); }
+.gen-block:nth-child(even) .card-dates { color: var(--gold-light); opacity: 0.7; }
+.gen-block:nth-child(even) .card-frame::after { background: #1e1208; }
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
@@ -656,7 +674,7 @@ body {
   inset: 0;
   background:
     radial-gradient(ellipse at 80% 50%, rgba(180,130,42,0.1) 0%, transparent 60%),
-    linear-gradient(135deg, #1a1007 0%, #2a1a0a 100%);
+    linear-gradient(135deg, #1e1408 0%, #2e1e0c 100%);
 }
 
 /* Gold border top */
@@ -721,6 +739,10 @@ body {
 .article-body {
   max-width: 700px;
   padding-top: 0.5rem;
+  background: rgba(255,252,245,0.6);
+  border-left: 3px solid rgba(184,131,42,0.25);
+  padding-left: 1.8rem;
+  padding-bottom: 1.5rem;
 }
 
 .article-body p {
@@ -852,7 +874,7 @@ body {
 ══════════════════════════════════════════════ */
 .sub-people {
   clear: both;
-  background: var(--cream-warm);
+  background: linear-gradient(135deg, #2a1c0c 0%, #342410 100%);
   border: 1px solid rgba(201,162,74,0.25);
   border-top: 3px solid var(--amber);
   padding: 1.8rem 2rem;
@@ -865,9 +887,9 @@ body {
   font-size: 0.6rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--amber);
+  color: var(--gold-light);
   margin-bottom: 1.2rem;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 .sub-people-grid {
@@ -983,7 +1005,7 @@ span.sub-person:hover { background: var(--ink-warm); color: var(--gold-pale); bo
 ══════════════════════════════════════════════ */
 .site-footer {
   position: relative;
-  background: var(--ink);
+  background: #2e2010;
   color: var(--sepia-warm);
   text-align: center;
   padding: 3.5rem 1.5rem 3rem;
@@ -1005,7 +1027,7 @@ span.sub-person:hover { background: var(--ink-warm); color: var(--gold-pale); bo
   letter-spacing: 0.5em;
   text-transform: uppercase;
   color: var(--amber);
-  opacity: 0.6;
+  opacity: 0.8;
   margin-bottom: 0.5rem;
 }
 
@@ -1016,25 +1038,25 @@ span.sub-person:hover { background: var(--ink-warm); color: var(--gold-pale); bo
   font-weight: 300;
   color: var(--gold-pale);
   margin-bottom: 0.3rem;
-  opacity: 0.85;
+  opacity: 0.95;
 }
 
 .site-footer p {
   font-family: 'IM Fell English', serif;
   font-style: italic;
-  font-size: 0.88rem;
-  color: rgba(200,160,80,0.45);
+  font-size: 0.9rem;
+  color: rgba(240,219,168,0.75);
   margin-top: 0.3rem;
 }
 
 .site-footer a {
-  color: var(--gold);
-  opacity: 0.7;
+  color: rgba(201,162,74,0.85);
+  opacity: 1;
   text-decoration: none;
-  border-bottom: 1px solid rgba(201,162,74,0.25);
+  border-bottom: 1px solid rgba(201,162,74,0.3);
   font-style: normal;
 }
-.site-footer a:hover { opacity: 1; }
+.site-footer a:hover { color: var(--gold-light); }
 
 .footer-ornament {
   margin: 1.5rem auto 1rem;
