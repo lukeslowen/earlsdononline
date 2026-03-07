@@ -982,13 +982,13 @@ span.sub-person:hover { background: var(--ink-warm); color: var(--gold-pale); bo
   gap: 0.5rem;
   margin-top: 3.5rem;
   padding: 0.55rem 1.4rem;
-  background: var(--ink-warm);
+  background: #1a3a3a;
   border: 1px solid rgba(201,162,74,0.3);
   font-family: 'Cinzel', serif;
   font-size: 0.58rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--gold-pale);
+  color: rgba(240,219,168,0.75);
   text-decoration: none;
   transition: background 0.2s, color 0.2s;
 }
