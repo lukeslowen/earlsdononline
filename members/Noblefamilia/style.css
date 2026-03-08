@@ -1125,15 +1125,19 @@ span.sub-person:hover { background: var(--ink-warm); color: var(--gold-pale); bo
 }
 .article-body p a:hover { color: var(--gold); }
 .inline-figure {
-  float: right;
-  margin: 0 0 1.5rem 2rem;
-  max-width: 300px;
-  clear: right;
+  display: block;
+  float: none;
+  clear: both;
+  margin: 2rem auto;
+  max-width: 600px;
+  text-align: center;
 }
 .inline-figure img {
-  width: 100%;
+  max-width: 100%;
+  height: auto;
   border: 2px solid rgba(201,162,74,0.35);
   display: block;
+  margin: 0 auto;
 }
 .inline-figure figcaption {
   font-family: 'Cormorant Garamond', serif;
@@ -1141,7 +1145,8 @@ span.sub-person:hover { background: var(--ink-warm); color: var(--gold-pale); bo
   color: rgba(42,26,10,0.65);
   font-style: italic;
   text-align: center;
-  margin-top: 0.35rem;
+  margin-top: 0.5rem;
+  line-height: 1.4;
 }
 .back-link { clear: both; padding-top: 1.5rem; }
 .back-link a {
@@ -1156,7 +1161,7 @@ span.sub-person:hover { background: var(--ink-warm); color: var(--gold-pale); bo
 }
 .back-link a:hover { background: #122e2e; color: var(--gold-light); }
 @media (max-width: 600px) {
-  .inline-figure { float: none; margin: 1rem auto; max-width: 100%; }
+  .inline-figure { max-width: 100%; }
   .article-body { padding: 1.5rem 1.2rem; }
   .family-header { padding: 1.5rem 1.2rem; }
   .page-surname { font-size: 1.8rem; }
