@@ -774,17 +774,6 @@ body {
   border-bottom-color: var(--rust);
 }
 
-/* Elegant drop-cap */
-.article-body > p:first-of-type::first-letter {
-  font-family: 'Cinzel', serif;
-  font-size: 4.2rem;
-  font-weight: 700;
-  float: left;
-  line-height: 0.78;
-  margin: 0.06em 0.12em 0 0;
-  color: var(--amber);
-  text-shadow: 1px 1px 0 rgba(201,162,74,0.3);
-}
 
 /* ══════════════════════════════════════════════
    FIGURE / PHOTO
@@ -1088,7 +1077,6 @@ span.sub-person:hover { background: var(--ink-warm); color: var(--gold-pale); bo
   .figure-aside { float: none !important; margin: 0 auto 2rem !important; }
   .surname-section { margin: 3rem -1rem; padding: 2.5rem 1.2rem; }
   .page-wrapper { padding: 2rem 1rem 5rem; }
-  .article-body > p:first-of-type::first-letter { font-size: 3rem; }
 }
 
 /* ── Content page elements added by rebuild ──────────────────── */
@@ -1172,4 +1160,28 @@ span.sub-person:hover { background: var(--ink-warm); color: var(--gold-pale); bo
   .article-body { padding: 1.5rem 1.2rem; }
   .family-header { padding: 1.5rem 1.2rem; }
   .page-surname { font-size: 1.8rem; }
+}
+
+/* ── Return Home button ────────────────────────────────────────── */
+.home-link {
+  display: inline-block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  color: rgba(240,219,168,0.75);
+  background: #1a3a3a;
+  padding: 0.5rem 1.2rem;
+  text-decoration: none;
+  border-left: 3px solid #b07d2a;
+  margin-top: 1rem;
+}
+.home-link:hover { background: #122e2e; color: var(--gold-light); }
+.home-footer {
+  clear: both;
+  padding: 1rem 2.5rem 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+@media (max-width: 600px) {
+  .home-footer { padding: 1rem 1.2rem 2rem; }
 }
