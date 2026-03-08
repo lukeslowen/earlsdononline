@@ -1090,3 +1090,86 @@ span.sub-person:hover { background: var(--ink-warm); color: var(--gold-pale); bo
   .page-wrapper { padding: 2rem 1rem 5rem; }
   .article-body > p:first-of-type::first-letter { font-size: 3rem; }
 }
+
+/* ── Content page elements added by rebuild ──────────────────── */
+.family-header {
+  background: linear-gradient(180deg, #1a3a3a 0%, #122e2e 100%);
+  border-bottom: 2px solid #b07d2a;
+  padding: 2rem 2.5rem 1.8rem;
+}
+.page-surname {
+  font-family: 'Cinzel', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  letter-spacing: 0.12em;
+  margin: 0 0 0.4rem;
+}
+.surname-origin {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  color: rgba(240,219,168,0.80);
+  margin: 0;
+  font-style: italic;
+  max-width: 700px;
+}
+.person-dates {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: rgba(240,219,168,0.75);
+  margin: 0.2rem 0 0;
+}
+.article-body {
+  padding: 2rem 2.5rem;
+  max-width: 820px;
+}
+.article-body p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  line-height: 1.85;
+  color: var(--ink-warm);
+  margin: 0 0 1.1rem;
+}
+.article-body p a {
+  color: var(--amber);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.article-body p a:hover { color: var(--gold); }
+.inline-figure {
+  float: right;
+  margin: 0 0 1.5rem 2rem;
+  max-width: 300px;
+  clear: right;
+}
+.inline-figure img {
+  width: 100%;
+  border: 2px solid rgba(201,162,74,0.35);
+  display: block;
+}
+.inline-figure figcaption {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.88rem;
+  color: rgba(42,26,10,0.65);
+  font-style: italic;
+  text-align: center;
+  margin-top: 0.35rem;
+}
+.back-link { clear: both; padding-top: 1.5rem; }
+.back-link a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  color: rgba(240,219,168,0.75);
+  background: #1a3a3a;
+  padding: 0.5rem 1.2rem;
+  text-decoration: none;
+  border-left: 3px solid #b07d2a;
+  display: inline-block;
+}
+.back-link a:hover { background: #122e2e; color: var(--gold-light); }
+@media (max-width: 600px) {
+  .inline-figure { float: none; margin: 1rem auto; max-width: 100%; }
+  .article-body { padding: 1.5rem 1.2rem; }
+  .family-header { padding: 1.5rem 1.2rem; }
+  .page-surname { font-size: 1.8rem; }
+}
