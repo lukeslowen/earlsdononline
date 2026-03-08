@@ -1162,26 +1162,62 @@ span.sub-person:hover { background: var(--ink-warm); color: var(--gold-pale); bo
   .page-surname { font-size: 1.8rem; }
 }
 
-/* ── Return Home button ────────────────────────────────────────── */
-.home-link {
-  display: inline-block;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.95rem;
-  color: rgba(240,219,168,0.75);
-  background: #1a3a3a;
-  padding: 0.5rem 1.2rem;
-  text-decoration: none;
-  border-left: 3px solid #b07d2a;
-  margin-top: 1rem;
-}
-.home-link:hover { background: #122e2e; color: var(--gold-light); }
-.home-footer {
+/* ── Page bottom navigation ───────────────────────────────────────────── */
+.page-nav-bottom {
   clear: both;
-  padding: 1rem 2.5rem 2rem;
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  padding: 1.5rem 0 2rem;
+  margin-top: 1rem;
 }
-@media (max-width: 600px) {
-  .home-footer { padding: 1rem 1.2rem 2rem; }
+.page-nav-bottom .btn-back,
+.page-nav-bottom .btn-home {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.98rem;
+  color: rgba(240,219,168,0.80);
+  background: #1a3a3a;
+  padding: 0.55rem 1.4rem;
+  text-decoration: none;
+  border-left: 3px solid #b07d2a;
+  display: inline-block;
+  transition: background 0.2s, color 0.2s;
+}
+.page-nav-bottom .btn-back:hover,
+.page-nav-bottom .btn-home:hover {
+  background: #122e2e;
+  color: #e2c07a;
+}
+
+/* ── Force headings to title case, no uppercase ────────────────────────── */
+.page-surname,
+h2.page-surname {
+  text-transform: none !important;
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(1.8rem, 4vw, 2.6rem) !important;
+  font-weight: 600 !important;
+  color: #e2c07a !important;
+  letter-spacing: 0.04em !important;
+  margin: 0 0 0.3rem !important;
+}
+.person-dates {
+  text-transform: none !important;
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 1.05rem !important;
+  font-weight: 400 !important;
+  color: rgba(240,219,168,0.75) !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* ── Image captions: smaller italic ───────────────────────────────────── */
+.inline-figure figcaption,
+figure.inline-figure figcaption {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: #6b5040;
+  text-align: center;
+  margin-top: 0.35rem;
+  line-height: 1.4;
+  padding: 0 0.3rem;
 }
