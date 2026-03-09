@@ -7,12 +7,71 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="style.css">
+
+  <!-- Lightbox -->
+  <style>
+    .lb-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(8,18,18,0.92);
+      z-index: 9000;
+      cursor: zoom-out;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 1rem;
+    }
+    .lb-overlay.lb-active { display: flex; }
+    .lb-img-wrap {
+      position: relative;
+      max-width: min(90vw, 1000px);
+      max-height: 82vh;
+    }
+    .lb-overlay img {
+      display: block;
+      max-width: 100%;
+      max-height: 82vh;
+      object-fit: contain;
+      border: 2px solid var(--amber, #b8832a);
+      box-shadow: 0 8px 48px rgba(0,0,0,0.7);
+    }
+    .lb-caption {
+      margin-top: 0.75rem;
+      color: var(--gold-pale, #f0dba8);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      text-align: center;
+      max-width: min(90vw, 1000px);
+    }
+    .lb-close {
+      position: fixed;
+      top: 1rem;
+      right: 1.25rem;
+      font-size: 2rem;
+      color: var(--gold-pale, #f0dba8);
+      background: none;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+      z-index: 9001;
+      opacity: 0.8;
+    }
+    .lb-close:hover { opacity: 1; color: #fff; }
+    .inline-figure img, figure.inline-figure img {
+      cursor: zoom-in;
+    }
+    .inline-figure img:hover, figure.inline-figure img:hover {
+      opacity: 0.88;
+    }
+  </style>
 </head>
 <body>
 <header class="site-header">
   <div class="header-bg">
     <div class="header-frame"></div>
-    <h1>Noble Familia</h1>
+    <img src="images/nf-logo.png" alt="Noble Familia monogram" class="nf-logo-img"><h1>Noble Familia</h1>
     <span class="header-subtitle">Our Family History</span>
     <div class="header-ornament">
       <span class="line"></span><span class="gem"></span><span class="line right"></span>
@@ -35,7 +94,7 @@
 <li><a href="whitaker.html">Whitaker</a></li>
 <li><a href="old.html">Old</a></li>
 <li><a href="peck.html">Peck</a></li>
-<li><a href="fowler.html">Fowler</a></li>
+<li><a href="fowler.html">FFowler</a></li>
 </ul></nav>
 <div class="page-body">
 <main class="page-wrapper">
@@ -44,11 +103,11 @@
 
 </div>
 <div class="article-body">
-<figure class="inline-figure"><img src="floyd/images/floyd.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="floyd/images/floyd.jpg" alt="floyd"></figure>
 <figcaption>19th century distribution of the Floyd surname</figcaption>
 </figure>
 <p>Our Floyd&#x27;s appear to originate from Staffordshire where Abraham Floyd married Ann Taylor at Norton in the Moors, Staffordshire in July 1797 (Possibly Abraham Lloyd - bapt 24 May 1778 Burslem, Stafford). They have two children that we know about. Nathan was born in Staffordshire in 1802, whilst six years later his brother Emmanuel was born in Liverpool.</p>
-<figure class="inline-figure"><img src="floyd/images/Norton.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="floyd/images/Norton.jpg" alt="Norton"></figure>
 <figcaption>Norton in the Moors Church, Staffordshire</figcaption>
 </figure>
 <p>Nathan meets and marries Margaret and in 1841 he appears in Nash Grove, Liverpool with his wife and their three children. Sadly our direct ancestor and Nathan&#x27;s daughter, Maria Floyd was not living with them at this time. Her two year old sister Harriet, does appear however and this enables us to identify the family as Harriet appears again, living with Maria in 1851. We know very little about Maria, and have been unable to find a record of her birth. There is a Mary Floyd living with Elizabeth King in Grenville Place, Nelson Street, Liverpool in 1841, however there is nothing definite to identify her as our Maria.</p>
@@ -58,11 +117,11 @@
 <p>July 14, 2011</p>
 <p>Floyd</p>
 <p>Surname Origin: English variant of the Welsh &#x27;Lloyd&#x27; meaning &quot;grey and hairy&quot;. The English found it difficult to pronounce the Welsh &quot;Ll&quot; sound and interpreted it as &quot;Fl&quot;.</p>
-<figure class="inline-figure"><img src="floyd/images/floyd.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="floyd/images/floyd.jpg" alt="floyd"></figure>
 <figcaption>19th century distribution of the Floyd surname</figcaption>
 </figure>
 <p>Our Floyd&#x27;s appear to originate from Staffordshire where Abraham Floyd married Ann Taylor at Norton in the Moors, Staffordshire in July 1797 (Possibly Abraham Lloyd - bapt 24 May 1778 Burslem, Stafford). They have two children that we know about. Nathan was born in Staffordshire in 1802, whilst six years later his brother Emmanuel was born in Liverpool.</p>
-<figure class="inline-figure"><img src="floyd/images/Norton.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="floyd/images/Norton.jpg" alt="Norton"></figure>
 <figcaption>Norton in the Moors Church, Staffordshire</figcaption>
 </figure>
 <p>Nathan meets and marries Margaret and in 1841 he appears in Nash Grove, Liverpool with his wife and their three children. Sadly our direct ancestor and Nathan&#x27;s daughter, Maria Floyd was not living with them at this time. Her two year old sister Harriet, does appear however and this enables us to identify the family as Harriet appears again, living with Maria in 1851. We know very little about Maria, and have been unable to find a record of her birth. There is a Mary Floyd living with Elizabeth King in Grenville Place, Nelson Street, Liverpool in 1841, however there is nothing definite to identify her as our Maria.</p>
@@ -84,5 +143,58 @@
   <p class="footer-title">Family History</p>
   <p><a href="mailto:noblefamilia@gmail.com">noblefamilia@gmail.com</a></p>
 </footer>
+
+  <!-- Lightbox overlay -->
+  <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lb-close" id="lb-close" aria-label="Close image viewer">&#x2715;</button>
+    <div class="lb-img-wrap">
+      <img id="lb-img" src="" alt="">
+    </div>
+    <p class="lb-caption" id="lb-caption"></p>
+  </div>
+
+  <script>
+    (function() {
+      var overlay = document.getElementById('lb-overlay');
+      var lbImg   = document.getElementById('lb-img');
+      var lbCap   = document.getElementById('lb-caption');
+      var lbClose = document.getElementById('lb-close');
+
+      function open(src, alt, caption) {
+        lbImg.src = src;
+        lbImg.alt = alt || '';
+        lbCap.textContent = caption || alt || '';
+        overlay.classList.add('lb-active');
+        document.body.style.overflow = 'hidden';
+      }
+      function close() {
+        overlay.classList.remove('lb-active');
+        document.body.style.overflow = '';
+        lbImg.src = '';
+      }
+
+      // Attach to all inline-figure images
+      document.querySelectorAll('.inline-figure img, figure.inline-figure img').forEach(function(img) {
+        img.addEventListener('click', function() {
+          var cap = '';
+          var fig = img.closest('figure');
+          if (fig) {
+            var fc = fig.querySelector('figcaption');
+            if (fc) cap = fc.textContent.trim();
+          }
+          open(img.src, img.alt, cap);
+        });
+      });
+
+      // Close on overlay click, button click, or Escape key
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay || e.target === lbImg) close();
+      });
+      lbClose.addEventListener('click', close);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') close();
+      });
+    })();
+  </script>
 </body>
 </html>

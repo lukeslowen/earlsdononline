@@ -8,6 +8,52 @@
 <link rel="stylesheet" href="style.css">
 <style>
 /* ── Homepage-only styles: tree, person cards, connectors ── */
+/* ── Generation 0 (grandparents) — text-only, no photos ── */
+.gen0-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 18px;
+  flex-wrap: nowrap;
+  min-width: 700px;
+  padding: 20px 20px 0;
+}
+.gen0-couple {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+  flex-shrink: 0;
+}
+.gen0-names {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.gen0-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.78rem;
+  font-style: italic;
+  color: rgba(201,162,74,0.72);
+  text-align: center;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+.gen0-amp {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.7rem;
+  color: rgba(201,162,74,0.45);
+  padding: 0 1px;
+}
+.gen0-dot {
+  width: 1px;
+  height: 14px;
+  background: rgba(192,168,120,0.4);
+  margin: 4px auto 0;
+}
+
 
 .nf-home {
   max-width: 1100px;
@@ -64,7 +110,7 @@
   display: block; filter: sepia(30%) contrast(1.05) brightness(0.97);
   transition: filter 0.3s;
 }
-.person:hover .photo-frame img { filter: sepia(10%) contrast(1.08) brightness(1.02); }
+.photo-frame a:hover img, .person:hover .photo-frame img { filter: sepia(10%) contrast(1.08) brightness(1.02); }
 
 .photo-placeholder {
   width: 100%; height: 100%; background: #122e28;
@@ -82,6 +128,8 @@
   border-bottom: 1px solid transparent; transition: color 0.2s, border-color 0.2s;
 }
 .person-name a:hover { color: var(--gold-light); border-bottom-color: var(--gold-light); }
+    .photo-frame a { display: block; width: 100%; height: 100%; }
+    .photo-frame a:focus { outline: 2px solid var(--gold, #c9a24a); outline-offset: 2px; }
 
 .connector-svg {
   display: block; width: 100%; min-width: 700px;
@@ -106,7 +154,11 @@
 .ancestry-btn:hover { background: var(--amber); color: var(--ink); }
 
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-</style>
+
+    .photo-frame a { display: block; width: 100%; height: 100%; cursor: pointer; }
+    .photo-frame a:hover img { filter: sepia(10%) contrast(1.08) brightness(1.06); opacity: 0.88; }
+    .photo-frame a:focus { outline: 2px solid var(--gold, #c9a24a); outline-offset: 2px; }
+  </style>
 </head>
 <body>
 <div class="page nf-home">
@@ -114,7 +166,7 @@
   <header class="site-header">
   <div class="header-bg">
     <div class="header-frame"></div>
-    <h1>Noble Familia</h1>
+    <img src="images/nf-logo.png" alt="Noble Familia monogram" class="nf-logo-img"><h1>Noble Familia</h1>
     <span class="header-subtitle">Our family history &mdash; tracing the lines of descent</span>
     <div class="header-ornament">
       <span class="line"></span><span class="gem"></span><span class="line right"></span>
@@ -122,56 +174,135 @@
   </div>
 </header>
 
-  <nav class="main-nav"><ul><li><a href="noble.html">Noble</a></li><li><a href="lloyd.html">Lloyd</a></li><li><a href="bunting.html">Bunting</a></li><li><a href="keetley.html">Keetley</a></li><li><a href="marsh.html">Marsh</a></li><li><a href="floyd.html">Floyd</a></li><li><a href="marshall.html">Marshall</a></li><li><a href="wainwright.html">Wainwright</a></li><li><a href="drury.html">Drury</a></li><li><a href="wood.html">Wood</a></li><li><a href="warren.html">Warren</a></li><li><a href="ward.html">Ward</a></li><li><a href="whitaker.html">Whitaker</a></li><li><a href="old.html">Old</a></li><li><a href="peck.html">Peck</a></li><li><a href="fowler.html">Fowler</a></li></ul></nav>
+  <nav class="main-nav"><ul><li><a href="noble.html">Noble</a></li><li><a href="lloyd.html">Lloyd</a></li><li><a href="bunting.html">Bunting</a></li><li><a href="keetley.html">Keetley</a></li><li><a href="marsh.html">Marsh</a></li><li><a href="floyd.html">Floyd</a></li><li><a href="marshall.html">Marshall</a></li><li><a href="wainwright.html">Wainwright</a></li><li><a href="drury.html">Drury</a></li><li><a href="wood.html">Wood</a></li><li><a href="warren.html">Warren</a></li><li><a href="ward.html">Ward</a></li><li><a href="whitaker.html">Whitaker</a></li><li><a href="old.html">Old</a></li><li><a href="peck.html">Peck</a></li><li><a href="fowler.html">FFowler</a></li></ul></nav>
 
   <div class="tree-container">
+
+    <!-- GEN 0 (grandparents) -->
+    <div class="gen0-row" id="gen0">
+
+      <div class="gen0-couple" id="gc-0a">
+        <div class="gen0-names">
+          <span class="gen0-name">John Noble</span>
+          <span class="gen0-amp">&amp;</span>
+          <span class="gen0-name">Selina Lloyd</span>
+        </div>
+        <div class="gen0-dot"></div>
+      </div>
+
+      <div class="gen0-couple" id="gc-0b">
+        <div class="gen0-names">
+          <span class="gen0-name">William Bunting</span>
+          <span class="gen0-amp">&amp;</span>
+          <span class="gen0-name">Clara Keetley</span>
+        </div>
+        <div class="gen0-dot"></div>
+      </div>
+
+      <div class="gen0-couple" id="gc-0c">
+        <div class="gen0-names">
+          <span class="gen0-name">Daniel Marsh</span>
+          <span class="gen0-amp">&amp;</span>
+          <span class="gen0-name">Maria Floyd</span>
+        </div>
+        <div class="gen0-dot"></div>
+      </div>
+
+      <div class="gen0-couple" id="gc-0d">
+        <div class="gen0-names">
+          <span class="gen0-name">George Marshall</span>
+          <span class="gen0-amp">&amp;</span>
+          <span class="gen0-name">Jane Wainwright</span>
+        </div>
+        <div class="gen0-dot"></div>
+      </div>
+
+      <div class="gen0-couple" id="gc-0e">
+        <div class="gen0-names">
+          <span class="gen0-name">William Drury</span>
+          <span class="gen0-amp">&amp;</span>
+          <span class="gen0-name">Ann Wood</span>
+        </div>
+        <div class="gen0-dot"></div>
+      </div>
+
+      <div class="gen0-couple" id="gc-0f">
+        <div class="gen0-names">
+          <span class="gen0-name">Henry Warren</span>
+          <span class="gen0-amp">&amp;</span>
+          <span class="gen0-name">Louisa Ward</span>
+        </div>
+        <div class="gen0-dot"></div>
+      </div>
+
+      <div class="gen0-couple" id="gc-0g">
+        <div class="gen0-names">
+          <span class="gen0-name">George Whitaker</span>
+          <span class="gen0-amp">&amp;</span>
+          <span class="gen0-name">Charlotte Old</span>
+        </div>
+        <div class="gen0-dot"></div>
+      </div>
+
+      <div class="gen0-couple" id="gc-0h">
+        <div class="gen0-names">
+          <span class="gen0-name">Thomas Peck</span>
+          <span class="gen0-amp">&amp;</span>
+          <span class="gen0-name">Mary Ann Warren</span>
+        </div>
+        <div class="gen0-dot"></div>
+      </div>
+
+    </div>
+
+    <svg class="connector-svg" id="svg01" height="40"></svg>
 
     <!-- GEN I -->
     <div class="gen-row" id="gen1">
       <div class="couple-unit" id="cu-1a">
         <div class="person" id="p-thomas">
-          <div class="photo-frame"><img src="images/headm.jpeg" alt="Thomas Noble"></div>
+          <div class="photo-frame"><a href="noble.html" tabindex="-1" aria-hidden="true"><img src="images/headm.jpeg" alt="Thomas Noble"></a></div>
           <p class="person-name"><a href="noble.html">Thomas Noble</a></p>
         </div>
         <div class="m-bar">✦</div>
         <div class="person" id="p-maryann">
-          <div class="photo-frame"><img src="images/headf.jpeg" alt="Mary Ann Bunting"></div>
+          <div class="photo-frame"><a href="keetley.html" tabindex="-1" aria-hidden="true"><img src="images/headf.jpeg" alt="Mary Ann Bunting"></a></div>
           <p class="person-name"><a href="keetley.html">Mary Ann Bunting</a></p>
         </div>
       </div>
 
       <div class="couple-unit" id="cu-1b">
         <div class="person" id="p-charles">
-          <div class="photo-frame"><img src="images/headm.jpeg" alt="Charles Marsh"></div>
+          <div class="photo-frame"><a href="marsh.html" tabindex="-1" aria-hidden="true"><img src="images/headm.jpeg" alt="Charles Marsh"></a></div>
           <p class="person-name"><a href="marsh.html">Charles Marsh</a></p>
         </div>
         <div class="m-bar">✦</div>
         <div class="person" id="p-henrietta">
-          <div class="photo-frame"><img src="images/headf.jpeg" alt="Henrietta Marshall"></div>
+          <div class="photo-frame"><a href="marshall.html" tabindex="-1" aria-hidden="true"><img src="images/headf.jpeg" alt="Henrietta Marshall"></a></div>
           <p class="person-name"><a href="marshall.html">Henrietta Marshall</a></p>
         </div>
       </div>
 
       <div class="couple-unit" id="cu-1c">
         <div class="person" id="p-tom">
-          <div class="photo-frame"><img src="images/Tom.jpg" alt="Tom Drury"></div>
+          <div class="photo-frame"><a href="drury/tom.html" tabindex="-1" aria-hidden="true"><img src="images/Tom.jpg" alt="Tom Drury"></a></div>
           <p class="person-name"><a href="drury/tom.html">Tom Drury</a></p>
         </div>
         <div class="m-bar">✦</div>
         <div class="person" id="p-lucy">
-          <div class="photo-frame"><img src="images/lucy21.jpg" alt="Lucy Warren"></div>
+          <div class="photo-frame"><a href="warren/lucy.html" tabindex="-1" aria-hidden="true"><img src="images/lucy21.jpg" alt="Lucy Warren"></a></div>
           <p class="person-name"><a href="warren/lucy.html">Lucy Warren</a></p>
         </div>
       </div>
 
       <div class="couple-unit" id="cu-1d">
         <div class="person" id="p-john">
-          <div class="photo-frame"><img src="images/headm.jpeg" alt="John Whitaker"></div>
+          <div class="photo-frame"><a href="whitaker/john.html" tabindex="-1" aria-hidden="true"><img src="images/headm.jpeg" alt="John Whitaker"></a></div>
           <p class="person-name"><a href="whitaker/john.html">John Whitaker</a></p>
         </div>
         <div class="m-bar">✦</div>
         <div class="person" id="p-eliza">
-          <div class="photo-frame"><img src="images/fowler.jpg" alt="Eliza Peck"></div>
+          <div class="photo-frame"><a href="peck/eliza.html" tabindex="-1" aria-hidden="true"><img src="images/fFowler.jpg" alt="Eliza Peck"></a></div>
           <p class="person-name"><a href="peck/eliza.html">Eliza Peck</a></p>
         </div>
       </div>
@@ -183,25 +314,25 @@
     <div class="gen-row" id="gen2">
       <div class="couple-unit" id="cu-2a">
         <div class="person" id="p-george">
-          <div class="photo-frame"><img src="images/george2.jpg" alt="George Noble"></div>
+          <div class="photo-frame"><a href="noble/george.html" tabindex="-1" aria-hidden="true"><img src="images/george2.jpg" alt="George Noble"></a></div>
           <p class="person-name"><a href="noble/george.html">George Noble</a></p>
         </div>
         <div class="m-bar">✦</div>
         <div class="person" id="p-edith">
-          <div class="photo-frame"><img src="images/headf.jpeg" alt="Edith Marsh"></div>
+          <div class="photo-frame"><a href="marsh/edith.html" tabindex="-1" aria-hidden="true"><img src="images/headf.jpeg" alt="Edith Marsh"></a></div>
           <p class="person-name"><a href="marsh/edith.html">Edith Marsh</a></p>
         </div>
       </div>
 
       <div class="couple-unit" id="cu-2b">
         <div class="person" id="p-bill">
-          <div class="photo-frame"><img src="images/bill.jpg" alt="Bill Drury"></div>
+          <div class="photo-frame"><a href="drury/bill.html" tabindex="-1" aria-hidden="true"><img src="images/bill.jpg" alt="Bill Drury"></a></div>
           <p class="person-name"><a href="drury/bill.html">Bill Drury</a></p>
         </div>
         <div class="m-bar">✦</div>
         <div class="person" id="p-may">
-          <div class="photo-frame"><img src="images/may.jpg" alt="May Fowler"></div>
-          <p class="person-name"><a href="fowler/may.html">May Fowler</a></p>
+          <div class="photo-frame"><a href="fowler/may.html" tabindex="-1" aria-hidden="true"><img src="images/may.jpg" alt="May Fowler"></a></div>
+          <p class="person-name"><a href="fowler/may.html">May FFowler</a></p>
         </div>
       </div>
     </div>
@@ -212,12 +343,12 @@
     <div class="gen-row" id="gen3">
       <div class="couple-unit" id="cu-3a">
         <div class="person" id="p-ken">
-          <div class="photo-frame"><img src="images/kennoble1945.jpg" alt="Ken Noble"></div>
+          <div class="photo-frame"><a href="noble/ken.html" tabindex="-1" aria-hidden="true"><img src="images/kennoble1945.jpg" alt="Ken Noble"></a></div>
           <p class="person-name"><a href="noble/ken.html">Ken Noble</a></p>
         </div>
         <div class="m-bar">✦</div>
         <div class="person" id="p-mavis">
-          <div class="photo-frame"><img src="images/mavis44.jpg" alt="Mavis Drury"></div>
+          <div class="photo-frame"><a href="drury/mavis.html" tabindex="-1" aria-hidden="true"><img src="images/mavis44.jpg" alt="Mavis Drury"></a></div>
           <p class="person-name"><a href="drury/mavis.html">Mavis Drury</a></p>
         </div>
       </div>
@@ -291,6 +422,26 @@ function drawConnectors() {
     p.setAttribute('stroke-width', '1.2');
     p.setAttribute('fill', 'none');
     svg.appendChild(p);
+  }
+
+
+  // Gen 0 -> Gen I
+  const svg01 = document.getElementById('svg01');
+  if (svg01) {
+    svg01.innerHTML = '';
+    [
+      ['gc-0a','cu-1a'],['gc-0b','cu-1a'],
+      ['gc-0c','cu-1b'],['gc-0d','cu-1b'],
+      ['gc-0e','cu-1c'],['gc-0f','cu-1c'],
+      ['gc-0g','cu-1d'],['gc-0h','cu-1d'],
+    ].forEach(([f,t]) => {
+      const from = document.getElementById(f);
+      const to   = document.getElementById(t);
+      if (from && to) {
+        const dot = from.querySelector('.gen0-dot');
+        makePath(svg01, elCX(from), relBottom(dot || from, svg01), elCX(to), relTop(to, svg01));
+      }
+    });
   }
 
   // Gen I -> Gen II

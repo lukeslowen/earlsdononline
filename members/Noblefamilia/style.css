@@ -111,15 +111,26 @@ body {
 }
 
 .site-header h1 {
-  font-family: 'Cinzel', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2.4rem, 7vw, 4.8rem);
-  font-weight: 700;
+  font-weight: 600;
+  font-style: italic;
   color: var(--cream);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   line-height: 1.05;
+  text-transform: none;
   text-shadow:
     0 0 60px rgba(201,162,74,0.2),
     0 2px 4px rgba(0,0,0,0.8);
+}
+
+.nf-logo-img {
+  display: block;
+  width: clamp(60px, 10vw, 100px);
+  height: auto;
+  margin: 0 auto 0.4rem;
+  opacity: 0.92;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.6));
 }
 
 .header-subtitle {
@@ -812,8 +823,10 @@ body {
 
 .photo-frame img {
   display: block;
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
   filter: sepia(20%) contrast(1.06) brightness(0.96);
   position: relative;
   z-index: 1;
@@ -1139,15 +1152,6 @@ span.sub-person:hover { background: var(--ink-warm); color: var(--gold-pale); bo
   display: block;
   margin: 0 auto;
 }
-.inline-figure figcaption {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.88rem;
-  color: rgba(42,26,10,0.65);
-  font-style: italic;
-  text-align: center;
-  margin-top: 0.5rem;
-  line-height: 1.4;
-}
 .back-link { clear: both; padding-top: 1.5rem; }
 .back-link a {
   font-family: 'Cormorant Garamond', serif;
@@ -1165,6 +1169,21 @@ span.sub-person:hover { background: var(--ink-warm); color: var(--gold-pale); bo
   .article-body { padding: 1.5rem 1.2rem; }
   .family-header { padding: 1.5rem 1.2rem; }
   .page-surname { font-size: 1.8rem; }
+}
+
+/* ── Image captions ────────────────────────────────────────────────────── */
+.inline-figure figcaption,
+figure.inline-figure figcaption {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.88rem;
+  font-style: italic;
+  color: #6b5040;
+  text-align: center;
+  margin: 0.5rem auto 0;
+  line-height: 1.4;
+  max-width: 500px;
+  padding: 0 0.5rem;
 }
 
 /* ── Page bottom navigation ───────────────────────────────────────────── */
@@ -1216,13 +1235,4 @@ h2.page-surname {
 
 /* ── Image captions: smaller italic ───────────────────────────────────── */
 .inline-figure figcaption,
-figure.inline-figure figcaption {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.82rem;
-  font-style: italic;
-  color: #6b5040;
-  text-align: center;
-  margin-top: 0.35rem;
-  line-height: 1.4;
-  padding: 0 0.3rem;
-}
+figure
