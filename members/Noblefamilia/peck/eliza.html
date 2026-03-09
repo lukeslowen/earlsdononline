@@ -7,13 +7,77 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="../style.css">
+
+  <!-- Lightbox -->
+  <style>
+    .lb-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(8,18,18,0.92);
+      z-index: 9000;
+      cursor: zoom-out;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 1rem;
+    }
+    .lb-overlay.lb-active { display: flex; }
+    .lb-img-wrap {
+      position: relative;
+      max-width: min(90vw, 1000px);
+      max-height: 82vh;
+    }
+    .lb-overlay img {
+      display: block;
+      max-width: 100%;
+      max-height: 82vh;
+      object-fit: contain;
+      border: 2px solid var(--amber, #b8832a);
+      box-shadow: 0 8px 48px rgba(0,0,0,0.7);
+    }
+    .lb-caption {
+      margin-top: 0.75rem;
+      color: var(--gold-pale, #f0dba8);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      text-align: center;
+      max-width: min(90vw, 1000px);
+    }
+    .lb-close {
+      position: fixed;
+      top: 1rem;
+      right: 1.25rem;
+      font-size: 2rem;
+      color: var(--gold-pale, #f0dba8);
+      background: none;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+      z-index: 9001;
+      opacity: 0.8;
+    }
+    .lb-close:hover { opacity: 1; color: #fff; }
+    .inline-figure img, figure.inline-figure img {
+      cursor: zoom-in;
+    }
+    .inline-figure img:hover, figure.inline-figure img:hover {
+      opacity: 0.88;
+    }
+  </style>
 </head>
 <body>
 <header class="site-header">
   <div class="header-bg">
     <div class="header-frame"></div>
-    <h1>Noble Familia</h1>
-    <span class="header-subtitle">Our Family History</span>
+    <div class="header-inner">
+      <img src="../images/nf-logo.png" alt="Noble Familia monogram" class="nf-logo-img">
+      <div class="header-text">
+        <h1>Noble Familia</h1>
+        <span class="header-subtitle">Our Family History</span>
+      </div>
+    </div>
     <div class="header-ornament">
       <span class="line"></span><span class="gem"></span><span class="line right"></span>
     </div>
@@ -45,22 +109,30 @@
 </div>
 <div class="article-body">
 <p>Eliza Peck, 1871 - 1948</p>
-<figure class="inline-figure"><img src="eliza/images/peck_elisa_1871.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="eliza/images/peck_elisa_1871.jpg" alt="peck elisa 1871">
+  <figcaption>Eliza Peck, 1871 Census</figcaption>
+</figure>
 <figcaption>Eliza Peck</figcaption>
 </figure>
-<p>Eliza (or Elisa as spellings vary) Peck was born in Pomfret Street, Sneinton, Nottingham in September 1871. She was the daughter of Thomas Peck and Mary Ann (formerly Warren). Thomas was a framework knitter and Mary Ann the daughter of Irish immigrants. Eliza was the oldest daughter of her fathers second marriage and the couple liveed in Sneinton.</p>
-<figure class="inline-figure"><img src="eliza/images/pomfret%20st.jpg" alt=""></figure>
+<p>Eliza (or Elisa as spellings vary) Peck was born in Pomfret Street, Sneinton, Nottingham in September 1871. She was the daughter of Thomas Peck and Mary Ann (formerly Warren). Thomas was a framework knitter and Mary Ann the daughter of Irish immigrants. Eliza was the oldest daughter of her fathers second marriage and the couple lived in Sneinton.</p>
+<figure class="inline-figure"><img src="eliza/images/pomfret%20st.jpg" alt="pomfret 20st">
+  <figcaption>Pomfret Street, Nottingham</figcaption>
+</figure>
 <figcaption>Pomfret Street, Sneinton, Nottingham</figcaption>
 </figure>
 <p>By 1881 the family had moved to Colton Terrace, Sneinton and Eliza (or Elysa as she appears in the census document) is shown as a 9 year old scholar. By 1891 Eliza is a 19 year old &#x27;lace clipper&#x27; employed in one of the many lace factories nearby. Also shown in the house at 13 Bond Street is a lodger by the name of Mary Ann Fowler, the half sister of <a href="../fowler/james.html">James Fowler</a> . This probably explains how Eliza was to meet her future husband James and in 1889 the two of them have a son, Harry Peck (later known as Harry Fowler). They were married in October 1901 at St Albans, Sneinton.</p>
-<figure class="inline-figure"><img src="eliza/images/peck_1891.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="eliza/images/peck_1891.jpg" alt="peck 1891">
+  <figcaption>Peck family, 1891 Census</figcaption>
+</figure>
 <figcaption>13 Bond Street, 1891 Census</figcaption>
 </figure>
 <p>Following their marriage James and Eliza Fowler continued to live with the Peck&#x27;s but at some point in the 1890&#x27;s they moved closer to the Fowlers who lived in Loughborough. In 1896 James leaves Eliza and their four children and Eliza returns to Nottingham, probably to be closer to her family for support. In 1901 they are living at 107 Manvers Street. James Fowler was a railway worker, painting signals and bridges, probably for the Midland Railway after his departure in 1896 he disappears and is not found in later census returns. Nor has his death been traced.</p>
 <p>At some point between 1896 and 1902 Eliza meets <a href="../whitaker/john.html">John Whitaker</a> , a gas worker, and it is presumed that Eliza&#x27;s next three children are fathered by John, despite the fact that James is declared on each of their birth certificates as the father. DNA testing has confirmed that John is the father of May Fowler and it is highly likely that he was also father to John (Jack) and Horace. It appears that John continued to live at his mothers address and in 1909 he dies.</p>
 <p>By 1911 Eliza and the family have moved to Stanley Terrace, Eldon Street, Sneinton. Eliza is head of household and is supporting the family through laceworking at home. She is supported by her two working sons Harry and Bertie, but also looking after her eighty year old mother, Mary Ann Peck. It was during this period that she tragically lost her youngest son Horace at just 6 years of age in 1913.</p>
 <p>Eliza was left to raise seven children on her own and did so supplementing her income as housekeeper for widowed baker, Harry Clark. She eventually married Harry in April 1915. Eliza also outlived her son <a href="../fowler/bert.html">Bertie Fowler</a> who was killed during the First World War, at Ypres in 1917.</p>
-<figure class="inline-figure"><img src="eliza/images/harry.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="eliza/images/harry.jpg" alt="harry">
+  <figcaption>Harry Fowler</figcaption>
+</figure>
 <figcaption>Harry Clark in 1944</figcaption>
 </figure>
 <p>Eliza died as Eliza Clarke in 1948 aged 76 and she was outlived by Harry.</p>
@@ -79,5 +151,58 @@
   <p class="footer-title">Family History</p>
   <p><a href="mailto:noblefamilia@gmail.com">noblefamilia@gmail.com</a></p>
 </footer>
+
+  <!-- Lightbox overlay -->
+  <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lb-close" id="lb-close" aria-label="Close image viewer">&#x2715;</button>
+    <div class="lb-img-wrap">
+      <img id="lb-img" src="" alt="">
+    </div>
+    <p class="lb-caption" id="lb-caption"></p>
+  </div>
+
+  <script>
+    (function() {
+      var overlay = document.getElementById('lb-overlay');
+      var lbImg   = document.getElementById('lb-img');
+      var lbCap   = document.getElementById('lb-caption');
+      var lbClose = document.getElementById('lb-close');
+
+      function open(src, alt, caption) {
+        lbImg.src = src;
+        lbImg.alt = alt || '';
+        lbCap.textContent = caption || alt || '';
+        overlay.classList.add('lb-active');
+        document.body.style.overflow = 'hidden';
+      }
+      function close() {
+        overlay.classList.remove('lb-active');
+        document.body.style.overflow = '';
+        lbImg.src = '';
+      }
+
+      // Attach to all inline-figure images
+      document.querySelectorAll('.inline-figure img, figure.inline-figure img').forEach(function(img) {
+        img.addEventListener('click', function() {
+          var cap = '';
+          var fig = img.closest('figure');
+          if (fig) {
+            var fc = fig.querySelector('figcaption');
+            if (fc) cap = fc.textContent.trim();
+          }
+          open(img.src, img.alt, cap);
+        });
+      });
+
+      // Close on overlay click, button click, or Escape key
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay || e.target === lbImg) close();
+      });
+      lbClose.addEventListener('click', close);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') close();
+      });
+    })();
+  </script>
 </body>
 </html>
