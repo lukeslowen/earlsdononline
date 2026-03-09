@@ -7,13 +7,77 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="../style.css">
+
+  <!-- Lightbox -->
+  <style>
+    .lb-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(8,18,18,0.92);
+      z-index: 9000;
+      cursor: zoom-out;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 1rem;
+    }
+    .lb-overlay.lb-active { display: flex; }
+    .lb-img-wrap {
+      position: relative;
+      max-width: min(90vw, 1000px);
+      max-height: 82vh;
+    }
+    .lb-overlay img {
+      display: block;
+      max-width: 100%;
+      max-height: 82vh;
+      object-fit: contain;
+      border: 2px solid var(--amber, #b8832a);
+      box-shadow: 0 8px 48px rgba(0,0,0,0.7);
+    }
+    .lb-caption {
+      margin-top: 0.75rem;
+      color: var(--gold-pale, #f0dba8);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      text-align: center;
+      max-width: min(90vw, 1000px);
+    }
+    .lb-close {
+      position: fixed;
+      top: 1rem;
+      right: 1.25rem;
+      font-size: 2rem;
+      color: var(--gold-pale, #f0dba8);
+      background: none;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+      z-index: 9001;
+      opacity: 0.8;
+    }
+    .lb-close:hover { opacity: 1; color: #fff; }
+    .inline-figure img, figure.inline-figure img {
+      cursor: zoom-in;
+    }
+    .inline-figure img:hover, figure.inline-figure img:hover {
+      opacity: 0.88;
+    }
+  </style>
 </head>
 <body>
 <header class="site-header">
   <div class="header-bg">
     <div class="header-frame"></div>
-    <h1>Noble Familia</h1>
-    <span class="header-subtitle">Our Family History</span>
+    <div class="header-inner">
+      <img src="../images/nf-logo.png" alt="Noble Familia monogram" class="nf-logo-img">
+      <div class="header-text">
+        <h1>Noble Familia</h1>
+        <span class="header-subtitle">Our Family History</span>
+      </div>
+    </div>
     <div class="header-ornament">
       <span class="line"></span><span class="gem"></span><span class="line right"></span>
     </div>
@@ -46,34 +110,41 @@
 <div class="article-body">
 <p>Mavis and Ken&#x27;s Pub&#x27;s 1956 - 1985</p>
 <p>Ken found employment with Shipstone&#x27;s Brewery on leaving the Navy in 1946. His father George and uncle Joe were already employed by Shipstone&#x27;s, Ken began in the cooperage but he soon moved to the offices where he became a member of the Accounts Department. He remembered regular visits to the County Hotel in Nottingham with bundles of cheques for Mr Shipstone&#x27;s signature. After a period of time in the offices Ken became a stock-taker for pubs in and around Nottingham, but he wanted his own pub. In 1956 Ken was appointed Assistant Manager of Truman&#x27;s Vaults in Nottingham Market Square. This came with a good sized house in Mansfield Road for Mavis and Michael, but also involved periods of relief management in pubs such as The Wolds and the St Anns Well Inn. It also included a long period as temporary manager of the Athol Hotel in Sheffield whilst it was transferred from Shipstones to another brewery. In 1958 Ken applied for the management of The Shire Horse in Corby and left Shipstone&#x27;s for Hole&#x27;s of Newark. Holes was acquired by Courage in 1967 with whom Ken stayed as manager of the Wheatsheaf Inn and the Kings Arms, until his retirement in 1985.</p>
-<figure class="inline-figure"><img src="ken/images/IMG_1073.jpeg" alt="shipstones"></figure>
-<figcaption>Shipstone&#x27;s Brewery Offices</figcaption>
+<figure class="inline-figure"><img src="ken/images/IMG_1073.jpeg" alt="shipstones">  <figcaption>Shipstone&#x27;s Brewery Offices</figcaption>
 </figure>
-<figure class="inline-figure"><img src="ken/images/IMG_1072.jpeg" alt="the wolds"></figure>
+<figure class="inline-figure"><img src="ken/images/IMG_1072.jpeg" alt="the wolds">
+  <figcaption>The wolds</figcaption>
+</figure>
 <p>The Wolds</p>
-<figure class="inline-figure"><img src="ken/images/480376.jpg" alt="St Annes Well"></figure>
-<figcaption>St Anns Well Inn</figcaption>
+<figure class="inline-figure"><img src="ken/images/480376.jpg" alt="St Annes Well">  <figcaption>St Anns Well Inn</figcaption>
 </figure>
-<figure class="inline-figure"><img src="ken/images/trumans.jpg" alt="trumans vaults"></figure>
-<figure class="inline-figure"><img src="ken/images/IMG_0385.JPG" alt="trumans vaults"></figure>
-<figcaption>1956-58 Trumans Vaults, Nottingham</figcaption>
+<figure class="inline-figure"><img src="ken/images/trumans.jpg" alt="trumans vaults">
+  <figcaption>Trumans vaults</figcaption>
 </figure>
-<figure class="inline-figure"><img src="ken/images/IMG_0690.JPG" alt="athol hotel"></figure>
-<figure class="inline-figure"><img src="ken/images/sheffield58.jpg" alt=""></figure>
-<figcaption>1957-58 The Athol Hotel, Sheffield</figcaption>
+<figure class="inline-figure"><img src="ken/images/IMG_0385.JPG" alt="trumans vaults">  <figcaption>1956-58 Trumans Vaults, Nottingham</figcaption>
 </figure>
-<figure class="inline-figure"><img src="ken/images/shire.jpg" alt=""></figure>
-<figure class="inline-figure"><img src="ken/images/shirehorse.jpg" alt=""></figure>
-<figcaption>1958-71 Shire Horse, Corby (Northants)</figcaption>
+<figure class="inline-figure"><img src="ken/images/IMG_0690.JPG" alt="athol hotel">
+  <figcaption>Athol hotel</figcaption>
 </figure>
-<figure class="inline-figure"><img src="ken/images/Wsheaf2.jpg" alt=""></figure>
-<figure class="inline-figure"><img src="ken/images/Wsheaf1.jpg" alt=""></figure>
-<figure class="inline-figure"><img src="ken/images/wheatsheaf.jpg" alt=""></figure>
-<figcaption>1971-78 Wheatsheaf, Edith Weston (Rutland)</figcaption>
+<figure class="inline-figure"><img src="ken/images/sheffield58.jpg" alt="sheffield58">  <figcaption>1957-58 The Athol Hotel, Sheffield</figcaption>
 </figure>
-<figure class="inline-figure"><img src="ken/images/kingsarms85.jpg" alt=""></figure>
-<figure class="inline-figure"><img src="ken/images/kingsarms82.jpg" alt=""></figure>
-<figcaption>1978-85 Kings Arms, Weldon (Northants)</figcaption>
+<figure class="inline-figure"><img src="ken/images/shire.jpg" alt="shire">
+  <figcaption>Shropshire</figcaption>
+</figure>
+<figure class="inline-figure"><img src="ken/images/shirehorse.jpg" alt="shirehorse">  <figcaption>1958-71 Shire Horse, Corby (Northants)</figcaption>
+</figure>
+<figure class="inline-figure"><img src="ken/images/Wsheaf2.jpg" alt="Wsheaf2">
+  <figcaption>Warren Sheaf, vol. 2</figcaption>
+</figure>
+<figure class="inline-figure"><img src="ken/images/Wsheaf1.jpg" alt="Wsheaf1">
+  <figcaption>Warren Sheaf, vol. 1</figcaption>
+</figure>
+<figure class="inline-figure"><img src="ken/images/wheatsheaf.jpg" alt="wheatsheaf">  <figcaption>1971-78 Wheatsheaf, Edith Weston (Rutland)</figcaption>
+</figure>
+<figure class="inline-figure"><img src="ken/images/kingsarms85.jpg" alt="kingsarms85">
+  <figcaption>King's Arms, 1985</figcaption>
+</figure>
+<figure class="inline-figure"><img src="ken/images/kingsarms82.jpg" alt="kingsarms82">  <figcaption>1978-85 Kings Arms, Weldon (Northants)</figcaption>
 </figure>
 </div>
 
@@ -89,5 +160,58 @@
   <p class="footer-title">Family History</p>
   <p><a href="mailto:noblefamilia@gmail.com">noblefamilia@gmail.com</a></p>
 </footer>
+
+  <!-- Lightbox overlay -->
+  <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lb-close" id="lb-close" aria-label="Close image viewer">&#x2715;</button>
+    <div class="lb-img-wrap">
+      <img id="lb-img" src="" alt="">
+    </div>
+    <p class="lb-caption" id="lb-caption"></p>
+  </div>
+
+  <script>
+    (function() {
+      var overlay = document.getElementById('lb-overlay');
+      var lbImg   = document.getElementById('lb-img');
+      var lbCap   = document.getElementById('lb-caption');
+      var lbClose = document.getElementById('lb-close');
+
+      function open(src, alt, caption) {
+        lbImg.src = src;
+        lbImg.alt = alt || '';
+        lbCap.textContent = caption || alt || '';
+        overlay.classList.add('lb-active');
+        document.body.style.overflow = 'hidden';
+      }
+      function close() {
+        overlay.classList.remove('lb-active');
+        document.body.style.overflow = '';
+        lbImg.src = '';
+      }
+
+      // Attach to all inline-figure images
+      document.querySelectorAll('.inline-figure img, figure.inline-figure img').forEach(function(img) {
+        img.addEventListener('click', function() {
+          var cap = '';
+          var fig = img.closest('figure');
+          if (fig) {
+            var fc = fig.querySelector('figcaption');
+            if (fc) cap = fc.textContent.trim();
+          }
+          open(img.src, img.alt, cap);
+        });
+      });
+
+      // Close on overlay click, button click, or Escape key
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay || e.target === lbImg) close();
+      });
+      lbClose.addEventListener('click', close);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') close();
+      });
+    })();
+  </script>
 </body>
 </html>
