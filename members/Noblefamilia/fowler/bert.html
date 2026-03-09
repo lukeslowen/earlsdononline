@@ -7,13 +7,77 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="../style.css">
+
+  <!-- Lightbox -->
+  <style>
+    .lb-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(8,18,18,0.92);
+      z-index: 9000;
+      cursor: zoom-out;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 1rem;
+    }
+    .lb-overlay.lb-active { display: flex; }
+    .lb-img-wrap {
+      position: relative;
+      max-width: min(90vw, 1000px);
+      max-height: 82vh;
+    }
+    .lb-overlay img {
+      display: block;
+      max-width: 100%;
+      max-height: 82vh;
+      object-fit: contain;
+      border: 2px solid var(--amber, #b8832a);
+      box-shadow: 0 8px 48px rgba(0,0,0,0.7);
+    }
+    .lb-caption {
+      margin-top: 0.75rem;
+      color: var(--gold-pale, #f0dba8);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      text-align: center;
+      max-width: min(90vw, 1000px);
+    }
+    .lb-close {
+      position: fixed;
+      top: 1rem;
+      right: 1.25rem;
+      font-size: 2rem;
+      color: var(--gold-pale, #f0dba8);
+      background: none;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+      z-index: 9001;
+      opacity: 0.8;
+    }
+    .lb-close:hover { opacity: 1; color: #fff; }
+    .inline-figure img, figure.inline-figure img {
+      cursor: zoom-in;
+    }
+    .inline-figure img:hover, figure.inline-figure img:hover {
+      opacity: 0.88;
+    }
+  </style>
 </head>
 <body>
 <header class="site-header">
   <div class="header-bg">
     <div class="header-frame"></div>
-    <h1>Noble Familia</h1>
-    <span class="header-subtitle">Our Family History</span>
+    <div class="header-inner">
+      <img src="../images/nf-logo.png" alt="Noble Familia monogram" class="nf-logo-img">
+      <div class="header-text">
+        <h1>Noble Familia</h1>
+        <span class="header-subtitle">Our Family History</span>
+      </div>
+    </div>
     <div class="header-ornament">
       <span class="line"></span><span class="gem"></span><span class="line right"></span>
     </div>
@@ -45,21 +109,27 @@
 </div>
 <div class="article-body">
 <p>Bertie Fowler, 1897-1917</p>
-<figure class="inline-figure"><img src="bert/images/fowler_bert_1896.JPG" alt=""></figure>
+<figure class="inline-figure"><img src="bert/images/fFowler_bert_1896.jpg" alt="fFowler bert 1896">
+  <figcaption>Fowler bert 1896</figcaption>
+</figure>
 <p>Bertie or Bertram Fowler was born in Nottingham in 1897, second son of <a href="james.html">James</a> and <a href="../peck/eliza.html">Eliza</a> Fowler and brother to <a href="may.html">May</a> . He grew up in Sneinton and unfortunately we know little about his early life. We do know from the 1911 census that when he was 14 and working as a printers labourer. At the outbreak of World War One in August 1914 he was 17 years old. Bertie enlisted in early March 1915 at the Mechanics Institute, into the Sherwood Foresters (Notts &amp; Derby Regiment) and was posted to the 15th Battalion as Private 24125.</p>
-<figure class="inline-figure"><img src="bert/images/Foresters.JPG" alt=""></figure>
-<figure class="inline-figure"><img src="bert/images/15thforesters%20may1915.jpg" alt="may 1915"></figure>
+<figure class="inline-figure"><img src="bert/images/Foresters.JPG" alt="Foresters">
+  <figcaption>15th Sherwood Foresters</figcaption>
+</figure>
+<figure class="inline-figure"><img src="bert/images/15thforesters%20may1915.jpg" alt="may 1915">
+  <figcaption>May 1915</figcaption>
+</figure>
 <p>The Bantams, Nottingham May 1915</p>
 <p>The 15th (Bantam) Battalion had been formed in February 1915 and was made up initially of men who although fit were below the normal minimum service height of 5&#x27; 3&quot;. As the battalion was raised through the Spring of 1915 they were billeted around Nottingham. There were no uniforms available so they were drilled in their civilian clothes. As uniforms became available they were issued from Battalion HQ in the Lace Market. Training continued throughout late Spring into June.</p>
-<figure class="inline-figure"><img src="bert/images/Nottingham%20Evening%20Post%20-%20Wednesday%2016%20June%201915.jpg" alt="Nottingham Evening Post"></figure>
-<figure class="inline-figure"><img src="bert/images/Nottingham%20Evening%20Post,%2021st%20Jun%201915.jpg" alt="Nottingham Evening Post"></figure>
-<figcaption>Nottingham Evening Post, June 1915</figcaption>
+<figure class="inline-figure"><img src="bert/images/Nottingham%20Evening%20Post%20-%20Wednesday%2016%20June%201915.jpg" alt="Nottingham Evening Post">
+  <figcaption>Nottingham Evening Post</figcaption>
+</figure>
+<figure class="inline-figure"><img src="bert/images/Nottingham%20Evening%20Post,%2021st%20Jun%201915.jpg" alt="Nottingham Evening Post">  <figcaption>Nottingham Evening Post, June 1915</figcaption>
 </figure>
 <p>On 22 June they were given a grand send off from Nottingham Market Square and marched to Victoria Station enroute to Masham in Yorkshire to join the 105th Brigade, part of the 35th (Bantam) Division. The men were accommodated in tents. The Battalion next moved to Bulford Camp, Tidworth Barracks on Salisbury Plain. They were still here by Christmas of 1915, training, drilling, route marching and digging trenches. As a signaller Bert Fowler would have been trained in specialist skills. He would have learnt how to use the heliograph, semaphore, morse code and telephones. After a couple of false starts the Battalion left Tidworth. Between 29 January and 1 February 1916 they arrived in France, the Transport via Southampton and Havre and the Battalion in two trains via Folkstone and Boulogne.</p>
-<figure class="inline-figure"><img src="bert/images/will.jpg" alt=""></figure>
-<figcaption>A copy of Bert&#x27;s will, completed before leaving for France in January 1916</figcaption>
+<figure class="inline-figure"><img src="bert/images/will.jpg" alt="will">  <figcaption>A copy of Bert&#x27;s will, completed before leaving for France in January 1916</figcaption>
 </figure>
-<p>For many, including Bert, it was probably their first sight of the sea. On arrival in France the 15th Sherwood Foresters moved in two parties to Renescure beyond St Omer. On 7 March they marched to Le Touret for instruction in the trenches and receive their first casualties. On 26 March they relieved the 2nd Scottish Rifles in the Fauquissant sector. Through April 1916 the battalion spent time in and out of the trenches at Laventie. In May the battalion spent the first half of the month in Divisional Reserve. From then they were again in and out of the tenches alternating with the 14th Gloucesters. On 30 May they were involved in their first serious engagement as they received heavy bombardment and hand to hand trench fighting, sustaining many losses. After a quiet June the battalion move south by train in July 1916 to join the new offensive in the Somme. The battalion were alongside the French near Maltz Horn Farm, half a mile south of Trones Wood. In heavy rain and under intense bombardment the 15th Sherwood Foresters entered the line on the night of 16/17 July. On 19 July the battalion was involved in an assault on German lines between Maltz Horn Farm and Arrow Head Copse.</p>
+<p>For many, including Bert, it was probably their first sight of the sea. On arrival in France the 15th Sherwood Foresters moved in two parties to Renescure beyond St Omer. On 7 March they marched to Le Touret for instruction in the trenches and receive their first casualties. On 26 March they relieved the 2nd Scottish Rifles in the Fauquissant sector. Through April 1916 the battalion spent time in and out of the trenches at Laventie. In May the battalion spent the first half of the month in Divisional Reserve. From then they were again in and out of the trenches alternating with the 14th Gloucesters. On 30 May they were involved in their first serious engagement as they received heavy bombardment and hand to hand trench fighting, sustaining many losses. After a quiet June the battalion move south by train in July 1916 to join the new offensive in the Somme. The battalion were alongside the French near Maltz Horn Farm, half a mile south of Trones Wood. In heavy rain and under intense bombardment the 15th Sherwood Foresters entered the line on the night of 16/17 July. On 19 July the battalion was involved in an assault on German lines between Maltz Horn Farm and Arrow Head Copse.</p>
 <p>800x600 Normal 0 false false false EN-GB X-NONE X-NONE MicrosoftInternetExplorer4</p>
 <p>The following adjusted extract is from &quot;The Blast of War&quot; :</p>
 <p>&quot;On the evening of the 19th July 1916 the Divisional Commander arrived at Brigade HQ, fresh from a Corps conference and ordered that the Brigade should capture some 1,000 yards of enemy trench from Maltz Horn Farm northwards, coordinated with a French attack. The task was allocated to the Foresters and appears to have been a desperately difficult venture from the outset. The frontage was far too wide for a battalion assault, observed artillery support could not be provided where it was needed most, and little time was given to troops that were already exhausted, hungry and under heavy artillery bombardment.</p>
@@ -140,8 +210,8 @@
 <p>27th - Moved to Aizecourt , stayed until 1st September. On 31st August, inspected by GOC Corps.</p>
 <p>September 1917</p>
 <p>1st - Relieved the 17th Royal Scots in the Lempire sector, remaining in front line trenches until 6th.</p>
-<p>2/3rd - 10pm, Wirk carried on. Covering party supplied to the 156th Cheshires. Enemy bombardment from about 11pm to 12.40am. Casulties - 1OR.</p>
-<p>3/4th - 9.30pm Inter Company Relief. Z Coy relieving Y Coy in E and F posts. About 8.30pm an enemy baloon over Gillemont was struck by lightening and came down in flames.</p>
+<p>2/3rd - 10pm, Wirk carried on. Covering party supplied to the 156th Cheshires. Enemy bombardment from about 11pm to 12.40am. Casualties - 1OR.</p>
+<p>3/4th - 9.30pm Inter Company Relief. Z Coy relieving Y Coy in E and F posts. About 8.30pm an enemy balloon over Gillemont was struck by lightening and came down in flames.</p>
 <p>6th - 9.30pm the Battalion was relieved by the 15th Cheshires, and went into shelters and billets previously occupied by them in Lempire and Sand Bag Alley (trench).</p>
 <p>7th - 11th - Wiring parties sent out by Coys alternately, 1 Coy on duty each night with orders in case of SOS or other alarm, to occupy Yak and Zebra, Lempire Central and Lempire East Posts .</p>
 <p>11th - The Battalion was relieved by the 20th Lancashire Fusiliers, and went into billets in Villers-Faucon .</p>
@@ -150,7 +220,7 @@
 <p>19th - 26th - The Battalion had a quiet time in the line on the whole. On the night of the 22nd/23rd the enemy shelled heavily along the line from Birdcage to Ossus Posts from 11-11.45pm. InterCompany relief. X Coy relieving w Coy and Z Coy relieving Y Coy.</p>
 <p>22nd - In the morning of 22nd about 8.45 1 NCO was killed near St Emilie by a bomb from an aeroplane while bringing two horses up to Malassise Farm. 1 horse was also killed. Work done - revetting and improving trenches and posts.</p>
 <p>26th - The Battalion was relieved by the 16th Cheshires and disposed as follows:- W Coy Meath and Limerick Posts - X Coy 14 Willows and Z Coy Kildare Post. Battalion HQ in Vaughan Bank near Epehy . Lewis gun classes commenced. Working parties supplied..</p>
-<p>30th - The Battalion was relieved by “D” Battalion, 166th Brigade, and marched by Coys to Aizecourt le Bas , halting by way at V illers Faucon . The relief was completed without incident</p>
+<p>30th - The Battalion was relieved by “D” Battalion, 166th Brigade, and marched by Coys to Aizecourt le Bas , halting by way at Villers Faucon . The relief was completed without incident</p>
 <p>October 1917 - During this month, the 35th Division left the Somme area for the first time since they arrived in France. The BEF had launched a very large offensive in Flanders on 31st July 1917; a strategic initiative to break through the German lines in front of Ypres, and to achieve re-capture of the Belgian ports and coast. This offensive soon ran into difficulties. The worst summer weather in Flanders for decades turned much of the Ypres area to deep mud, and the infantry ran into an unsuspected deep array of enemy concrete pillboxes holding machine gun posts. This unfortunate offensive, which was never to break through the enemy, has long been known as the Battle of Passchendaele, after a village at the extreme extent of the British advance, which was captured in November. In October, it was the turn of 35th Division to move into this appalling affair.</p>
 <p>1st - Battalion conveyed to Peronne in Motor Lorries. Transport moving by road.</p>
 <p>2/3rd - Resting and refitting. Battalion entrained at Peronne at 12 midnight 2/3rd inst en route for XVII Corps area, and detrained at Arras at 4.30am on the 4th inst, proceeding by march route into billets at Warlus . Part of the Battalion Transport proceeded by road halting on the night of 3rd inst at Bampaume and continuing march on 4th inst arrived at Walrus at 12 noon.</p>
@@ -162,13 +232,13 @@
 <p>17-20th - Reconnaissance of the line south of Houthulst Forest preparatory to attack. Furnishing of work parties.</p>
 <p>20th - At 5pm Battalion moved to Gouvy Farm near Boesinghe.</p>
 <p>24125 Lance Corporal Fowler died on Saturday 20th October 1917, killed in action at Gouvy Farm near Boesinghe , Belgium. He has no grave but is commemorated on the Tyne Cot Memorial, Zonnebeke, West-Vlaanderen, Belgium (Panel 99 to 102 and 162 to 162A). It is thought that he was killed during shelling. It may be that his body was buried at the time and lost due to subsequent shelling.</p>
-<figure class="inline-figure"><img src="bert/images/bertie.jpg" alt=""></figure>
-<figcaption>Nottingham Evening Post - 22 November 1917 (date of death incorrect)</figcaption>
+<figure class="inline-figure"><img src="bert/images/bertie.jpg" alt="bertie">  <figcaption>Nottingham Evening Post - 22 November 1917 (date of death incorrect)</figcaption>
 </figure>
-<figure class="inline-figure"><img src="bert/images/TyneCotWarMemorial.jpg" alt=""></figure>
-<figcaption>Tyne Cot Memorial, Belgium</figcaption>
+<figure class="inline-figure"><img src="bert/images/TyneCotWarMemorial.jpg" alt="TyneCotWarMemorial">  <figcaption>Tyne Cot Memorial, Belgium</figcaption>
 </figure>
-<figure class="inline-figure"><img src="bert/images/sherwoodpanel99.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="bert/images/sherwoodpanel99.jpg" alt="sherwoodpanel99">
+  <figcaption>Sherwood Foresters memorial panel</figcaption>
+</figure>
 <p>The Sherwood Foresters Panel</p>
 <p>showing Lance Corporal B Fowler</p>
 <p><a href="../fowler.html">Fowlers</a></p>
@@ -186,5 +256,58 @@
   <p class="footer-title">Family History</p>
   <p><a href="mailto:noblefamilia@gmail.com">noblefamilia@gmail.com</a></p>
 </footer>
+
+  <!-- Lightbox overlay -->
+  <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lb-close" id="lb-close" aria-label="Close image viewer">&#x2715;</button>
+    <div class="lb-img-wrap">
+      <img id="lb-img" src="" alt="">
+    </div>
+    <p class="lb-caption" id="lb-caption"></p>
+  </div>
+
+  <script>
+    (function() {
+      var overlay = document.getElementById('lb-overlay');
+      var lbImg   = document.getElementById('lb-img');
+      var lbCap   = document.getElementById('lb-caption');
+      var lbClose = document.getElementById('lb-close');
+
+      function open(src, alt, caption) {
+        lbImg.src = src;
+        lbImg.alt = alt || '';
+        lbCap.textContent = caption || alt || '';
+        overlay.classList.add('lb-active');
+        document.body.style.overflow = 'hidden';
+      }
+      function close() {
+        overlay.classList.remove('lb-active');
+        document.body.style.overflow = '';
+        lbImg.src = '';
+      }
+
+      // Attach to all inline-figure images
+      document.querySelectorAll('.inline-figure img, figure.inline-figure img').forEach(function(img) {
+        img.addEventListener('click', function() {
+          var cap = '';
+          var fig = img.closest('figure');
+          if (fig) {
+            var fc = fig.querySelector('figcaption');
+            if (fc) cap = fc.textContent.trim();
+          }
+          open(img.src, img.alt, cap);
+        });
+      });
+
+      // Close on overlay click, button click, or Escape key
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay || e.target === lbImg) close();
+      });
+      lbClose.addEventListener('click', close);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') close();
+      });
+    })();
+  </script>
 </body>
 </html>

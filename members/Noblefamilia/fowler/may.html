@@ -7,13 +7,77 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="../style.css">
+
+  <!-- Lightbox -->
+  <style>
+    .lb-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(8,18,18,0.92);
+      z-index: 9000;
+      cursor: zoom-out;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 1rem;
+    }
+    .lb-overlay.lb-active { display: flex; }
+    .lb-img-wrap {
+      position: relative;
+      max-width: min(90vw, 1000px);
+      max-height: 82vh;
+    }
+    .lb-overlay img {
+      display: block;
+      max-width: 100%;
+      max-height: 82vh;
+      object-fit: contain;
+      border: 2px solid var(--amber, #b8832a);
+      box-shadow: 0 8px 48px rgba(0,0,0,0.7);
+    }
+    .lb-caption {
+      margin-top: 0.75rem;
+      color: var(--gold-pale, #f0dba8);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      text-align: center;
+      max-width: min(90vw, 1000px);
+    }
+    .lb-close {
+      position: fixed;
+      top: 1rem;
+      right: 1.25rem;
+      font-size: 2rem;
+      color: var(--gold-pale, #f0dba8);
+      background: none;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+      z-index: 9001;
+      opacity: 0.8;
+    }
+    .lb-close:hover { opacity: 1; color: #fff; }
+    .inline-figure img, figure.inline-figure img {
+      cursor: zoom-in;
+    }
+    .inline-figure img:hover, figure.inline-figure img:hover {
+      opacity: 0.88;
+    }
+  </style>
 </head>
 <body>
 <header class="site-header">
   <div class="header-bg">
     <div class="header-frame"></div>
-    <h1>Noble Familia</h1>
-    <span class="header-subtitle">Our Family History</span>
+    <div class="header-inner">
+      <img src="../images/nf-logo.png" alt="Noble Familia monogram" class="nf-logo-img">
+      <div class="header-text">
+        <h1>Noble Familia</h1>
+        <span class="header-subtitle">Our Family History</span>
+      </div>
+    </div>
     <div class="header-ornament">
       <span class="line"></span><span class="gem"></span><span class="line right"></span>
     </div>
@@ -45,49 +109,39 @@
 </div>
 <div class="article-body">
 <p>May Fowler, 1905 - 1994</p>
-<figure class="inline-figure"><img src="may/images/fowler_may_1905_agedabout12.jpg" alt="may aged 12"></figure>
-<figcaption>May Fowler as a young girl</figcaption>
+<figure class="inline-figure"><img src="may/images/fFowler_may_1905_agedabout12.jpg" alt="may aged 12">  <figcaption>May Fowler as a young girl</figcaption>
 </figure>
 <p>May was born on January 5 1904, at 107 Manvers Street, Sneinton, Nottingham. One of seven children and daughter of <a href="../peck/eliza.html">Eliza Fowler (nee Peck)</a> . Eliza was married to <a href="james.html">James Fowler,</a> a painter, employed by the local railway company to paint bridges. James had left Eliza in 1896 and Eliza formed a relationship with <a href="../whitaker/john.html">John Whitaker</a> . As she was still married to James she was unable to marry John, but they had three children together. May was their second child together and their only daughter. Although John was the father James still appeared on their birth certificates. May&#x27;s father John died in 1909, just after the birth of their youngest son.</p>
 <p>Little is known of May&#x27;s early life but she grew up and attended school in Sneinton and had a very elementary education. Life wasn&#x27;t easy for May&#x27;s family as her mother was a single parent. There was also the tragedy of her younger brothers death in 1913 when she was just 8 and then the death of her older brother, <a href="bert.html">Bertie</a> , who was killed in the First World War when she was 12.</p>
-<figure class="inline-figure"><img src="may/images/manvers.jpg" alt=""></figure>
-<figcaption>Manvers Street, Sneinton, Nottingham</figcaption>
+<figure class="inline-figure"><img src="may/images/manvers.jpg" alt="manvers">  <figcaption>Manvers Street, Sneinton, Nottingham</figcaption>
 </figure>
 <p>In March 1923, at the age of 18, May married William Croome a miner and they lived together at 28 Davidson Street, Colwick. Within a year they had a baby daughter, Marjorie, but the baby did not survive her first birthday. This may have led to the breakdown of the couples relationship. Around this time we know she worked as a barmaid in the Old Moot Hall Wine Vaults in Nottingham Market Square (her brother Harry and sister Clara also worked here when it was bombed during the war) and it may have been here that she first met <a href="../drury/bill.html">Bill Drury</a> .</p>
-<figure class="inline-figure"><img src="may/images/moot%20hall.jpg" alt="moot hall"></figure>
-<figcaption>Old Moot Hall Wine Vaults, Market Square, Nottingham</figcaption>
+<figure class="inline-figure"><img src="may/images/moot%20hall.jpg" alt="moot hall">  <figcaption>Old Moot Hall Wine Vaults, Market Square, Nottingham</figcaption>
 </figure>
-<p>May left her husband William Croome in about 1925 and this likely that Bill moved in with May who was living with her brother Jack in Hutton Street. It was at Hutton Street that May gave birth to their first child <a href="http://freepages.rootsweb.com/~noblefamilia/genealogy/drury/mavis/mavis.htm">Mavis</a> in May 1928. Within months they had moved to Staines in Middlesex, possibly to escape the scandal of May&#x27;s divorce. Bill had been cited as an adulterer in the divorce case.</p>
-<figure class="inline-figure"><img src="may/images/6%20nov%201929.jpg" alt="Nottingham Evening News  1929"></figure>
-<figcaption>Nottingham Evening News, 6 November 1929</figcaption>
+<p>May left her husband William Croome in about 1925 and it is likely that Bill moved in with May who was living with her brother Jack in Hutton Street. It was at Hutton Street that May gave birth to their first child Mavis in May 1928. Within months they had moved to Staines in Middlesex, possibly to escape the scandal of May&#x27;s divorce. Bill had been cited as an adulterer in the divorce case.</p>
+<figure class="inline-figure"><img src="may/images/6%20nov%201929.jpg" alt="Nottingham Evening News  1929">  <figcaption>Nottingham Evening News, 6 November 1929</figcaption>
 </figure>
 <p>This was the start of the Great Depression and it is likely that they also moved south in search of work. May&#x27;s divorce was finally granted on 12 May 1930 and the couple wasted no time in getting married at Staines Register Office on 12 July 1930. Whilst in Croydon Bill worked as an electrician and May found work as a domestic in the flyers hostel at Croydon Aerodrome.</p>
-<figure class="inline-figure"><img src="may/images/croydon.jpg" alt=""></figure>
-<figcaption>Croydon Aerodrome in the 1930&#x27;s</figcaption>
+<figure class="inline-figure"><img src="may/images/croydon.jpg" alt="croydon">  <figcaption>Croydon Aerodrome in the 1930&#x27;s</figcaption>
 </figure>
-<figure class="inline-figure"><img src="may/images/1933.jpg" alt=""></figure>
-<figcaption>Mavis outside the family home - Feltham Middx 1933</figcaption>
+<figure class="inline-figure"><img src="may/images/1933.jpg" alt="1933">  <figcaption>Mavis outside the family home - Feltham Middx 1933</figcaption>
 </figure>
-<p>The family eventually returned to Nottingham in about 1933 to Overdale Road in Sneinton staying with May&#x27;s mother Eliza. Soon after their return May gave birth to Sheila, their second daughter. Sheala&#x27;s impending arrival may have bee the reason for their return to Nottingham. Sadly Sheila died before her second birthday in 1935, just weeks before May gave birth to twind Jean and June. In 1936 the family moved to their new council house in Deepdene Way, Cinderhill and remained there for most of their lives. May and William had four children Mavis, Sheila, and twins June and Jean. Sadly Sheila died at a very young age.</p>
-<figure class="inline-figure"><img src="may/images/mavis46.jpg" alt=""></figure>
-<figcaption>Mavis</figcaption>
+<p>The family eventually returned to Nottingham in about 1933 to Overdale Road in Sneinton staying with May&#x27;s mother Eliza. Soon after their return May gave birth to Sheila, their second daughter. Sheala&#x27;s impending arrival may have bee the reason for their return to Nottingham. Sadly Sheila died before her second birthday in 1935, just weeks before May gave birth to twins Jean and June. In 1936 the family moved to their new council house in Deepdene Way, Cinderhill and remained there for most of their lives. May and William had four children Mavis, Sheila, and twins June and Jean. Sadly Sheila died at a very young age.</p>
+<figure class="inline-figure"><img src="may/images/mavis46.jpg" alt="mavis46">  <figcaption>Mavis</figcaption>
 </figure>
-<figure class="inline-figure"><img src="../drury/images/sheilad.jpg" alt=""></figure>
-<figcaption>Sheila</figcaption>
+<figure class="inline-figure"><img src="../drury/images/sheilad.jpg" alt="sheilad">  <figcaption>Sheila</figcaption>
 </figure>
-<figure class="inline-figure"><img src="may/images/jean.jpg" alt=""></figure>
-<figcaption>Jean</figcaption>
+<figure class="inline-figure"><img src="may/images/jean.jpg" alt="jean">  <figcaption>Jean</figcaption>
 </figure>
-<figure class="inline-figure"><img src="may/images/june.jpg" alt=""></figure>
-<figcaption>June</figcaption>
+<figure class="inline-figure"><img src="may/images/june.jpg" alt="june">  <figcaption>June</figcaption>
 </figure>
-<p>After returning to Nottingham May worked at CS Wardle and Sons in Catle Boulevard, Nottingham as a semptress and later an examiner. Her eldest daughter Mavis joining her there on leaving school, as did the twins June and Jean and they worked there together until Mavis married and the company eventually relocated to London.</p>
-<figure class="inline-figure"><img src="may/images/wardles.jpg" alt=""></figure>
-<figure class="inline-figure"><img src="may/images/fowler_may_1905_wardlesworksouting1949.jpg" alt="wardles"></figure>
-<figcaption>CS Wardles Ltd, Castle Boulevard</figcaption>
+<p>After returning to Nottingham May worked at CS Wardle and Sons in Cattle Boulevard, Nottingham as a semptress and later an examiner. Her eldest daughter Mavis joining her there on leaving school, as did the twins June and Jean and they worked there together until Mavis married and the company eventually relocated to London.</p>
+<figure class="inline-figure"><img src="may/images/wardles.jpg" alt="wardles">
+  <figcaption>Wardle's Works outing</figcaption>
 </figure>
-<figure class="inline-figure"><img src="may/images/drury_william_1867_withmay.jpg" alt="may and bill"></figure>
-<figcaption>May and Bill</figcaption>
+<figure class="inline-figure"><img src="may/images/fFowler_may_1905_wardlesworksouting1949.jpg" alt="wardles">  <figcaption>CS Wardles Ltd, Castle Boulevard</figcaption>
+</figure>
+<figure class="inline-figure"><img src="may/images/drury_william_1867_withmay.jpg" alt="may and bill">  <figcaption>May and Bill</figcaption>
 </figure>
 <p>May outlived Bill by six years moving to Oakfield Close in 1990. She died in the University Hospital in April 1994, aged 89.</p>
 <p><a href="../fowler.html">Fowlers</a></p>
@@ -105,5 +159,58 @@
   <p class="footer-title">Family History</p>
   <p><a href="mailto:noblefamilia@gmail.com">noblefamilia@gmail.com</a></p>
 </footer>
+
+  <!-- Lightbox overlay -->
+  <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lb-close" id="lb-close" aria-label="Close image viewer">&#x2715;</button>
+    <div class="lb-img-wrap">
+      <img id="lb-img" src="" alt="">
+    </div>
+    <p class="lb-caption" id="lb-caption"></p>
+  </div>
+
+  <script>
+    (function() {
+      var overlay = document.getElementById('lb-overlay');
+      var lbImg   = document.getElementById('lb-img');
+      var lbCap   = document.getElementById('lb-caption');
+      var lbClose = document.getElementById('lb-close');
+
+      function open(src, alt, caption) {
+        lbImg.src = src;
+        lbImg.alt = alt || '';
+        lbCap.textContent = caption || alt || '';
+        overlay.classList.add('lb-active');
+        document.body.style.overflow = 'hidden';
+      }
+      function close() {
+        overlay.classList.remove('lb-active');
+        document.body.style.overflow = '';
+        lbImg.src = '';
+      }
+
+      // Attach to all inline-figure images
+      document.querySelectorAll('.inline-figure img, figure.inline-figure img').forEach(function(img) {
+        img.addEventListener('click', function() {
+          var cap = '';
+          var fig = img.closest('figure');
+          if (fig) {
+            var fc = fig.querySelector('figcaption');
+            if (fc) cap = fc.textContent.trim();
+          }
+          open(img.src, img.alt, cap);
+        });
+      });
+
+      // Close on overlay click, button click, or Escape key
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay || e.target === lbImg) close();
+      });
+      lbClose.addEventListener('click', close);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') close();
+      });
+    })();
+  </script>
 </body>
 </html>

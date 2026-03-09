@@ -7,13 +7,77 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="../style.css">
+
+  <!-- Lightbox -->
+  <style>
+    .lb-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(8,18,18,0.92);
+      z-index: 9000;
+      cursor: zoom-out;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 1rem;
+    }
+    .lb-overlay.lb-active { display: flex; }
+    .lb-img-wrap {
+      position: relative;
+      max-width: min(90vw, 1000px);
+      max-height: 82vh;
+    }
+    .lb-overlay img {
+      display: block;
+      max-width: 100%;
+      max-height: 82vh;
+      object-fit: contain;
+      border: 2px solid var(--amber, #b8832a);
+      box-shadow: 0 8px 48px rgba(0,0,0,0.7);
+    }
+    .lb-caption {
+      margin-top: 0.75rem;
+      color: var(--gold-pale, #f0dba8);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      text-align: center;
+      max-width: min(90vw, 1000px);
+    }
+    .lb-close {
+      position: fixed;
+      top: 1rem;
+      right: 1.25rem;
+      font-size: 2rem;
+      color: var(--gold-pale, #f0dba8);
+      background: none;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+      z-index: 9001;
+      opacity: 0.8;
+    }
+    .lb-close:hover { opacity: 1; color: #fff; }
+    .inline-figure img, figure.inline-figure img {
+      cursor: zoom-in;
+    }
+    .inline-figure img:hover, figure.inline-figure img:hover {
+      opacity: 0.88;
+    }
+  </style>
 </head>
 <body>
 <header class="site-header">
   <div class="header-bg">
     <div class="header-frame"></div>
-    <h1>Noble Familia</h1>
-    <span class="header-subtitle">Our Family History</span>
+    <div class="header-inner">
+      <img src="../images/nf-logo.png" alt="Noble Familia monogram" class="nf-logo-img">
+      <div class="header-text">
+        <h1>Noble Familia</h1>
+        <span class="header-subtitle">Our Family History</span>
+      </div>
+    </div>
     <div class="header-ornament">
       <span class="line"></span><span class="gem"></span><span class="line right"></span>
     </div>
@@ -45,19 +109,18 @@
 </div>
 <div class="article-body">
 <p>James Fowler, 1870 - 1907</p>
-<p>James Fowler remains a bit of a mystery. We have been unable to find either a record of his birth or his death and in 1896 he leaves his family and disappears completely having fathered four children with his wife Eliza. He continues to appear on the birth certificates of a further three children butthanks to DNA testing we now know that he was not the father and it is unlikely that he returned to Eliza after he left in 1896.</p>
+<p>James Fowler remains a bit of a mystery. We have been unable to find either a record of his birth or his death and in 1896 he leaves his family and disappears completely having fathered four children with his wife Eliza. He continues to appear on the birth certificates of a further three children but thanks to DNA testing we now know that he was not the father and it is unlikely that he returned to Eliza after he left in 1896.</p>
 <p>James was born in Bedford in about 1870. His parents James and Rebecca had moved to Bedford from Somerset sometime between 1863 and 1868, possibly in search of work. James senior was an iron moulder and Bedfordshire was an important centre for the manufacture of agricultural machinery. James and Frederick Howard Ltd had opened the Britannia Iron Works in Kempston Road in 1859, as a manufactory of steel ploughs and it is likely that it was here that James&#x27; father found employment.</p>
-<figure class="inline-figure"><img src="james/images/Iron%20works%20bedford.JPG" alt=""></figure>
-<figure class="inline-figure"><img src="james/images/Iron%20works%20bedford%201872.jpg" alt=""></figure>
-<figcaption>Britannia Iron Works, Bedford, 1872</figcaption>
+<figure class="inline-figure"><img src="james/images/Iron%20works%20bedford.JPG" alt="Iron 20works 20bedford">
+  <figcaption>Iron 20works 20bedford</figcaption>
+</figure>
+<figure class="inline-figure"><img src="james/images/Iron%20works%20bedford%201872.jpg" alt="Iron 20works 20bedford 201872">  <figcaption>Britannia Iron Works, Bedford, 1872</figcaption>
 </figure>
 <p>By 1881 the family had moved again and were living in Nottingham. They lived in Derby Terrace Sneinton where James attended the local school. Within ten years James had found work with the local railway company, possibly through his brother in law William Prince who was already a railway worker. In 1891 he was lodging with his sister and brother in law in Victoria Square, Sneinton.</p>
-<figure class="inline-figure"><img src="james/images/1891%20census.jpg" alt=""></figure>
-<figcaption>1891 Census</figcaption>
+<figure class="inline-figure"><img src="james/images/1891%20census.jpg" alt="1891 20census">  <figcaption>1891 Census</figcaption>
 </figure>
 <p>At this time there were two major rail operators in Nottingham. Living in Sneinton there was a good chance that James worked for the Midland Railway, but there is also the possibility that he could have worked for the Great Northern. It is even possible he worked for a private contractor as a lot of the painting of stations and bridges in Midland times was tendered out. James was described as a signal painter and bridge painter.</p>
-<figure class="inline-figure"><img src="james/images/midland%20station%2018972.jpg" alt=""></figure>
-<figcaption>Midland Station Nottingham 1897</figcaption>
+<figure class="inline-figure"><img src="james/images/midland%20station%2018972.jpg" alt="midland 20station 2018972">  <figcaption>Midland Station Nottingham 1897</figcaption>
 </figure>
 <p>James married local girl <a href="../peck/eliza.html">Eliza Peck</a> in October 1891 at St Albans church and they had four children. They were Harry, Lilly, Clara and Bert. In 1896 the family appear to be living in Loughborough, which was home to James&#x27; parents. James abandoned his wife and four children and Eliza returns to Nottingham, probably in order to find support from her family.</p>
 <p>after 1896 James appears on the birth certificates of three further children of Eliza Fowler, including <a href="may.html">May Fowle</a> r. However it appears that after the departure of James in 1896 Eliza met <a href="../whitaker/john.html">John Whitaker</a> , a distant relation, with whom she had Jack, May and Horace. As she was still officially married to James it was probably not possible for them to marry and for this reason she recorded the birth of their three children with James as the father.</p>
@@ -77,5 +140,58 @@
   <p class="footer-title">Family History</p>
   <p><a href="mailto:noblefamilia@gmail.com">noblefamilia@gmail.com</a></p>
 </footer>
+
+  <!-- Lightbox overlay -->
+  <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lb-close" id="lb-close" aria-label="Close image viewer">&#x2715;</button>
+    <div class="lb-img-wrap">
+      <img id="lb-img" src="" alt="">
+    </div>
+    <p class="lb-caption" id="lb-caption"></p>
+  </div>
+
+  <script>
+    (function() {
+      var overlay = document.getElementById('lb-overlay');
+      var lbImg   = document.getElementById('lb-img');
+      var lbCap   = document.getElementById('lb-caption');
+      var lbClose = document.getElementById('lb-close');
+
+      function open(src, alt, caption) {
+        lbImg.src = src;
+        lbImg.alt = alt || '';
+        lbCap.textContent = caption || alt || '';
+        overlay.classList.add('lb-active');
+        document.body.style.overflow = 'hidden';
+      }
+      function close() {
+        overlay.classList.remove('lb-active');
+        document.body.style.overflow = '';
+        lbImg.src = '';
+      }
+
+      // Attach to all inline-figure images
+      document.querySelectorAll('.inline-figure img, figure.inline-figure img').forEach(function(img) {
+        img.addEventListener('click', function() {
+          var cap = '';
+          var fig = img.closest('figure');
+          if (fig) {
+            var fc = fig.querySelector('figcaption');
+            if (fc) cap = fc.textContent.trim();
+          }
+          open(img.src, img.alt, cap);
+        });
+      });
+
+      // Close on overlay click, button click, or Escape key
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay || e.target === lbImg) close();
+      });
+      lbClose.addEventListener('click', close);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') close();
+      });
+    })();
+  </script>
 </body>
 </html>
