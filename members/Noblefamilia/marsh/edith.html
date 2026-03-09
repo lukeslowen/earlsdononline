@@ -7,13 +7,77 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="../style.css">
+
+  <!-- Lightbox -->
+  <style>
+    .lb-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(8,18,18,0.92);
+      z-index: 9000;
+      cursor: zoom-out;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 1rem;
+    }
+    .lb-overlay.lb-active { display: flex; }
+    .lb-img-wrap {
+      position: relative;
+      max-width: min(90vw, 1000px);
+      max-height: 82vh;
+    }
+    .lb-overlay img {
+      display: block;
+      max-width: 100%;
+      max-height: 82vh;
+      object-fit: contain;
+      border: 2px solid var(--amber, #b8832a);
+      box-shadow: 0 8px 48px rgba(0,0,0,0.7);
+    }
+    .lb-caption {
+      margin-top: 0.75rem;
+      color: var(--gold-pale, #f0dba8);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      text-align: center;
+      max-width: min(90vw, 1000px);
+    }
+    .lb-close {
+      position: fixed;
+      top: 1rem;
+      right: 1.25rem;
+      font-size: 2rem;
+      color: var(--gold-pale, #f0dba8);
+      background: none;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+      z-index: 9001;
+      opacity: 0.8;
+    }
+    .lb-close:hover { opacity: 1; color: #fff; }
+    .inline-figure img, figure.inline-figure img {
+      cursor: zoom-in;
+    }
+    .inline-figure img:hover, figure.inline-figure img:hover {
+      opacity: 0.88;
+    }
+  </style>
 </head>
 <body>
 <header class="site-header">
   <div class="header-bg">
     <div class="header-frame"></div>
-    <h1>Noble Familia</h1>
-    <span class="header-subtitle">Our Family History</span>
+    <div class="header-inner">
+      <img src="../images/nf-logo.png" alt="Noble Familia monogram" class="nf-logo-img">
+      <div class="header-text">
+        <h1>Noble Familia</h1>
+        <span class="header-subtitle">Our Family History</span>
+      </div>
+    </div>
     <div class="header-ornament">
       <span class="line"></span><span class="gem"></span><span class="line right"></span>
     </div>
@@ -45,18 +109,24 @@
 </div>
 <div class="article-body">
 <p>Edith Marsh, 1899 - 1935</p>
-<p>Edith Mabel Marsh was born o n 14 March 1899 at Crown and Anchor Yard, London Road, Nottingham and christened at St Phillip&#x27;s in Sneinton. She was the daughter of Charles and Henrietta Marsh. <a href="charles.html">Charles Marsh</a> was a lace maker, working at one of the many local lace factories. <a href="../marshall.html">Henrietta Marsh</a> was a lace winder.</p>
-<figure class="inline-figure"><img src="edith/images/winders.jpg" alt=""></figure>
+<p>Edith Mabel Marsh was born on 14 March 1899 at Crown and Anchor Yard, London Road, Nottingham and christened at St Phillip&#x27;s in Sneinton. She was the daughter of Charles and Henrietta Marsh. <a href="charles.html">Charles Marsh</a> was a lace maker, working at one of the many local lace factories. <a href="../marshall.html">Henrietta Marsh</a> was a lace winder.</p>
+<figure class="inline-figure"><img src="edith/images/winders.jpg" alt="winders">
+  <figcaption>Thread winders</figcaption>
+</figure>
 <figcaption>Lace winders at work</figcaption>
 </figure>
 <p>Edith was one of 9 children and along with Alfred, Charles, Maria, Hettie, Lizzie and Rose she appears in the 1901 census as living at 9 Crown and Anchor Yard, but strangely under the surname Stanley.</p>
-<p>We are unsure about Edith&#x27;s early life but we know she married John Ambrose in April 1921. John was a french polisher who had just been demobilised from Royal Field Artillery. After their marriage they were both living in <a href="../noble/guystemplate.html">Guys Terrace</a> in the St Anns area of Nottingham with Edith&#x27;s father, Charles and her brother Albert. Shortly after there marriage Edith gave birth to their daughter Miriam, named after John&#x27;s mother. It was therefore tragic that in July 1922, just 15 moths after their marriage, John died leaving 23 year old Edith alone with a small baby to care for. Edith received a small military pension so it is possible that his death was as a result of his military service.</p>
-<figure class="inline-figure"><img src="edith/images/miriam55.jpg" alt=""></figure>
+<p>We are unsure about Edith&#x27;s early life but we know she married John Ambrose in April 1921. John was a french polisher who had just been demobilised from Royal Field Artillery. After their marriage they were both living in <a href="../noble/guystemplate.html">Guys Terrace</a> in the St Anns area of Nottingham with Edith&#x27;s father, Charles and her brother Albert. Shortly after their marriage Edith gave birth to their daughter Miriam, named after John&#x27;s mother. It was therefore tragic that in July 1922, just 15 months after their marriage, John died leaving 23 year old Edith alone with a small baby to care for. Edith received a small military pension so it is possible that his death was as a result of his military service.</p>
+<figure class="inline-figure"><img src="edith/images/miriam55.jpg" alt="miriam55">
+  <figcaption>Miriam Noble, 1955</figcaption>
+</figure>
 <figcaption>Miriam Ambrose</figcaption>
 </figure>
 <p>Edith appears to have remained living at <a href="../noble/guystemplate.html">Guys Terrace</a> , Blue Bell Hill Road. Also living here at the time were her father Charles and her sister Ethel, living nearby with her husband Harry. We are unsure at what point she met the younger <a href="../noble/george.html">George Noble</a> who was also living at Guy&#x27;s Terrace at the time, a near neighbour, living with his grandmother Clara. George and Edith married in May 1925 at St Anns Church in Nottingham. George was 21 and Edith a 25 year old widow. This was shortly followed by the birth of their first son <a href="../noble/ken.html">Ken Noble</a> . Six years later there followed their second child Ray.</p>
 <p>George was described as a labourer and plasterers labourer. Shortly after Ray&#x27;s birth the family of five moved to Wendover Drive in Aspley to a newly built council house. Around this time George also secured work at Shipstone&#x27;s Brewery. However in April 1935 tragedy struck again when, at the age of 36, Edith died, at home, from a stomach ulcer. George was unable to cope with looking after the three children who were now 14, 10 and 4, and the family moved in with Edith&#x27;s sister Hetti and her husband in Joe Kirkham, living in Sturton Street.</p>
-<figure class="inline-figure"><img src="edith/images/evening%20post%2026%20april%2035.jpg" alt="evening post"></figure>
+<figure class="inline-figure"><img src="edith/images/evening%20post%2026%20april%2035.jpg" alt="evening post">
+  <figcaption>Nottingham Evening Post</figcaption>
+</figure>
 <figcaption>Evening Post, 26 April 1935</figcaption>
 </figure>
 <p><a href="../marsh.html">Marsh's</a></p>
@@ -74,5 +144,58 @@
   <p class="footer-title">Family History</p>
   <p><a href="mailto:noblefamilia@gmail.com">noblefamilia@gmail.com</a></p>
 </footer>
+
+  <!-- Lightbox overlay -->
+  <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lb-close" id="lb-close" aria-label="Close image viewer">&#x2715;</button>
+    <div class="lb-img-wrap">
+      <img id="lb-img" src="" alt="">
+    </div>
+    <p class="lb-caption" id="lb-caption"></p>
+  </div>
+
+  <script>
+    (function() {
+      var overlay = document.getElementById('lb-overlay');
+      var lbImg   = document.getElementById('lb-img');
+      var lbCap   = document.getElementById('lb-caption');
+      var lbClose = document.getElementById('lb-close');
+
+      function open(src, alt, caption) {
+        lbImg.src = src;
+        lbImg.alt = alt || '';
+        lbCap.textContent = caption || alt || '';
+        overlay.classList.add('lb-active');
+        document.body.style.overflow = 'hidden';
+      }
+      function close() {
+        overlay.classList.remove('lb-active');
+        document.body.style.overflow = '';
+        lbImg.src = '';
+      }
+
+      // Attach to all inline-figure images
+      document.querySelectorAll('.inline-figure img, figure.inline-figure img').forEach(function(img) {
+        img.addEventListener('click', function() {
+          var cap = '';
+          var fig = img.closest('figure');
+          if (fig) {
+            var fc = fig.querySelector('figcaption');
+            if (fc) cap = fc.textContent.trim();
+          }
+          open(img.src, img.alt, cap);
+        });
+      });
+
+      // Close on overlay click, button click, or Escape key
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay || e.target === lbImg) close();
+      });
+      lbClose.addEventListener('click', close);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') close();
+      });
+    })();
+  </script>
 </body>
 </html>

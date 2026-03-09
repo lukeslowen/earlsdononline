@@ -7,13 +7,77 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="../style.css">
+
+  <!-- Lightbox -->
+  <style>
+    .lb-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(8,18,18,0.92);
+      z-index: 9000;
+      cursor: zoom-out;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 1rem;
+    }
+    .lb-overlay.lb-active { display: flex; }
+    .lb-img-wrap {
+      position: relative;
+      max-width: min(90vw, 1000px);
+      max-height: 82vh;
+    }
+    .lb-overlay img {
+      display: block;
+      max-width: 100%;
+      max-height: 82vh;
+      object-fit: contain;
+      border: 2px solid var(--amber, #b8832a);
+      box-shadow: 0 8px 48px rgba(0,0,0,0.7);
+    }
+    .lb-caption {
+      margin-top: 0.75rem;
+      color: var(--gold-pale, #f0dba8);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      text-align: center;
+      max-width: min(90vw, 1000px);
+    }
+    .lb-close {
+      position: fixed;
+      top: 1rem;
+      right: 1.25rem;
+      font-size: 2rem;
+      color: var(--gold-pale, #f0dba8);
+      background: none;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+      z-index: 9001;
+      opacity: 0.8;
+    }
+    .lb-close:hover { opacity: 1; color: #fff; }
+    .inline-figure img, figure.inline-figure img {
+      cursor: zoom-in;
+    }
+    .inline-figure img:hover, figure.inline-figure img:hover {
+      opacity: 0.88;
+    }
+  </style>
 </head>
 <body>
 <header class="site-header">
   <div class="header-bg">
     <div class="header-frame"></div>
-    <h1>Noble Familia</h1>
-    <span class="header-subtitle">Our Family History</span>
+    <div class="header-inner">
+      <img src="../images/nf-logo.png" alt="Noble Familia monogram" class="nf-logo-img">
+      <div class="header-text">
+        <h1>Noble Familia</h1>
+        <span class="header-subtitle">Our Family History</span>
+      </div>
+    </div>
     <div class="header-ornament">
       <span class="line"></span><span class="gem"></span><span class="line right"></span>
     </div>
@@ -45,20 +109,19 @@
 </div>
 <div class="article-body">
 <p>Charles Marsh, 1849 - 1933</p>
-<figure class="inline-figure"><img src="charles/images/Hull1866.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="charles/images/Hull1866.jpg" alt="Hull1866">
+  <figcaption>Hull, 1866</figcaption>
+</figure>
 <p>Charles Francis Marsh was born in 1849 in Hull, Yorkshire, the son of butcher <a href="daniel.html">Daniel Marsh</a> and Maria Floyd. There is no trace of a birth certificate for Charles but he was baptised in All Saints Hull in January 1849. Daniel Marsh and Maria Floyd had moved to Hull from Manchester in about 1847. Daniel had left his wife Mary in Liverpool and appears to have eloped with Maria, who was a laundress and half his age. Charles was the second of their five children and the family appeared to settle in Great Passage Street Hull where Daniel traded as a butcher.</p>
 <p>By the time Charles was 12 in 1861 the family had moved again, this time to St Mary&#x27;s Nottingham.They were living in the notoriously poor Narrow Marsh area in Martins Yard. Although only 12, Charles was already employed in the local lace trade as a circular threader. Daniel was still described as a butcher.</p>
-<figure class="inline-figure"><img src="charles/images/marsh-1861a.jpg" alt="1861 census"></figure>
-<figcaption>1861 Census, Martins Yard, St Marys Nottingham</figcaption>
+<figure class="inline-figure"><img src="charles/images/marsh-1861a.jpg" alt="1861 census">  <figcaption>1861 Census, Martins Yard, St Marys Nottingham</figcaption>
 </figure>
 <p>At the age of 18 Charles began a brief spell in the army and enlisted into 2/6th Foot (Royal Warwickshire Regiment) on 1st March 1867. At the time of enlistment he was described as a labourer. His service number was 1694 and he served as a Private in E Company of the 2nd Battalion of the 6th Regiment . He joined his regiment in Edinburgh on 6 May 1867 before moving to Aldershot in 1868. The battalion spent two years in Wales in 1869-70 before moving to Buttevant Ireland in October 1870. By the time of the 1871 census we find Charles posted to the School of Musketry at St Leonard, Hythe . After a tour including the Curragh Camp, Newry and Belfast the battalion moved to Guernsey in 1874/75. Charles spent his last two years of service at Aldershot and Dover. After 10 years of service he was discharged as &#x27;time served&#x27; in Dover on 1 March 1877.</p>
-<figure class="inline-figure"><img src="charles/images/hythe.jpg" alt=""></figure>
-<figcaption>School of Musketry, Hythe</figcaption>
+<figure class="inline-figure"><img src="charles/images/hythe.jpg" alt="hythe">  <figcaption>School of Musketry, Hythe</figcaption>
 </figure>
 <p>On his discharge Charles returned to Nottingham and found employment as a lace maker and by 1880 he was living in Sneinton Elements. Within three years of leaving the army he had married <a href="../marshall/henrietta.html">Henrietta Marshall</a> , at St Matthias in Sneinton on 28 November 1880. Henrietta was the daughter of George and Jane Marshall and she was a cotton winder from Oldham Street, Nottingham. During the 1880s Charles works briefly as a painter but he returns to lace making before the end of the decade.</p>
 <p>In 1891 Charles and Henrietta were living in Beeston, moving to Crown and Anchor Yard, London Road, before 1901. The 1901 and 1911 census are however a mystery as Charles appears to change the family name to Stanley. Charles and Henrietta had nine children in total, including their youngest <a href="edith.html">Edith Marsh</a> in 1899.</p>
-<figure class="inline-figure"><img src="charles/images/1911%20census.jpeg" alt="1911 census"></figure>
-<figcaption>1911 Census, Newark Street, Sneinton Nottingham - family using the surname &#x27;Stanley&#x27;</figcaption>
+<figure class="inline-figure"><img src="charles/images/1911%20census.jpeg" alt="1911 census">  <figcaption>1911 Census, Newark Street, Sneinton Nottingham - family using the surname &#x27;Stanley&#x27;</figcaption>
 </figure>
 <p>In October 1908 Henrietta dies at home in Newark Street, Nottingham. Charles is present at the death. From 1911 we know little of Charles life until his own death in January 1933 aged 84. He was buried in a family grave in the Church Cemetery, Mansfield Road, together with three other members of the family including his wife, daughter and grand daughter, out-living them all.</p>
 <p><a href="../marsh.html">Marsh's</a></p>
@@ -76,5 +139,58 @@
   <p class="footer-title">Family History</p>
   <p><a href="mailto:noblefamilia@gmail.com">noblefamilia@gmail.com</a></p>
 </footer>
+
+  <!-- Lightbox overlay -->
+  <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lb-close" id="lb-close" aria-label="Close image viewer">&#x2715;</button>
+    <div class="lb-img-wrap">
+      <img id="lb-img" src="" alt="">
+    </div>
+    <p class="lb-caption" id="lb-caption"></p>
+  </div>
+
+  <script>
+    (function() {
+      var overlay = document.getElementById('lb-overlay');
+      var lbImg   = document.getElementById('lb-img');
+      var lbCap   = document.getElementById('lb-caption');
+      var lbClose = document.getElementById('lb-close');
+
+      function open(src, alt, caption) {
+        lbImg.src = src;
+        lbImg.alt = alt || '';
+        lbCap.textContent = caption || alt || '';
+        overlay.classList.add('lb-active');
+        document.body.style.overflow = 'hidden';
+      }
+      function close() {
+        overlay.classList.remove('lb-active');
+        document.body.style.overflow = '';
+        lbImg.src = '';
+      }
+
+      // Attach to all inline-figure images
+      document.querySelectorAll('.inline-figure img, figure.inline-figure img').forEach(function(img) {
+        img.addEventListener('click', function() {
+          var cap = '';
+          var fig = img.closest('figure');
+          if (fig) {
+            var fc = fig.querySelector('figcaption');
+            if (fc) cap = fc.textContent.trim();
+          }
+          open(img.src, img.alt, cap);
+        });
+      });
+
+      // Close on overlay click, button click, or Escape key
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay || e.target === lbImg) close();
+      });
+      lbClose.addEventListener('click', close);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') close();
+      });
+    })();
+  </script>
 </body>
 </html>
