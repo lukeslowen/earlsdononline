@@ -141,29 +141,26 @@
 }
 .gen0-pair {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 3px;
+  gap: 1px;
   width: 100%;
-}
-.gen0-pair + .gen0-pair {
-  margin-top: 3px;
+  margin-bottom: 6px;
 }
 .gen0-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 0.74rem;
+  font-size: 0.78rem;
   font-style: italic;
-  color: rgba(201,162,74,0.68);
+  color: rgba(201,162,74,0.72);
   text-align: center;
-  line-height: 1.2;
+  line-height: 1.3;
   white-space: nowrap;
 }
 .gen0-amp {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   color: rgba(201,162,74,0.38);
-  padding: 0 1px;
-  flex-shrink: 0;
+  line-height: 1;
 }
 .gen0-tick {
   width: 1px;
@@ -172,6 +169,34 @@
   margin: 5px auto 0;
 }
 
+
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 0.5rem 2rem;
+}
+.header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.nf-home .nf-logo-img {
+  width: clamp(55px, 8vw, 90px);
+  height: auto;
+  opacity: 0.92;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.6));
+  flex-shrink: 0;
+}
+.nf-home .site-header h1 {
+  text-align: left;
+}
+.nf-home .header-subtitle {
+  text-align: left;
+  margin-top: 0.2rem;
+}
 
     .photo-frame a { display: block; width: 100%; height: 100%; cursor: pointer; }
     .photo-frame a:hover img { filter: sepia(10%) contrast(1.08) brightness(1.06); opacity: 0.88; }
@@ -184,15 +209,20 @@
   <header class="site-header">
   <div class="header-bg">
     <div class="header-frame"></div>
-    <img src="images/nf-logo.png" alt="Noble Familia monogram" class="nf-logo-img"><h1>Noble Familia</h1>
-    <span class="header-subtitle">Our family history &mdash; tracing the lines of descent</span>
+    <div class="header-inner">
+      <img src="images/nf-logo.png" alt="Noble Familia monogram" class="nf-logo-img">
+      <div class="header-text">
+        <h1>Noble Familia</h1>
+        <span class="header-subtitle">Our family history &mdash; tracing the lines of descent</span>
+      </div>
+    </div>
     <div class="header-ornament">
       <span class="line"></span><span class="gem"></span><span class="line right"></span>
     </div>
   </div>
 </header>
 
-  <nav class="main-nav"><ul><li><a href="noble.html">Noble</a></li><li><a href="lloyd.html">Lloyd</a></li><li><a href="bunting.html">Bunting</a></li><li><a href="keetley.html">Keetley</a></li><li><a href="marsh.html">Marsh</a></li><li><a href="floyd.html">Floyd</a></li><li><a href="marshall.html">Marshall</a></li><li><a href="wainwright.html">Wainwright</a></li><li><a href="drury.html">Drury</a></li><li><a href="wood.html">Wood</a></li><li><a href="warren.html">Warren</a></li><li><a href="ward.html">Ward</a></li><li><a href="whitaker.html">Whitaker</a></li><li><a href="old.html">Old</a></li><li><a href="peck.html">Peck</a></li><li><a href="fowler.html">FFowler</a></li></ul></nav>
+  <nav class="main-nav"><ul><li><a href="noble.html">Noble</a></li><li><a href="lloyd.html">Lloyd</a></li><li><a href="bunting.html">Bunting</a></li><li><a href="keetley.html">Keetley</a></li><li><a href="marsh.html">Marsh</a></li><li><a href="floyd.html">Floyd</a></li><li><a href="marshall.html">Marshall</a></li><li><a href="wainwright.html">Wainwright</a></li><li><a href="drury.html">Drury</a></li><li><a href="wood.html">Wood</a></li><li><a href="warren.html">Warren</a></li><li><a href="ward.html">Ward</a></li><li><a href="whitaker.html">Whitaker</a></li><li><a href="old.html">Old</a></li><li><a href="peck.html">Peck</a></li><li><a href="fowler.html">Fowler</a></li></ul></nav>
 
   <div class="tree-container">
     <!-- GEN 0 (grandparents) -->
@@ -200,17 +230,61 @@
 
       <div class="gen0-slot" id="gs-0a">
         <div class="gen0-pair">
-          <span class="gen0-name">John Noble</span>
-          <span class="gen0-amp">&amp;</span>
-          <span class="gen0-name">Selina Lloyd</span>
+          <div class="gen0-name">John Noble</div>
+          <div class="gen0-amp">&amp;</div>
+          <div class="gen0-name">Selina Lloyd</div>
         </div>
         <div class="gen0-pair">
-          <span class="gen0-name">William Bunting</span>
-          <span class="gen0-amp">&amp;</span>
-          <span class="gen0-name">Clara Keetley</span>
+          <div class="gen0-name">William Bunting</div>
+          <div class="gen0-amp">&amp;</div>
+          <div class="gen0-name">Clara Keetley</div>
         </div>
         <div class="gen0-tick"></div>
       </div>
+
+      <div class="gen0-slot" id="gs-0b">
+        <div class="gen0-pair">
+          <div class="gen0-name">Daniel Marsh</div>
+          <div class="gen0-amp">&amp;</div>
+          <div class="gen0-name">Maria Floyd</div>
+        </div>
+        <div class="gen0-pair">
+          <div class="gen0-name">George Marshall</div>
+          <div class="gen0-amp">&amp;</div>
+          <div class="gen0-name">Jane Wainwright</div>
+        </div>
+        <div class="gen0-tick"></div>
+      </div>
+
+      <div class="gen0-slot" id="gs-0c">
+        <div class="gen0-pair">
+          <div class="gen0-name">William Drury</div>
+          <div class="gen0-amp">&amp;</div>
+          <div class="gen0-name">Ann Wood</div>
+        </div>
+        <div class="gen0-pair">
+          <div class="gen0-name">Henry Warren</div>
+          <div class="gen0-amp">&amp;</div>
+          <div class="gen0-name">Louisa Ward</div>
+        </div>
+        <div class="gen0-tick"></div>
+      </div>
+
+      <div class="gen0-slot" id="gs-0d">
+        <div class="gen0-pair">
+          <div class="gen0-name">George Whitaker</div>
+          <div class="gen0-amp">&amp;</div>
+          <div class="gen0-name">Charlotte Old</div>
+        </div>
+        <div class="gen0-pair">
+          <div class="gen0-name">Thomas Peck</div>
+          <div class="gen0-amp">&amp;</div>
+          <div class="gen0-name">Mary Ann Warren</div>
+        </div>
+        <div class="gen0-tick"></div>
+      </div>
+
+    </div>
 
       <div class="gen0-slot" id="gs-0b">
         <div class="gen0-pair">
@@ -331,7 +405,7 @@
         <div class="m-bar">✦</div>
         <div class="person" id="p-may">
           <div class="photo-frame"><a href="fowler/may.html" tabindex="-1" aria-hidden="true"><img src="images/may.jpg" alt="May Fowler"></a></div>
-          <p class="person-name"><a href="fowler/may.html">May FFowler</a></p>
+          <p class="person-name"><a href="fowler/may.html">May Fowler</a></p>
         </div>
       </div>
     </div>
