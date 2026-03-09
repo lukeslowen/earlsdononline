@@ -7,12 +7,71 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="../style.css">
+
+  <!-- Lightbox -->
+  <style>
+    .lb-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(8,18,18,0.92);
+      z-index: 9000;
+      cursor: zoom-out;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 1rem;
+    }
+    .lb-overlay.lb-active { display: flex; }
+    .lb-img-wrap {
+      position: relative;
+      max-width: min(90vw, 1000px);
+      max-height: 82vh;
+    }
+    .lb-overlay img {
+      display: block;
+      max-width: 100%;
+      max-height: 82vh;
+      object-fit: contain;
+      border: 2px solid var(--amber, #b8832a);
+      box-shadow: 0 8px 48px rgba(0,0,0,0.7);
+    }
+    .lb-caption {
+      margin-top: 0.75rem;
+      color: var(--gold-pale, #f0dba8);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      text-align: center;
+      max-width: min(90vw, 1000px);
+    }
+    .lb-close {
+      position: fixed;
+      top: 1rem;
+      right: 1.25rem;
+      font-size: 2rem;
+      color: var(--gold-pale, #f0dba8);
+      background: none;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+      z-index: 9001;
+      opacity: 0.8;
+    }
+    .lb-close:hover { opacity: 1; color: #fff; }
+    .inline-figure img, figure.inline-figure img {
+      cursor: zoom-in;
+    }
+    .inline-figure img:hover, figure.inline-figure img:hover {
+      opacity: 0.88;
+    }
+  </style>
 </head>
 <body>
 <header class="site-header">
   <div class="header-bg">
     <div class="header-frame"></div>
-    <h1>Noble Familia</h1>
+    <img src="../images/nf-logo.png" alt="Noble Familia monogram" class="nf-logo-img"><h1>Noble Familia</h1>
     <span class="header-subtitle">Our Family History</span>
     <div class="header-ornament">
       <span class="line"></span><span class="gem"></span><span class="line right"></span>
@@ -35,7 +94,7 @@
 <li><a href="../whitaker.html">Whitaker</a></li>
 <li><a href="../old.html">Old</a></li>
 <li><a href="../peck.html">Peck</a></li>
-<li><a href="../fowler.html">Fowler</a></li>
+<li><a href="../fowler.html">FFowler</a></li>
 </ul></nav>
 <div class="page-body">
 <main class="page-wrapper">
@@ -45,46 +104,46 @@
 </div>
 <div class="article-body">
 <p>Having survived the duration Tom Drury was killed just 4 months before the end of the war in July 1918. He served as an officers cook at the Divisional Headquarters of the 46th Division at La Chartreuse, Gosnay near Bethune. On the evening Saturday July 6th the officers mess took a direct hit.</p>
-<figure class="inline-figure"><img src="tom/images/gosnay.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="tom/images/gosnay.jpg" alt="gosnay"></figure>
 <figcaption>La Chartreuse, Gosnay - Divisional HQ of the 46th Division</figcaption>
 </figure>
 <p>Tom would have been evacuated to one of the Casualty Clearing Stations at Pernes but he died of his wounds within hours. Tom was buried at the military cemetery at Pernes. Pernes-en-Artois is a small town on the main road from Lillers to St Pol. The British Cemetery is nearly one kilometre west of the town on the road to Sains-les-Pernes.</p>
 <p>The cemetery was not begun until April 1918 when the 1st and 4th Canadian Casualty Clearing Stations arrived at Pernes, driven back by the German advance. In May, the 6th and 22nd Clearing Stations also arrived. Tom is one of 1078 burials.</p>
-<figure class="inline-figure"><img src="tom/images/pernes.jpg" alt=""></figure>
-<figure class="inline-figure"><img src="tom/images/Pernes2.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="tom/images/pernes.jpg" alt="pernes"></figure>
+<figure class="inline-figure"><img src="tom/images/Pernes2.jpg" alt="Pernes2"></figure>
 <p>Pernes British Cemetery Pas de Calais, France and Tom&#x27;s gravestone inscribed &quot;an inspiration to all&quot; Grave Ref V. D. 49</p>
-<figure class="inline-figure"><img src="tom/images/W5080aa.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="tom/images/W5080aa.jpg" alt="W5080aa"></figure>
 <figcaption><a href="tom.html">Details of Tom's Next of Kin (Army Form W5080)</a></figcaption>
 </figure>
-<figure class="inline-figure"><img src="tom/images/echo.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="tom/images/echo.jpg" alt="echo"></figure>
 <figcaption>Loughborough Echo - Friday 12th July 1918</figcaption>
 </figure>
 <p>DRURY - killed in France on July 6th, 1918, Tom Drury, aged 49 years.</p>
 <p>Private Drury Killed</p>
 <p>The news the Pte T Drury, of the Leicesters, was killed on Saturday last has been officially received by his wife. He was well known in Loughborough as a compositor and at one time his wife was caretaker of Emmanuel Schools. He joined the army in September 1914, the month after the outbreak of war. Writing to Mrs Drury, the Camp Commandant states that a shell destroyed the billet in which he was working. He was well thought of by officers and men by unfailing willingness to help, many times under trying conditions.</p>
-<figure class="inline-figure"><img src="tom/images/herald.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="tom/images/herald.jpg" alt="herald"></figure>
 <figcaption>Loughborough Herald - Thursday 18 July 1918</figcaption>
 </figure>
 <p>&quot;AN INSPIRATION TO ALL&quot;</p>
 <p>Mrs Drury of Leicester Road, Shepshed has received news of the death of her husband, Pte Tom Drury, of the Labour Corp. He was a cook at headquarters division and a shell fell on the roof of the house and burst in the mess as he was preparing tea. He received injuries from which he died a few hours later. The lieutenant of his company writes that he was &quot;well thought of by both officers and men with whom he came in touch for his unfailing willingness to help, many times under trying conditions.&quot; His Sergeant-Major also says: &quot;His first thoughts were always of his duty and the welfare of the mess, and he was an inspiration to all.&quot; Pte Drury formerly lived in Loughborough and was employed by Messrs Clarke, printers. He enlisted in September 1914, in the South Staffs, in which he was for some time officers cook, and was transferred to the Labour Corp in the same capacity. He was 49 years of age and has a son serving in the Leicesters.</p>
-<figure class="inline-figure"><img src="tom/images/carrol.jpg" alt=""></figure>
-<figure class="inline-figure"><img src="tom/images/plaq.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="tom/images/carrol.jpg" alt="carrol"></figure>
+<figure class="inline-figure"><img src="tom/images/plaq.jpg" alt="plaq"></figure>
 <p>Tom&#x27;s inscription on The Carrolin, erected as a</p>
 <p>memorial to Loughborough&#x27;s fallen</p>
-<figure class="inline-figure"><img src="tom/images/Labour%20Corps%20Recordsaa.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="tom/images/Labour%20Corps%20Recordsaa.jpg" alt="Labour 20Corps 20Recordsaa"></figure>
 <figcaption><a href="tom.html">Letters to Lucy Drury after Tom's death</a></figcaption>
 </figure>
-<figure class="inline-figure"><img src="tom/images/memorial.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="tom/images/memorial.jpg" alt="memorial"></figure>
 <p>Tom is also commemorated on a memorial</p>
 <p>erected to Shepshed&#x27;s fallen</p>
-<figure class="inline-figure"><img src="tom/images/service.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="tom/images/service.jpg" alt="service"></figure>
 <p>Tom was also commemorated at a service held at</p>
 <p>St Botolph&#x27;s Church, Shepshed on 22 July 1922</p>
 <p>and on a bronze plaque in the church.</p>
 </div>
 
 <div class="page-nav-bottom">
-<a href="tom-diary.html" class="btn-back">← Return to Tom Drury Service Record</a>
+<a href="tom-labour.html" class="btn-back">← The Labour Corps</a>
 <a href="../index.html" class="btn-home">⌂ Family History Homepage</a>
 </div>
 </main>
@@ -95,5 +154,58 @@
   <p class="footer-title">Family History</p>
   <p><a href="mailto:noblefamilia@gmail.com">noblefamilia@gmail.com</a></p>
 </footer>
+
+  <!-- Lightbox overlay -->
+  <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lb-close" id="lb-close" aria-label="Close image viewer">&#x2715;</button>
+    <div class="lb-img-wrap">
+      <img id="lb-img" src="" alt="">
+    </div>
+    <p class="lb-caption" id="lb-caption"></p>
+  </div>
+
+  <script>
+    (function() {
+      var overlay = document.getElementById('lb-overlay');
+      var lbImg   = document.getElementById('lb-img');
+      var lbCap   = document.getElementById('lb-caption');
+      var lbClose = document.getElementById('lb-close');
+
+      function open(src, alt, caption) {
+        lbImg.src = src;
+        lbImg.alt = alt || '';
+        lbCap.textContent = caption || alt || '';
+        overlay.classList.add('lb-active');
+        document.body.style.overflow = 'hidden';
+      }
+      function close() {
+        overlay.classList.remove('lb-active');
+        document.body.style.overflow = '';
+        lbImg.src = '';
+      }
+
+      // Attach to all inline-figure images
+      document.querySelectorAll('.inline-figure img, figure.inline-figure img').forEach(function(img) {
+        img.addEventListener('click', function() {
+          var cap = '';
+          var fig = img.closest('figure');
+          if (fig) {
+            var fc = fig.querySelector('figcaption');
+            if (fc) cap = fc.textContent.trim();
+          }
+          open(img.src, img.alt, cap);
+        });
+      });
+
+      // Close on overlay click, button click, or Escape key
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay || e.target === lbImg) close();
+      });
+      lbClose.addEventListener('click', close);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') close();
+      });
+    })();
+  </script>
 </body>
 </html>

@@ -7,12 +7,71 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="../style.css">
+
+  <!-- Lightbox -->
+  <style>
+    .lb-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(8,18,18,0.92);
+      z-index: 9000;
+      cursor: zoom-out;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 1rem;
+    }
+    .lb-overlay.lb-active { display: flex; }
+    .lb-img-wrap {
+      position: relative;
+      max-width: min(90vw, 1000px);
+      max-height: 82vh;
+    }
+    .lb-overlay img {
+      display: block;
+      max-width: 100%;
+      max-height: 82vh;
+      object-fit: contain;
+      border: 2px solid var(--amber, #b8832a);
+      box-shadow: 0 8px 48px rgba(0,0,0,0.7);
+    }
+    .lb-caption {
+      margin-top: 0.75rem;
+      color: var(--gold-pale, #f0dba8);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      text-align: center;
+      max-width: min(90vw, 1000px);
+    }
+    .lb-close {
+      position: fixed;
+      top: 1rem;
+      right: 1.25rem;
+      font-size: 2rem;
+      color: var(--gold-pale, #f0dba8);
+      background: none;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+      z-index: 9001;
+      opacity: 0.8;
+    }
+    .lb-close:hover { opacity: 1; color: #fff; }
+    .inline-figure img, figure.inline-figure img {
+      cursor: zoom-in;
+    }
+    .inline-figure img:hover, figure.inline-figure img:hover {
+      opacity: 0.88;
+    }
+  </style>
 </head>
 <body>
 <header class="site-header">
   <div class="header-bg">
     <div class="header-frame"></div>
-    <h1>Noble Familia</h1>
+    <img src="../images/nf-logo.png" alt="Noble Familia monogram" class="nf-logo-img"><h1>Noble Familia</h1>
     <span class="header-subtitle">Our Family History</span>
     <div class="header-ornament">
       <span class="line"></span><span class="gem"></span><span class="line right"></span>
@@ -35,7 +94,7 @@
 <li><a href="../whitaker.html">Whitaker</a></li>
 <li><a href="../old.html">Old</a></li>
 <li><a href="../peck.html">Peck</a></li>
-<li><a href="../fowler.html">Fowler</a></li>
+<li><a href="../fowler.html">FFowler</a></li>
 </ul></nav>
 <div class="page-body">
 <main class="page-wrapper">
@@ -56,23 +115,23 @@
 <p>20/9/1917 - 4.10pm move from Winnezeele and arrive at Esk Camp at 9am.</p>
 <p>21-22/9/1917 - Training</p>
 <p>23/9/1917 - Battalion move to reserve trenches at St Jean by train from Chadderston to Ypres and route march.</p>
-<figure class="inline-figure"><img src="bill/images/ypres1.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="bill/images/ypres1.jpg" alt="ypres1"></figure>
 <figcaption>Ypres, 1917</figcaption>
 </figure>
 <p>24/9/1917 - 7.30pm Battalion take over front line from 176 Brigade at Hill 37 and Elmtree Corner . D Company in reserve at Hill 35 .</p>
 <p>25/9/1917 - Bank Farm . Officer killed. Rifle grenades fired on hostile posts. Enemy aeroplane fired into trenches at 7.30am</p>
 <p>The 177th Brigade was detailed as the right forward Brigade of the Division. The conditions were atrocious: &quot;no one will ever lose the memory of the shell swept Wieltje crossroads with its nightly traffic jam - or of Number 5 mule track with its treacherous duck boards and its garland of foulness - or of Bank Farm and other farms of nondescript name, but specific odour.&quot;</p>
-<figure class="inline-figure"><img src="bill/images/ypres.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="bill/images/ypres.jpg" alt="ypres"></figure>
 <p>The Ypres Salient</p>
 <p>The weather was fortunately fine, but the nights were intensely cold. The taking over of the forward line of posts had been difficult but it was accomplished and hot soup was served before the bombardment began. At 5.50am the 2/4 and 2/5 Leicesters began their advance on the &#x27;Red Line&#x27; This was the beginning of what later became known as the Battle of Polygon Wood. They used a tactic of maintaining a distance of 100 yards behind a creeping barrage that carried them easily over the devastated remains of the enemy strongpoints.</p>
 <p>26/9/1917 - 2am bombardment starts. 5.50am Zero Hour. Battalion goes over to capture positions on Hill 37 . Platoons kept within 100 yards of creeping barrage and in some cases closer. There was a tendency to get too close. Hostile strong points caused little difficulty because of the closeness of the barrage. First objective taken at 6.37am and second objective at 8.30am. Bombardment on both sides continued all day. Consolidation of positions up to 12 noon Battalion HQ established in pill box on Hill 37 . German barrage on back areas. 4pm counter attack formed up but never materialised. Heavy hostile barrage through the night. Artillery active on both sides.</p>
 <p>The first objectives were taken within two hours and prisoners, mostly Saxons and Bavarians, were seen coming back. The 3rd Division on the right were not so fortunate being held up by the very poor ground. The 178th Brigade on the left also had difficulty with Otto Farm, but by 2.50pm the 59th Division had taken all the objectives on its front. The four tanks that had been assisting the infantry had all been ditched by 10.15am owing to the difficult nature of the ground. The expected counter attacks came in the afternoon. They were severe and supported by intense artillery fire but they were successfully repelled and the front lines remained intact. The doctrine of &#x27;bite and hold&#x27; had entered the language of trench warfare.</p>
-<figure class="inline-figure"><img src="bill/images/hill37.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="bill/images/hill37.jpg" alt="hill37"></figure>
 <figcaption>Area around Hill 37 and the advance of the 177 Brigade</figcaption>
 </figure>
 <p>During the night of the 26th/27th there was a great deal of shelling and many casualties were inflicted amongst both forward troops and carrying parties.</p>
 <p>27/9/1917 - Artillery and aerial action very active. Counter attack on the right at Zonnebeke .</p>
-<figure class="inline-figure"><img src="bill/images/zonneb.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="bill/images/zonneb.jpg" alt="zonneb"></figure>
 <figcaption>Zonnebeke Church</figcaption>
 </figure>
 <p>28/9/1917 - Shelling for 5 hours not so heavy - some periods of quiet. Gas attacks and heavy explosives on back areas.</p>
@@ -81,7 +140,7 @@
 <p>30/9/1917 Quiet - enemy aeroplane dropped flare on Hill 37 . Relieved by Otago Rgt at night. Battalion shelled on the Wieltje Road , 25 casualties. Total casualties of tour 10 officers killed, 61 other ranks, 184 wounded and 25 missing</p>
 <p>1/10/1917 - Passed day in reserve trenches and at 7pm marched out to Vlamertinge hutments. 27 officers 613 other ranks.</p>
 <p>After relief by the Australians the whole Division was removed from the Salient being considered too weakened by the losses sustained to carry out further attacks.. On October 6th the 59th Division was transferred from the Vth to the IIIrd Army.</p>
-<p>2/10/1917 - Thiennes. Proceded there by train arriving at 6pm</p>
+<p>2/10/1917 - Thiennes. Proceeded there by train arriving at 6pm</p>
 <p>3/10/1917 - Rest and clean up and equipping</p>
 <p>4-5/10/1917 - Training and service</p>
 <p>6/10/1917 - From 8am-1pm march and bus to Beaumetz-Lel-Aire .</p>
@@ -105,5 +164,58 @@
   <p class="footer-title">Family History</p>
   <p><a href="mailto:noblefamilia@gmail.com">noblefamilia@gmail.com</a></p>
 </footer>
+
+  <!-- Lightbox overlay -->
+  <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lb-close" id="lb-close" aria-label="Close image viewer">&#x2715;</button>
+    <div class="lb-img-wrap">
+      <img id="lb-img" src="" alt="">
+    </div>
+    <p class="lb-caption" id="lb-caption"></p>
+  </div>
+
+  <script>
+    (function() {
+      var overlay = document.getElementById('lb-overlay');
+      var lbImg   = document.getElementById('lb-img');
+      var lbCap   = document.getElementById('lb-caption');
+      var lbClose = document.getElementById('lb-close');
+
+      function open(src, alt, caption) {
+        lbImg.src = src;
+        lbImg.alt = alt || '';
+        lbCap.textContent = caption || alt || '';
+        overlay.classList.add('lb-active');
+        document.body.style.overflow = 'hidden';
+      }
+      function close() {
+        overlay.classList.remove('lb-active');
+        document.body.style.overflow = '';
+        lbImg.src = '';
+      }
+
+      // Attach to all inline-figure images
+      document.querySelectorAll('.inline-figure img, figure.inline-figure img').forEach(function(img) {
+        img.addEventListener('click', function() {
+          var cap = '';
+          var fig = img.closest('figure');
+          if (fig) {
+            var fc = fig.querySelector('figcaption');
+            if (fc) cap = fc.textContent.trim();
+          }
+          open(img.src, img.alt, cap);
+        });
+      });
+
+      // Close on overlay click, button click, or Escape key
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay || e.target === lbImg) close();
+      });
+      lbClose.addEventListener('click', close);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') close();
+      });
+    })();
+  </script>
 </body>
 </html>

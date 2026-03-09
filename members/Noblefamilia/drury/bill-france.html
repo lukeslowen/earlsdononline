@@ -7,12 +7,71 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="../style.css">
+
+  <!-- Lightbox -->
+  <style>
+    .lb-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(8,18,18,0.92);
+      z-index: 9000;
+      cursor: zoom-out;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 1rem;
+    }
+    .lb-overlay.lb-active { display: flex; }
+    .lb-img-wrap {
+      position: relative;
+      max-width: min(90vw, 1000px);
+      max-height: 82vh;
+    }
+    .lb-overlay img {
+      display: block;
+      max-width: 100%;
+      max-height: 82vh;
+      object-fit: contain;
+      border: 2px solid var(--amber, #b8832a);
+      box-shadow: 0 8px 48px rgba(0,0,0,0.7);
+    }
+    .lb-caption {
+      margin-top: 0.75rem;
+      color: var(--gold-pale, #f0dba8);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      text-align: center;
+      max-width: min(90vw, 1000px);
+    }
+    .lb-close {
+      position: fixed;
+      top: 1rem;
+      right: 1.25rem;
+      font-size: 2rem;
+      color: var(--gold-pale, #f0dba8);
+      background: none;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+      z-index: 9001;
+      opacity: 0.8;
+    }
+    .lb-close:hover { opacity: 1; color: #fff; }
+    .inline-figure img, figure.inline-figure img {
+      cursor: zoom-in;
+    }
+    .inline-figure img:hover, figure.inline-figure img:hover {
+      opacity: 0.88;
+    }
+  </style>
 </head>
 <body>
 <header class="site-header">
   <div class="header-bg">
     <div class="header-frame"></div>
-    <h1>Noble Familia</h1>
+    <img src="../images/nf-logo.png" alt="Noble Familia monogram" class="nf-logo-img"><h1>Noble Familia</h1>
     <span class="header-subtitle">Our Family History</span>
     <div class="header-ornament">
       <span class="line"></span><span class="gem"></span><span class="line right"></span>
@@ -35,7 +94,7 @@
 <li><a href="../whitaker.html">Whitaker</a></li>
 <li><a href="../old.html">Old</a></li>
 <li><a href="../peck.html">Peck</a></li>
-<li><a href="../fowler.html">Fowler</a></li>
+<li><a href="../fowler.html">FFowler</a></li>
 </ul></nav>
 <div class="page-body">
 <main class="page-wrapper">
@@ -50,7 +109,7 @@
 <p>The move back to Salisbury Plain was accompanied by embarkation leave prior to departure for France. The weather at Fovant was bitterly cold but musketry and other training continued. On February 13th the King inspected the 59th Division and presented decorations won during the Easter Rebellion.</p>
 <p>23/2/1917 - Fovant . In camp (hutments) pending embarkation overseas.</p>
 <p>24/2/1917 - Entrained at Dinton for Southampton en route for BEF France. Left Southampton at 4.15pm crossed to Havre where we arrived and disembarked at 7.30am.</p>
-<figure class="inline-figure"><img src="bill/images/leharve1916.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="bill/images/leharve1916.jpg" alt="leharve1916"></figure>
 <figcaption>Le Havre</figcaption>
 </figure>
 <p>25/2/1917 - Havre . Entrained at Gare de Marchadises at 10.30pm for Saleux .</p>
@@ -59,7 +118,7 @@
 <p>1/3/1917 - Petit St Jean. Marched to Fouencamps occupied billets.</p>
 <p>2/3/1917 - Marched to Camp 59 Mourcourt. Occupied hutments.</p>
 <p>3-7/3/1917 - At Camp 59</p>
-<figure class="inline-figure"><img src="bill/images/road.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="bill/images/road.jpg" alt="road"></figure>
 <p>The road to the front</p>
 <p>8/3/1917 - Marched to Bois Triangulaire and took over trenches as battalion reserve. 4th and 5th Lincolns in the front line.</p>
 <p>9-12/3/1917 - In Brigade reserve.</p>
@@ -73,12 +132,12 @@
 <p>20/3/191 - Relieved by the 8th Sherwood Foresters. Marched to Divisional rest at Foucaucourt (Cantonnement des Pommiers) .</p>
 <p>26/3/1917 - Foucaucourt . Marched to Le Mesnil .</p>
 <p>27/3/1917 - Le Mesnil . Marched to Hancourt which was occupied by the 18th Bengal Lancers, 48th Division Cyclists and part of 2/5 Sherwood Foresters.</p>
-<figure class="inline-figure"><img src="bill/images/hancou.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="bill/images/hancou.jpg" alt="hancou"></figure>
 <figcaption>Field Cookers an Hancourt</figcaption>
 </figure>
 <p>27-29/3/1917 - Hancourt . Working parties nightly to make line of cruciform posts joined up by wire along the east of Nobiscourt Line .</p>
 <p>30/3/1917 - Marched to Roisel .</p>
-<figure class="inline-figure"><img src="bill/images/roisel.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="bill/images/roisel.jpg" alt="roisel"></figure>
 <figcaption>Roisel March 31 1917 -</figcaption>
 </figure>
 <p>Troops rest before the attack on Hesbecourt</p>
@@ -90,7 +149,7 @@
 <p>2/4/1917 - Cruciform posts constructed. Hesbecourt shelled intermittently during the day. Post occupied at Carpeza Copse throughout the day. 7.30-8.30pm artillery preparation. 8.30pm B and C Coys in support of 4th Leicesters in attack at Fervaque Farm . Attack held up partly through wire and machine gun, partly through failure of 178th Brigade to take Le Verguier .</p>
 <p>Fervaque Farm was of considerable importance as it gave excellent views over the &#x27;Pontruet-Hargicourt Switch&#x27; - part of the celebrated &#x27;Hindenburg Line&#x27;. The farm was protected with thick wire and strongly held by machine guns. The 2/4 Leicesters attack in the mist was eventually abandoned without success.</p>
 <p>3/4/1917 - B and C Coys took over front line in the evening. 8.30pm artillery preparation. 9.15pm 2/4 Leicesters attacked Fervaque Farm but failed due to inability to clear wire. 2/5 Leicesters maintained former line after failure of the attack.</p>
-<figure class="inline-figure"><img src="bill/images/fervaque%20farm.JPG" alt=""></figure>
+<figure class="inline-figure"><img src="bill/images/fervaque%20farm.JPG" alt="fervaque 20farm"></figure>
 <figcaption>Fervaque Farm 2006-</figcaption>
 </figure>
 <p>(Pic courtesy of Catherine Bryan)</p>
@@ -101,7 +160,7 @@
 <p>7/4/1917 - Cruciform posts occupied C in support and B in line. 3 new posts dug during the night.</p>
 <p>Maj Gen Romer assumed command of the 59th Division on April 8th.</p>
 <p>8/4/1917 - Work on new cruciform posts continued and forward observation posts made. A took right of line and D took left.</p>
-<p>On the night of the 9th/10th April the 2/5 Lincolns moved to the attack, supported by artillery, but no actual assault was made as forward troops reported the Fervaque Farm empty. An examination of the farm by daylight showed it to be an extremely strong position, thickly wired and offering no real chance of success from any frontal attack. Late in the morning of the 9th a patrol of men from the 2/5 Leicesters was all but annihilated following a long and vicious exchange of fire near the farm, as the Germans called upon their artillery to pound the British troops facing their positions. Dodging the shells and scurrying from post to post was Private William Drury who was assigned the difficult job of runner for that day, his reports ensuring that Battalion HQ remained fully informed of events. Later that afternoon the Germans retired from the farm enabling a patrol from D Company to enter the shattered buildings. The trenches either side of the farm however remaind in enemy hands and it took several hours of intense fighting before the 2/5 Leicesters could move forward and link with adjacent battalions.</p>
+<p>On the night of the 9th/10th April the 2/5 Lincolns moved to the attack, supported by artillery, but no actual assault was made as forward troops reported the Fervaque Farm empty. An examination of the farm by daylight showed it to be an extremely strong position, thickly wired and offering no real chance of success from any frontal attack. Late in the morning of the 9th a patrol of men from the 2/5 Leicesters was all but annihilated following a long and vicious exchange of fire near the farm, as the Germans called upon their artillery to pound the British troops facing their positions. Dodging the shells and scurrying from post to post was Private William Drury who was assigned the difficult job of runner for that day, his reports ensuring that Battalion HQ remained fully informed of events. Later that afternoon the Germans retired from the farm enabling a patrol from D Company to enter the shattered buildings. The trenches either side of the farm however remained in enemy hands and it took several hours of intense fighting before the 2/5 Leicesters could move forward and link with adjacent battalions.</p>
 <p>9/4/1917 - 7am reported by Division on right that enemy is retiring. Patrols sent out by Fervaque Farm but still occupied. 11am patrol of D Coy killed after long fight, 1 survivor. 2pm Farm still occupied. 5.25pm Fervaque Farm occupied by patrol of D Coy. Enemy trenches cleared to right until junction made with 176 Brigade and to left with 2/5 Lincolns. 9pm battalion relieved by 2/5 Leicesters and returned to Hesbecourt .</p>
 <p>10/4/1917 3.30am relief completed C and D Company went to Hervilly .</p>
 <p>With the occupation of Fervaque Farm Hesbecourt immediately became a support and billeting area. Working parties left nightly to dig and wire new positions on the slopes above the village. Hervilly became Brigade HQ.</p>
@@ -130,7 +189,7 @@
 <p>6/5/1917 - C and D Coy return, working parties on the line.</p>
 <p>7-8/5/1917 - 2/4 Leicesters relieved - C, D and A in line.</p>
 <p>9/5/1917 - Quiet.</p>
-<p>10/5/1917 - Considerable enemy activity until dawn. One man killed. Work to start on continuos forward line.</p>
+<p>10/5/1917 - Considerable enemy activity until dawn. One man killed. Work to start on continuous forward line.</p>
 <p>11/5/1917 - Battalion withdrawn to the old German Line and relieved by 2/4 Leicesters.</p>
 <p>12/5/1917 - 1.05pm reliefs completed. Working parties.</p>
 <p>13-14/5/1917 - Working parties.</p>
@@ -138,7 +197,7 @@
 <p>16/5/1917 - Bois Bias. Battalion cleaning up. A bomb accidentally explodes wounding 6 guards and a prisoner.</p>
 <p>17-19/5/1917 - Individual and Company training.</p>
 <p>20/5/1917 - Bois Bias. Brigade church parade. At close of the service Maj Gen Romer presented commendation cards to No.240621 Pte GH Farmer, C Company for good work at Villeret and <a href="bill.html">No.241249 Lance Corp W Drury</a> and No.241983 Pte J Goulden of D Company for good work at Fervaque Farm .</p>
-<figure class="inline-figure"><img src="tom/images/herald.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="tom/images/herald.jpg" alt="herald"></figure>
 <figcaption>Loughborough Herald - Thursday 23 August 1917</figcaption>
 </figure>
 <p>&#x27;LOUGHBOROUGH MAN&#x27;S BRAVERY&#x27;-</p>
@@ -252,7 +311,9 @@
 <p>Monty</p>
 </div>
 
-<div class="page-nav-bottom">
+<p><a href="bill-france2.html">→ Read a letter home from a fellow soldier in the 2/5 Leicesters, April 1917</a></p>
+
+      <div class="page-nav-bottom">
 <a href="bill-diary.html" class="btn-back">← Return to Bill Drury Service Record</a>
 <a href="../index.html" class="btn-home">⌂ Family History Homepage</a>
 </div>
@@ -264,5 +325,58 @@
   <p class="footer-title">Family History</p>
   <p><a href="mailto:noblefamilia@gmail.com">noblefamilia@gmail.com</a></p>
 </footer>
+
+  <!-- Lightbox overlay -->
+  <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lb-close" id="lb-close" aria-label="Close image viewer">&#x2715;</button>
+    <div class="lb-img-wrap">
+      <img id="lb-img" src="" alt="">
+    </div>
+    <p class="lb-caption" id="lb-caption"></p>
+  </div>
+
+  <script>
+    (function() {
+      var overlay = document.getElementById('lb-overlay');
+      var lbImg   = document.getElementById('lb-img');
+      var lbCap   = document.getElementById('lb-caption');
+      var lbClose = document.getElementById('lb-close');
+
+      function open(src, alt, caption) {
+        lbImg.src = src;
+        lbImg.alt = alt || '';
+        lbCap.textContent = caption || alt || '';
+        overlay.classList.add('lb-active');
+        document.body.style.overflow = 'hidden';
+      }
+      function close() {
+        overlay.classList.remove('lb-active');
+        document.body.style.overflow = '';
+        lbImg.src = '';
+      }
+
+      // Attach to all inline-figure images
+      document.querySelectorAll('.inline-figure img, figure.inline-figure img').forEach(function(img) {
+        img.addEventListener('click', function() {
+          var cap = '';
+          var fig = img.closest('figure');
+          if (fig) {
+            var fc = fig.querySelector('figcaption');
+            if (fc) cap = fc.textContent.trim();
+          }
+          open(img.src, img.alt, cap);
+        });
+      });
+
+      // Close on overlay click, button click, or Escape key
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay || e.target === lbImg) close();
+      });
+      lbClose.addEventListener('click', close);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') close();
+      });
+    })();
+  </script>
 </body>
 </html>

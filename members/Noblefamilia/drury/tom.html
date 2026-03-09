@@ -7,12 +7,71 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="../style.css">
+
+  <!-- Lightbox -->
+  <style>
+    .lb-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(8,18,18,0.92);
+      z-index: 9000;
+      cursor: zoom-out;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 1rem;
+    }
+    .lb-overlay.lb-active { display: flex; }
+    .lb-img-wrap {
+      position: relative;
+      max-width: min(90vw, 1000px);
+      max-height: 82vh;
+    }
+    .lb-overlay img {
+      display: block;
+      max-width: 100%;
+      max-height: 82vh;
+      object-fit: contain;
+      border: 2px solid var(--amber, #b8832a);
+      box-shadow: 0 8px 48px rgba(0,0,0,0.7);
+    }
+    .lb-caption {
+      margin-top: 0.75rem;
+      color: var(--gold-pale, #f0dba8);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      text-align: center;
+      max-width: min(90vw, 1000px);
+    }
+    .lb-close {
+      position: fixed;
+      top: 1rem;
+      right: 1.25rem;
+      font-size: 2rem;
+      color: var(--gold-pale, #f0dba8);
+      background: none;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+      z-index: 9001;
+      opacity: 0.8;
+    }
+    .lb-close:hover { opacity: 1; color: #fff; }
+    .inline-figure img, figure.inline-figure img {
+      cursor: zoom-in;
+    }
+    .inline-figure img:hover, figure.inline-figure img:hover {
+      opacity: 0.88;
+    }
+  </style>
 </head>
 <body>
 <header class="site-header">
   <div class="header-bg">
     <div class="header-frame"></div>
-    <h1>Noble Familia</h1>
+    <img src="../images/nf-logo.png" alt="Noble Familia monogram" class="nf-logo-img"><h1>Noble Familia</h1>
     <span class="header-subtitle">Our Family History</span>
     <div class="header-ornament">
       <span class="line"></span><span class="gem"></span><span class="line right"></span>
@@ -35,7 +94,7 @@
 <li><a href="../whitaker.html">Whitaker</a></li>
 <li><a href="../old.html">Old</a></li>
 <li><a href="../peck.html">Peck</a></li>
-<li><a href="../fowler.html">Fowler</a></li>
+<li><a href="../fowler.html">FFowler</a></li>
 </ul></nav>
 <div class="page-body">
 <main class="page-wrapper">
@@ -47,7 +106,7 @@
 <p>Tom Drury, 1869 - 1918</p>
 <figure class="inline-figure"><img src="tom/images/drury_tom_1869_about1881inlodgings.jpg" alt="tom drury"></figure>
 <p>Tom Drury</p>
-<p>Tom was born youngest son of William Drury and Ann (formerly Wood) at Eagle in Lincolnshire, on 29 June 1869 and baptised at Eagle parish church on 1 August 1869. Tom was one of eight children ans his father farmed at Eagle where Tom spent all of his childhood helping out around the farm. When Tom was 14 the family moved to Thorpe on the Hill and a year later he left home to begin a five year printers apprenticeship on 20 November 1884, with Samuel White in Newark, Nottinghamshire. Samuel White was the publisher of the Newark Advertiser and it would have been at his Appleton Gate or Magnus Street printing works that Tom would have completed his apprenticeship. During this time Tom also enlisted and served with 4th Territorial Battalion of the Sherwood Foresters, as a part-time soldier, attending camp once a year.</p>
+<p>Tom was born youngest son of William Drury and Ann (formerly Wood) at Eagle in Lincolnshire, on 29 June 1869 and baptised at Eagle parish church on 1 August 1869. Tom was one of eight children and his father farmed at Eagle where Tom spent all of his childhood helping out around the farm. When Tom was 14 the family moved to Thorpe on the Hill and a year later he left home to begin a five year printers apprenticeship on 20 November 1884, with Samuel White in Newark, Nottinghamshire. Samuel White was the publisher of the Newark Advertiser and it would have been at his Appleton Gate or Magnus Street printing works that Tom would have completed his apprenticeship. During this time Tom also enlisted and served with 4th Territorial Battalion of the Sherwood Foresters, as a part-time soldier, attending camp once a year.</p>
 <figure class="inline-figure"><img src="tom/images/newark%20advertiser.jpg" alt="newark advertiser"></figure>
 <p>By 1890 Tom had completed his apprenticeship and had moved to nearby Loughborough to take up employment for Alfred Clarke&#x27;s of 32 Swan Street, Loughborough as a printers compositor. On arriving in the town he took up lodgings in Albert Street and within seven years he had met Lucy Warren a bookbinder who may also have been employed at Alfred Clarkes. Lucy was the daughter of a local coachbuilder and they married 2 August 1897.</p>
 <figure class="inline-figure"><img src="tom/images/drury_tom_1869_groupphotocloseup.jpg" alt="group"></figure>
@@ -61,11 +120,11 @@
 <figure class="inline-figure"><img src="tom/images/Angel%20Press.JPG" alt="Angel Press"></figure>
 <figcaption>Loughborough Printers, Angel Press</figcaption>
 </figure>
-<p>The family moved from Station Street to Oxford Street. In 1903 tat Tom and Lucy have their second child Eva. Station Street Loughborough and within six years they had their second child, Eva in December 1903. Tom continued to work at the Angel Press up until the outbreak of war. By 1914 they had moved to Devonshire Square.</p>
-<figure class="inline-figure"><img src="tom/images/devo.jpg" alt=""></figure>
+<p>The family moved from Station Street to Oxford Street. In 1903 Tom and Lucy had their second child Eva.  Tom continued to work at the Angel Press up until the outbreak of war. By 1914 they had moved to Devonshire Square.</p>
+<figure class="inline-figure"><img src="tom/images/devo.jpg" alt="devo"></figure>
 <figcaption>Devonshire Square, Loughborough</figcaption>
 </figure>
-<figure class="inline-figure"><img src="tom/images/devon.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="tom/images/devon.jpg" alt="devon"></figure>
 <figcaption>...and now.</figcaption>
 </figure>
 <p>Tom volunteered at Loughborough Drill Hall a few weeks after the outbreak of war on the evening of 24 September 1914 with his brother-in-law Thomas Warren and other friends. He was 44 years old, but informed them that he was ten years younger. For some reason they were assigned to the 9th Battalion South Staffs Regiment (rather than the local Leicesters) at Lichfield. After basic training they served in the Armentires area until April 1916. In April 1916 Tom was on leave in Loughborough and is mentioned in the local paper for breaking the drinking laws in his brother in laws pub.</p>
@@ -79,7 +138,7 @@
 <p>Following duty on the Somme Front, Tom&#x27;s division was sent to the Ypres salient. In June 1917, the 23rd was part of the spear head attack at Messines. In October 1917 Tom was transferred to the 1/6th South Staffordshire Regiment. Shortly after he was attached to the 240th Employment Coy and transferred to the Labour Corps (probably due to his age). All this time he was an officer&#x27;s cook.</p>
 <p><a href="tom-diary.html">Tom's war service in more detail</a></p>
 <p>Tom was killed at &quot;the headquarters division&quot; on 6 July 1918, aged 49. He is buried in Pernes France. He was killed when a shell hit the mess, probably during an artillery barrage.</p>
-<figure class="inline-figure"><img src="tom/images/grave.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="tom/images/grave.jpg" alt="grave"></figure>
 <p>Tom&#x27;s grave in Pernes Cemetery</p>
 </div>
 
@@ -95,5 +154,58 @@
   <p class="footer-title">Family History</p>
   <p><a href="mailto:noblefamilia@gmail.com">noblefamilia@gmail.com</a></p>
 </footer>
+
+  <!-- Lightbox overlay -->
+  <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lb-close" id="lb-close" aria-label="Close image viewer">&#x2715;</button>
+    <div class="lb-img-wrap">
+      <img id="lb-img" src="" alt="">
+    </div>
+    <p class="lb-caption" id="lb-caption"></p>
+  </div>
+
+  <script>
+    (function() {
+      var overlay = document.getElementById('lb-overlay');
+      var lbImg   = document.getElementById('lb-img');
+      var lbCap   = document.getElementById('lb-caption');
+      var lbClose = document.getElementById('lb-close');
+
+      function open(src, alt, caption) {
+        lbImg.src = src;
+        lbImg.alt = alt || '';
+        lbCap.textContent = caption || alt || '';
+        overlay.classList.add('lb-active');
+        document.body.style.overflow = 'hidden';
+      }
+      function close() {
+        overlay.classList.remove('lb-active');
+        document.body.style.overflow = '';
+        lbImg.src = '';
+      }
+
+      // Attach to all inline-figure images
+      document.querySelectorAll('.inline-figure img, figure.inline-figure img').forEach(function(img) {
+        img.addEventListener('click', function() {
+          var cap = '';
+          var fig = img.closest('figure');
+          if (fig) {
+            var fc = fig.querySelector('figcaption');
+            if (fc) cap = fc.textContent.trim();
+          }
+          open(img.src, img.alt, cap);
+        });
+      });
+
+      // Close on overlay click, button click, or Escape key
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay || e.target === lbImg) close();
+      });
+      lbClose.addEventListener('click', close);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') close();
+      });
+    })();
+  </script>
 </body>
 </html>

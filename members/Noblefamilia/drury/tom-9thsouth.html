@@ -7,12 +7,71 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="../style.css">
+
+  <!-- Lightbox -->
+  <style>
+    .lb-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(8,18,18,0.92);
+      z-index: 9000;
+      cursor: zoom-out;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 1rem;
+    }
+    .lb-overlay.lb-active { display: flex; }
+    .lb-img-wrap {
+      position: relative;
+      max-width: min(90vw, 1000px);
+      max-height: 82vh;
+    }
+    .lb-overlay img {
+      display: block;
+      max-width: 100%;
+      max-height: 82vh;
+      object-fit: contain;
+      border: 2px solid var(--amber, #b8832a);
+      box-shadow: 0 8px 48px rgba(0,0,0,0.7);
+    }
+    .lb-caption {
+      margin-top: 0.75rem;
+      color: var(--gold-pale, #f0dba8);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      text-align: center;
+      max-width: min(90vw, 1000px);
+    }
+    .lb-close {
+      position: fixed;
+      top: 1rem;
+      right: 1.25rem;
+      font-size: 2rem;
+      color: var(--gold-pale, #f0dba8);
+      background: none;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+      z-index: 9001;
+      opacity: 0.8;
+    }
+    .lb-close:hover { opacity: 1; color: #fff; }
+    .inline-figure img, figure.inline-figure img {
+      cursor: zoom-in;
+    }
+    .inline-figure img:hover, figure.inline-figure img:hover {
+      opacity: 0.88;
+    }
+  </style>
 </head>
 <body>
 <header class="site-header">
   <div class="header-bg">
     <div class="header-frame"></div>
-    <h1>Noble Familia</h1>
+    <img src="../images/nf-logo.png" alt="Noble Familia monogram" class="nf-logo-img"><h1>Noble Familia</h1>
     <span class="header-subtitle">Our Family History</span>
     <div class="header-ornament">
       <span class="line"></span><span class="gem"></span><span class="line right"></span>
@@ -35,7 +94,7 @@
 <li><a href="../whitaker.html">Whitaker</a></li>
 <li><a href="../old.html">Old</a></li>
 <li><a href="../peck.html">Peck</a></li>
-<li><a href="../fowler.html">Fowler</a></li>
+<li><a href="../fowler.html">FFowler</a></li>
 </ul></nav>
 <div class="page-body">
 <main class="page-wrapper">
@@ -46,12 +105,12 @@
 <div class="article-body">
 <p>9th South Staffordshire Regiment</p>
 <p>(text in italics is extracted from the 9th South Staffordshires War Diary)</p>
-<figure class="inline-figure"><img src="tom/images/group.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="tom/images/group.jpg" alt="group"></figure>
 <p>Tom, back row -third from left, with his Company including his</p>
 <p>brother-in-law Thomas Warren, corporal on back row.</p>
 <p>Dressed in the &#x27;blue serge&#x27; uniform issued between Oct 1914 - Feb 1915.</p>
 <p><a href="tom.html">Tom Drury</a> volunteered at Loughborough Drill Hall a few weeks after the outbreak of war on the evening of 24 September 1914 with his brother-in-law Thomas Warren and other friends. He was 44 years old, but informed the Recruiting Sergeant that he was ten years younger. Tom was enlisted into the Leicestershire Regiment (Regular Army) as Private 15452 and immediately posted to depot. On 30th September he and Tom Warren were posted to the 9th Battalion of the South Staffordshire Regiment at Lichfield. It is not clear why, it may simply have been that the Leicestershire Regiment was oversubscribed.</p>
-<figure class="inline-figure"><img src="tom/images/B111aa.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="tom/images/B111aa.jpg" alt="B111aa"></figure>
 <figcaption><a href="tom.html">Details of Tom's Attestation (Army Form B111)</a></figcaption>
 </figure>
 <p>The 9th South Staffs Regiment was formed at Lichfield in September 1914. The battalion was attached to the 23rd Division (Kitcheners Third New Army) at Bourley Bottom, Aldershot. Equipment of all kinds was in short supply and so were cooks. Trained cooks were non-existent in the Division and contract catering was bought in until the Division trained its own chefs early in December. It was probably at this time that Tom trained for his new trade. Uniforms were also in short supply and recruits paraded in a combination of khaki and civilian clothing. In October emergency blue-serge clothing and obsolete Lee-Metford rifles were issued. Training at this time consisted of squad drill, physical training, running, marching, night work and entrenching.</p>
@@ -86,7 +145,7 @@
 <p>D Coy draining and improving Shaftsbury Avenue communication trench</p>
 <p>2nd October- Companies in place as they were the previous day, but at 10am B Coy was shelled at La Fleurie Post. Pte 13412, Carter B. and Sgt. B Davis were wounded, Pte. Carter dying of his wounds by 9pm</p>
 <p>3-18th October- A and B Coys employed as before. C Coy. Working on the Grenier Line - 50 men on barbed wire entanglements in the rear of the first line and 50 at work paving Shaftsbury Avenue with bricks. D was revetting and repairing Cowgate Avenue communication trench. They remained in these locations until the 18th, but with D Coy sending 30 men to Brasserie as a carrying party on the 9th and working on Brick Street communication trench from the 10th to the 13th.</p>
-<p>At 3pm on the 13th Lavisee Post was shelled &quot;and twawled&quot; [sic] causing C and B Coy working parties four casualties. Wounded were</p>
+<p>At 3pm on the 13th Lavisee Post was shelled &quot;and trawled&quot; [sic] causing C and B Coy working parties four casualties. Wounded were</p>
 <p>14148 Pte Dennis J. C Coy</p>
 <p>15041 Pte Harris L.J.</p>
 <p>15257 Pte Smith E B Coy</p>
@@ -99,8 +158,8 @@
 <p>With the companies on detached duties, the Battalion War Diary refers to the separate documents for more details from this point on, but the general routine seems to have continued as before</p>
 <p>A Coy - Worked at Bois Grenier (24th); Park Road Avenue communication trench (25th); Park Road Avenue, Haymarket, Oxford Circus and Shaftsbury Avenue (27th) and at Haymarket and Park Row Avenue on the 28th, 29th and 30th. On the 26th they went to the Divisional baths in the afternoon, but were able to do &quot;little or no work&quot; that night due to heavy shelling.</p>
 <p>D Coy. - Worked on Fire Trench 62 on the 25th, on Willow Avenue (night of 26-27th). On the 28th they were making knife rests and entanglements at Rue de Bois and working in Willow Avenue - a communication trench. Cpl.W Watts was wounded in the back by a spent bullet. On the 29th they converted dugouts in Trench 66 moving to Railway Walk on the 30th</p>
-<figure class="inline-figure"><img src="tom/images/boisgrenier.jpg" alt=""></figure>
-<figcaption>Map shwing trench system around Bois-Grenier</figcaption>
+<figure class="inline-figure"><img src="tom/images/boisgrenier.jpg" alt="boisgrenier"></figure>
+<figcaption>Map showing trench system around Bois-Grenier</figcaption>
 </figure>
 <p>The November War Diary includes loose items for individual companies/posts. These aren&#x27;t identified and it is not always clear who is featured.</p>
 <p>B Company - Posts at Halfway House and Rue Allee and Rue Fleuree were under Lt. AE Smith. These are confirmed as B Coy posts as Smith recorded an order from Capt. Rabon William, OC B Coy on 3 Nov, and as they were recorded as B Coy posts on 30/9/15.</p>
@@ -153,7 +212,7 @@
 <p>25th December - &quot;Christmas Day. Heavy artillery duels all day otherwise nothing to report except 1 casualty in C Coy and one accidental injury in D Coy&quot; [loading in the RE yard]</p>
 <p>27th December - 34 men sick</p>
 <p>28th December 1915 - New RSM &quot;14684 CSM Kilvert CR vice RSM Barret t</p>
-<figure class="inline-figure"><img src="tom/images/albert1916.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="tom/images/albert1916.jpg" alt="albert1916"></figure>
 <figcaption>Albert 1916</figcaption>
 </figure>
 <p>The Division was relieved after a lengthy five month spell in the front line by 34th Division, between 26 January and 8 February 1916. After a certain amount of confusing movement, Divisional HQ was established at Blaringhem and the units concentrated around Bruay.</p>
@@ -175,5 +234,58 @@
   <p class="footer-title">Family History</p>
   <p><a href="mailto:noblefamilia@gmail.com">noblefamilia@gmail.com</a></p>
 </footer>
+
+  <!-- Lightbox overlay -->
+  <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lb-close" id="lb-close" aria-label="Close image viewer">&#x2715;</button>
+    <div class="lb-img-wrap">
+      <img id="lb-img" src="" alt="">
+    </div>
+    <p class="lb-caption" id="lb-caption"></p>
+  </div>
+
+  <script>
+    (function() {
+      var overlay = document.getElementById('lb-overlay');
+      var lbImg   = document.getElementById('lb-img');
+      var lbCap   = document.getElementById('lb-caption');
+      var lbClose = document.getElementById('lb-close');
+
+      function open(src, alt, caption) {
+        lbImg.src = src;
+        lbImg.alt = alt || '';
+        lbCap.textContent = caption || alt || '';
+        overlay.classList.add('lb-active');
+        document.body.style.overflow = 'hidden';
+      }
+      function close() {
+        overlay.classList.remove('lb-active');
+        document.body.style.overflow = '';
+        lbImg.src = '';
+      }
+
+      // Attach to all inline-figure images
+      document.querySelectorAll('.inline-figure img, figure.inline-figure img').forEach(function(img) {
+        img.addEventListener('click', function() {
+          var cap = '';
+          var fig = img.closest('figure');
+          if (fig) {
+            var fc = fig.querySelector('figcaption');
+            if (fc) cap = fc.textContent.trim();
+          }
+          open(img.src, img.alt, cap);
+        });
+      });
+
+      // Close on overlay click, button click, or Escape key
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay || e.target === lbImg) close();
+      });
+      lbClose.addEventListener('click', close);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') close();
+      });
+    })();
+  </script>
 </body>
 </html>
