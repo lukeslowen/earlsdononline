@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="style.css">
 <style>
 /* ── Homepage-only styles: tree, person cards, connectors ── */
-/* ── Generation 0 (grandparents) — text-only, no photos ── */
+
 .gen0-row {
   display: flex;
   justify-content: center;
@@ -18,41 +18,7 @@
   min-width: 700px;
   padding: 20px 20px 0;
 }
-.gen0-couple {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 220px;
-  flex-shrink: 0;
-}
-.gen0-names {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.gen0-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.78rem;
-  font-style: italic;
-  color: rgba(201,162,74,0.72);
-  text-align: center;
-  line-height: 1.25;
-  white-space: nowrap;
-}
-.gen0-amp {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.7rem;
-  color: rgba(201,162,74,0.45);
-  padding: 0 1px;
-}
-.gen0-dot {
-  width: 1px;
-  height: 14px;
-  background: rgba(192,168,120,0.4);
-  margin: 4px auto 0;
-}
+
 
 
 .nf-home {
@@ -155,6 +121,58 @@
 
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
+/* ── Generation 0 (grandparents) ── */
+.gen0-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 30px;
+  flex-wrap: nowrap;
+  min-width: 700px;
+  padding: 28px 20px 0;
+}
+.gen0-slot {
+  width: 222px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+.gen0-pair {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  width: 100%;
+}
+.gen0-pair + .gen0-pair {
+  margin-top: 3px;
+}
+.gen0-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.74rem;
+  font-style: italic;
+  color: rgba(201,162,74,0.68);
+  text-align: center;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.gen0-amp {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.68rem;
+  color: rgba(201,162,74,0.38);
+  padding: 0 1px;
+  flex-shrink: 0;
+}
+.gen0-tick {
+  width: 1px;
+  height: 20px;
+  background: rgba(192,168,120,0.35);
+  margin: 5px auto 0;
+}
+
+
     .photo-frame a { display: block; width: 100%; height: 100%; cursor: pointer; }
     .photo-frame a:hover img { filter: sepia(10%) contrast(1.08) brightness(1.06); opacity: 0.88; }
     .photo-frame a:focus { outline: 2px solid var(--gold, #c9a24a); outline-offset: 2px; }
@@ -177,85 +195,66 @@
   <nav class="main-nav"><ul><li><a href="noble.html">Noble</a></li><li><a href="lloyd.html">Lloyd</a></li><li><a href="bunting.html">Bunting</a></li><li><a href="keetley.html">Keetley</a></li><li><a href="marsh.html">Marsh</a></li><li><a href="floyd.html">Floyd</a></li><li><a href="marshall.html">Marshall</a></li><li><a href="wainwright.html">Wainwright</a></li><li><a href="drury.html">Drury</a></li><li><a href="wood.html">Wood</a></li><li><a href="warren.html">Warren</a></li><li><a href="ward.html">Ward</a></li><li><a href="whitaker.html">Whitaker</a></li><li><a href="old.html">Old</a></li><li><a href="peck.html">Peck</a></li><li><a href="fowler.html">FFowler</a></li></ul></nav>
 
   <div class="tree-container">
-
     <!-- GEN 0 (grandparents) -->
     <div class="gen0-row" id="gen0">
 
-      <div class="gen0-couple" id="gc-0a">
-        <div class="gen0-names">
+      <div class="gen0-slot" id="gs-0a">
+        <div class="gen0-pair">
           <span class="gen0-name">John Noble</span>
           <span class="gen0-amp">&amp;</span>
           <span class="gen0-name">Selina Lloyd</span>
         </div>
-        <div class="gen0-dot"></div>
-      </div>
-
-      <div class="gen0-couple" id="gc-0b">
-        <div class="gen0-names">
+        <div class="gen0-pair">
           <span class="gen0-name">William Bunting</span>
           <span class="gen0-amp">&amp;</span>
           <span class="gen0-name">Clara Keetley</span>
         </div>
-        <div class="gen0-dot"></div>
+        <div class="gen0-tick"></div>
       </div>
 
-      <div class="gen0-couple" id="gc-0c">
-        <div class="gen0-names">
+      <div class="gen0-slot" id="gs-0b">
+        <div class="gen0-pair">
           <span class="gen0-name">Daniel Marsh</span>
           <span class="gen0-amp">&amp;</span>
           <span class="gen0-name">Maria Floyd</span>
         </div>
-        <div class="gen0-dot"></div>
-      </div>
-
-      <div class="gen0-couple" id="gc-0d">
-        <div class="gen0-names">
+        <div class="gen0-pair">
           <span class="gen0-name">George Marshall</span>
           <span class="gen0-amp">&amp;</span>
           <span class="gen0-name">Jane Wainwright</span>
         </div>
-        <div class="gen0-dot"></div>
+        <div class="gen0-tick"></div>
       </div>
 
-      <div class="gen0-couple" id="gc-0e">
-        <div class="gen0-names">
+      <div class="gen0-slot" id="gs-0c">
+        <div class="gen0-pair">
           <span class="gen0-name">William Drury</span>
           <span class="gen0-amp">&amp;</span>
           <span class="gen0-name">Ann Wood</span>
         </div>
-        <div class="gen0-dot"></div>
-      </div>
-
-      <div class="gen0-couple" id="gc-0f">
-        <div class="gen0-names">
+        <div class="gen0-pair">
           <span class="gen0-name">Henry Warren</span>
           <span class="gen0-amp">&amp;</span>
           <span class="gen0-name">Louisa Ward</span>
         </div>
-        <div class="gen0-dot"></div>
+        <div class="gen0-tick"></div>
       </div>
 
-      <div class="gen0-couple" id="gc-0g">
-        <div class="gen0-names">
+      <div class="gen0-slot" id="gs-0d">
+        <div class="gen0-pair">
           <span class="gen0-name">George Whitaker</span>
           <span class="gen0-amp">&amp;</span>
           <span class="gen0-name">Charlotte Old</span>
         </div>
-        <div class="gen0-dot"></div>
-      </div>
-
-      <div class="gen0-couple" id="gc-0h">
-        <div class="gen0-names">
+        <div class="gen0-pair">
           <span class="gen0-name">Thomas Peck</span>
           <span class="gen0-amp">&amp;</span>
           <span class="gen0-name">Mary Ann Warren</span>
         </div>
-        <div class="gen0-dot"></div>
+        <div class="gen0-tick"></div>
       </div>
 
     </div>
-
-    <svg class="connector-svg" id="svg01" height="40"></svg>
 
     <!-- GEN I -->
     <div class="gen-row" id="gen1">
@@ -423,25 +422,7 @@ function drawConnectors() {
     p.setAttribute('fill', 'none');
     svg.appendChild(p);
   }
-
-
-  // Gen 0 -> Gen I
-  const svg01 = document.getElementById('svg01');
-  if (svg01) {
-    svg01.innerHTML = '';
-    [
-      ['gc-0a','cu-1a'],['gc-0b','cu-1a'],
-      ['gc-0c','cu-1b'],['gc-0d','cu-1b'],
-      ['gc-0e','cu-1c'],['gc-0f','cu-1c'],
-      ['gc-0g','cu-1d'],['gc-0h','cu-1d'],
-    ].forEach(([f,t]) => {
-      const from = document.getElementById(f);
-      const to   = document.getElementById(t);
-      if (from && to) {
-        const dot = from.querySelector('.gen0-dot');
-        makePath(svg01, elCX(from), relBottom(dot || from, svg01), elCX(to), relTop(to, svg01));
-      }
-    });
+      });
   }
 
   // Gen I -> Gen II
