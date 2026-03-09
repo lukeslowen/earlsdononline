@@ -7,13 +7,77 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="../style.css">
+
+  <!-- Lightbox -->
+  <style>
+    .lb-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(8,18,18,0.92);
+      z-index: 9000;
+      cursor: zoom-out;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 1rem;
+    }
+    .lb-overlay.lb-active { display: flex; }
+    .lb-img-wrap {
+      position: relative;
+      max-width: min(90vw, 1000px);
+      max-height: 82vh;
+    }
+    .lb-overlay img {
+      display: block;
+      max-width: 100%;
+      max-height: 82vh;
+      object-fit: contain;
+      border: 2px solid var(--amber, #b8832a);
+      box-shadow: 0 8px 48px rgba(0,0,0,0.7);
+    }
+    .lb-caption {
+      margin-top: 0.75rem;
+      color: var(--gold-pale, #f0dba8);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      text-align: center;
+      max-width: min(90vw, 1000px);
+    }
+    .lb-close {
+      position: fixed;
+      top: 1rem;
+      right: 1.25rem;
+      font-size: 2rem;
+      color: var(--gold-pale, #f0dba8);
+      background: none;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+      z-index: 9001;
+      opacity: 0.8;
+    }
+    .lb-close:hover { opacity: 1; color: #fff; }
+    .inline-figure img, figure.inline-figure img {
+      cursor: zoom-in;
+    }
+    .inline-figure img:hover, figure.inline-figure img:hover {
+      opacity: 0.88;
+    }
+  </style>
 </head>
 <body>
 <header class="site-header">
   <div class="header-bg">
     <div class="header-frame"></div>
-    <h1>Noble Familia</h1>
-    <span class="header-subtitle">Our Family History</span>
+    <div class="header-inner">
+      <img src="../images/nf-logo.png" alt="Noble Familia monogram" class="nf-logo-img">
+      <div class="header-text">
+        <h1>Noble Familia</h1>
+        <span class="header-subtitle">Our Family History</span>
+      </div>
+    </div>
     <div class="header-ornament">
       <span class="line"></span><span class="gem"></span><span class="line right"></span>
     </div>
@@ -46,18 +110,24 @@
 <div class="article-body">
 <p>Mary Ann Bunting (Keetley), 1877 -</p>
 <p>Mary Ann Bunting was born on 19 November 1877, at 11 Herbert Street, St Anns Nottingham, the daughter of Clara Keetley. Mary Ann&#x27;s father was not recorded at the birth registration and for many years remained unknown. She was registered as Mary Ann Keetley. However DNA testing has confirmed that her father was William Bunting. William Bunting was also living at 11 Herbert Street in 1877 and later married Mary Ann&#x27;s mother, Clara. Clara was a millhand in the local cotton industry. By 1881 Clara and William Bunting were living at her parents home in Fleet Place, St Mary&#x27;s. Mary Ann was just 3 years old, her mother was 21. Interestingly however the census shows Mary Ann as the daughter of Christopher and Mary Keatley, who were in fact her grandparents. This was a common practice at a time when it was scandalous for someone to have a baby when unmarried at only 18 years of age.</p>
-<figure class="inline-figure"><img src="mary/images/Fleet%20Place%20001.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="mary/images/Fleet%20Place%20001.jpg" alt="Fleet 20Place 20001">
+  <figcaption>Fleet Place, Nottingham</figcaption>
+</figure>
 <figcaption>Fleet Place, Leenside</figcaption>
 </figure>
 <p>Mary Ann&#x27;s life was nearly cut short at just the age of 5. In June 1883 Mary Ann was rescued from drowning in the Nottingham Canal by a teenage boy.</p>
-<figure class="inline-figure"><img src="mary/images/13%206%201883%20Eve%20Pst.jpg" alt="evening post"></figure>
+<figure class="inline-figure"><img src="mary/images/13%206%201883%20Eve%20Pst.jpg" alt="evening post">
+  <figcaption>Nottingham Evening Post</figcaption>
+</figure>
 <figcaption>Evening Post, 13 June 1883</figcaption>
 </figure>
 <p>By 1891 Clara and William have a house of their own at Redferries Yard, North Street, Sneinton. Mary Ann was 13 and and had two sisters and one brother also living with them. Elizabeth, like Mary Ann, had been born before Clara&#x27;s marriage to William. George and Emily were born after the marriage. In 1898, at the age of 20, Mary Ann married <a href="../noble/thomas.html">Thomas Noble</a> , a 22 year old cotton repairer of Hooton Street. The couple moved in with Mary Ann&#x27;s parents and by 1901 they were all living at 1 Harveys Terrace in St Anns. They had two children, William was born at Harvey Terrace in 1901 and in 1904 <a href="../noble/george.html">George Henry Noble</a> was born to Mary Ann in the Nottingham Workhouse at Bagthorpe. During this period Mary Ann and the children appeared to be in and out of the Workhouse finally being admitted in 1908 for one month, after which Thomas discharges the children to his home at 2 Ash Yard but leaves Mary Ann behind. Mary Ann&#x27;s address at the time is given as 1 Harvey Terrace and her nearest relation as &quot;Mrs Bunting, of the same address&quot;.</p>
-<figure class="inline-figure"><img src="mary/images/bagthorpe%20workhouse.jpg" alt="bagthorpe workhouse"></figure>
+<figure class="inline-figure"><img src="mary/images/bagthorpe%20workhouse.jpg" alt="bagthorpe workhouse">
+  <figcaption>Bagthorpe Workhouse, Nottingham</figcaption>
+</figure>
 <figcaption>Bagthorpe Workhouse</figcaption>
 </figure>
-<p>By 1911 the children were living with their mother again at Windmill Row, Carlton. Mary Ann Noble is recorded as &#x27;Mrs Hannah Noble - boarder&#x27; to a Robert Thompson. Along with William (10) and George (7), there is Christopher (1). It is unlikely that Thomas was the father of Christopher as Mary Ann and Thomas had by this time seperated. Sadly Christopher died within a year of his birth. Mary Ann&#x27;s husband is recorded in the same census as living in Ash Yard with his parents John and Charlotte Noble. Mary Ann is working as a &#x27;Gasser&#x27; in a Cotton Doubling Mill.</p>
+<p>By 1911 the children were living with their mother again at Windmill Row, Carlton. Mary Ann Noble is recorded as &#x27;Mrs Hannah Noble - boarder&#x27; to a Robert Thompson. Along with William (10) and George (7), there is Christopher (1). It is unlikely that Thomas was the father of Christopher as Mary Ann and Thomas had by this time separated. Sadly Christopher died within a year of his birth. Mary Ann&#x27;s husband is recorded in the same census as living in Ash Yard with his parents John and Charlotte Noble. Mary Ann is working as a &#x27;Gasser&#x27; in a Cotton Doubling Mill.</p>
 <p>Just three years later and shortly after the outbreak of the First World War in 1914, Mary Ann contracts pneumonia and dies on 11 December aged just 37. Her mother Clara Bunting was present at the death and it seems that Clara took the children in from this point on as their father also died just two months later.</p>
 <p><a href="../keetley.html">Keetley's</a></p>
 </div>
@@ -74,5 +144,58 @@
   <p class="footer-title">Family History</p>
   <p><a href="mailto:noblefamilia@gmail.com">noblefamilia@gmail.com</a></p>
 </footer>
+
+  <!-- Lightbox overlay -->
+  <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lb-close" id="lb-close" aria-label="Close image viewer">&#x2715;</button>
+    <div class="lb-img-wrap">
+      <img id="lb-img" src="" alt="">
+    </div>
+    <p class="lb-caption" id="lb-caption"></p>
+  </div>
+
+  <script>
+    (function() {
+      var overlay = document.getElementById('lb-overlay');
+      var lbImg   = document.getElementById('lb-img');
+      var lbCap   = document.getElementById('lb-caption');
+      var lbClose = document.getElementById('lb-close');
+
+      function open(src, alt, caption) {
+        lbImg.src = src;
+        lbImg.alt = alt || '';
+        lbCap.textContent = caption || alt || '';
+        overlay.classList.add('lb-active');
+        document.body.style.overflow = 'hidden';
+      }
+      function close() {
+        overlay.classList.remove('lb-active');
+        document.body.style.overflow = '';
+        lbImg.src = '';
+      }
+
+      // Attach to all inline-figure images
+      document.querySelectorAll('.inline-figure img, figure.inline-figure img').forEach(function(img) {
+        img.addEventListener('click', function() {
+          var cap = '';
+          var fig = img.closest('figure');
+          if (fig) {
+            var fc = fig.querySelector('figcaption');
+            if (fc) cap = fc.textContent.trim();
+          }
+          open(img.src, img.alt, cap);
+        });
+      });
+
+      // Close on overlay click, button click, or Escape key
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay || e.target === lbImg) close();
+      });
+      lbClose.addEventListener('click', close);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') close();
+      });
+    })();
+  </script>
 </body>
 </html>
