@@ -7,13 +7,112 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="../style.css">
+  <style>
+    .directory-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.92rem;
+    }
+    .directory-table th {
+      background: var(--sepia-deep, #3d2510);
+      color: var(--gold-pale, #f0dba8);
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+      font-family: 'Cinzel', serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      border: 1px solid var(--amber, #b8832a);
+    }
+    .directory-table td {
+      padding: 0.4rem 0.75rem;
+      border: 1px solid rgba(180,140,80,0.25);
+      vertical-align: top;
+      color: var(--ink, #0f0a04);
+    }
+    .directory-table tbody tr:nth-child(odd) td {
+      background: rgba(180,140,60,0.07);
+    }
+    .directory-table tbody tr:hover td {
+      background: rgba(180,140,60,0.16);
+    }
+    .directory-table td:nth-child(2) {
+      white-space: nowrap;
+      font-weight: 600;
+    }
+  </style>
+
+  <!-- Lightbox -->
+  <style>
+    .lb-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(8,18,18,0.92);
+      z-index: 9000;
+      cursor: zoom-out;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 1rem;
+    }
+    .lb-overlay.lb-active { display: flex; }
+    .lb-img-wrap {
+      position: relative;
+      max-width: min(90vw, 1000px);
+      max-height: 82vh;
+    }
+    .lb-overlay img {
+      display: block;
+      max-width: 100%;
+      max-height: 82vh;
+      object-fit: contain;
+      border: 2px solid var(--amber, #b8832a);
+      box-shadow: 0 8px 48px rgba(0,0,0,0.7);
+    }
+    .lb-caption {
+      margin-top: 0.75rem;
+      color: var(--gold-pale, #f0dba8);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      text-align: center;
+      max-width: min(90vw, 1000px);
+    }
+    .lb-close {
+      position: fixed;
+      top: 1rem;
+      right: 1.25rem;
+      font-size: 2rem;
+      color: var(--gold-pale, #f0dba8);
+      background: none;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+      z-index: 9001;
+      opacity: 0.8;
+    }
+    .lb-close:hover { opacity: 1; color: #fff; }
+    .inline-figure img, figure.inline-figure img {
+      cursor: zoom-in;
+    }
+    .inline-figure img:hover, figure.inline-figure img:hover {
+      opacity: 0.88;
+    }
+  </style>
 </head>
 <body>
 <header class="site-header">
   <div class="header-bg">
     <div class="header-frame"></div>
-    <h1>Noble Familia</h1>
-    <span class="header-subtitle">Our Family History</span>
+    <div class="header-inner">
+      <img src="../images/nf-logo.png" alt="Noble Familia monogram" class="nf-logo-img">
+      <div class="header-text">
+        <h1>Noble Familia</h1>
+        <span class="header-subtitle">Our Family History</span>
+      </div>
+    </div>
     <div class="header-ornament">
       <span class="line"></span><span class="gem"></span><span class="line right"></span>
     </div>
@@ -45,172 +144,253 @@
 </div>
 <div class="article-body">
 <p>The Warren&#x27;s and Coachbuilding in Loughborough</p>
-<figure class="inline-figure"><img src="leicester/images/coachmaking.jpg" alt=""></figure>
-<p>The Warren family was associated with coachbuilding in Loughborough for over a hundred years. John Warren (snr) first brought his business to the town from Ashby de la Zouch in about 1820 and worked his trade at his premises, at 29 1/2 High Street, for 20 years until his death in 1841.</p>
-<figure class="inline-figure"><img src="leicester/images/1855.jpg" alt=""></figure>
-<figcaption>1855 Loughborough Directory</figcaption>
+<figure class="inline-figure"><img src="leicester/images/coachmaking.jpg" alt="coachmaking">
+  <figcaption>Coachmaking trade</figcaption>
 </figure>
-<figure class="inline-figure"><img src="leicester/images/highst1900.jpg" alt=""></figure>
-<figcaption>High St, Loughborough, 1900</figcaption>
+<p>The Warren family was associated with coachbuilding in Loughborough for over a hundred years. John Warren (snr) first brought his business to the town from Ashby de la Zouch in about 1820 and worked his trade at his premises, at 29 1/2 High Street, for 20 years until his death in 1841.</p>
+<figure class="inline-figure"><img src="leicester/images/1855.jpg" alt="1855">  <figcaption>1855 Loughborough Directory</figcaption>
+</figure>
+<figure class="inline-figure"><img src="leicester/images/highst1900.jpg" alt="highst1900">  <figcaption>High St, Loughborough, 1900</figcaption>
 </figure>
 <p>From 1841 he was succeeded by his wife Alice and then his eldest sons Thomas and John, whilst other members of the family developed their skills in all aspects of the trade including coachmaking, coach painting and harness making, Thomas and John (jnr) worked side by side for a further 20 years until in the mid 1860&#x27;s John Warren decided to go his own way and establish his own coachbuilding firm at 48 Baxter Gate.</p>
-<figure class="inline-figure"><img src="leicester/images/jwarren.jpg" alt=""></figure>
-<figcaption>John Warren</figcaption>
+<figure class="inline-figure"><img src="leicester/images/jwarren.jpg" alt="jwarren">  <figcaption>John Warren</figcaption>
 </figure>
-<figure class="inline-figure"><img src="leicester/images/baxtergate.jpg" alt=""></figure>
-<figcaption>Baxter Gate, Loughborough</figcaption>
+<figure class="inline-figure"><img src="leicester/images/baxtergate.jpg" alt="baxtergate">  <figcaption>Baxter Gate, Loughborough</figcaption>
 </figure>
 <p>The original High Street Coachmaking business continued under the guidance of Thomas Warren until the marriage of his son John to Lucy Hulin. This introduced Thomas to a partnership with Lucy&#x27;s half brother Sydney Hulin and &#x27;Warren and Hulin&#x27; was formed in the 1880&#x27;s.</p>
-<figure class="inline-figure"><img src="leicester/images/w&amp;h.jpg" alt=""></figure>
-<figcaption>Trade Directory extract from 1888</figcaption>
+<figure class="inline-figure"><img src="leicester/images/w&h.jpg" alt="w&h">  <figcaption>Trade Directory extract from 1888</figcaption>
 </figure>
 <p>Thomas died in 1891 leaving his share to his son John. With John&#x27;s death in 1904 the business passed to Sydney Hulin and the name of Warren was finally dropped.</p>
-<figure class="inline-figure"><img src="leicester/images/hulin22.jpg" alt=""></figure>
-<figure class="inline-figure"><img src="leicester/images/hulin22a.jpg" alt=""></figure>
-<figcaption>High Street workshop of Hulin&#x27;s, formerly Thomas Warren Coachbuilders in 1922</figcaption>
+<figure class="inline-figure"><img src="leicester/images/hulin22.jpg" alt="hulin22">
+  <figcaption>Hulin's coachworks, c.1922</figcaption>
+</figure>
+<figure class="inline-figure"><img src="leicester/images/hulin22a.jpg" alt="hulin22a">  <figcaption>High Street workshop of Hulin&#x27;s, formerly Thomas Warren Coachbuilders in 1922</figcaption>
 </figure>
 <p>Meanwhile the other firm of &#x27;John Warren and Son&#x27; also became well established in the town passing from John Warren (jnr) at his death in 1891 to the eldest son of his second marriage John Bennett Warren.</p>
-<figure class="inline-figure"><img src="leicester/images/catalog.jpg" alt=""></figure>
-<figcaption>J Warren and Son catalogue, 1888</figcaption>
+<figure class="inline-figure"><img src="leicester/images/catalog.jpg" alt="catalog">  <figcaption>J Warren and Son catalogue, 1888</figcaption>
 </figure>
-<figure class="inline-figure"><img src="leicester/images/warren%20and%20son.jpg" alt=""></figure>
-<figcaption>Loughborough Trade Directories 1822 - 1916</figcaption>
+<figure class="inline-figure"><img src="leicester/images/warren%20and%20son.jpg" alt="warren 20and 20son">  <figcaption>Loughborough Trade Directories 1822 - 1916</figcaption>
 </figure>
-<p>Directory</p>
-<p>1822-23</p>
-<p>John Warrin</p>
-<p>High Street</p>
-<p>Coachbuilder and painter</p>
-<p>Valuation of Loughborough</p>
-<p>1834</p>
-<p>J Warren</p>
-<p>High Street</p>
-<p>Valued £3 -0-0</p>
-<p>Directory</p>
-<p>1841</p>
-<p>John Warren</p>
-<p>High Street</p>
-<p>Coachbuilder and painter</p>
-<p>Directory ( Pigots )</p>
-<p>1841</p>
-<p>John Warren</p>
-<p>High Street</p>
-<p>Coachmaker</p>
-<p>Directory</p>
-<p>1842</p>
-<p>Thomas Warren</p>
-<p>High Street</p>
-<p>Coachmaker</p>
-<p>Directory</p>
-<p>1846</p>
-<p>Alice Warren</p>
-<p>High Street</p>
-<p>Coachbuilder</p>
-<p>Directory (Melville)</p>
-<p>1854</p>
-<p>Thomas and John Warren</p>
-<p>High Street</p>
-<p>Coachbuilders</p>
-<p>Directory (Post Office)</p>
-<p>1855</p>
-<p>Thomas and John Warren</p>
-<p>High Street</p>
-<p>Coachbuilders</p>
-<p>Directory (Drake)</p>
-<p>1861</p>
-<p>Thomas and John Warren</p>
-<p>High Street</p>
-<p>Coachbuilder</p>
-<p>Directory</p>
-<p>1862</p>
-<p>Thomas and John Warren</p>
-<p>High Street</p>
-<p>Coachmaker</p>
-<p>Directory (Buchan)</p>
-<p>1867</p>
-<p>John Warren</p>
-<p>Baxter Gate</p>
-<p>Coachbuilder</p>
-<p>Directory (Buchan)</p>
-<p>1867</p>
-<p>Thos Warren</p>
-<p>High Street</p>
-<p>Coachbuilder</p>
-<p>Directory (Post Office)</p>
-<p>1876</p>
-<p>John Warren and Son</p>
-<p>Baxter Gate</p>
-<p>Coachbuilders</p>
-<p>Directory (post Office)</p>
-<p>1876</p>
-<p>Thomas Warren</p>
-<p>High Street</p>
-<p>Coachbuilder</p>
-<p>Directory</p>
-<p>1896</p>
-<p>Warren and Son (John and Albert)</p>
-<p>48 Baxter Gate</p>
-<p>Coachbuilder</p>
-<p>Directory ( Bennetts )</p>
-<p>1888</p>
-<p>Warren and Hullin</p>
-<p>29 1/2 High Street</p>
-<p>Coachbuilder</p>
-<p>Directory ( Bennetts )</p>
-<p>1888</p>
-<p>Warren and Son</p>
-<p>Baxter Gate</p>
-<p>Carriage Manufacturers</p>
-<p>Directory (Wrights)</p>
-<p>1892</p>
-<p>Warren and Hulin</p>
-<p>29 1/2 High Street</p>
-<p>Coachbuilders</p>
-<p>Directory (Wright)</p>
-<p>1892</p>
-<p>J Warren and Son</p>
-<p>48 Baxter Gate</p>
-<p>Coachbuilders</p>
-<p>Directory (Wright)</p>
-<p>1899</p>
-<p>Warren and Son (John and Albert)</p>
-<p>48 Baxter Gate</p>
-<p>Coachbuilders</p>
-<p>Directory ( Bennetts )</p>
-<p>1902</p>
-<p>Warren and Hulin</p>
-<p>High Street</p>
-<p>Carriage Builders</p>
-<p>Directory ( Bennetts )</p>
-<p>1902</p>
-<p>J Warren and Son</p>
-<p>Baxter Gate</p>
-<p>Carriage Manufacturers</p>
-<p>Carriages of every description built to order. Established 1815</p>
-<p>Directory</p>
-<p>1908</p>
-<p>John Warren and Son ( Estab 1815)</p>
-<p>48 Baxter Gate</p>
-<p>Coach and Motor Body Builders</p>
-<p>Vans, floats and all descriptions of trade vehicles and motor car repairers and engineers.</p>
-<p>Directory ( Kellys )</p>
-<p>1916</p>
-<p>John Warren and Son ( Estab 1815)</p>
-<p>48 Baxter Gate</p>
-<p>Coach and Motor Body Builders</p>
-<p>Vans, floats and all descriptions of trade vehicles and motor car repairers and engineers.</p>
-<p>Directory ( Kellys )</p>
-<p>1916</p>
-<p>Sydney Joseph Hulin</p>
-<p>High Street</p>
-<p>Carriage Builders</p>
-<figure class="inline-figure"><img src="leicester/images/1888cb.jpg" alt=""></figure>
-<figcaption>1888</figcaption>
-</figure>
-<p>The Warren family interest in coachbuilding and car bodies continued into the 20th Century. The original family firm becoming &#x27;Warren and Hulin&#x27; and eventually &#x27;Hulin&#x27;s&#x27;, after the death of Thomas Warren&#x27;s son John in 1904. &#x27;Hulin&#x27;s&#x27; ceased to exist in about 1928.</p>
+
+      <h3>Loughborough Trade Directories 1822–1916</h3>
+      <table class="directory-table">
+        <thead>
+          <tr>
+            <th>Source</th>
+            <th>Year</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Trade</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Directory</td>
+            <td>1822</td>
+            <td>John Warrin</td>
+            <td>High Street</td>
+            <td>Coachbuilder and painter</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Valuation of Loughborough</td>
+            <td>1834</td>
+            <td>J Warren</td>
+            <td>High Street</td>
+            <td></td>
+            <td>Valued £3–0–0</td>
+          </tr>
+          <tr>
+            <td>Directory</td>
+            <td>1841</td>
+            <td>John Warren</td>
+            <td>High Street</td>
+            <td>Coachbuilder and painter</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Directory (Pigot's)</td>
+            <td>1841</td>
+            <td>John Warren</td>
+            <td>High Street</td>
+            <td>Coachmaker</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Directory</td>
+            <td>1842</td>
+            <td>Thomas Warren</td>
+            <td>High Street</td>
+            <td>Coachmaker</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Directory</td>
+            <td>1846</td>
+            <td>Alice Warren</td>
+            <td>High Street</td>
+            <td>Coachbuilder</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Directory (Melville)</td>
+            <td>1854</td>
+            <td>Thomas and John Warren</td>
+            <td>High Street</td>
+            <td>Coachbuilders</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Directory (Post Office)</td>
+            <td>1855</td>
+            <td>Thomas and John Warren</td>
+            <td>High Street</td>
+            <td>Coachbuilders</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Directory (Drake)</td>
+            <td>1861</td>
+            <td>Thomas and John Warren</td>
+            <td>High Street</td>
+            <td>Coachbuilder</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Directory</td>
+            <td>1862</td>
+            <td>Thomas and John Warren</td>
+            <td>High Street</td>
+            <td>Coachmaker</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Directory (Buchan)</td>
+            <td>1867</td>
+            <td>John Warren</td>
+            <td>Baxter Gate</td>
+            <td>Coachbuilder</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Directory (Buchan)</td>
+            <td>1867</td>
+            <td>Thos Warren</td>
+            <td>High Street</td>
+            <td>Coachbuilder</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Directory (Post Office)</td>
+            <td>1876</td>
+            <td>John Warren and Son</td>
+            <td>Baxter Gate</td>
+            <td>Coachbuilders</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Directory (Post Office)</td>
+            <td>1876</td>
+            <td>Thomas Warren</td>
+            <td>High Street</td>
+            <td>Coachbuilder</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Directory (Bennett's)</td>
+            <td>1888</td>
+            <td>Warren and Hullin</td>
+            <td>29½ High Street</td>
+            <td>Coachbuilder</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Directory (Bennett's)</td>
+            <td>1888</td>
+            <td>Warren and Son</td>
+            <td>Baxter Gate</td>
+            <td>Carriage Manufacturers</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Directory (Wright's)</td>
+            <td>1892</td>
+            <td>Warren and Hulin</td>
+            <td>29½ High Street</td>
+            <td>Coachbuilders</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Directory (Wright's)</td>
+            <td>1892</td>
+            <td>J Warren and Son</td>
+            <td>48 Baxter Gate</td>
+            <td>Coachbuilders</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Directory</td>
+            <td>1896</td>
+            <td>Warren and Son (John and Albert)</td>
+            <td>48 Baxter Gate</td>
+            <td>Coachbuilder</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Directory (Wright's)</td>
+            <td>1899</td>
+            <td>Warren and Son (John and Albert)</td>
+            <td>48 Baxter Gate</td>
+            <td>Coachbuilders</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Directory (Bennett's)</td>
+            <td>1902</td>
+            <td>Warren and Hulin</td>
+            <td>High Street</td>
+            <td>Carriage Builders</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Directory (Bennett's)</td>
+            <td>1902</td>
+            <td>J Warren and Son</td>
+            <td>Baxter Gate</td>
+            <td>Carriage Manufacturers</td>
+            <td>Carriages of every description built to order. Established 1815</td>
+          </tr>
+          <tr>
+            <td>Directory</td>
+            <td>1908</td>
+            <td>John Warren and Son (Est. 1815)</td>
+            <td>48 Baxter Gate</td>
+            <td>Coach and Motor Body Builders</td>
+            <td>Vans, floats and all descriptions of trade vehicles and motor car repairers and engineers.</td>
+          </tr>
+          <tr>
+            <td>Directory (Kelly's)</td>
+            <td>1916</td>
+            <td>John Warren and Son (Est. 1815)</td>
+            <td>48 Baxter Gate</td>
+            <td>Coach and Motor Body Builders</td>
+            <td>Vans, floats and all descriptions of trade vehicles and motor car repairers and engineers.</td>
+          </tr>
+          <tr>
+            <td>Directory (Kelly's)</td>
+            <td>1916</td>
+            <td>Sydney Joseph Hulin</td>
+            <td>High Street</td>
+            <td>Carriage Builders</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>The Warren family interest in coachbuilding and car bodies continued into the 20th Century. The original family firm becoming &#x27;Warren and Hulin&#x27; and eventually &#x27;Hulin&#x27;s&#x27;, after the death of Thomas Warren&#x27;s son John in 1904. &#x27;Hulin&#x27;s&#x27; ceased to exist in about 1928.</p>
 <p>&#x27;John Warren and Son&#x27; was still evident in 1916 but was eventually bought out by &#x27;Dicken&#x27;s&#x27; of Pinfold Gate, in the 1920&#x27;s.</p>
-<figure class="inline-figure"><img src="leicester/images/dicken.jpg" alt=""></figure>
-<figcaption>William Dickens</figcaption>
+<figure class="inline-figure"><img src="leicester/images/dicken.jpg" alt="dicken">  <figcaption>William Dickens</figcaption>
 </figure>
 </div>
 
@@ -226,5 +406,58 @@
   <p class="footer-title">Family History</p>
   <p><a href="mailto:noblefamilia@gmail.com">noblefamilia@gmail.com</a></p>
 </footer>
+
+  <!-- Lightbox overlay -->
+  <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lb-close" id="lb-close" aria-label="Close image viewer">&#x2715;</button>
+    <div class="lb-img-wrap">
+      <img id="lb-img" src="" alt="">
+    </div>
+    <p class="lb-caption" id="lb-caption"></p>
+  </div>
+
+  <script>
+    (function() {
+      var overlay = document.getElementById('lb-overlay');
+      var lbImg   = document.getElementById('lb-img');
+      var lbCap   = document.getElementById('lb-caption');
+      var lbClose = document.getElementById('lb-close');
+
+      function open(src, alt, caption) {
+        lbImg.src = src;
+        lbImg.alt = alt || '';
+        lbCap.textContent = caption || alt || '';
+        overlay.classList.add('lb-active');
+        document.body.style.overflow = 'hidden';
+      }
+      function close() {
+        overlay.classList.remove('lb-active');
+        document.body.style.overflow = '';
+        lbImg.src = '';
+      }
+
+      // Attach to all inline-figure images
+      document.querySelectorAll('.inline-figure img, figure.inline-figure img').forEach(function(img) {
+        img.addEventListener('click', function() {
+          var cap = '';
+          var fig = img.closest('figure');
+          if (fig) {
+            var fc = fig.querySelector('figcaption');
+            if (fc) cap = fc.textContent.trim();
+          }
+          open(img.src, img.alt, cap);
+        });
+      });
+
+      // Close on overlay click, button click, or Escape key
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay || e.target === lbImg) close();
+      });
+      lbClose.addEventListener('click', close);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') close();
+      });
+    })();
+  </script>
 </body>
 </html>

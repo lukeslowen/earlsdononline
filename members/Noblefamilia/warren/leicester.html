@@ -7,13 +7,77 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="../style.css">
+
+  <!-- Lightbox -->
+  <style>
+    .lb-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(8,18,18,0.92);
+      z-index: 9000;
+      cursor: zoom-out;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 1rem;
+    }
+    .lb-overlay.lb-active { display: flex; }
+    .lb-img-wrap {
+      position: relative;
+      max-width: min(90vw, 1000px);
+      max-height: 82vh;
+    }
+    .lb-overlay img {
+      display: block;
+      max-width: 100%;
+      max-height: 82vh;
+      object-fit: contain;
+      border: 2px solid var(--amber, #b8832a);
+      box-shadow: 0 8px 48px rgba(0,0,0,0.7);
+    }
+    .lb-caption {
+      margin-top: 0.75rem;
+      color: var(--gold-pale, #f0dba8);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      text-align: center;
+      max-width: min(90vw, 1000px);
+    }
+    .lb-close {
+      position: fixed;
+      top: 1rem;
+      right: 1.25rem;
+      font-size: 2rem;
+      color: var(--gold-pale, #f0dba8);
+      background: none;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+      z-index: 9001;
+      opacity: 0.8;
+    }
+    .lb-close:hover { opacity: 1; color: #fff; }
+    .inline-figure img, figure.inline-figure img {
+      cursor: zoom-in;
+    }
+    .inline-figure img:hover, figure.inline-figure img:hover {
+      opacity: 0.88;
+    }
+  </style>
 </head>
 <body>
 <header class="site-header">
   <div class="header-bg">
     <div class="header-frame"></div>
-    <h1>Noble Familia</h1>
-    <span class="header-subtitle">Our Family History</span>
+    <div class="header-inner">
+      <img src="../images/nf-logo.png" alt="Noble Familia monogram" class="nf-logo-img">
+      <div class="header-text">
+        <h1>Noble Familia</h1>
+        <span class="header-subtitle">Our Family History</span>
+      </div>
+    </div>
     <div class="header-ornament">
       <span class="line"></span><span class="gem"></span><span class="line right"></span>
     </div>
@@ -45,54 +109,78 @@
 </div>
 <div class="article-body">
 <p>(of Leicestershire)</p>
-<figure class="inline-figure"><img src="leicester/images/ratcliffe.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="leicester/images/ratcliffe.jpg" alt="ratcliffe">
+  <figcaption>Ratcliffe</figcaption>
+</figure>
 <figcaption>Ratcliffe Culey Parish Church</figcaption>
 </figure>
 <p>The first reference that we find to our Warren family is in Ratcliffe Culey, Leicestershire with the marriage of Thomas Warren to Ann Winters in October 1735. Although the marriage took place in Ratcliffe Culey, we believe that the Warren family were settled in neighbouring Sheepy Magna as this is where Thomas and Anne had their first children baptised in 1738 and 1740. In 1742 the pair then apply for, and are granted, a <a href="leicester.html">settlement certificate</a> to be legally settled in Ratcliffe Culey.</p>
-<figure class="inline-figure"><img src="images/settlement%20cert.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="images/settlement%20cert.jpg" alt="settlement 20cert">
+  <figcaption>Settlement Certificate</figcaption>
+</figure>
 <figcaption>Settlement Certificate of 1742</figcaption>
 </figure>
 <p>Once settled in Ratcliffe Culey the family grows to six children, the youngest being the only boy, William. William was baptised in May 1751 and married to Mary Parkes in December 1777. John Warren was born in Ratcliffe Culey and baptised there in March 1786. He was the youngest son of William and Mary Warren. We know nothing of William&#x27;s occupation. It is likely that he was a skilled craftsman and his son went on to become a craftsman in his own right. John married Alice Kirk of Thrussington in 1811 and the family settled in Ashby de la Zouch where John is recorded as a wheelwright and a coachmaker. Whilst living in Ashby the couple had two sons Thomas, born in 1814, and John, born in 1815.</p>
-<figure class="inline-figure"><img src="leicester/images/map.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="leicester/images/map.jpg" alt="map">
+  <figcaption>Distribution map</figcaption>
+</figure>
 <figcaption>Loughborough</figcaption>
 </figure>
 <p>By 1820 the family had moved to Loughborough and John had established his business there. The couple had six further children between 1820 and 1831. John Warren Snr, continued to work as a Coachmaker establishing his name in the town from his High Street and High Gate premises. This he continued to do until his death in 1841.</p>
-<figure class="inline-figure"><img src="leicester/images/1841census.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="leicester/images/1841census.jpg" alt="1841census">
+  <figcaption>1841 Census</figcaption>
+</figure>
 <figcaption>1841 Census, High Gate Loughborough, John Warren and family shortly before his death</figcaption>
 </figure>
 <p>At the time of his death John&#x27;s sons were already employed in coachmaking. John&#x27;s second son, John Warren Jnr, had married Mary Ann Harvey in 1836 and the couple were living in Baxter Gate. John Jnr&#x27;s brothers including Thomas, George and William were still living at home and all had developed different coachmaking skills. For a time the business was managed by Alice in her name until 1854 when Thomas and John took over the business as a partnership and ran it as such for 9 years until 1863, both brothers being described as Master Coachmakers.</p>
-<figure class="inline-figure"><img src="images/jbw.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="images/jbw.jpg" alt="jbw">
+  <figcaption>J. B. Warren</figcaption>
+</figure>
 <figcaption>John Warren Jnr</figcaption>
 </figure>
 <p>The family business continued to operate out of the High Street premises whilst John Jnr and his wife Mary Ann established their family at their Baxter Gate home. Between 1837 and 1848 they had 5 children, their eldest son being Henry Warren, born in September 1841. However in 1848, Mary Ann Warren tragically died leaving John to care for the children, the oldest of which was 12 and the youngest still a baby. John soon met Mary Bennett and married her in 1852. Between 1853 and 1869 they had 9 children.</p>
-<figure class="inline-figure"><img src="images/henry.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="images/henry.jpg" alt="henry">
+  <figcaption>Henry Warren</figcaption>
+</figure>
 <figcaption>Henry Warren</figcaption>
 </figure>
 <p>During this period Thomas continued to live at the High Street premises, having married Eleanor Munton in 1841. In the meantime their widowed mother, Alice, moved to Woodgate to live with her daughter Mary Ann and her husband William Dextor. Thomas and Eleanor had 8 children between 1843 and 1858 and again all of the male children were apprenticed into the business.</p>
 <p>By 1863 John had established his own business and had broken away from Thomas. We&#x27;ll never know whether this was a natural development or whether there was a rift between the brothers. John acquired a business premises at 48 Baxter Gate and he and the family moved there from Wellington Road. The business operated as John Warren Coachbuilders and later as John Warren and Son.</p>
-<figure class="inline-figure"><img src="leicester/images/cataloguea.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="leicester/images/cataloguea.jpg" alt="cataloguea">
+  <figcaption>Trade catalogue</figcaption>
+</figure>
 <figcaption>J Warren and Son Catalogue</figcaption>
 </figure>
-<figure class="inline-figure"><img src="leicester/images/1888.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="leicester/images/1888.jpg" alt="1888">
+  <figcaption>Document, 1888</figcaption>
+</figure>
 <figcaption>Loughborough Street Directory 1888</figcaption>
 </figure>
 <p>John Warren continued to establish his name until his death in May 1891. The business then appears to have been inherited by the eldest son of his second marriage, John Bennett Warren. John&#x27;s eldest son from his first marriage, Henry, had already moved away from Loughborough and had worked as a coachbuilder in Leicester and Newport Pagnell, settling back in Loughborough by 1881. Henry had married Louisa Ward in 1864, about the same time as his father had founded his own business. At the time the couple were living in Leicester and had there first three children there, including <a href="lucy.html">Lucy Warren</a> their first daughter, Henry and John. From Leicester they moved to Newport Pagnell where Henry&#x27;s brother William was working. During this period they had 2 more children, <a href="albert.html">Albert Warren</a> and Nellie.</p>
-<figure class="inline-figure"><img src="images/lucy.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="images/lucy.jpg" alt="lucy">
+  <figcaption>Lucy Warren</figcaption>
+</figure>
 <figcaption>Lucy Drury nee Warren</figcaption>
 </figure>
-<figure class="inline-figure"><img src="images/thomas.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="images/thomas.jpg" alt="thomas">
+  <figcaption>Thomas Warren</figcaption>
+</figure>
 <figcaption>Thomas Warren</figcaption>
 </figure>
-<figure class="inline-figure"><img src="images/Nellie.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="images/Nellie.jpg" alt="Nellie">
+  <figcaption>Nellie Warren</figcaption>
+</figure>
 <figcaption>Nellie Webster nee Warren</figcaption>
 </figure>
-<figure class="inline-figure"><img src="images/Mabel.jpg" alt=""></figure>
+<figure class="inline-figure"><img src="images/Mabel.jpg" alt="Mabel">
+  <figcaption>Mabel Warren</figcaption>
+</figure>
 <figcaption>Mabel Warren</figcaption>
 </figure>
 <p>By 1881 Henry, Louisa and family had returned to Loughborough and Henry was probably employed in the family business again. Between 1881 and 1891 they had 3 more children, Thomas, Mabel and Louisa. Henry died in 1894, just three years after his father.</p>
 <p>Read more about the <a href="coachmaking.html">Warren's and Coachbuilding in Loughborough</a> .</p>
 <p>Current Research : No trace of Thomas in Leicestershire. May be that the Warrens came into Leicestershire from over the border in Warwickshire.</p>
-<p><a href="../warren.html">Click here</a> to return to the Warren homepage</p>
+<p><a href="../warren.html">Return to the Warren homepage</a></p>
 </div>
 
 <div class="page-nav-bottom">
@@ -107,5 +195,58 @@
   <p class="footer-title">Family History</p>
   <p><a href="mailto:noblefamilia@gmail.com">noblefamilia@gmail.com</a></p>
 </footer>
+
+  <!-- Lightbox overlay -->
+  <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lb-close" id="lb-close" aria-label="Close image viewer">&#x2715;</button>
+    <div class="lb-img-wrap">
+      <img id="lb-img" src="" alt="">
+    </div>
+    <p class="lb-caption" id="lb-caption"></p>
+  </div>
+
+  <script>
+    (function() {
+      var overlay = document.getElementById('lb-overlay');
+      var lbImg   = document.getElementById('lb-img');
+      var lbCap   = document.getElementById('lb-caption');
+      var lbClose = document.getElementById('lb-close');
+
+      function open(src, alt, caption) {
+        lbImg.src = src;
+        lbImg.alt = alt || '';
+        lbCap.textContent = caption || alt || '';
+        overlay.classList.add('lb-active');
+        document.body.style.overflow = 'hidden';
+      }
+      function close() {
+        overlay.classList.remove('lb-active');
+        document.body.style.overflow = '';
+        lbImg.src = '';
+      }
+
+      // Attach to all inline-figure images
+      document.querySelectorAll('.inline-figure img, figure.inline-figure img').forEach(function(img) {
+        img.addEventListener('click', function() {
+          var cap = '';
+          var fig = img.closest('figure');
+          if (fig) {
+            var fc = fig.querySelector('figcaption');
+            if (fc) cap = fc.textContent.trim();
+          }
+          open(img.src, img.alt, cap);
+        });
+      });
+
+      // Close on overlay click, button click, or Escape key
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay || e.target === lbImg) close();
+      });
+      lbClose.addEventListener('click', close);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') close();
+      });
+    })();
+  </script>
 </body>
 </html>
