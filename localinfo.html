@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Local information for Earlsdon, Coventry — community groups, local representatives, voluntary organisations, and useful local services.">
+  <title>Local Information - Earlsdon Online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root{--green-dark:#2c4a2e;--green-mid:#3d6b40;--green-light:#e8f0e8;--navy:#1a2744;--gold:#c9903a;--gold-light:#f0c060;--cream:#faf8f3;--text:#2a2a2a;--text-light:#555}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Source Serif 4',Georgia,serif;background:var(--cream);color:var(--text);line-height:1.8}
+    header{background:var(--navy);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+    .header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;gap:16px}
+    .logo-area{display:flex;align-items:center;gap:14px;text-decoration:none}
+    .logo-area img{height:52px;width:auto}
+    .logo-text{display:flex;flex-direction:column;line-height:1.1}
+    .logo-main{font-family:'Playfair Display',serif;font-weight:900;font-size:1.5rem;color:#fff}
+    .logo-sub{font-size:.7rem;color:var(--gold);letter-spacing:.18em;text-transform:uppercase}
+    nav{display:flex;gap:6px;flex-wrap:wrap}
+    nav a{font-size:.82rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.85);text-decoration:none;padding:8px 14px;border-radius:3px;transition:background .2s,color .2s}
+    nav a:hover,nav a.active{background:var(--green-mid);color:#fff}
+    .page-hero{background:var(--navy);padding:48px 24px 40px;position:relative;overflow:hidden}
+    .page-hero::before{content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;border-radius:50%;background:rgba(201,144,58,.06)}
+    .page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(to right,var(--gold),var(--green-mid),var(--gold))}
+    .page-hero-inner{max-width:1100px;margin:0 auto;position:relative}
+    .breadcrumb{font-size:.78rem;color:rgba(255,255,255,.5);margin-bottom:12px}
+    .breadcrumb a{color:var(--gold);text-decoration:none}
+    .page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:8px}
+    .page-hero .subtitle{color:var(--gold-light);font-style:italic;font-size:.95rem}
+    .main-content{max-width:1100px;margin:0 auto;padding:44px 24px 80px;display:grid;grid-template-columns:1fr 300px;gap:48px;align-items:start}
+    @media(max-width:800px){.main-content{grid-template-columns:1fr}}
+    .sections{display:flex;flex-direction:column;gap:40px}
+    .section{background:#fff;border-radius:8px;border:1px solid var(--green-light);overflow:hidden}
+    .section-header{background:var(--navy);padding:16px 24px;display:flex;align-items:center;gap:12px}
+    .section-header .icon{font-size:1.3rem}
+    .section-header h2{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:#fff;margin:0}
+    .section-body{padding:24px}
+    .group{padding:16px 0;border-bottom:1px solid var(--green-light)}
+    .group:last-child{border-bottom:none;padding-bottom:0}
+    .group:first-child{padding-top:0}
+    .group-name{font-family:'Playfair Display',serif;font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
+    .group-streets{font-size:.82rem;color:var(--text-light);font-style:italic;margin-bottom:6px;line-height:1.5}
+    .group-inactive{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);background:rgba(201,144,58,.1);border:1px solid rgba(201,144,58,.3);border-radius:10px;padding:2px 8px;margin-left:8px;vertical-align:middle}
+    .contact-list{display:flex;flex-direction:column;gap:4px;margin-top:6px}
+    .contact-item{display:flex;align-items:baseline;gap:8px;font-size:.85rem}
+    .contact-label{font-weight:700;color:var(--navy);min-width:60px;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+    .contact-item a{color:var(--green-mid);text-decoration:none;word-break:break-all}
+    .contact-item a:hover{color:var(--gold)}
+    .rep-card{display:flex;flex-direction:column;gap:6px;padding:16px 0;border-bottom:1px solid var(--green-light)}
+    .rep-card:last-child{border-bottom:none;padding-bottom:0}
+    .rep-card:first-child{padding-top:0}
+    .rep-title{font-family:'Playfair Display',serif;font-weight:700;color:var(--navy);font-size:1rem}
+    .rep-desc{font-size:.85rem;color:var(--text-light);margin-bottom:4px}
+    .rep-link a{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:#fff;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:8px 16px;border-radius:4px;text-decoration:none;transition:background .2s}
+    .rep-link a:hover{background:var(--green-mid)}
+    .sidebar{display:flex;flex-direction:column;gap:20px}
+    .sidebar-card{background:#fff;border:1px solid var(--green-light);border-radius:8px;overflow:hidden}
+    .sidebar-card-header{background:var(--green-mid);color:#fff;font-family:'Playfair Display',serif;font-size:.85rem;font-weight:700;padding:10px 16px;letter-spacing:.06em}
+    .sidebar-card-body{padding:16px;font-size:.85rem;color:var(--text-light);line-height:1.7}
+    .sidebar-card-body a{color:var(--green-mid);font-weight:600;text-decoration:none}
+    .sidebar-card-body a:hover{color:var(--gold)}
+    .sidebar-card-body p{margin-bottom:.8em}
+    .sidebar-card-body p:last-child{margin-bottom:0}
+    .facebook-btn{display:flex;align-items:center;gap:10px;background:#1877f2;color:#fff;font-weight:700;font-size:.85rem;padding:10px 14px;border-radius:6px;text-decoration:none;margin-top:10px;transition:background .2s}
+    .facebook-btn:hover{background:#0f5fba}
+    .facebook-btn svg{flex-shrink:0}
+    footer{background:var(--navy);color:rgba(255,255,255,.6);padding:40px 24px;font-size:.82rem}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+    .footer-logo{font-family:'Playfair Display',serif;font-weight:700;color:#fff;font-size:1.1rem}
+    .footer-logo span{color:var(--gold)}
+    footer a{color:rgba(255,255,255,.6);text-decoration:none}
+    footer a:hover{color:var(--gold)}
+    .footer-links{display:flex;gap:20px}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo-area">
+      <img src="images/Logo2.png" alt="Earlsdon Online" onerror="this.style.display='none'">
+      <div class="logo-text"><span class="logo-main">Earlsdon</span><span class="logo-sub">&mdash; Online &mdash;</span></div>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="history/history.html">History</a>
+      <a href="localinfo.html" class="active">Local Info</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <p class="breadcrumb"><a href="index.html">Home</a> &rsaquo; Local Information</p>
+    <h1>Local Information</h1>
+    <p class="subtitle">Your representatives, community groups and local services</p>
+  </div>
+</section>
+
+<div style="width:100%;overflow:hidden;height:260px;margin-bottom:0;">
+  <img src="images/Festival.jpeg" alt="Earlsdon Festival" style="width:100%;height:100%;object-fit:cover;object-position:center 60%;display:block;">
+</div>
+
+<div class="main-content">
+  <div class="sections">
+
+    <div class="section">
+      <div class="section-header">
+        <span class="icon">&#127963;</span>
+        <h2>Your Representatives</h2>
+      </div>
+      <div class="section-body">
+        <div class="rep-card">
+          <div class="rep-title">Earlsdon Ward Councillors</div>
+          <p class="rep-desc">Earlsdon ward is represented by three elected councillors on Coventry City Council. You can contact your councillors via the Council website.</p>
+          <div class="rep-link"><a href="https://www.coventry.gov.uk/councillors?ward=10&amp;party=&amp;filterList=Go" target="_blank" rel="noopener">Find your councillors &#8599;</a></div>
+        </div>
+        <div class="rep-card">
+          <div class="rep-title">Member of Parliament</div>
+          <p class="rep-desc">Earlsdon falls within the Coventry South constituency. You can contact your MP and find out about their work via the Parliament website.</p>
+          <div class="rep-link"><a href="https://members.parliament.uk/member/4786/contact" target="_blank" rel="noopener">Contact your MP &#8599;</a></div>
+        </div>
+        <div class="rep-card">
+          <div class="rep-title">Neighbourhood Policing</div>
+          <p class="rep-desc">The Earlsdon area is covered by West Midlands Police&rsquo;s Coventry South neighbourhood policing team. You can report issues, find your local officers, and sign up for alerts via the WMP website.</p>
+          <div class="rep-link"><a href="https://www.westmidlands.police.uk/area/your-area/west-midlands/coventry/binley-willenhall-cheylesmore-and-earlsdon/about-us/top-reported-crimes-in-this-area" target="_blank" rel="noopener">West Midlands Police &#8599;</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="icon">&#127968;</span>
+        <h2>Neighbourhood &amp; Community Groups</h2>
+      </div>
+      <div class="section-body">
+        <p style="color:var(--text-light);font-size:.9rem;margin-bottom:20px;">Earlsdon is an active community, reflected in the number of neighbourhood groups working with the City Council and other agencies to protect and improve the area.</p>
+
+        <div class="group">
+          <div class="group-name">North Earlsdon Neighbourhood Association (NENA)<span class="group-inactive">Currently inactive</span></div>
+          <div class="group-streets">Belvedere Road &middot; Berkeley Road North &middot; Broadway &middot; Dalton Road &middot; Earlsdon Avenue South &middot; Huntingdon Road &middot; Mayfield Road &middot; Mickleton Road &middot; Morningside &middot; Spencer Avenue &middot; Stanway Road</div>
+          <div class="contact-list">
+            <div class="contact-item"><span class="contact-label">Email</span><a href="mailto:nena.earlsdon@gmail.com">nena.earlsdon@gmail.com</a></div>
+          </div>
+        </div>
+
+        <div class="group">
+          <div class="group-name">South Earlsdon Neighbourhood Association (SENA)</div>
+          <div class="group-streets">Avondale Road &middot; Beechwood Avenue &middot; Berkeley Road South &middot; Moor Street &middot; Osborne Road &middot; Providence Street &middot; Styvechale Avenue &middot; Warwick Avenue</div>
+          <div class="contact-list">
+            <div class="contact-item"><span class="contact-label">Facebook</span><a href="https://www.facebook.com/SouthEarlsdon" target="_blank" rel="noopener">facebook.com/SouthEarlsdon</a></div>
+          </div>
+        </div>
+
+        <div class="group">
+          <div class="group-name">Hearsall Earlsdon Residents Association (HERA)</div>
+          <div class="group-streets">Westwood Road &middot; Kensington Road &middot; Broomfield Road &middot; Bristol Road &middot; Kingston Road &middot; Melbourne Road &middot; Centaur Road &middot; Sovereign Road &middot; Kirby Road &middot; Farman Road &middot; Latham Road &middot; Collingwood Road &middot; Hawkins Road &middot; Ludlow Road &middot; Shakleton Road &middot; Little Broomfield Place</div>
+          <div class="contact-list">
+            <div class="contact-item"><span class="contact-label">Facebook</span><a href="https://www.facebook.com/groups/hearlsdon/" target="_blank" rel="noopener">facebook.com/groups/hearlsdon</a></div>
+          </div>
+        </div>
+
+        <div class="group">
+          <div class="group-name">Rochester Road Area Residents Association<span class="group-inactive">Currently inactive</span></div>
+          <div class="group-streets">Beechwood Avenue &middot; Hartington Crescent &middot; Palmerston Road &middot; Radcliffe Road &middot; Ravenscrag Road &middot; Rochester Road &middot; Shaftesbury Road &middot; Stanley Road &middot; St Andrews Road &middot; Woodfield Road</div>
+        </div>
+
+        <div class="group">
+          <div class="group-name">Earlsdon Street 2.0</div>
+          <p style="font-size:.85rem;color:var(--text-light);margin-top:4px;margin-bottom:8px;">A group bringing together local business interests to safeguard Earlsdon's main shopping area, Earlsdon Street.</p>
+          <div class="contact-list">
+            <div class="contact-item"><span class="contact-label">Facebook</span><a href="https://www.facebook.com/earlsdonstreet2.0/" target="_blank" rel="noopener">facebook.com/earlsdonstreet2.0</a></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="icon">&#127807;</span>
+        <h2>Voluntary Groups &amp; Community Services</h2>
+      </div>
+      <div class="section-body">
+        <p style="color:var(--text-light);font-size:.9rem;margin-bottom:20px;">Earlsdon is a vibrant community with a wide range of active voluntary groups and services.</p>
+
+        <div class="group">
+          <div class="group-name">Earlsdon Carnegie Community Library</div>
+          <p style="font-size:.85rem;color:var(--text-light);margin-top:4px;margin-bottom:8px;">Providing quality library and information services to the community. The library is run by volunteers and is a vital local resource.</p>
+          <div style="margin:12px 0;border-radius:6px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.1);">
+            <img src="images/Library.jpeg" alt="Earlsdon Carnegie Community Library" style="width:100%;height:200px;object-fit:cover;object-position:center;display:block;">
+          </div>
+          <div class="contact-list">
+            <div class="contact-item"><span class="contact-label">Address</span><span>Earlsdon Avenue North, Coventry, CV5 6FZ</span></div>
+            <div class="contact-item"><span class="contact-label">Web</span><a href="https://earlsdonlibrary.org.uk/" target="_blank" rel="noopener">earlsdonlibrary.org.uk</a></div>
+            <div class="contact-item"><span class="contact-label">Facebook</span><a href="https://www.facebook.com/EarlsdonCommunityLibrary/?locale=en_GB" target="_blank" rel="noopener">facebook.com/EarlsdonCommunityLibrary</a></div>
+          </div>
+        </div>
+
+        <div class="group">
+          <div class="group-name">The Criterion Theatre</div>
+          <p style="font-size:.85rem;color:var(--text-light);margin-top:4px;margin-bottom:8px;">Earlsdon&rsquo;s much-loved amateur theatre company, based in the former Methodist Chapel on Berkeley Road South.</p>
+          <div class="contact-list">
+            <div class="contact-item"><span class="contact-label">Web</span><a href="https://criteriontheatre.co.uk/" target="_blank" rel="noopener">criteriontheatre.co.uk</a></div>
+            <div class="contact-item"><span class="contact-label">Facebook</span><a href="https://www.facebook.com/CriterionEarlsdon/?locale=en_GB" target="_blank" rel="noopener">facebook.com/CriterionEarlsdon</a></div>
+          </div>
+        </div>
+
+        <div class="group">
+          <div class="group-name">Earlsdon Festival Committee</div>
+          <p style="font-size:.85rem;color:var(--text-light);margin-top:4px;margin-bottom:8px;">Organising Earlsdon's much-loved annual festival, which brings together local residents, businesses and community groups for a day of music, food and entertainment on Earlsdon Street.</p>
+          <div class="contact-list">
+            <div class="contact-item"><span class="contact-label">Facebook</span><a href="https://www.facebook.com/earlsdonfest/?locale=en_GB" target="_blank" rel="noopener">facebook.com/earlsdonfest</a></div>
+          </div>
+        </div>
+
+        <div class="group">
+          <div class="group-name">Echo Community Newspaper</div>
+          <p style="font-size:.85rem;color:var(--text-light);margin-top:4px;margin-bottom:8px;">A volunteer led community newspaper covering news and events across Earlsdon and the surrounding area, sold in over 20 outlets and available at the library.</p>
+          <div class="contact-list">
+            <div class="contact-item"><span class="contact-label">Address</span><span>c/o Earlsdon Library, Earlsdon Avenue North</span></div>
+            <div class="contact-item"><span class="contact-label">Email</span><a href="mailto:newsdesk@echonews.org.uk">newsdesk@echonews.org.uk</a></div>
+            <div class="contact-item"><span class="contact-label">Web</span><a href="http://www.echonews.org.uk" target="_blank" rel="noopener">echonews.org.uk</a></div>
+          </div>
+        </div>
+
+        <div class="group">
+          <div class="group-name">Friends of Spencer Park</div>
+          <p style="font-size:.85rem;color:var(--text-light);margin-top:4px;margin-bottom:8px;">A volunteer group dedicated to maintaining and improving Spencer Park, one of Coventry's most popular green spaces, gifted to the city by local benefactor David Spencer in the 19th century.</p>
+          <div class="contact-list">
+            <div class="contact-item"><span class="contact-label">Web</span><a href="http://www.friendsofspencerpark.org" target="_blank" rel="noopener">friendsofspencerpark.org</a></div>
+            <div class="contact-item"><span class="contact-label">Facebook</span><a href="https://www.facebook.com/FriendsofSpencerPark/?locale=en_GB" target="_blank" rel="noopener">facebook.com/FriendsofSpencerPark</a></div>
+          </div>
+        </div>
+
+        <div class="group">
+          <div class="group-name">Earlsdon Society / Earlsdon Research Group</div>
+          <p style="font-size:.85rem;color:var(--text-light);margin-top:4px;margin-bottom:8px;">Dedicated to researching and recording the history of Earlsdon, the Research Group maintains a rich archive of local historical material and welcomes contributions from residents with an interest in the area's past.</p>
+          <div class="contact-list">
+            <div class="contact-item"><span class="contact-label">Web</span><a href="https://earlsdonresearchgroup.org/" target="_blank" rel="noopener">earlsdonresearchgroup.org</a></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-card">
+      <img src="images/Spencerpark.jpeg" alt="Spencer Park, Earlsdon" style="width:100%;height:180px;object-fit:cover;object-position:center;display:block;">
+      <div class="sidebar-card-body" style="font-size:.8rem;color:var(--text-light);font-style:italic;padding:8px 16px;">Spencer Park</div>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-card-header">Earlsdon on Facebook</div>
+      <div class="sidebar-card-body">
+        <p>Stay up to date with local news and events through our Facebook community groups.</p>
+        <a href="https://www.facebook.com/groups/1741625052743636/?locale=en_GB" target="_blank" rel="noopener" class="facebook-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Earlsdon Local Message Board
+        </a>
+        <a href="https://www.facebook.com/EarlsdonHistory" target="_blank" rel="noopener" class="facebook-btn" style="margin-top:8px;background:#2c4a2e;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Earlsdon History Group
+        </a>
+      </div>
+    </div>
+
+        <div class="sidebar-card">
+      <div class="sidebar-card-header">Coventry City Council</div>
+      <div class="sidebar-card-body">
+        <p>For bin collections, planning applications, road repairs and other council services visit the Coventry City Council website.</p>
+        <a href="https://www.coventry.gov.uk" target="_blank" rel="noopener" style="color:var(--green-mid);font-weight:600;">coventry.gov.uk</a>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Earlsdon <span>Online</span></div>
+      <p style="margin-top:6px;">© EOL 2026 | In association with <a href="http://www.firesidemedia.co.uk" target="_blank" rel="noopener">Fireside Media</a></p>
+    </div>
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="mailto:earlsdon.online@gmail.com">Contact</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
